@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 const Footer: React.FC = () => {
   // TODO put icons here
-  return <FooterStyle></FooterStyle>;
+  return (
+    <FooterStyle>
+      Handcrafted with love © {new Date().getFullYear()}
+    </FooterStyle>
+  );
 };
 
 export default Footer;

@@ -1,0 +1,104 @@
+{
+  "projects": [
+    {
+      "name": "Planter",
+      "client": "Genia",
+      "tools": [
+        "next.js",
+        "prisma",
+        "docker",
+        "redux toolkit",
+        "typescript",
+        "apollo",
+        "graphQL",
+        "styled-components",
+        "azure",
+        "mui"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    },
+    {
+      "name": "Agora Mentoring",
+      "client": "Agora",
+      "tools": [
+        "next.js",
+        "vercel",
+        "typescript",
+        "prisma",
+        "postgreSQL",
+        "googleapis",
+        "google-calendar",
+        "redux toolkit",
+        "apollo",
+        "graphQL",
+        "styled-components",
+        "mui"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    },
+    {
+      "name": "Trelli",
+      "client": "Genia",
+      "tools": [
+        "react",
+        "vercel",
+        "typescript",
+        "react-spring",
+        "styled-components",
+        "mui",
+        "koa",
+        "node",
+        "sendgrid",
+        "azure"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    },
+    {
+      "name": "Stellargaze",
+      "client": "Personal Project",
+      "tools": [
+        "react",
+        "javascript",
+        "googleapis",
+        "styled-components",
+        "mui",
+        "express",
+        "node",
+        "mySQL",
+        "passport.js",
+        "openweather",
+        "openstreetmaps"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    },
+    {
+      "name": "Handits",
+      "client": "Personal Project",
+      "tools": ["unity", "c#"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    },
+    {
+      "name": "Misc Timber Industry Apps",
+      "client": "Genia",
+      "tools": [
+        "timbersmart",
+        "react",
+        "azure",
+        "typescript",
+        "prisma",
+        "mySQL",
+        "kubernetes",
+        "docker",
+        "redux",
+        "apollo",
+        "graphQL",
+        "styled-components",
+        "dotnet",
+        "sentry",
+        "jest",
+        "express"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+    }
+  ]
+}

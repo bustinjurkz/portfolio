@@ -7,11 +7,8 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 
 const theme = {
-  secondary: "#4B5D67",
-  primary: "#322F3D",
   white: "#f6faf6",
-  purplePrimary: "#59405C",
-  purpleSecondary: "#87556F",
+  black: "#3b4250",
   background: "#1f2028",
 };
 
