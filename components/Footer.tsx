@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   // TODO put icons here
   return (
     <FooterStyle>
-      Handcrafted with love © {new Date().getFullYear()}
+      HANDCRAFTED WITH LOVE © {new Date().getFullYear()}
     </FooterStyle>
   );
 };

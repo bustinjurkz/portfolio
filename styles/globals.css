@@ -13,6 +13,10 @@ h3 {
   color: #3b4250;
 }
 
+h1 {
+  font-family: "Inter", sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;

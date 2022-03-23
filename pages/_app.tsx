@@ -5,12 +5,7 @@ import type { AppProps } from "next/app";
 import Navbar from "../components/Navbar";
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
-
-const theme = {
-  white: "#f6faf6",
-  black: "#3b4250",
-  background: "#1f2028",
-};
+import { theme } from "../styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

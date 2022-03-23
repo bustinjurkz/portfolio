@@ -28,6 +28,8 @@ const NavbarStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
+  max-width: 1500px;
+  margin: auto auto;
   .logo-container {
     cursor: pointer;
     width: 115px;
