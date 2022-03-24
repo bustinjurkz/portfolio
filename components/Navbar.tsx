@@ -24,10 +24,14 @@ const Navbar: React.FC = () => {
 export default Navbar;
 
 const NavbarStyle = styled.header`
+  position: sticky;
+  top: 0;
   display: flex;
+  background: ${(props) => props.theme.background};
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  height: 120px;
+  padding: 0px 15px;
   max-width: 1500px;
   margin: auto auto;
   .logo-container {

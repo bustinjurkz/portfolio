@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import Footer from "./Footer";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +9,10 @@ export interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <LayoutStyle id="main">
-      <ChildrenStyle>{children}</ChildrenStyle>
+      <ChildrenStyle>
+        {children}
+        <Footer />
+      </ChildrenStyle>
     </LayoutStyle>
   );
 };
@@ -17,13 +21,11 @@ export default Layout;
 
 const LayoutStyle = styled.div`
   position: absolute;
+  top: 120px;
   width: 100%;
-  overflow: auto;
+  bottom: 0;
+  overflow-y: scroll;
   background-color: ${(props) => props.theme.lightestGreen};
-  height: calc(100% - 125px);
-  @media screen and (min-width: 700px) {
-    height: calc(100% - 175px);
-  }
 `;
 
 const ChildrenStyle = styled.div`

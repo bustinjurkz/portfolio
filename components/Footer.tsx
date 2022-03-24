@@ -13,7 +13,6 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const FooterStyle = styled.div`
+  padding: 50px 0px;
   display: inline-flex;
-  font-weight: 600;
-  font-family: "Karla", sans-serif;
 `;
