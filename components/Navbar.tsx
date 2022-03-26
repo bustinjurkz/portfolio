@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../public/logo.png";
 import Image from "next/image";
+import { Button } from "./Button";
 
 export const NAVBAR_HEIGHT = 160;
 
@@ -13,9 +14,9 @@ const Navbar: React.FC = () => {
         <Image src={Logo} alt="Logo" aria-label="Planter Logo" />
       </div>
       <div className="nav-links">
-        <div className="link">Work</div>
-        <div className="link">About</div>
-        <div className="link">Contact</div>
+        <Button text="Work" />
+        <Button text="About" />
+        <Button text="Contact" />
       </div>
     </NavbarStyle>
   );
@@ -40,11 +41,5 @@ const NavbarStyle = styled.header`
   }
   .nav-links {
     display: flex;
-    .link {
-      cursor: pointer;
-      :hover {
-        color: red;
-      }
-    }
   }
 `;

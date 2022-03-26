@@ -1,11 +1,14 @@
 import React from "react";
 import { styled } from "../styles/theme";
+import { Button } from "./Button";
 
 export interface ProjectPreviewCardProps {
   name: string;
   description: string;
   tools: string[];
   client: string;
+  repo?: string;
+  liveURL?: string;
 }
 
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
@@ -29,6 +32,25 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
           </div>
         ))}
       </div>
+      <div className="links">
+        <div className="external">
+          {props.repo && (
+            <div className="repo">
+              <Button text={"View Repo"} to={props.repo} />
+            </div>
+          )}
+          {props.liveURL && (
+            <div className="url">
+              <Button text={"View Live"} to={props.liveURL} />
+            </div>
+          )}
+        </div>
+        <div className="internal">
+          <div className="more-info">
+            <Button text={"More Info"} to={""} />
+          </div>
+        </div>
+      </div>
     </ProjectPreviewCardStyle>
   );
 };
@@ -36,12 +58,12 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 const ProjectPreviewCardStyle = styled.div`
   font-size: larger;
   height: 100%;
-  min-height: 350px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 50px;
-  border: 1px solid ${(props) => props.theme.black};
+  background: ${(props) => props.theme.cardBackground};
   padding: 0px 30px 20px 30px;
   border-radius: 20px;
   .header {
@@ -64,6 +86,7 @@ const ProjectPreviewCardStyle = styled.div`
   .tools {
     display: flex;
     flex-wrap: wrap;
+
     .tool {
       padding: 8px;
       border-radius: 10px;
@@ -72,6 +95,19 @@ const ProjectPreviewCardStyle = styled.div`
       margin: 5px 20px 5px 0px;
       :hover {
         transform: scale(1.02);
+      }
+    }
+  }
+
+  .links {
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .external {
+      display: inline-flex;
+      .repo {
+        margin-right: 20px;
       }
     }
   }

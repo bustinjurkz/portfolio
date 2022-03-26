@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background: #f2f3f4;
+  background: #f7f7f7;
   overflow: hidden;
   font-family: "Inter", sans-serif;
   font-family: "Source Sans Pro", sans-serif;
@@ -25,4 +25,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 1.25em;
+}
+
+::-webkit-scrollbar-track {
+  background: #eceff4;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b4250;
+  border: 0.2em solid #eceff4;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b566c;
+}
+
+@supports (scrollbar-color: #3b4250 #eceff4) {
+  * {
+    scrollbar-color: #3b4250 #eceff4;
+    scrollbar-width: auto;
+  }
 }

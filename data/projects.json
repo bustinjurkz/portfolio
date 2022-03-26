@@ -15,7 +15,8 @@
         "azure",
         "mui"
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "description": "Planter lets New Zealanders plan their garden by choosing the fruits and vegetables which grow optimally in their region. They receive a custom planting calendar which tells them when to sow and harvest their selected plants.",
+      "liveURL": "https://planter.co.nz/"
     },
     {
       "name": "Agora Mentoring",
@@ -34,7 +35,8 @@
         "styled-components",
         "mui"
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections.",
+      "repo": "https://github.com/bustinjurkz/agora-mentorship"
     },
     {
       "name": "Trelli",
@@ -51,7 +53,8 @@
         "sendgrid",
         "azure"
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "description": "Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
+      "liveURL": "https://trelli.co.nz/"
     },
     {
       "name": "Stellargaze",
@@ -69,13 +72,16 @@
         "openweather",
         "openstreetmaps"
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
+      "liveURL": "https://stellar-gaze.herokuapp.com/",
+      "repo": "https://github.com/bustinjurkz/StellarGaze"
     },
     {
       "name": "Handits",
-      "client": "Personal Project",
+      "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "liveURL": "http://handits.ca/part1.html",
+      "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
     },
     {
       "name": "Misc Timber Industry Apps",
@@ -98,7 +104,7 @@
         "jest",
         "express"
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum tortor non nunc faucibus luctus. Nunc bibendum elit in magna accumsan dapibus ac ac nibh. Suspendisse euismod imperdiet nunc, et hendrerit tortor pretium et. Phasellus ipsum metus, ultrices in erat ultrices, aliquam sagittis orci. "
+      "description": "Genia has been in the timber industry since 1993 and I am proud to have helped modernize their logistics and business-processes, as well as spearhead their consumer/marketing endeavors.  Just three of the apps I've helped design and develop is estimated to save the company over $100,000 per year."
     }
   ]
 }
