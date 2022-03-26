@@ -48,7 +48,12 @@ const HomeStyle = styled.div`
       width: 100%;
       height: 400px;
       position: relative;
-      background: red;
+      background: rgb(245, 217, 213);
+      background: linear-gradient(
+        90deg,
+        rgba(245, 217, 213, 1) 0%,
+        rgba(236, 239, 244, 1) 100%
+      );
       .image-container {
         .image {
           object-fit: contain;
