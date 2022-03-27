@@ -23,6 +23,8 @@ const ButtonStyle = styled.button`
   text-transform: uppercase;
   color: #000;
   cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
   border: 3px solid;
   padding: 0.25em 0.5em;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
@@ -32,7 +34,7 @@ const ButtonStyle = styled.button`
   touch-action: manipulation;
   :hover,
   :active {
-    background: ${(props) => props.theme.green};
+    background: ${(props) => props.theme.red};
   }
   :active {
     box-shadow: 0px 0px 0px 0px;

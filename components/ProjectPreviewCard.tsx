@@ -63,7 +63,7 @@ const ProjectPreviewCardStyle = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 50px;
-  background: ${(props) => props.theme.cardBackground};
+  background: ${(props) => props.theme.blue};
   padding: 0px 30px 20px 30px;
   border-radius: 20px;
   .header {

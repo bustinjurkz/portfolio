@@ -19,6 +19,24 @@
       "liveURL": "https://planter.co.nz/"
     },
     {
+      "name": "Trelli",
+      "client": "Genia",
+      "tools": [
+        "react",
+        "vercel",
+        "typescript",
+        "react-spring",
+        "styled-components",
+        "mui",
+        "koa",
+        "node",
+        "sendgrid",
+        "azure"
+      ],
+      "description": "🏆 Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
+      "liveURL": "https://trelli.co.nz/"
+    },
+    {
       "name": "Agora Mentoring",
       "client": "Agora",
       "tools": [
@@ -38,24 +56,7 @@
       "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections.",
       "repo": "https://github.com/bustinjurkz/agora-mentorship"
     },
-    {
-      "name": "Trelli",
-      "client": "Genia",
-      "tools": [
-        "react",
-        "vercel",
-        "typescript",
-        "react-spring",
-        "styled-components",
-        "mui",
-        "koa",
-        "node",
-        "sendgrid",
-        "azure"
-      ],
-      "description": "Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
-      "liveURL": "https://trelli.co.nz/"
-    },
+
     {
       "name": "Stellargaze",
       "client": "Personal Project",

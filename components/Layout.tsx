@@ -21,7 +21,7 @@ export default Layout;
 
 const LayoutStyle = styled.div`
   position: absolute;
-  top: 120px;
+  top: 80px;
   width: 100%;
   bottom: 0;
   overflow-y: scroll;
