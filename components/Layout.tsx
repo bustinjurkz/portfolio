@@ -10,8 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <LayoutStyle id="main">
       <ChildrenStyle>
-        {children}
-        <Footer />
+        {children} <Footer />
       </ChildrenStyle>
     </LayoutStyle>
   );
@@ -22,6 +21,7 @@ export default Layout;
 const LayoutStyle = styled.div`
   position: absolute;
   top: 80px;
+  overflow-x: hidden;
   width: 100%;
   bottom: 0;
   overflow-y: scroll;

@@ -1,17 +1,17 @@
 export function gradualFade(headerName: string) {
-  var header = document.getElementById(headerName);
+  const header = document.getElementById(headerName);
 
   function fadeOutOnScroll(element: HTMLElement | null) {
     if (!element) {
       return;
     }
 
-    var distanceToTop =
+    const distanceToTop =
       window.pageYOffset + element.getBoundingClientRect().top;
-    var elementHeight = element.offsetHeight;
-    var scrollTop = document.documentElement.scrollTop;
+    const elementHeight = element.offsetHeight;
+    const scrollTop = document.documentElement.scrollTop;
 
-    var opacity = 1;
+    let opacity = 1;
 
     if (scrollTop > distanceToTop) {
       opacity = 1 - (scrollTop - distanceToTop) / elementHeight;

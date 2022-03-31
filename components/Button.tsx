@@ -23,7 +23,6 @@ const ButtonStyle = styled.button`
   text-transform: uppercase;
   color: #000;
   cursor: pointer;
-  font-family: "Inter", sans-serif;
   font-weight: 600;
   border: 3px solid;
   padding: 0.25em 0.5em;

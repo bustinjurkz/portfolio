@@ -3,6 +3,8 @@ import baseStyled, { ThemedStyledInterface } from "styled-components";
 export const theme = {
   white: "#f6faf6",
   black: "#3b4250",
+  darkBlue: "#1d1e2b",
+  whiteContrast: "#cacaca",
   grey: "#8b93a3",
   darkGrey: "#4F5D75",
   red: "#f5d9d5",

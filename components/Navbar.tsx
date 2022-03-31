@@ -8,7 +8,6 @@ const Navbar: React.FC = () => {
   const scrollIntoView = require("scroll-into-view");
   const [container, setContainer] = useState<any>(undefined);
 
-  // Main scrolling container is 'main' component in this app
   useEffect(() => {
     setContainer(document.getElementById("work"));
   }, []);
