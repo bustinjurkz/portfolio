@@ -23,5 +23,5 @@ const SectionHeaderStyle = styled.div`
     background-position: 0 88%;
     width: min-content;
   }
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 `;

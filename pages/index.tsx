@@ -42,5 +42,6 @@ export default Home;
 const HomeStyle = styled.div`
   .section {
     margin-top: 100px;
+    margin-bottom: 40px;
   }
 `;
