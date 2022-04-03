@@ -31,7 +31,9 @@ const Home: NextPage = () => {
             );
           })}
         </div>
-        <Contact />
+        <div id="contact" className="section">
+          <Contact />
+        </div>
       </div>
     </HomeStyle>
   );

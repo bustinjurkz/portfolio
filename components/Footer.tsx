@@ -5,7 +5,13 @@ const Footer: React.FC = () => {
   return (
     <FooterStyle>
       <div className="contents">
-        HANDCRAFTED WITH LOVE © {new Date().getFullYear()}
+        <a
+          href="https://github.com/bustinjurkz/portfolio"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          HANDCRAFTED WITH LOVE © {new Date().getFullYear()}
+        </a>
       </div>
     </FooterStyle>
   );
