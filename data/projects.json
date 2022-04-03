@@ -19,6 +19,26 @@
       "liveURL": "https://planter.co.nz/"
     },
     {
+      "name": "Stellargaze",
+      "client": "Personal Project",
+      "tools": [
+        "react",
+        "javascript",
+        "googleapis",
+        "styled-components",
+        "mui",
+        "express",
+        "node",
+        "mySQL",
+        "passport.js",
+        "openweather",
+        "openstreetmaps"
+      ],
+      "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
+      "liveURL": "https://stellar-gaze.herokuapp.com/",
+      "repo": "https://github.com/bustinjurkz/StellarGaze"
+    },
+    {
       "name": "Trelli",
       "client": "Genia",
       "tools": [
@@ -57,26 +77,6 @@
       "repo": "https://github.com/bustinjurkz/agora-mentorship"
     },
 
-    {
-      "name": "Stellargaze",
-      "client": "Personal Project",
-      "tools": [
-        "react",
-        "javascript",
-        "googleapis",
-        "styled-components",
-        "mui",
-        "express",
-        "node",
-        "mySQL",
-        "passport.js",
-        "openweather",
-        "openstreetmaps"
-      ],
-      "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
-      "liveURL": "https://stellar-gaze.herokuapp.com/",
-      "repo": "https://github.com/bustinjurkz/StellarGaze"
-    },
     {
       "name": "Handits",
       "client": "Capstone - McMaster University",

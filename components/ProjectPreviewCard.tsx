@@ -25,26 +25,50 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       <div className="header">
         <h1 className="project-name">{props.name}</h1>
         <div className="client">
-          <span>Client: </span>
+          <span>
+            {props.client !== "Personal Project" &&
+              props.client !== "Capstone - McMaster University" &&
+              "Client:"}{" "}
+          </span>
           <span className="name">{props.client}</span>
         </div>
       </div>
       <div className="inner-container">
         <div className="image-container">
-          <Image
-            priority
-            className="image"
-            src={`/${props.name.toLowerCase()}-preview.png`}
-            alt={`/${props.name.toLowerCase()}-preview`}
-            aria-label="Planter Preview Image"
-            width={1668}
-            height={865}
-            layout={"responsive"}
-          />
+          {props.name !== "Handits" ? (
+            <Image
+              priority
+              className="image"
+              src={`/${props.name.toLowerCase()}-preview.png`}
+              alt={`/${props.name.toLowerCase()}-preview`}
+              aria-label="Planter Preview Image"
+              width={1668}
+              height={865}
+              layout={"responsive"}
+            />
+          ) : (
+            <div className="video-container">
+              <iframe
+                width="1668"
+                height="865"
+                src="https://www.youtube.com/embed/abJWSL5FRzs"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </div>
+          )}
         </div>
-
-        <div className="description">{props.description}</div>
-
+        <hr />
+        <div className="description-container">
+          <h2 className="about">
+            About{" "}
+            {props.name !== "Misc Timber Industry Apps"
+              ? props.name
+              : "Misc Timber Projects"}
+          </h2>
+          <div className="description">{props.description}</div>
+        </div>
         <div className="tools">
           {props.tools.map((tool, i) => (
             <div className="tool" key={i}>
@@ -61,7 +85,10 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             )}
             {props.liveURL && (
               <div className="url">
-                <Button text={"View Live"} to={props.liveURL} />
+                <Button
+                  text={props.name === "Handits" ? "View Blog" : "View Live"}
+                  to={props.liveURL}
+                />
               </div>
             )}
           </div>
@@ -90,9 +117,37 @@ const ProjectPreviewCardStyle = styled.div`
   border-radius: 20px;
   box-shadow: 0px 2px 15px 0px rgb(158 162 171);
 
+  hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: none;
+    height: 9px;
+    background: linear-gradient(120deg, #4f5d75 0%, #f5d9d5 100%);
+    border-radius: 20px;
+    width: 50%;
+    filter: opacity(0.2);
+  }
+
   .inner-container {
     max-width: 1000px;
     align-self: center;
+    padding: 0px 25px;
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+      iframe,
+      .video-container object,
+      .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   .header {
     display: flex;
@@ -125,7 +180,9 @@ const ProjectPreviewCardStyle = styled.div`
   .tools {
     display: flex;
     flex-wrap: wrap;
-    background: red;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
     margin: 50px 0px;
 
     .tool {
@@ -140,7 +197,7 @@ const ProjectPreviewCardStyle = styled.div`
     }
   }
 
-  .description {
+  .description-container {
     margin: 30px 0px;
   }
 
@@ -148,9 +205,10 @@ const ProjectPreviewCardStyle = styled.div`
     margin-bottom: 20px;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: right;
     .external {
       display: inline-flex;
+      margin-right: 20px;
       .repo {
         margin-right: 20px;
       }
