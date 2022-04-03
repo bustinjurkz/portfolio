@@ -12,15 +12,28 @@ export const Contact = () => {
       <SectionHeader text={"Contact"} />
       <h1>Let&apos;s collaborate! Anytime, anywhere.</h1>
       <div className="logos">
-        <div className="logo-container">
+        <a
+          className="logo-container"
+          href="https://github.com/bustinjurkz"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <Image src={Github} alt="Github Logo" aria-label="Github" />
-        </div>
-        <div className="logo-container middle">
+        </a>
+        <a
+          className="logo-container middle"
+          href="https://www.linkedin.com/in/dustinjurkaulionis/"
+          target={"_blank"}
+          rel="noreferrer"
+        >
           <Image src={LinkedIn} alt="LinkedIn Logo" aria-label="LinkedIn" />
-        </div>
-        <div className="logo-container">
+        </a>
+        <a
+          className="logo-container"
+          href="mailto: dustinjurkaulionis@gmail.com"
+        >
           <Image src={Mail} alt="Mail Logo" aria-label="Mail" />
-        </div>
+        </a>
       </div>
     </ContactStyle>
   );

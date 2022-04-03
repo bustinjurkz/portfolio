@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.png";
 import Image from "next/image";
-export const NAVBAR_HEIGHT = 160;
 
 const Navbar: React.FC = () => {
-  const scrollIntoView = require("scroll-into-view");
-  const [container, setContainer] = useState<any>(undefined);
-
-  useEffect(() => {
-    setContainer(document.getElementById("work"));
-  }, []);
+  function handleScroll(scrollTo: string) {
+    const elem = document.getElementById(scrollTo);
+    if (elem) {
+      elem.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }
   return (
     <NavbarStyle>
       <div className="logo-container">
         <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
       </div>
       <div className="nav-links">
-        <div
-          className="link"
-          onClick={() =>
-            scrollIntoView(container, { align: { topOffset: 1050 } })
-          }
-        >
+        <div onClick={() => handleScroll("work")} className="link">
           WORK
         </div>
         <div className="link about">ABOUT</div>
-        <div className="link">CONTACT</div>
+        <div onClick={() => handleScroll("contact")} className="link">
+          CONTACT
+        </div>
       </div>
     </NavbarStyle>
   );
