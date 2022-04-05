@@ -30,17 +30,10 @@ const LayoutStyle = styled.div`
 
 const ChildrenStyle = styled.div`
   height: 100%;
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0px auto;
-  padding: 40px 20px 0px 20px;
+  /* padding: 40px 20px 0px 20px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @media screen and (min-width: 665px) {
-    padding: 0px 40px;
-  }
-  @media screen and (min-width: 1000px) {
-    padding: 40px 40px 0px 40px;
-  }
 `;

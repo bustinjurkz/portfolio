@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   function handleScroll(scrollTo: string) {
@@ -15,13 +16,14 @@ const Navbar: React.FC = () => {
   return (
     <NavbarStyle>
       <div className="logo-container">
-        <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
+        <Link href="/" passHref>
+          <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
+        </Link>
       </div>
       <div className="nav-links">
-        <div onClick={() => handleScroll("work")} className="link">
+        <div onClick={() => handleScroll("work")} className="link work">
           WORK
         </div>
-        <div className="link about">ABOUT</div>
         <div onClick={() => handleScroll("contact")} className="link">
           CONTACT
         </div>
@@ -64,8 +66,8 @@ const NavbarStyle = styled.header`
         width: min-content;
       }
     }
-    .about {
-      margin: 0px 40px;
+    .work {
+      margin-right: 40px;
     }
   }
 `;

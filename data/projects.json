@@ -2,6 +2,7 @@
   "projects": [
     {
       "name": "Planter",
+      "slug": "planter",
       "client": "Genia",
       "tools": [
         "next.js",
@@ -15,11 +16,12 @@
         "azure",
         "mui"
       ],
-      "description": "Planter lets New Zealanders plan their garden by choosing the fruits and vegetables which grow optimally in their region. They receive a custom planting calendar which tells them when to sow and harvest their selected plants.",
+      "description": "Planter helps New Zealanders plan their vegetable garden. Knowing what to plant and when to grow it throughout the year can be rather complicated! Planter takes away the guesswork and provides an effortless way to get a personalised planting calendar for their garden.",
       "liveURL": "https://planter.co.nz/"
     },
     {
       "name": "Stellargaze",
+      "slug": "stellargaze",
       "client": "Personal Project",
       "tools": [
         "react",
@@ -41,6 +43,7 @@
     {
       "name": "Trelli",
       "client": "Genia",
+      "slug": "trelli",
       "tools": [
         "react",
         "vercel",
@@ -59,6 +62,7 @@
     {
       "name": "Agora Mentoring",
       "client": "Agora",
+      "slug": "agora",
       "tools": [
         "next.js",
         "vercel",
@@ -79,6 +83,7 @@
 
     {
       "name": "Handits",
+      "slug": "handits",
       "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
       "liveURL": "http://handits.ca/part1.html",
@@ -87,6 +92,7 @@
     {
       "name": "Misc Timber Industry Apps",
       "client": "Genia",
+      "slug": "genia",
       "tools": [
         "timbersmart",
         "react",

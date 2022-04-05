@@ -18,7 +18,7 @@ export const Contact = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <Image src={Github} alt="Github Logo" aria-label="Github" />
+          <Image priority src={Github} alt="Github Logo" aria-label="Github" />
         </a>
         <a
           className="logo-container middle"
@@ -26,13 +26,18 @@ export const Contact = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <Image src={LinkedIn} alt="LinkedIn Logo" aria-label="LinkedIn" />
+          <Image
+            priority
+            src={LinkedIn}
+            alt="LinkedIn Logo"
+            aria-label="LinkedIn"
+          />
         </a>
         <a
           className="logo-container"
           href="mailto: dustinjurkaulionis@gmail.com"
         >
-          <Image src={Mail} alt="Mail Logo" aria-label="Mail" />
+          <Image priority src={Mail} alt="Mail Logo" aria-label="Mail" />
         </a>
       </div>
     </ContactStyle>

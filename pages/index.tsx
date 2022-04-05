@@ -24,6 +24,7 @@ const Home: NextPage = () => {
                   name={x.name}
                   tools={x.tools}
                   repo={x.repo}
+                  slug={x.slug}
                   liveURL={x.liveURL}
                   key={i}
                 />

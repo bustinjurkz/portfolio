@@ -2,37 +2,37 @@ import React from "react";
 import { styled } from "../styles/theme";
 import { Button } from "./Button";
 import Image from "next/image";
-// import Image1 from "../public/";
+import Link from "next/link";
 
 export interface ProjectPreviewCardProps {
   name: string;
   description: string;
   tools: string[];
   client: string;
+  slug: string;
   repo?: string;
   liveURL?: string;
 }
-
-const myLoader = ({ src }: any) => {
-  return `../public/${src}.png`;
-};
 
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
   return (
     <ProjectPreviewCardStyle>
-      <div className="header">
-        <h1 className="project-name">{props.name}</h1>
-        <div className="client">
-          <span>
-            {props.client !== "Personal Project" &&
-              props.client !== "Capstone - McMaster University" &&
-              "Client:"}{" "}
-          </span>
-          <span className="name">{props.client}</span>
+      <Link href={`/${props.slug}`} passHref>
+        <div className="header">
+          <h1 className="project-name">{props.name}</h1>
+          <div className="client">
+            <span>
+              {props.client !== "Personal Project" &&
+                props.client !== "Capstone - McMaster University" &&
+                "Client:"}{" "}
+            </span>
+            <span className="name">{props.client}</span>
+          </div>
         </div>
-      </div>
+      </Link>
+
       <div className="inner-container">
         <div className="image-container">
           {props.name !== "Handits" ? (
@@ -93,9 +93,11 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             )}
           </div>
           <div className="internal">
-            <div className="more-info">
-              <Button text={"More Info"} to={""} />
-            </div>
+            <Link href={`/${props.slug}`} passHref>
+              <div className="more-info">
+                <Button text={"More Info"} to={""} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -164,6 +166,12 @@ const ProjectPreviewCardStyle = styled.div`
     align-items: center;
     font-family: "Inter", sans-serif;
     justify-content: space-between;
+    opacity: 1;
+    transition: 0.4s;
+    cursor: pointer;
+    :hover {
+      opacity: 0.93;
+    }
     .project-name {
       text-transform: uppercase;
       color: ${(props) => props.theme.white};
