@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "../styles/theme";
 import { Button } from "./Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useParallax } from "react-scroll-parallax";
 
 export interface ProjectPreviewCardProps {
   name: string;
@@ -17,6 +18,9 @@ export interface ProjectPreviewCardProps {
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
+  const { ref } = useParallax<HTMLDivElement>({
+    translateX: [-3, 3],
+  });
   return (
     <ProjectPreviewCardStyle>
       <Link href={`/${props.slug}`} passHref>
@@ -36,7 +40,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       </Link>
 
       <div className="inner-container">
-        <div className="image-container">
+        <div className="image-container" ref={ref}>
           {props.name !== "Handits" ? (
             <Image
               priority

@@ -81,7 +81,7 @@ const Planter = () => {
         </section>
         <section className="actions">
           <div className="next">
-            <Link href="/trelli" passHref>
+            <Link href="/stellargaze" passHref>
               <a>
                 <Button text={"NEXT PROJECT"} />
               </a>
