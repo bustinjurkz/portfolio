@@ -43,8 +43,8 @@ export const Hero = () => {
           >
             full-stack web developer
           </a>{" "}
-          who loves good design. I am available for full-time & freelance
-          projects.
+          who loves good design and quirky ideas. I am available for full-time &
+          freelance projects.
         </div>
       </div>
     </HeroStyle>

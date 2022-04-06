@@ -20,17 +20,19 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   return (
     <ProjectPreviewCardStyle>
       <Link href={`/${props.slug}`} passHref>
-        <div className="header">
-          <h1 className="project-name">{props.name}</h1>
-          <div className="client">
-            <span>
-              {props.client !== "Personal Project" &&
-                props.client !== "Capstone - McMaster University" &&
-                "Client:"}{" "}
-            </span>
-            <span className="name">{props.client}</span>
+        <a>
+          <div className="header">
+            <h1 className="project-name">{props.name}</h1>
+            <div className="client">
+              <span>
+                {props.client !== "Personal Project" &&
+                  props.client !== "Capstone - McMaster University" &&
+                  "Client:"}{" "}
+              </span>
+              <span className="name">{props.client}</span>
+            </div>
           </div>
-        </div>
+        </a>
       </Link>
 
       <div className="inner-container">
@@ -94,9 +96,11 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
           </div>
           <div className="internal">
             <Link href={`/${props.slug}`} passHref>
-              <div className="more-info">
-                <Button text={"More Info"} to={""} />
-              </div>
+              <a>
+                <div className="more-info">
+                  <Button text={"More Info"} to={""} />
+                </div>
+              </a>
             </Link>
           </div>
         </div>

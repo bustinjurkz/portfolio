@@ -6,8 +6,9 @@ import Layout from "../components/Layout";
 import { theme } from "../styles/theme";
 import React, { useEffect, useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   const [container, setContainer] = useState<any>(undefined);
 
   // Main scrolling container is 'main' component in this app
@@ -20,7 +21,34 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <Navbar />
         <Layout>
-          <Component {...pageProps} />
+          <AnimatePresence initial={false} exitBeforeEnter>
+            <motion.div
+              key={router.route}
+              initial="pageInitial"
+              animate="pageAnimate"
+              transition={{ duration: 0.5 }}
+              exit="pageExit"
+              onAnimationComplete={() => {
+                container.scrollTop = 0;
+              }}
+              variants={{
+                pageInitial: {
+                  opacity: 0,
+                  x: 250,
+                },
+                pageAnimate: {
+                  opacity: 1,
+                  x: 0,
+                },
+                pageExit: {
+                  opacity: 0,
+                  x: -250,
+                },
+              }}
+            >
+              <Component {...pageProps} />
+            </motion.div>
+          </AnimatePresence>
         </Layout>
       </ThemeProvider>
     </ParallaxProvider>

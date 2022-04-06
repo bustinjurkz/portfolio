@@ -12,6 +12,7 @@ export const theme = {
   blue: "#eceff4",
   biggestFont: "90px",
   bigFont: "70px",
+  mediumFont: "50px",
   gradient: "linear-gradient(120deg, #4f5d75 0%, #f5d9d5 100%)",
 };
 

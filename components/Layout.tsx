@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
 
@@ -20,11 +20,11 @@ export default Layout;
 
 const LayoutStyle = styled.div`
   position: absolute;
+  overflow-y: scroll;
   top: 80px;
   overflow-x: hidden;
   width: 100%;
   bottom: 0;
-  overflow-y: scroll;
   background-color: ${(props) => props.theme.lightestGreen};
 `;
 
