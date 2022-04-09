@@ -7,12 +7,21 @@ import { theme } from "../styles/theme";
 import React, { useEffect, useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { motion, AnimatePresence } from "framer-motion";
+import smoothscroll from "smoothscroll-polyfill";
+declare global {
+  interface Window {
+    __forceSmoothScrollPolyfill__: any;
+  }
+}
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [container, setContainer] = useState<any>(undefined);
-
   // Main scrolling container is 'main' component in this app
   useEffect(() => {
+    if (window != undefined) {
+      window.__forceSmoothScrollPolyfill__ = true;
+      smoothscroll.polyfill();
+    }
     setContainer(document.getElementById("main"));
   }, []);
 
@@ -21,16 +30,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <ThemeProvider theme={theme}>
         <Navbar />
         <Layout>
-          <AnimatePresence initial={false} exitBeforeEnter>
+          <AnimatePresence
+            initial={false}
+            exitBeforeEnter
+            onExitComplete={() => {
+              container.scrollTop = 0;
+            }}
+          >
             <motion.div
               key={router.route}
               initial="pageInitial"
               animate="pageAnimate"
               transition={{ duration: 0.5 }}
               exit="pageExit"
-              onAnimationComplete={() => {
-                container.scrollTop = 0;
-              }}
               variants={{
                 pageInitial: {
                   opacity: 0,

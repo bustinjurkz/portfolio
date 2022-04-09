@@ -2,13 +2,35 @@ import type { NextPage } from "next";
 import styled from "styled-components";
 import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
-
 import { SectionHeader } from "../components/SectionHeader";
 import { Fade } from "react-awesome-reveal";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
+import { useEffect } from "react";
+// import router from "next/router";
+import { useRouter } from "next/router";
+
+export function handleScroll(scrollTo: string) {
+  const elem = document.getElementById(scrollTo);
+  if (elem) {
+    console.log("ELEM FOUND!", elem);
+    elem.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log("RAN!!!!!!!!!!!!!!");
+    if (router.asPath.split("#")[1] === "work") {
+      console.log("GOTUS HEREUS");
+      handleScroll("work");
+    }
+  }, [router]);
+
   return (
     <HomeStyle>
       <Hero />

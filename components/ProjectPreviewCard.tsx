@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { styled } from "../styles/theme";
 import { Button } from "./Button";
 import Image from "next/image";
@@ -161,14 +161,9 @@ const ProjectPreviewCardStyle = styled.div`
   }
   .header {
     display: flex;
-    background: rgb(84, 97, 120);
-    background: linear-gradient(
-      90deg,
-      rgba(84, 97, 120, 1) 0%,
-      rgba(64, 71, 84, 1) 100%
-    );
+    background: ${(props) => props.theme.darkBlue};
     border-radius: 20px 20px 0px 0px;
-    color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.darkBlue};
     padding: 10px 40px;
     margin-bottom: 60px;
     align-items: center;
@@ -186,6 +181,7 @@ const ProjectPreviewCardStyle = styled.div`
     }
   }
   .client {
+    color: ${(props) => props.theme.white};
     .name {
       margin-left: 10px;
       font-size: x-large;

@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import router from "next/router";
 
-const Navbar: React.FC = () => {
-  function handleScroll(scrollTo: string) {
-    const elem = document.getElementById(scrollTo);
-    if (elem) {
-      elem.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
+export function handleScroll(scrollTo: string) {
+  const elem = document.getElementById(scrollTo);
+  console.log("elem: ", elem);
+
+  if (elem) {
+    elem.scrollIntoView({
+      behavior: "smooth",
+    });
+  } else {
+    router.push("/#work");
   }
+}
+const Navbar: React.FC = () => {
+  // useEffect(() => {
+  //   if (router.asPath.split("#")[1] === "work") {
+  //     // router.back();
+  //     handleScroll("work");
+  //   }
+  // }, []);
   return (
     <NavbarStyle>
       <div className="logo-container">

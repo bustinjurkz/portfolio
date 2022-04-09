@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          HANDCRAFTED WITH LOVE © {new Date().getFullYear()}
+          Made with ❤️ © {new Date().getFullYear()}
         </a>
       </div>
     </FooterStyle>
@@ -22,11 +22,10 @@ export default Footer;
 const FooterStyle = styled.div`
   background: ${(props) => props.theme.darkBlue};
   color: ${(props) => props.theme.whiteContrast};
-  padding: 2em 0;
+  padding: 3em 0;
   display: inline-flex;
   width: 100vw;
   position: relative;
-  font-weight: 600;
   font-size: large;
   /*Push the container to the exact middle of the browser window with left: 50%
   then pull it back to the left edge with negative -50vw margin.  
