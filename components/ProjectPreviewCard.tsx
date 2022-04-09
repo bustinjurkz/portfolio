@@ -40,31 +40,35 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       </Link>
 
       <div className="inner-container">
-        <div className="image-container" ref={ref}>
-          {props.name !== "Handits" ? (
-            <Image
-              priority
-              className="image"
-              src={`/${props.name.toLowerCase()}-preview.png`}
-              alt={`/${props.name.toLowerCase()}-preview`}
-              aria-label="Planter Preview Image"
-              width={1668}
-              height={865}
-              layout={"responsive"}
-            />
-          ) : (
-            <div className="video-container">
-              <iframe
-                width="1668"
-                height="865"
-                src="https://www.youtube.com/embed/abJWSL5FRzs"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              />
+        <Link href={`/${props.slug}`} passHref>
+          <a>
+            <div className="image-container" ref={ref}>
+              {props.name !== "Handits" ? (
+                <Image
+                  priority
+                  className="image"
+                  src={`/${props.name.toLowerCase()}-preview.png`}
+                  alt={`/${props.name.toLowerCase()}-preview`}
+                  aria-label="Planter Preview Image"
+                  width={1668}
+                  height={865}
+                  layout={"responsive"}
+                />
+              ) : (
+                <div className="video-container">
+                  <iframe
+                    width="1668"
+                    height="865"
+                    src="https://www.youtube.com/embed/abJWSL5FRzs"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </a>
+        </Link>
         <hr />
         <div className="description-container">
           <h2 className="about">

@@ -7,7 +7,6 @@ import router from "next/router";
 
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
-  console.log("elem: ", elem);
 
   if (elem) {
     elem.scrollIntoView({
@@ -18,12 +17,6 @@ export function handleScroll(scrollTo: string) {
   }
 }
 const Navbar: React.FC = () => {
-  // useEffect(() => {
-  //   if (router.asPath.split("#")[1] === "work") {
-  //     // router.back();
-  //     handleScroll("work");
-  //   }
-  // }, []);
   return (
     <NavbarStyle>
       <div className="logo-container">
