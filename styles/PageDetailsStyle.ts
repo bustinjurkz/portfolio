@@ -50,6 +50,8 @@ export const PageDetailsStyle = styled.div`
         margin-top: 3rem;
         height: 100%;
         position: relative;
+        width: 100%;
+        justify-content: space-between;
 
         .description {
           width: 70%;
@@ -60,8 +62,13 @@ export const PageDetailsStyle = styled.div`
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          .note-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.7rem;
+          }
           .role {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
           }
           .label {
             font-weight: 600;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.png";
 import Image from "next/image";
@@ -13,9 +13,10 @@ export function handleScroll(scrollTo: string) {
       behavior: "smooth",
     });
   } else {
-    router.push("/#work");
+    router.push(`/#${scrollTo}`);
   }
 }
+
 const Navbar: React.FC = () => {
   return (
     <NavbarStyle>

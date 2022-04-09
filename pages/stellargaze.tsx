@@ -26,7 +26,7 @@ const Stellargaze = () => {
   }).ref;
 
   const imageRef2 = useParallax<HTMLDivElement>({
-    translateX: [3, -3],
+    translateX: [-3, 3],
   }).ref;
 
   return (
@@ -79,6 +79,13 @@ const Stellargaze = () => {
                   <div className="note-container">
                     <div className="label date">DATE</div>
                     <div className="date">June - October 2019</div>
+                  </div>
+                  <div className="note-container">
+                    <div className="label client">Teammates</div>
+                    <Link href="https://vladfalach.com/">
+                      <a target="_blank">Vlad Falach</a>
+                    </Link>
+                    <div className="client">Evan Reaume</div>
                   </div>
                 </div>
               </div>

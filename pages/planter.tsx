@@ -26,7 +26,7 @@ const Planter = () => {
   }).ref;
 
   const imageRef2 = useParallax<HTMLDivElement>({
-    translateX: [3, -3],
+    translateX: [-3, 3],
   }).ref;
 
   return (

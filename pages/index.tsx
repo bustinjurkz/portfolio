@@ -25,6 +25,9 @@ const Home: NextPage = () => {
     if (router.asPath.split("#")[1] === "work") {
       handleScroll("work");
     }
+    if (router.asPath.split("#")[1] === "contact") {
+      handleScroll("contact");
+    }
   }, [router]);
 
   return (
@@ -50,9 +53,9 @@ const Home: NextPage = () => {
             );
           })}
         </div>
-        <div id="contact" className="section">
-          <Contact />
-        </div>
+      </div>
+      <div id="contact" className="section">
+        <Contact />
       </div>
     </HomeStyle>
   );
