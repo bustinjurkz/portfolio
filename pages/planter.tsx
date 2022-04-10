@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { useParallax } from "react-scroll-parallax";
+import { BounceIn } from "../components/BounceIn";
 import Image from "next/image";
 import Calendar from "../public/planter/calendar.png";
 import Cart from "../public/planter/cart.png";
@@ -21,18 +21,10 @@ const Planter = () => {
     gradualFade("banner", true);
   }, []);
 
-  const imageRef1 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
-  const imageRef2 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
   return (
     <PageDetailsStyle>
       <ParallaxBanner
-        layers={[{ image: "planter/header.jpg", speed: 20 }]}
+        layers={[{ image: "planter/header.jpg", speed: -20 }]}
         className="parallax-container"
         id="banner"
       >
@@ -72,7 +64,9 @@ const Planter = () => {
                   </div>
                   <div className="note-container">
                     <div className="label client">CLIENT</div>
-                    <div className="client">Get Growing (Genia)</div>
+                    <Link href="https://www.genia.co.nz/">
+                      <a target={"_blank"}>Genia - Get Growing</a>
+                    </Link>
                   </div>
                   <div className="note-container">
                     <div className="label date">DATE</div>
@@ -89,23 +83,24 @@ const Planter = () => {
             </div>
           </section>
         </Fade>
-
-        <div className="image-container" ref={imageRef1}>
-          <Image
-            priority
-            className="image"
-            src={Calendar}
-            aria-label="Planter Preview Image"
-            width={782}
-            height={786}
-            layout={"responsive"}
-          />
-          <div className="label">
-            This is the PDF calendar that is sent, ordered by starting month.
-            Some seeds can be planted straight into the ground depending on the
-            climate zone, and others will need to start in a pot.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Calendar}
+              aria-label="Planter Preview Image"
+              width={782}
+              height={786}
+              layout={"responsive"}
+            />
+            <div className="label">
+              This is the PDF calendar that is sent, ordered by starting month.
+              Some seeds can be planted straight into the ground depending on
+              the climate zone, and others will need to start in a pot.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
         <Fade fraction={0} triggerOnce>
           <section className="technical">
@@ -136,22 +131,23 @@ const Planter = () => {
             </div>
           </section>
         </Fade>
-
-        <div className="image-container" ref={imageRef2}>
-          <Image
-            priority
-            className="image"
-            src={Cart}
-            aria-label="Planter Preview Image"
-            width={839}
-            height={732}
-            layout={"responsive"}
-          />
-          <div className="label">
-            These 8 plants the user added will be simply displayed in the
-            calendar.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Cart}
+              aria-label="Planter Preview Image"
+              width={839}
+              height={732}
+              layout={"responsive"}
+            />
+            <div className="label">
+              These 8 plants the user added will be simply displayed in the
+              calendar.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
         <Fade fraction={0} triggerOnce>
           <section className="learnings">

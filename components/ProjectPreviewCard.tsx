@@ -3,7 +3,8 @@ import { styled } from "../styles/theme";
 import { Button } from "./Button";
 import Image from "next/image";
 import Link from "next/link";
-import { useParallax } from "react-scroll-parallax";
+import Swal from "sweetalert2";
+import { AnimatePresence, motion } from "framer-motion";
 
 export interface ProjectPreviewCardProps {
   name: string;
@@ -13,107 +14,153 @@ export interface ProjectPreviewCardProps {
   slug: string;
   repo?: string;
   liveURL?: string;
+  key: number;
 }
 
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
-  const { ref } = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  });
   return (
-    <ProjectPreviewCardStyle>
-      <Link href={`/${props.slug}`} passHref>
-        <a>
-          <div className="header">
-            <h1 className="project-name">{props.name}</h1>
-            <div className="client">
-              <span>
-                {props.client !== "Personal Project" &&
-                  props.client !== "Capstone - McMaster University" &&
-                  "Client:"}{" "}
-              </span>
-              <span className="name">{props.client}</span>
-            </div>
-          </div>
-        </a>
-      </Link>
-
-      <div className="inner-container">
-        <Link href={`/${props.slug}`} passHref>
-          <a>
-            <div className="image-container" ref={ref}>
-              {props.name !== "Handits" ? (
-                <Image
-                  priority
-                  className="image"
-                  src={`/${props.name.toLowerCase()}-preview.png`}
-                  alt={`/${props.name.toLowerCase()}-preview`}
-                  aria-label="Planter Preview Image"
-                  width={1668}
-                  height={865}
-                  layout={"responsive"}
-                />
-              ) : (
-                <div className="video-container">
-                  <iframe
-                    width="1668"
-                    height="865"
-                    src="https://www.youtube.com/embed/abJWSL5FRzs"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
+    <AnimatePresence>
+      <motion.div
+        initial="hidden"
+        key={props.key}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8 }}
+        variants={{
+          visible: { opacity: 1, x: 0 },
+          hidden: { opacity: 0, x: -100 },
+        }}
+      >
+        <ProjectPreviewCardStyle>
+          <Link href={`/${props.slug}`} passHref>
+            <a>
+              <div className="header">
+                <h1 className="project-name">{props.name}</h1>
+                <div className="client">
+                  <span>
+                    {props.client !== "Personal Project" &&
+                      props.client !== "Capstone - McMaster University" &&
+                      "Client:"}{" "}
+                  </span>
+                  <span className="name">{props.client}</span>
                 </div>
-              )}
-            </div>
-          </a>
-        </Link>
-        <hr />
-        <div className="description-container">
-          <h2 className="about">
-            About{" "}
-            {props.name !== "Misc Timber Industry Apps"
-              ? props.name
-              : "Misc Timber Projects"}
-          </h2>
-          <div className="description">{props.description}</div>
-        </div>
-        <div className="tools">
-          {props.tools.map((tool, i) => (
-            <div className="tool" key={i}>
-              {tool}
-            </div>
-          ))}
-        </div>
-        <div className="links">
-          <div className="external">
-            {props.repo && (
-              <div className="repo">
-                <Button text={"View Repo"} to={props.repo} />
               </div>
-            )}
-            {props.liveURL && (
-              <div className="url">
-                <Button
-                  text={props.name === "Handits" ? "View Blog" : "View Live"}
-                  to={props.liveURL}
-                />
-              </div>
-            )}
-          </div>
-          <div className="internal">
+            </a>
+          </Link>
+
+          <div className="inner-container">
             <Link href={`/${props.slug}`} passHref>
               <a>
-                <div className="more-info">
-                  <Button text={"More Info"} to={""} />
-                </div>
+                <AnimatePresence>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1,
+                    }}
+                    variants={{
+                      visible: { scale: 1 },
+                      hidden: { scale: 0.9 },
+                    }}
+                  >
+                    <div className="image-container">
+                      {props.name !== "Handits" ? (
+                        <Image
+                          priority
+                          className="image"
+                          src={`/${props.name.toLowerCase()}-preview.png`}
+                          alt={`/${props.name.toLowerCase()}-preview`}
+                          aria-label="Planter Preview Image"
+                          width={1668}
+                          height={865}
+                          layout={"responsive"}
+                        />
+                      ) : (
+                        <div className="video-container">
+                          <iframe
+                            width="1668"
+                            height="865"
+                            src="https://www.youtube.com/embed/abJWSL5FRzs"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </a>
             </Link>
+
+            <hr />
+            <div className="description-container">
+              <h2 className="about">
+                About{" "}
+                {props.name !== "Misc Timber Industry Apps"
+                  ? props.name
+                  : "Misc Timber Projects"}
+              </h2>
+              <div className="description">{props.description}</div>
+            </div>
+            <div className="tools">
+              {props.tools.map((tool, i) => (
+                <div className="tool" key={i}>
+                  {tool}
+                </div>
+              ))}
+            </div>
+            <div className="links">
+              <div className="external">
+                {props.repo && (
+                  <div className="repo">
+                    <Button text={"View Repo"} to={props.repo} />
+                  </div>
+                )}
+                {props.name === "Agora Mentoring" && (
+                  <div
+                    className="repo"
+                    onClick={() =>
+                      Swal.fire({
+                        icon: "warning",
+                        title: "Available on Request",
+                        confirmButtonColor: "#3b4250",
+                        text: "To assess my current skills via this repo, please send me an e-mail to request access due to an NDA.",
+                      })
+                    }
+                  >
+                    <Button text={"View Repo"} />
+                  </div>
+                )}
+                {props.liveURL && (
+                  <div className="url">
+                    <Button
+                      text={
+                        props.name === "Handits" ? "View Blog" : "View Live"
+                      }
+                      to={props.liveURL}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="internal">
+                <Link href={`/${props.slug}`} passHref>
+                  <a>
+                    <div className="more-info">
+                      <Button text={"More Info"} to={""} />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </ProjectPreviewCardStyle>
+        </ProjectPreviewCardStyle>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
@@ -204,7 +251,8 @@ const ProjectPreviewCardStyle = styled.div`
     .tool {
       padding: 8px;
       border-radius: 10px;
-      background: ${(props) => props.theme.black};
+      background: ${(props) => props.theme.grey};
+      cursor: default;
       color: ${(props) => props.theme.white};
       margin: 5px 20px 5px 0px;
       :hover {

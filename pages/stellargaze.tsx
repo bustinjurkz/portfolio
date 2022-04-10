@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { useParallax } from "react-scroll-parallax";
+import { BounceIn } from "../components/BounceIn";
 import Image from "next/image";
 import MainApp from "../public/stellargaze/main-app.png";
 import Data from "../public/stellargaze/data.jpg";
@@ -21,18 +21,10 @@ const Stellargaze = () => {
     gradualFade("banner", true);
   }, []);
 
-  const imageRef1 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
-  const imageRef2 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
   return (
     <PageDetailsStyle>
       <ParallaxBanner
-        layers={[{ image: "stellargaze/header.jpg", speed: 20 }]}
+        layers={[{ image: "stellargaze/header.jpg", speed: -20 }]}
         className="parallax-container"
         id="banner"
       >
@@ -99,22 +91,24 @@ const Stellargaze = () => {
           </section>
         </Fade>
 
-        <div className="image-container" ref={imageRef1}>
-          <Image
-            priority
-            className="image"
-            src={MainApp}
-            aria-label="Stellargaze Preview Image"
-            width={1719}
-            height={914}
-            layout={"responsive"}
-          />
-          <div className="label">
-            With an average score of 46% for these public areas, the app does
-            not recommend stargazing in the current conditions, as there is high
-            humidity and high cloud coverage.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={MainApp}
+              aria-label="Stellargaze Preview Image"
+              width={1719}
+              height={914}
+              layout={"responsive"}
+            />
+            <div className="label">
+              With an average score of 46% for these public areas, the app does
+              not recommend stargazing in the current conditions, as there is
+              high humidity and high cloud coverage.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
         <Fade fraction={0} triggerOnce>
           <section className="technical">
@@ -181,23 +175,24 @@ const Stellargaze = () => {
             </div>
           </section>
         </Fade>
-
-        <div className="image-container" ref={imageRef2}>
-          <Image
-            priority
-            className="image"
-            src={Data}
-            aria-label="Park Satellite Image"
-            width={1044}
-            height={697}
-            layout={"responsive"}
-          />
-          <div className="label">
-            The result of mixing the satellite data with the GIS park data.
-            Stored parks coloured according to light pollution - the lighter the
-            colour, the more light pollution.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Data}
+              aria-label="Park Satellite Image"
+              width={1044}
+              height={697}
+              layout={"responsive"}
+            />
+            <div className="label">
+              The result of mixing the satellite data with the GIS park data.
+              Stored parks coloured according to light pollution - the lighter
+              the colour, the more light pollution.
+            </div>
           </div>
-        </div>
+        </BounceIn>
         <Fade fraction={0} triggerOnce>
           <section className="learnings">
             <h1 className="header">WHAT I LEARNED</h1>
@@ -237,7 +232,8 @@ const Stellargaze = () => {
                   repo with the{" "}
                   <Link href="/agora">
                     <a>Agora project.</a>
-                  </Link>
+                  </Link>{" "}
+                  (on request due to an NDA)
                 </li>
               </ul>
             </ListStyle>

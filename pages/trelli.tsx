@@ -3,7 +3,6 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { useParallax } from "react-scroll-parallax";
 import Image from "next/image";
 import Quote from "../public/trelli/quote-summary.png";
 import Award from "../public/trelli/innovation.jpg";
@@ -15,28 +14,17 @@ import {
   PageDetailsStyle,
 } from "../styles/PageDetailsStyle";
 import { Fade } from "react-awesome-reveal";
+import { BounceIn } from "../components/BounceIn";
 
 const Trelli = () => {
   useEffect(() => {
     gradualFade("banner", true);
   }, []);
 
-  const imageRef1 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
-  const imageRef2 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
-  const imageRef3 = useParallax<HTMLDivElement>({
-    translateX: [-3, 3],
-  }).ref;
-
   return (
     <PageDetailsStyle>
       <ParallaxBanner
-        layers={[{ image: "trelli/header.jpg", speed: 20 }]}
+        layers={[{ image: "trelli/header.jpg", speed: -20 }]}
         className="parallax-container"
         id="banner"
       >
@@ -79,7 +67,11 @@ const Trelli = () => {
                   </div>
                   <div className="note-container">
                     <div className="label client">CLIENT</div>
-                    <div className="client">Genia</div>
+                    <div className="client">
+                      <Link href="https://www.genia.co.nz/">
+                        <a target={"_blank"}>Genia</a>
+                      </Link>
+                    </div>
                   </div>
                   <div className="note-container">
                     <div className="label date">DATE</div>
@@ -105,56 +97,62 @@ const Trelli = () => {
             </div>
           </section>
         </Fade>
-
-        <div className="image-container" ref={imageRef1}>
-          <Image
-            priority
-            className="image"
-            src={Quote}
-            aria-label="Quote"
-            width={776}
-            height={653}
-            layout={"responsive"}
-          />
-          <div className="label">
-            A customer or sales rep selected two products with these custom
-            specs.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Quote}
+              aria-label="Quote"
+              width={776}
+              height={653}
+              layout={"responsive"}
+            />
+            <div className="label">
+              A customer or sales rep selected two products with these custom
+              specs.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
-        <div className="image-container" ref={imageRef2}>
-          <Image
-            priority
-            className="image"
-            src={Tradeshow}
-            aria-label="Tradeshow"
-            width={1131}
-            height={751}
-            layout={"responsive"}
-          />
-          <div className="label">
-            Trelli on the bottom right during a tradeshow in Auckland.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Tradeshow}
+              aria-label="Tradeshow"
+              width={1131}
+              height={751}
+              layout={"responsive"}
+            />
+            <div className="label">
+              Trelli on the bottom right during a tradeshow in Auckland.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
-        <div className="image-container" ref={imageRef3}>
-          <Image
-            priority
-            className="image"
-            src={Award}
-            aria-label="Award Image"
-            width={1200}
-            height={900}
-            layout={"responsive"}
-          />
-          <div className="label">
-            Here is me (on the screens live from Wellington NZ) and my coworkers
-            receiving the first ever Innovation Award at the company-wide
-            meeting in Motueka. It was a nice surprise. Had I known prior I
-            probably would not have worn my Biggie Smalls tee in front of 100+
-            people with a Microsoft Teams blanket fort background.
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Award}
+              aria-label="Award Image"
+              width={1200}
+              height={900}
+              layout={"responsive"}
+            />
+            <div className="label">
+              Here is me (on the screens live from Wellington NZ) and my
+              coworkers receiving the first ever Innovation Award at the
+              company-wide meeting in Motueka. It was a nice surprise. Had I
+              known prior I probably would not have worn my Biggie Smalls tee in
+              front of 100+ people with a Microsoft Teams blanket fort
+              background.
+            </div>
           </div>
-        </div>
+        </BounceIn>
 
         <Fade fraction={0} triggerOnce>
           <section className="technical">

@@ -77,8 +77,7 @@
         "styled-components",
         "mui"
       ],
-      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections.",
-      "repo": "https://github.com/bustinjurkz/agora-mentorship"
+      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections."
     },
 
     {
@@ -86,6 +85,7 @@
       "slug": "handits",
       "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
+      "repo": "https://github.com/Evan-HR/Handits",
       "liveURL": "http://handits.ca/part1.html",
       "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
     },

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 export interface SectionHeaderProps {
@@ -17,11 +16,14 @@ const SectionHeaderStyle = styled.div`
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: ${(props) => props.theme.bigFont};
-    background-image: ${(props) => props.theme.gradient};
+    color: ${(props) => props.theme.black};
+
+    /* background-image: ${(props) => props.theme.gradient};
+    /* background-image: ${(props) => props.theme.gradient};
     background-repeat: no-repeat;
     background-size: 100% 0.2em;
     background-position: 0 88%;
-    width: min-content;
+    width: min-content; */
   }
   margin-bottom: 50px;
 `;

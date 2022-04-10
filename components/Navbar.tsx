@@ -64,11 +64,7 @@ const NavbarStyle = styled.header`
       :focus {
         cursor: pointer;
         transform: scale(1.05);
-        background-image: ${(props) => props.theme.gradient};
-        background-repeat: no-repeat;
-        background-size: 100% 0.2em;
-        background-position: 0 88%;
-        width: min-content;
+        color: ${(props) => props.theme.green};
       }
     }
     .work {

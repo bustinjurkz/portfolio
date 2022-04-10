@@ -10,53 +10,64 @@ export const Contact = () => {
   return (
     <ContactStyle>
       <SectionHeader text={"Contact"} />
-      <h1>Let&apos;s collaborate! Anytime, anywhere.</h1>
-      <div className="logos">
-        <a
-          className="logo-container"
-          href="https://github.com/bustinjurkz"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <Image priority src={Github} alt="Github Logo" aria-label="Github" />
-        </a>
-        <a
-          className="logo-container middle"
-          href="https://www.linkedin.com/in/dustinjurkaulionis/"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <Image
-            priority
-            src={LinkedIn}
-            alt="LinkedIn Logo"
-            aria-label="LinkedIn"
-          />
-        </a>
-        <a
-          className="logo-container"
-          href="mailto: dustinjurkaulionis@gmail.com"
-        >
-          <Image priority src={Mail} alt="Mail Logo" aria-label="Mail" />
-        </a>
+      <div className="container">
+        <h1>Let&apos;s collaborate! Anytime, anywhere.</h1>
+        <div className="logos">
+          <a
+            className="logo-container"
+            href="https://github.com/bustinjurkz"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <Image
+              priority
+              src={Github}
+              alt="Github Logo"
+              aria-label="Github"
+            />
+          </a>
+          <a
+            className="logo-container middle"
+            href="https://www.linkedin.com/in/dustinjurkaulionis/"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <Image
+              priority
+              src={LinkedIn}
+              alt="LinkedIn Logo"
+              aria-label="LinkedIn"
+            />
+          </a>
+          <a
+            className="logo-container"
+            href="mailto: dustinjurkaulionis@gmail.com"
+          >
+            <Image priority src={Mail} alt="Mail Logo" aria-label="Mail" />
+          </a>
+        </div>
       </div>
     </ContactStyle>
   );
 };
 
 const ContactStyle = styled.div`
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .logos {
     display: flex;
     align-items: self-end;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 1rem 0rem;
   }
   .logo-container {
     cursor: pointer;
     max-width: 50px;
     transition: 0.3s;
     :hover {
-      transform: translateY(-10px);
+      transform: translateY(-3px);
     }
   }
   .middle {

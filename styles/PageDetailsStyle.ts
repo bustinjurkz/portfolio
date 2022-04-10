@@ -66,6 +66,12 @@ export const PageDetailsStyle = styled.div`
             display: flex;
             flex-direction: column;
             margin-bottom: 0.7rem;
+            a {
+              color: ${(props) => props.theme.green};
+              :hover {
+                color: ${(props) => props.theme.grey};
+              }
+            }
           }
           .role {
             margin-bottom: 0.2rem;
@@ -95,6 +101,9 @@ export const PageDetailsStyle = styled.div`
   .learnings {
     a {
       color: ${(props) => props.theme.green};
+      :hover {
+        color: ${(props) => props.theme.grey};
+      }
     }
   }
 

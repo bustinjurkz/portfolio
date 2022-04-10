@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { SectionHeader } from "../components/SectionHeader";
-import { Fade } from "react-awesome-reveal";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
 import { useEffect } from "react";
@@ -38,18 +37,16 @@ const Home: NextPage = () => {
         <div className="projects">
           {data.projects.map((x, i) => {
             return (
-              <Fade key={i} fraction={0}>
-                <ProjectPreviewCard
-                  client={x.client}
-                  description={x.description}
-                  name={x.name}
-                  tools={x.tools}
-                  repo={x.repo}
-                  slug={x.slug}
-                  liveURL={x.liveURL}
-                  key={i}
-                />
-              </Fade>
+              <ProjectPreviewCard
+                client={x.client}
+                description={x.description}
+                name={x.name}
+                tools={x.tools}
+                repo={x.repo}
+                slug={x.slug}
+                liveURL={x.liveURL}
+                key={i}
+              />
             );
           })}
         </div>
