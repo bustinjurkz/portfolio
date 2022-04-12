@@ -5,8 +5,16 @@ import { Button } from "../components/Button";
 import Link from "next/link";
 import { BounceIn } from "../components/BounceIn";
 import Image from "next/image";
-import Calendar from "../public/planter/calendar.png";
-import Cart from "../public/planter/cart.png";
+import Speaking from "../public/genia/speaking.jpg";
+import FP_Clipboard from "../public/genia/factoryplanner-clipboard.png";
+import FP_Main from "../public/genia/factoryplanner-main.png";
+import PS_Main from "../public/genia/profilesheets-main.png";
+import PS_Print from "../public/genia/profilesheets-print.png";
+import TS_Kiln from "../public/genia/tsrunner-kiln.png";
+import TS_Run from "../public/genia/tsrunner-run.png";
+import UNI_PRINT from "../public/genia/universalprint-main.png";
+
+import Promo from "../public/genia/promo.jpg";
 import { handleScroll } from ".";
 import {
   ArrowStyle,
@@ -36,119 +44,202 @@ const Genia = () => {
       <div className="project-container" id="start">
         <Fade fraction={0} triggerOnce>
           <section className="intro">
-            <h1 className="header">ABOUT THE PROJECT</h1>
+            <h1 className="header">ABOUT MY TIME HERE</h1>
             <div className="snapshot">
-              <div className="tagline">Automating your garden plan!</div>
+              <div className="tagline">
+                I helped modernize Genia&apos;s business processes and
+                spearheaded their consumer apps.
+              </div>
               <div className="container">
                 <div className="description">
-                  Genia&apos;s Marketing Director made a static planting
-                  calendar which tells kiwis when to plant a fruit or vegetable
-                  subject to a particular climate zone. We realized that this
-                  could be a fun, dynamic user-experience, and thus Planter was
-                  born - Genia&apos;s first consumer app. As the Project Lead, I
-                  collaborated with the marketing team, an Auckland-based
-                  designer, and my fellow developers. It was quickly wire-framed
-                  and implemented, and through several rounds of UX testing
-                  which I conducted, it was further refined into the app today.
-                  The purpose is to drive Genia&apos;s social metrics and
-                  generate sales for their gardening division - Get Growing. In
-                  the future, this app will integrate with Shopify in order to
-                  further streamline the gardening process.
+                  After graduating from my second bachelors, I was tired of
+                  school and keen to enter my new industry as a Full Stack Web
+                  Developer. While I had unquestionable self-belief that I could
+                  offer something valuable to any organization that would give
+                  me a chance, it seemed on paper I was a dime-a-dozen in the
+                  Toronto area.
+                  <p>
+                    A family-run lumber company in Motueka (a town of 4000 in
+                    the rugged South Island of New Zealand), gave me that
+                    chance. I will be forever grateful for it.
+                  </p>
                 </div>
                 <div className="notes">
                   <div className="note-container">
                     <div className="label">ROLE</div>
-                    <div className="role">Project Lead</div>
-                    <div className="role">Developer (Mostly Front-End)</div>
-                    <div className="role">UX Testing / Some Design</div>
+                    <div className="role">Full Stack Web Developer</div>
                   </div>
-                  <div className="note-container">
-                    <div className="label client">CLIENT</div>
-                    <Link href="https://www.genia.co.nz/">
-                      <a target={"_blank"}>Genia - Get Growing</a>
-                    </Link>
-                  </div>
+
                   <div className="note-container">
                     <div className="label date">DATE</div>
-                    <div className="date">2021 - Current</div>
+                    <div className="date">Dec 2019 - Current</div>
                   </div>
                 </div>
               </div>
               <div className="visit">
                 <Button
                   text={"VISIT THE WEBSITE"}
-                  to={"https://planter.co.nz"}
+                  to={"https://www.genia.co.nz/"}
                 />
               </div>
             </div>
           </section>
         </Fade>
+        <section>
+          <div className="experience">
+            <p>
+              As a full-stack developer specializing in the front-end at MLC,
+              the apps I have been involved with eliminate the amount of manual
+              administrative work require and help automate the inventory system
+              of the complicated lumber industry. For example, I have helped
+              make apps that scan custom barcodes on outgoing packs of lumber,
+              update the inventory/cost-spreading in the database, and informs
+              the clients in real-time on the changes.
+            </p>
+          </div>
+        </section>
+
         <BounceIn>
           <div className="image-container">
             <Image
               priority
               className="image"
-              src={Calendar}
-              aria-label="Planter Preview Image"
-              width={782}
-              height={786}
+              src={UNI_PRINT}
+              aria-label="Universal Print Main"
+              width={935}
+              height={643}
               layout={"responsive"}
             />
-            <div className="label">
-              This is the PDF calendar that is sent, ordered by starting month.
-              Some seeds can be planted straight into the ground depending on
-              the climate zone, and others will need to start in a pot.
-            </div>
+            <div className="label">TODO</div>
           </div>
         </BounceIn>
-
-        <Fade fraction={0} triggerOnce>
-          <section className="technical">
-            <h1 className="header">HOW IT WORKS</h1>
-
-            <div className="content">
-              <p>
-                Users first select their region in NZ, then will be presented
-                with viable plants for the month. They can tap a plant for more
-                specific info, and add plants to their cart.
-              </p>
-              <p>
-                Each plant has an optimal climate zone. For example, if you are
-                in Wellington, New Zealand, a Temperate climate zone, and the
-                month is May, then the app will suggest plants like Bok Choy,
-                Carrot and Chives.
-              </p>
-              <p>
-                The user receives a calendar if they agree to sign-up for
-                marketing e-mails from Genia, via an Azure Function, Mailchimp,
-                and SendGrid.
-              </p>
-              <p>
-                This calendar tells users when to sow or pot a seed, and when to
-                harvest all their selected plants. The calendar itself was made
-                using our proprietary React-to-PDF templating tool.
-              </p>
-            </div>
-          </section>
-        </Fade>
         <BounceIn>
           <div className="image-container">
             <Image
               priority
               className="image"
-              src={Cart}
-              aria-label="Planter Preview Image"
-              width={839}
-              height={732}
+              src={TS_Run}
+              aria-label="TimberSmart Runner Run Section"
+              width={302}
+              height={511}
+              layout={"responsive"}
+            />
+            <div className="label">TODO</div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={TS_Kiln}
+              aria-label="TimberSmart Runner Kiln Section"
+              width={301}
+              height={509}
+              layout={"responsive"}
+            />
+            <div className="label">TODO</div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={PS_Print}
+              aria-label="Profile Sheets Print"
+              width={948}
+              height={880}
+              layout={"responsive"}
+            />
+            <div className="label">TODO</div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={PS_Main}
+              aria-label="Profile Sheets Main"
+              width={1905}
+              height={904}
+              layout={"responsive"}
+            />
+            <div className="label">TODO</div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={FP_Clipboard}
+              aria-label="FP Clipboard"
+              width={1011}
+              height={898}
               layout={"responsive"}
             />
             <div className="label">
-              These 8 plants the user added will be simply displayed in the
-              calendar.
+              My main contribution to the Factory Planner app was to implement a
+              clipboard system. This allows a given user to store useful
+              processes/items for another session.
+            </div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={FP_Main}
+              aria-label="FP"
+              width={1912}
+              height={879}
+              layout={"responsive"}
+            />
+            <div className="label">
+              Sample section of our Factory Planner app. This replaces a tedious
+              whiteboard system.
+            </div>
+          </div>
+        </BounceIn>
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Promo}
+              aria-label="Promo Image"
+              width={602}
+              height={418}
+              layout={"responsive"}
+            />
+            <div className="label">
+              Here is me and fellow Canadian Alana pretending we are architects
+              for an internet ad.
             </div>
           </div>
         </BounceIn>
 
+        <BounceIn>
+          <div className="image-container">
+            <Image
+              priority
+              className="image"
+              src={Speaking}
+              aria-label="Promo Image"
+              width={1100}
+              height={1179}
+              layout={"responsive"}
+            />
+            <div className="label">
+              Formerly MLC Group, Genia asked me to speak at their new brand
+              launch - with 4 minutes notice in front of 150+. I was happy to be
+              the token Canadian.
+            </div>
+          </div>
+        </BounceIn>
         <Fade fraction={0} triggerOnce>
           <section className="learnings">
             <h1 className="header">WHAT I LEARNED</h1>
@@ -195,7 +286,7 @@ const Genia = () => {
         </Fade>
         <section className="actions">
           <div className="next">
-            <Link href="/planter" passHref>
+            <Link href="/agora" passHref>
               <a>
                 <Button text={"NEXT PROJECT"} />
               </a>

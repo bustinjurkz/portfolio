@@ -200,7 +200,7 @@ const Trelli = () => {
         </Fade>
         <section className="actions">
           <div className="next">
-            <Link href="/agora" passHref>
+            <Link href="/genia" passHref>
               <a>
                 <Button text={"NEXT PROJECT"} />
               </a>

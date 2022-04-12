@@ -8,6 +8,13 @@ import { Contact } from "../components/Contact";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
+export enum ProjectType {
+  FullTime = "Full-Time Workplace",
+  Contract = "Contract",
+  Personal = "Personal Project",
+  School = "School",
+}
+
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
   if (elem) {
@@ -38,7 +45,9 @@ const Home: NextPage = () => {
           {data.projects.map((x, i) => {
             return (
               <ProjectPreviewCard
+                type={x.type as ProjectType}
                 client={x.client}
+                current={x.current}
                 description={x.description}
                 name={x.name}
                 tools={x.tools}

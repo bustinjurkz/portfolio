@@ -5,12 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { AnimatePresence, motion } from "framer-motion";
+import { ProjectType } from "../pages";
 
 export interface ProjectPreviewCardProps {
   name: string;
+  type: ProjectType;
   description: string;
   tools: string[];
-  client: string;
+  client?: string;
+  current?: boolean;
   slug: string;
   repo?: string;
   liveURL?: string;
@@ -20,6 +23,38 @@ export interface ProjectPreviewCardProps {
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
+  const whoForPrettier = () => {
+    switch (props.type) {
+      case ProjectType.Contract:
+        return (
+          <div className="client">
+            <span>Client: </span>
+            <span className="name">{props.client}</span>
+          </div>
+        );
+      case ProjectType.Personal:
+        return (
+          <div className="client">
+            <span className="name">Personal Project</span>
+          </div>
+        );
+      case ProjectType.FullTime:
+        return (
+          <div className="client">
+            <span> {props.current ? "Current" : "Past"} Employment at</span>
+            <span className="name">{props.client}</span>
+          </div>
+        );
+      case ProjectType.School:
+        return (
+          <div className="client">
+            {" "}
+            <span className="name">{props.client}</span>
+          </div>
+        );
+    }
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -38,14 +73,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             <a>
               <div className="header">
                 <h1 className="project-name">{props.name}</h1>
-                <div className="client">
-                  <span>
-                    {props.client !== "Personal Project" &&
-                      props.client !== "Capstone - McMaster University" &&
-                      "Client:"}{" "}
-                  </span>
-                  <span className="name">{props.client}</span>
-                </div>
+                {whoForPrettier()}
               </div>
             </a>
           </Link>
@@ -101,9 +129,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             <div className="description-container">
               <h2 className="about">
                 About{" "}
-                {props.name !== "Misc Timber Industry Apps"
+                {props.name !== "Timber Industry Apps"
                   ? props.name
-                  : "Misc Timber Projects"}
+                  : "Timber Industry Apps"}
               </h2>
               <div className="description">{props.description}</div>
             </div>
@@ -136,7 +164,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                     <Button text={"View Repo"} />
                   </div>
                 )}
-                {props.liveURL && (
+                {props.type && (
                   <div className="url">
                     <Button
                       text={

@@ -3,6 +3,7 @@
     {
       "name": "Planter",
       "slug": "planter",
+      "type": "Contract",
       "client": "Genia",
       "tools": [
         "next.js",
@@ -22,7 +23,7 @@
     {
       "name": "Stellargaze",
       "slug": "stellargaze",
-      "client": "Personal Project",
+      "type": "Personal Project",
       "tools": [
         "react",
         "javascript",
@@ -42,6 +43,7 @@
     },
     {
       "name": "Trelli",
+      "type": "Contract",
       "client": "Genia",
       "slug": "trelli",
       "tools": [
@@ -56,41 +58,13 @@
         "sendgrid",
         "azure"
       ],
-      "description": "🏆 Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
+      "description": "Winner of the Genia Innovation Award🏆, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
       "liveURL": "https://trelli.co.nz/"
     },
     {
-      "name": "Agora Mentoring",
-      "client": "Agora",
-      "slug": "agora",
-      "tools": [
-        "next.js",
-        "vercel",
-        "typescript",
-        "prisma",
-        "postgreSQL",
-        "googleapis",
-        "google-calendar",
-        "redux toolkit",
-        "apollo",
-        "graphQL",
-        "styled-components",
-        "mui"
-      ],
-      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections."
-    },
-
-    {
-      "name": "Handits",
-      "slug": "handits",
-      "client": "Capstone - McMaster University",
-      "tools": ["unity", "c#"],
-      "repo": "https://github.com/Evan-HR/Handits",
-      "liveURL": "http://handits.ca/part1.html",
-      "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
-    },
-    {
-      "name": "Misc Timber Industry Apps",
+      "name": "Timber Industry Apps",
+      "type": "Full-Time Workplace",
+      "current": true,
       "client": "Genia",
       "slug": "genia",
       "tools": [
@@ -112,6 +86,37 @@
         "express"
       ],
       "description": "Genia has been in the timber industry since 1993 and I am proud to have helped modernize their logistics and business-processes, as well as spearhead their consumer/marketing endeavors.  Just three of the apps I've helped design and develop is estimated to save the company over $100,000 per year."
+    },
+    {
+      "name": "Agora Mentoring",
+      "type": "Contract",
+      "client": "Agora",
+      "slug": "agora",
+      "tools": [
+        "next.js",
+        "vercel",
+        "typescript",
+        "prisma",
+        "postgreSQL",
+        "googleapis",
+        "google-calendar",
+        "redux toolkit",
+        "apollo",
+        "graphQL",
+        "styled-components",
+        "mui"
+      ],
+      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections."
+    },
+    {
+      "name": "Handits",
+      "type": "School",
+      "slug": "handits",
+      "client": "Capstone - McMaster University",
+      "tools": ["unity", "c#"],
+      "repo": "https://github.com/Evan-HR/Handits",
+      "liveURL": "http://handits.ca/part1.html",
+      "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
     }
   ]
 }
