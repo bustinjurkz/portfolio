@@ -99,6 +99,16 @@ const Genia = () => {
           </div>
         </section>
 
+        <section>
+          These apps are designed for iPads, or mobile-first, since a lot of the
+          apps are used on wireless scanner devices. I&apos;ve developed such
+          apps keeping in mind the key stakeholders, whether that be an older
+          crane-driver using a handheld scanner, or a seasoned administrative
+          employee savvy with timber-specific applications. These apps were made
+          using scrum methodology and I help continuously deploy them to
+          development, user-acceptance testing, and finally production.
+        </section>
+
         <BounceIn>
           <div className="image-container">
             <Image
@@ -110,7 +120,11 @@ const Genia = () => {
               height={643}
               layout={"responsive"}
             />
-            <div className="label">TODO</div>
+            <div className="label">
+              This app simplifies the labelling process in real-time for the
+              workers who stack timber on bales and attach a product label.
+              Previously they had to tediously write out the label manually.{" "}
+            </div>
           </div>
         </BounceIn>
         <BounceIn>
@@ -124,7 +138,12 @@ const Genia = () => {
               height={511}
               layout={"responsive"}
             />
-            <div className="label">TODO</div>
+            <div className="label">
+              This app helps the admin staff integrate with the main timber
+              database software (TimberSmart). I was personally involved with
+              the wire-framing and UX research for this app from the start and
+              developed a significant portion of it.
+            </div>
           </div>
         </BounceIn>
         <BounceIn>
@@ -152,7 +171,11 @@ const Genia = () => {
               height={880}
               layout={"responsive"}
             />
-            <div className="label">TODO</div>
+            <div className="label">
+              The screen in Profile Sheets for printing product specs. I was
+              recently involved in refactoring the entire app and giving it a UI
+              overhaul.
+            </div>
           </div>
         </BounceIn>
         <BounceIn>
@@ -166,7 +189,10 @@ const Genia = () => {
               height={904}
               layout={"responsive"}
             />
-            <div className="label">TODO</div>
+            <div className="label">
+              Profile Sheets is where admin staff and remote workers who
+              authenticate can create and print product specs.
+            </div>
           </div>
         </BounceIn>
         <BounceIn>
@@ -240,45 +266,117 @@ const Genia = () => {
             </div>
           </div>
         </BounceIn>
+
+        <Fade fraction={0} triggerOnce>
+          <section className="intro">
+            <h1 className="header">APP HIGHLIGHTS</h1>
+            <span>
+              Below are some of the apps I have helped create or made
+              significant contributions to:
+            </span>
+            <SpecialListStyle>
+              <b>TS-Runner</b> - This app helps automate the repetitive and
+              tedious tasks surrounding the administrative work required in
+              TimberSmart (a prominent lumber database) by office staff. This
+              app aids in the streamlining of 4 main timber industry related
+              processes: the Opti, Filleting, Kiln drying, and stock-take. I was
+              involved in the initial wireframing and a substantial amount of
+              the development.
+            </SpecialListStyle>
+
+            <SpecialListStyle>
+              <b>Transit Tracker</b> - Helps automate the inventory actions
+              required when transitioning transfers of stock between stock
+              locations. Operators use the scanning devices to create and send
+              stock transfers; admin staff receive the transfers into their
+              destination and can edit them if required.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Genia API</b> - This api ties everything together. More
+              technically, it is a federated GraphQL microservice architecture.
+              I have made changes to key microservices for new features.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>TimberSmart Addons</b> - Reduces the manual labour involved in
+              receipting incoming inventory. Delivery dockets sent from
+              suppliers are automatically consumed into the application. Factory
+              staff scan in the physical packs that arrive into the factory,
+              then the app delivers the information to TimberSmart without
+              manual intervention. In the case that there are errors, e.g. pack
+              number not in the system, then the user can provide the required
+              missing information to the delivery documents.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Profile Sheets</b> - This app allows admin staff to view and
+              generate a spec sheet for a chosen customer, unit number, and
+              product, which they can then print out.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Factory-Planner</b> - Genia&apos;s custom software for planning
+              operations in the factory. This is done primarily with the concept
+              of <b>resources</b>, <b>items</b>, and <b>chaining</b>. The app
+              can be used to view and modify items, configure resources, and
+              view recent changes on the board. This app was already in
+              development when I started. I personally was involved in making
+              key improvements to the app, such as the ability for a specific
+              user to copy/paste items to a <b>clipboard</b> which helps the UX
+              and allows them to store useful processes/items for another
+              session.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Universal Print</b> - The two main portions of the app that I
+              wireframed and helped develop from the ground-up is used for
+              real-time pack label printing during a shift. Users are able to
+              enter a product code or scan the barcode of a pack in realtime.
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Planter</b> - The gardening helper as{" "}
+              <Link href="/planter">
+                <a target={"_blank"}>mentioned here.</a>
+              </Link>
+            </SpecialListStyle>
+            <SpecialListStyle>
+              <b>Trelli</b> - The trellis/panel/gate customizer as{" "}
+              <Link href="/trelli">
+                <a target={"_blank"}>mentioned here.</a>
+              </Link>
+            </SpecialListStyle>
+          </section>
+        </Fade>
         <Fade fraction={0} triggerOnce>
           <section className="learnings">
             <h1 className="header">WHAT I LEARNED</h1>
             <ListStyle>
               <ul>
                 <li>
+                  While I am technically a Full Stack Developer, what really
+                  separates me is my attention to detail with the front-facing
+                  portion of our apps. I can be quite obsessed with whitespace
+                  and the <u>vibe</u> of the app perhaps a bit more than I
+                  should be
+                </li>
+                <li>
                   The importance of writing well-defined user-stories so that
                   scope-creep, while tempting, does not happen
                 </li>
                 <li>
-                  UX Testing can be quite fun and can energize the test subjects
-                  in the office. I organized each session into 3 major sections:
-                  <SpecialListStyle>
-                    <b>Think-Aloud</b> - Users say out loud what they think the
-                    app is for and what the general impressions are.
-                  </SpecialListStyle>
-                  <SpecialListStyle>
-                    <b>Tasks</b> - Users are asked to complete tasks, such as:
-                    &quot;You are keen to grow tomatoes. You want to know what
-                    level of sunlight tomatoes need and when to begin planting.
-                    How would you go about doing this?&quot;
-                  </SpecialListStyle>
-                  <SpecialListStyle>
-                    <b>Adjectives</b> - Users are asked to circle 5 out of 100
-                    adjectives which indicate how they feel about the UI /
-                    branding.
-                  </SpecialListStyle>
-                  The main finding was that users initially did not the goal of
-                  the app was to help create a plan/calendar. Thus, the designer
-                  drafted a different landing page and the results were much
-                  better
+                  Scoring dev tickets with story-points as a team can be a fun
+                  way to estimate the size of a sprint
                 </li>
                 <li>
-                  Working within a smaller tech team is great - I can wear
-                  multiple hats: full-stack, design, and UX
+                  Sprint retrospectives should be fun and provide a way to share
+                  development learnings across the wider team, e.g.{" "}
+                  <b>gotchas</b> in services like the Shopify API
                 </li>
                 <li>
-                  For storing data on a small app, JSON can be used in lieu of a
-                  costly database
+                  If I ever run a software team or business in the future, I
+                  will borrow a lot of ideas from Genia. They have done an
+                  amazing job expanding to a medium-sized company while keeping
+                  the vibe of a small-town family-run company that takes special
+                  care of individual employees
+                </li>
+                <li>
+                  Year-end holiday gifts are taken very seriously in New Zealand
                 </li>
               </ul>
             </ListStyle>
