@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { SectionHeader } from "../components/SectionHeader";
 import Image from "next/image";
 import Github from "../public/icon-github.png";
 import LinkedIn from "../public/icon-linkedin.png";
@@ -9,7 +8,7 @@ import Mail from "../public/icon-mail.png";
 export const Contact = () => {
   return (
     <ContactStyle>
-      <SectionHeader text={"Contact"} />
+      <h1 style={{ fontSize: 70 }}>Contact</h1>
       <div className="container">
         <h1>Let&apos;s collaborate! Anytime, anywhere.</h1>
         <div className="logos">

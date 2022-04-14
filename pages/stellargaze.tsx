@@ -42,21 +42,30 @@ const Stellargaze = () => {
                 There are roughly 5000 stars visible at night - where are they?
               </div>
               <div className="container">
-                <div className="description">
-                  STELLARGAZE is a React web project which helps find areas with
-                  low light pollution and ranks them in real-time according to
-                  both the moon phase and the nightly weather forecasts of
-                  humidity and cloud coverage. It is made for both space
-                  enthusiasts and casual observers of the sky. This was my first
-                  ever experience with React and my first real project after
-                  completing my Bachelors in Computer Science. I decided to
-                  become a professional web developer after; I had so much fun
-                  working on this with close friends at cafes all throughout
-                  Hamilton, Ontario. There are future plans to make this an
-                  experiential meditative stargazing experience using React
-                  Native and my more honed skills after working 3 years in the
-                  industry.
+                <div className="description-container">
+                  <div className="description">
+                    STELLARGAZE is a React web project which helps find areas
+                    with low light pollution and ranks them in real-time
+                    according to both the moon phase and the nightly weather
+                    forecasts of humidity and cloud coverage. It is made for
+                    both space enthusiasts and casual observers of the sky. This
+                    was my first ever experience with React and my first real
+                    project after completing my Bachelors in Computer Science. I
+                    decided to become a professional web developer after; I had
+                    so much fun working on this with close friends at cafes all
+                    throughout Hamilton, Ontario. There are future plans to make
+                    this an experiential meditative stargazing experience using
+                    React Native and my more honed skills after working 3 years
+                    in the industry.
+                  </div>
+                  <div className="visit">
+                    <Button
+                      text={"VISIT THE WEBSITE"}
+                      to={"https://stellar-gaze.herokuapp.com/"}
+                    />
+                  </div>
                 </div>
+
                 <div className="notes">
                   <div className="note-container">
                     <div className="label">ROLE</div>
@@ -80,12 +89,6 @@ const Stellargaze = () => {
                     <div className="client">Evan Reaume</div>
                   </div>
                 </div>
-              </div>
-              <div className="visit">
-                <Button
-                  text={"VISIT THE WEBSITE"}
-                  to={"https://stellar-gaze.herokuapp.com/"}
-                />
               </div>
             </div>
           </section>

@@ -68,7 +68,16 @@ const NavbarStyle = styled.header`
       }
     }
     .work {
-      margin-right: 40px;
+      margin-right: 1rem;
+      @media screen and (min-width: 430px) {
+        margin-right: 2rem;
+      }
+      @media screen and (min-width: 800px) {
+        margin-right: 3rem;
+      }
+      @media screen and (min-width: 1000px) {
+        margin-right: 4rem;
+      }
     }
   }
 `;

@@ -40,27 +40,38 @@ const Planter = () => {
             <div className="snapshot">
               <div className="tagline">Automating your garden plan!</div>
               <div className="container">
-                <div className="description">
-                  Genia&apos;s Marketing Director made a static planting
-                  calendar which tells kiwis when to plant a fruit or vegetable
-                  subject to a particular climate zone. We realized that this
-                  could be a fun, dynamic user-experience, and thus Planter was
-                  born - Genia&apos;s first consumer app. As the Project Lead, I
-                  collaborated with the marketing team, an Auckland-based
-                  designer, and my fellow developers. It was quickly wire-framed
-                  and implemented, and through several rounds of UX testing
-                  which I conducted, it was further refined into the app today.
-                  The purpose is to drive Genia&apos;s social metrics and
-                  generate sales for their gardening division - Get Growing. In
-                  the future, this app will integrate with Shopify in order to
-                  further streamline the gardening process.
+                <div className="description-container">
+                  <div className="description">
+                    Genia&apos;s Marketing Director made a static planting
+                    calendar which tells kiwis when to plant a fruit or
+                    vegetable subject to a particular climate zone. We realized
+                    that this could be a fun, dynamic user-experience, and thus
+                    Planter was born - Genia&apos;s first consumer app. As the
+                    Project Lead, I collaborated with the marketing team, an
+                    Auckland-based designer, and my fellow developers. It was
+                    quickly wire-framed and implemented, and through several
+                    rounds of UX testing which I conducted, it was further
+                    refined into the app today. The purpose is to drive
+                    Genia&apos;s social metrics and generate sales for their
+                    gardening division - Get Growing. In the future, this app
+                    will integrate with Shopify in order to further streamline
+                    the gardening process.
+                  </div>
+                  <div className="visit">
+                    <Button
+                      text={"VISIT THE WEBSITE"}
+                      to={"https://planter.co.nz"}
+                    />
+                  </div>
                 </div>
+
                 <div className="notes">
                   <div className="note-container">
                     <div className="label">ROLE</div>
                     <div className="role">Project Lead</div>
                     <div className="role">Developer (Mostly Front-End)</div>
-                    <div className="role">UX Testing / Some Design</div>
+                    <div className="role">UX Testing</div>
+                    <div className="role">Dash of Design</div>
                   </div>
                   <div className="note-container">
                     <div className="label client">CLIENT</div>
@@ -74,12 +85,35 @@ const Planter = () => {
                   </div>
                 </div>
               </div>
-              <div className="visit">
-                <Button
-                  text={"VISIT THE WEBSITE"}
-                  to={"https://planter.co.nz"}
-                />
-              </div>
+            </div>
+          </section>
+        </Fade>
+        <Fade fraction={0} triggerOnce>
+          <section className="technical">
+            <h1 className="header">HOW IT WORKS</h1>
+
+            <div className="content">
+              <p>
+                Users first select their region in NZ, then will be presented
+                with viable plants for the month. They can tap a plant for more
+                specific info, and add plants to their cart.
+              </p>
+              <p>
+                Each plant has an optimal climate zone. For example, if you are
+                in Wellington, New Zealand - a Temperate climate zone - and the
+                month is May, then the app will suggest plants like Bok Choy,
+                Carrot and Chives.
+              </p>
+              <p>
+                The user receives a calendar if they agree to sign-up for
+                marketing e-mails from Genia, via an Azure Function, Mailchimp,
+                and SendGrid.
+              </p>
+              <p>
+                This calendar tells users when to sow or pot a seed, and when to
+                harvest all their selected plants. The calendar itself was made
+                using our proprietary React-to-PDF templating tool.
+              </p>
             </div>
           </section>
         </Fade>
@@ -101,36 +135,6 @@ const Planter = () => {
             </div>
           </div>
         </BounceIn>
-
-        <Fade fraction={0} triggerOnce>
-          <section className="technical">
-            <h1 className="header">HOW IT WORKS</h1>
-
-            <div className="content">
-              <p>
-                Users first select their region in NZ, then will be presented
-                with viable plants for the month. They can tap a plant for more
-                specific info, and add plants to their cart.
-              </p>
-              <p>
-                Each plant has an optimal climate zone. For example, if you are
-                in Wellington, New Zealand, a Temperate climate zone, and the
-                month is May, then the app will suggest plants like Bok Choy,
-                Carrot and Chives.
-              </p>
-              <p>
-                The user receives a calendar if they agree to sign-up for
-                marketing e-mails from Genia, via an Azure Function, Mailchimp,
-                and SendGrid.
-              </p>
-              <p>
-                This calendar tells users when to sow or pot a seed, and when to
-                harvest all their selected plants. The calendar itself was made
-                using our proprietary React-to-PDF templating tool.
-              </p>
-            </div>
-          </section>
-        </Fade>
         <BounceIn>
           <div className="image-container">
             <Image

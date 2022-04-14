@@ -6,6 +6,10 @@ export const PageDetailsStyle = styled.div`
   }
   .parallax-container {
     height: 100vh;
+    margin-bottom: 6rem;
+    @media screen and (min-width: 420px) {
+      margin-bottom: 9rem;
+    }
     .name-container {
       position: absolute;
       inset: 0;
@@ -15,18 +19,39 @@ export const PageDetailsStyle = styled.div`
       align-items: center;
 
       .name {
-        font-size: 5rem;
+        font-size: 2.3rem;
+
+        @media screen and (min-width: 420px) {
+          font-size: 3.2rem;
+        }
+        @media screen and (min-width: 600px) {
+          font-size: 4.4rem;
+        }
+        @media screen and (min-width: 730px) {
+          font-size: 5rem;
+        }
         background-color: ${(props) => props.theme.darkBlue};
         padding: 20px;
         border-radius: 20px;
         color: ${(props) => props.theme.white};
       }
     }
-    margin-bottom: 9rem;
   }
 
   .project-container {
-    margin: 0px 9em;
+    margin: 0rem 1rem;
+    @media screen and (min-width: 380px) {
+      margin: 0rem 2rem;
+    }
+    @media screen and (min-width: 500px) {
+      margin: 0rem 3rem;
+    }
+    @media screen and (min-width: 700px) {
+      margin: 0rem 4rem;
+    }
+    @media screen and (min-width: 1000px) {
+      margin: 0rem 9rem;
+    }
   }
 
   section {
@@ -42,29 +67,59 @@ export const PageDetailsStyle = styled.div`
     .snapshot {
       .tagline {
         font-family: "Inter", sans-serif;
-        font-size: ${(props) => props.theme.bigFont};
+        font-size: 1.8rem;
+        @media screen and (min-width: 600px) {
+          font-size: 2.5rem;
+        }
+        @media screen and (min-width: 800px) {
+          font-size: 3rem;
+        }
+        @media screen and (min-width: 1200px) {
+          font-size: 3.5rem;
+        }
         font-weight: 600;
       }
       .container {
         display: flex;
+        flex-flow: column;
         margin-top: 3rem;
         height: 100%;
         position: relative;
         width: 100%;
         justify-content: space-between;
 
-        .description {
-          width: 70%;
-          margin-right: 6rem;
+        .description-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .description {
+            @media screen and (min-width: 1000px) {
+              width: 70%;
+              margin-right: 6rem;
+            }
+          }
+          .visit {
+            align-self: center;
+            margin: 4rem 0rem;
+            font-weight: 600;
+            @media screen and (min-width: 1000px) {
+              align-self: flex-start;
+            }
+            @media screen and (min-width: 1000px) {
+              margin-top: 0;
+            }
+          }
         }
 
         .notes {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          align-self: center;
+
           .note-container {
             display: flex;
             flex-direction: column;
+            width: max-content;
             margin-bottom: 0.7rem;
             a {
               color: ${(props) => props.theme.green};
@@ -82,23 +137,29 @@ export const PageDetailsStyle = styled.div`
           }
         }
       }
-
-      .visit {
-        margin: 3rem 0rem;
-        font-weight: 600;
-      }
     }
   }
 
   .actions {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @media screen and (min-width: 1000px) {
+      justify-content: end;
+    }
+
     .repo {
       margin-right: 2rem;
     }
   }
   .technical,
   .learnings {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 5rem;
+
     a {
       color: ${(props) => props.theme.green};
       :hover {
@@ -111,10 +172,13 @@ export const PageDetailsStyle = styled.div`
     background: ${(props) => props.theme.blue};
     padding: 8px;
     border-radius: 15px;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 800px) {
+      margin-bottom: 4rem;
+    }
     img {
       border-radius: 15px;
     }

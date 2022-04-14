@@ -43,21 +43,30 @@ const Trelli = () => {
                 Trellis products.
               </div>
               <div className="container">
-                <div className="description">
-                  Genia&apos;s sales department needed to give a presentation to
-                  hardware stores throughout New Zealand to launch their new
-                  line of custom Trellis, Panels, and Gates. An idea was pitched
-                  that would allow these hardware retail stores to receive
-                  instant quotes for these products and make their job easier.
-                  Prior to this, a sales rep would have to manually call and ask
-                  our company for a quote. The challenge was to finish a
-                  prototype before the presentation in 2 working days. Thomas
-                  (backend) and I ended up getting it in done in two iconic 11
-                  hour shifts. Since then, the app has evolved and continues to
-                  receive rave reviews from hardware stores throughout NZ,
-                  increasing sales for the Motueka Pickets brand. In 2022, I
-                  received Genia&apos;s Innovation Award for contributing
-                  towards the goal of continuous improvement and innovation.
+                <div className="description-container">
+                  <div className="description">
+                    Genia&apos;s sales department needed to give a presentation
+                    to hardware stores throughout New Zealand to launch their
+                    new line of custom Trellis, Panels, and Gates. An idea was
+                    pitched that would allow these hardware retail stores to
+                    receive instant quotes for these products and make their job
+                    easier. Prior to this, a sales rep would have to manually
+                    call and ask our company for a quote. The challenge was to
+                    finish a prototype before the presentation in 2 working
+                    days. Thomas (backend) and I ended up getting it in done in
+                    two iconic 11 hour shifts. Since then, the app has evolved
+                    and continues to receive rave reviews from hardware stores
+                    throughout NZ, increasing sales for the Motueka Pickets
+                    brand. In 2022, I received Genia&apos;s Innovation Award for
+                    contributing towards the goal of continuous improvement and
+                    innovation.
+                  </div>
+                  <div className="visit">
+                    <Button
+                      text={"VISIT THE WEBSITE"}
+                      to={"https://trelli.co.nz/"}
+                    />
+                  </div>
                 </div>
                 <div className="notes">
                   <div className="note-container">
@@ -87,12 +96,6 @@ const Trelli = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
-              <div className="visit">
-                <Button
-                  text={"VISIT THE WEBSITE"}
-                  to={"https://trelli.co.nz/"}
-                />
               </div>
             </div>
           </section>

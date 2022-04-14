@@ -51,18 +51,26 @@ const Genia = () => {
                 spearheaded their consumer apps.
               </div>
               <div className="container">
-                <div className="description">
-                  After graduating from my second bachelors, I was tired of
-                  school and keen to enter my new industry as a Full Stack Web
-                  Developer. While I had unquestionable self-belief that I could
-                  offer something valuable to any organization that would give
-                  me a chance, it seemed on paper I was a dime-a-dozen in the
-                  Toronto area.
-                  <p>
-                    A family-run lumber company in Motueka (a town of 4000 in
-                    the rugged South Island of New Zealand), gave me that
-                    chance. I will be forever grateful for it.
-                  </p>
+                <div className="description-container">
+                  <div className="description">
+                    After graduating from my second bachelors, I was tired of
+                    school and keen to enter my new industry as a Full Stack Web
+                    Developer. While I had unquestionable self-belief that I
+                    could offer something valuable to any organization that
+                    would give me a chance, it seemed on paper I was a
+                    dime-a-dozen in the Toronto area.
+                    <p>
+                      A family-run lumber company in Motueka (a town of 4000 in
+                      the rugged South Island of New Zealand), gave me that
+                      chance. I will be forever grateful for it.
+                    </p>
+                  </div>
+                  <div className="visit">
+                    <Button
+                      text={"VISIT THE WEBSITE"}
+                      to={"https://www.genia.co.nz/"}
+                    />
+                  </div>
                 </div>
                 <div className="notes">
                   <div className="note-container">
@@ -75,12 +83,6 @@ const Genia = () => {
                     <div className="date">Dec 2019 - Current</div>
                   </div>
                 </div>
-              </div>
-              <div className="visit">
-                <Button
-                  text={"VISIT THE WEBSITE"}
-                  to={"https://www.genia.co.nz/"}
-                />
               </div>
             </div>
           </section>

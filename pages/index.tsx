@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import styled from "styled-components";
 import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
-import { SectionHeader } from "../components/SectionHeader";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
 import { useEffect } from "react";
@@ -18,6 +17,11 @@ export enum ProjectType {
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
   if (elem) {
+    // console.log("elem.offsetTop: ", elem.offsetTop);
+    // elem.scroll({
+    //   top: elem.offsetTop,
+    //   behavior: "smooth",
+    // });
     elem.scrollIntoView({
       behavior: "smooth",
     });
@@ -40,7 +44,7 @@ const Home: NextPage = () => {
     <HomeStyle>
       <Hero />
       <div id="work" className="section">
-        <SectionHeader text={"WORK"} />
+        <h1 style={{ fontSize: 70 }}>WORK</h1>
         <div className="projects">
           {data.projects.map((x, i) => {
             return (
