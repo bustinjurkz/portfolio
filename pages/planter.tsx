@@ -69,7 +69,7 @@ const Planter = () => {
                   <div className="note-container">
                     <div className="label">ROLE</div>
                     <div className="role">Project Lead</div>
-                    <div className="role">Developer (Mostly Front-End)</div>
+                    <div className="role">Developer</div>
                     <div className="role">UX Testing</div>
                     <div className="role">Dash of Design</div>
                   </div>
@@ -96,23 +96,18 @@ const Planter = () => {
               <p>
                 Users first select their region in NZ, then will be presented
                 with viable plants for the month. They can tap a plant for more
-                specific info, and add plants to their cart.
-              </p>
-              <p>
-                Each plant has an optimal climate zone. For example, if you are
-                in Wellington, New Zealand - a Temperate climate zone - and the
-                month is May, then the app will suggest plants like Bok Choy,
-                Carrot and Chives.
+                specific info, and add plants to their cart. Each plant has an
+                optimal climate zone. For example, if you are in Wellington, New
+                Zealand - a Temperate climate zone - and the month is May, then
+                the app will suggest plants like Bok Choy, Carrot and Chives.
               </p>
               <p>
                 The user receives a calendar if they agree to sign-up for
                 marketing e-mails from Genia, via an Azure Function, Mailchimp,
-                and SendGrid.
-              </p>
-              <p>
-                This calendar tells users when to sow or pot a seed, and when to
-                harvest all their selected plants. The calendar itself was made
-                using our proprietary React-to-PDF templating tool.
+                and SendGrid. This calendar tells users when to sow or pot a
+                seed, and when to harvest all their selected plants. The
+                calendar itself was made using our proprietary React-to-PDF
+                templating tool.
               </p>
             </div>
           </section>

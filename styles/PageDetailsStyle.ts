@@ -20,7 +20,7 @@ export const PageDetailsStyle = styled.div`
 
       .name {
         font-size: 2.3rem;
-
+        text-align: center;
         @media screen and (min-width: 420px) {
           font-size: 3.2rem;
         }
@@ -40,6 +40,7 @@ export const PageDetailsStyle = styled.div`
 
   .project-container {
     margin: 0rem 1rem;
+
     @media screen and (min-width: 380px) {
       margin: 0rem 2rem;
     }
@@ -50,12 +51,19 @@ export const PageDetailsStyle = styled.div`
       margin: 0rem 4rem;
     }
     @media screen and (min-width: 1000px) {
-      margin: 0rem 9rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0rem 4rem;
     }
   }
 
   section {
+    margin-top: 5rem;
     margin-bottom: 5rem;
+    /* @media screen and (min-width: 900px) {
+      margin-bottom: 5rem;
+    } */
+
     .header {
       font-weight: 600;
       font-size: x-large;
@@ -88,33 +96,41 @@ export const PageDetailsStyle = styled.div`
         width: 100%;
         justify-content: space-between;
 
+        @media screen and (min-width: 900px) {
+          flex-flow: row;
+        }
+
         .description-container {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          .description {
-            @media screen and (min-width: 1000px) {
-              width: 70%;
-              margin-right: 6rem;
-            }
-          }
+
           .visit {
             align-self: center;
             margin: 4rem 0rem;
             font-weight: 600;
-            @media screen and (min-width: 1000px) {
+            @media screen and (min-width: 900px) {
               align-self: flex-start;
             }
-            @media screen and (min-width: 1000px) {
-              margin-top: 0;
-            }
           }
+        }
+
+        .no-website {
+          margin: 3rem 0rem;
         }
 
         .notes {
           display: flex;
           flex-direction: column;
           align-self: center;
+
+          @media screen and (min-width: 900px) {
+            align-self: auto;
+            margin-left: 2rem;
+          }
+          @media screen and (min-width: 1000px) {
+            margin-left: 3rem;
+          }
 
           .note-container {
             display: flex;
@@ -142,9 +158,16 @@ export const PageDetailsStyle = styled.div`
 
   .actions {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 3rem;
     margin-bottom: 3rem;
+
+    @media screen and (min-width: 575px) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
 
     @media screen and (min-width: 1000px) {
       justify-content: end;
@@ -152,14 +175,25 @@ export const PageDetailsStyle = styled.div`
 
     .repo {
       margin-right: 2rem;
+      @media screen and (max-width: 575px) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .technical {
+    @media screen and (min-width: 900px) {
+      margin-top: 4rem;
+    }
+  }
+  .learnings {
+    @media screen and (min-width: 900px) {
+      margin-top: 4rem;
     }
   }
   .technical,
   .learnings {
-    max-width: 800px;
-    margin: auto;
-    margin-top: 5rem;
-
+    margin-left: auto;
+    margin-right: auto;
     a {
       color: ${(props) => props.theme.green};
       :hover {
@@ -167,7 +201,16 @@ export const PageDetailsStyle = styled.div`
       }
     }
   }
-
+  .kiln,
+  .runs {
+    max-width: 380px !important;
+  }
+  .ad {
+    max-width: 602px !important;
+  }
+  .speak {
+    max-width: 602px !important;
+  }
   .image-container {
     background: ${(props) => props.theme.blue};
     padding: 8px;
@@ -176,12 +219,14 @@ export const PageDetailsStyle = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
+
     @media screen and (min-width: 800px) {
-      margin-bottom: 4rem;
+      margin-top: 4rem;
     }
     img {
       border-radius: 15px;
     }
+
     .label {
       padding: 15px 10px;
       text-align: center;
@@ -197,6 +242,13 @@ export const SpecialListStyle = styled.div`
   padding: 20px 15px;
   border: 1px solid #ebebeb;
   border-radius: 5px;
+  a {
+    color: ${(props) => props.theme.green};
+    :hover,
+    :focus {
+      color: ${(props) => props.theme.darkBlue};
+    }
+  }
 `;
 
 export const ListStyle = styled.div`

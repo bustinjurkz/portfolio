@@ -53,7 +53,7 @@ const Agora = () => {
                   science wizardry in order to optimally connect a mentee with a
                   mentor, thus increasing the likelihood of successful career
                   advice and employment down the line.
-                  <p>
+                  <p className="no-website">
                     <b>
                       This project is on-going and the beta version will be out
                       sometime in 2023. Live preview and repo available upon

@@ -99,16 +99,16 @@ const Genia = () => {
               the clients in real-time on the changes.
             </p>
           </div>
-        </section>
-
-        <section>
-          These apps are designed for iPads, or mobile-first, since a lot of the
-          apps are used on wireless scanner devices. I&apos;ve developed such
-          apps keeping in mind the key stakeholders, whether that be an older
-          crane-driver using a handheld scanner, or a seasoned administrative
-          employee savvy with timber-specific applications. These apps were made
-          using scrum methodology and I help continuously deploy them to
-          development, user-acceptance testing, and finally production.
+          <div>
+            These apps are designed for iPads, or mobile-first, since a lot of
+            the apps are used on wireless scanner devices. I&apos;ve developed
+            such apps keeping in mind the key stakeholders, whether that be an
+            older crane-driver using a handheld scanner, or a seasoned
+            administrative employee savvy with timber-specific applications.
+            These apps were made using scrum methodology and I help continuously
+            deploy them to development, user-acceptance testing, and finally
+            production.
+          </div>
         </section>
 
         <BounceIn>
@@ -130,10 +130,9 @@ const Genia = () => {
           </div>
         </BounceIn>
         <BounceIn>
-          <div className="image-container">
+          <div className="image-container runs">
             <Image
               priority
-              className="image"
               src={TS_Run}
               aria-label="TimberSmart Runner Run Section"
               width={302}
@@ -149,17 +148,18 @@ const Genia = () => {
           </div>
         </BounceIn>
         <BounceIn>
-          <div className="image-container">
+          <div className="image-container kiln">
             <Image
               priority
-              className="image"
               src={TS_Kiln}
               aria-label="TimberSmart Runner Kiln Section"
               width={301}
               height={509}
               layout={"responsive"}
             />
-            <div className="label">TODO</div>
+            <div className="label">
+              Kiln Operators must digitally sign for timber compliance reasons.
+            </div>
           </div>
         </BounceIn>
         <BounceIn>
@@ -233,7 +233,7 @@ const Genia = () => {
           </div>
         </BounceIn>
         <BounceIn>
-          <div className="image-container">
+          <div className="image-container ad">
             <Image
               priority
               className="image"
@@ -251,7 +251,7 @@ const Genia = () => {
         </BounceIn>
 
         <BounceIn>
-          <div className="image-container">
+          <div className="image-container speak">
             <Image
               priority
               className="image"

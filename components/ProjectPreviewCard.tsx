@@ -218,7 +218,7 @@ const ProjectPreviewCardStyle = styled.div`
   }
 
   .inner-container {
-    max-width: 1000px;
+    max-width: 1200px;
     align-self: center;
     padding: 0px 25px;
     .video-container {

@@ -95,7 +95,7 @@ const Stellargaze = () => {
         </Fade>
 
         <BounceIn>
-          <div className="image-container">
+          <div className="image-container" style={{ marginBottom: "3rem" }}>
             <Image
               priority
               className="image"
