@@ -17,11 +17,6 @@ export enum ProjectType {
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
   if (elem) {
-    // console.log("elem.offsetTop: ", elem.offsetTop);
-    // elem.scroll({
-    //   top: elem.offsetTop,
-    //   behavior: "smooth",
-    // });
     elem.scrollIntoView({
       behavior: "smooth",
     });
