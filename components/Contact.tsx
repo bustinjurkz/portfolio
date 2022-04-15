@@ -4,13 +4,58 @@ import Image from "next/image";
 import Github from "../public/icon-github.png";
 import LinkedIn from "../public/icon-linkedin.png";
 import Mail from "../public/icon-mail.png";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const Contact = () => {
+  const line1 = "Let's collaborate!";
+  const line2 = "Anytime, anywhere.";
+  const letter = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
   return (
     <ContactStyle>
       <h1 style={{ fontSize: 70 }}>Contact</h1>
       <div className="container">
-        <h1>Let&apos;s collaborate! Anytime, anywhere.</h1>
+        <AnimatePresence>
+          <motion.h2
+            className="collab"
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ amount: 0.3, once: true }}
+            variants={{
+              hidden: {
+                opacity: 1,
+              },
+              visible: {
+                opacity: 1,
+                transition: {
+                  delay: 0.5,
+                  staggerChildren: 0.015,
+                },
+              },
+            }}
+          >
+            {line1.split("").map((char, index) => {
+              return (
+                <motion.span key={char + "-" + index} variants={letter}>
+                  {char}
+                </motion.span>
+              );
+            })}
+            <br />{" "}
+            {line2.split("").map((char, index) => {
+              return (
+                <motion.span key={char + "-" + index} variants={letter}>
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.h2>
+        </AnimatePresence>
         <div className="logos">
           <a
             className="logo-container"
@@ -55,6 +100,9 @@ const ContactStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    .collab {
+      text-align: center;
+    }
   }
   .logos {
     display: flex;

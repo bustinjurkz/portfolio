@@ -41,7 +41,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       case ProjectType.FullTime:
         return (
           <div className="client">
-            <span> {props.current ? "Current" : "Past"} Employment at</span>
+            <span> {props.current ? "Current" : "Past"} Job at</span>
             <span className="name">{props.client}</span>
           </div>
         );
@@ -240,23 +240,42 @@ const ProjectPreviewCardStyle = styled.div`
   }
   .header {
     display: flex;
+    flex-direction: column;
     background: ${(props) => props.theme.darkBlue};
     border-radius: 20px 20px 0px 0px;
     color: ${(props) => props.theme.darkBlue};
-    padding: 10px 40px;
+    padding: 30px 15px;
     margin-bottom: 60px;
     align-items: center;
     font-family: "Inter", sans-serif;
-    justify-content: space-between;
+
+    width: 100%;
     opacity: 1;
+    text-align: center;
     transition: 0.4s;
+    justify-content: center;
+    @media screen and (min-width: 430px) {
+      padding: 30px 40px;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding: 30px 40px;
+      justify-content: space-between;
+    }
     cursor: pointer;
     :hover {
       opacity: 0.93;
     }
     .project-name {
+      margin: 0;
+      margin-bottom: 0.5rem;
       text-transform: uppercase;
       color: ${(props) => props.theme.white};
+      font-size: clamp(32px, 4vw, 48px);
+      @media screen and (min-width: 768px) {
+        margin: 0;
+      }
     }
   }
   .client {
@@ -291,13 +310,22 @@ const ProjectPreviewCardStyle = styled.div`
 
   .description-container {
     margin: 30px 0px;
+    .about {
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        text-align: start;
+      }
+    }
   }
 
   .links {
     margin-bottom: 20px;
     display: flex;
     width: 100%;
-    justify-content: right;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+      justify-content: right;
+    }
     .external {
       display: inline-flex;
       margin-right: 20px;

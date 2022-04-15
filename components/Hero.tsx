@@ -142,7 +142,7 @@ const HeroStyle = styled.div`
         font-size: clamp(14.5vw, 10vw, 15vw);
         align-self: center;
         transform: translateY(-10vw);
-
+        white-space: nowrap;
         @media screen and (min-width: 768px) {
           align-self: auto;
           font-size: 4rem;

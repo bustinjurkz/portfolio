@@ -72,5 +72,11 @@ const HomeStyle = styled.div`
   .section {
     margin-top: 100px;
     margin-bottom: 40px;
+    h1 {
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        text-align: start;
+      }
+    }
   }
 `;
