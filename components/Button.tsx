@@ -8,7 +8,15 @@ export interface ButtonProps {
 
 export const Button: React.VFC<ButtonProps> = ({ ...props }) => {
   return (
-    <ButtonStyle href={props.to} role="button" target="_blank">
+    <ButtonStyle
+      href={props.to}
+      role="button"
+      target="_blank"
+      style={{
+        padding:
+          props.text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem;",
+      }}
+    >
       {props.text}
     </ButtonStyle>
   );
@@ -25,6 +33,7 @@ const ButtonStyle = styled.a`
   font-size: 1rem;
   letter-spacing: 0.15rem;
   transition: all 0.3s;
+  min-width: 55px;
   position: relative;
   overflow: hidden;
   z-index: 1;

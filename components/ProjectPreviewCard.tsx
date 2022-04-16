@@ -125,7 +125,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               </a>
             </Link>
 
-            <hr />
+            <DividerStyle />
             <div className="description-container">
               <h2 className="about">
                 About{" "}
@@ -206,17 +206,6 @@ const ProjectPreviewCardStyle = styled.div`
   border-radius: 20px;
   box-shadow: 0px 2px 15px 0px rgb(158 162 171);
 
-  hr {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: none;
-    height: 9px;
-    background: linear-gradient(120deg, #4f5d75 0%, #f5d9d5 100%);
-    border-radius: 20px;
-    width: 50%;
-    filter: opacity(0.2);
-  }
-
   .inner-container {
     max-width: 1200px;
     align-self: center;
@@ -294,6 +283,10 @@ const ProjectPreviewCardStyle = styled.div`
     border-radius: 20px;
     border: 1px solid lightgrey;
     margin: 50px 0px;
+    font-size: 1rem;
+    @media screen and (min-width: 768px) {
+      font-size: 1.2rem;
+    }
 
     .tool {
       padding: 8px;
@@ -323,15 +316,36 @@ const ProjectPreviewCardStyle = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-flow: wrap;
+
     @media screen and (min-width: 768px) {
       justify-content: right;
     }
+    gap: 1.5%;
+    .internal,
     .external {
-      display: inline-flex;
-      margin-right: 20px;
-      .repo {
-        margin-right: 20px;
+      gap: 3%;
+      @media screen and (min-width: 768px) {
+        display: flex;
       }
     }
+
+    .repo {
+      min-width: fit-content;
+    }
+    .url {
+      min-width: fit-content;
+    }
   }
+`;
+
+export const DividerStyle = styled.hr`
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: none;
+  height: 9px;
+  background: linear-gradient(120deg, #4f5d75 0%, #f5d9d5 100%);
+  border-radius: 20px;
+  width: 50%;
+  filter: opacity(0.2);
 `;
