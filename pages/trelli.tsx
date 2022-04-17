@@ -49,17 +49,17 @@ const Trelli = () => {
                     to hardware stores throughout New Zealand to launch their
                     new line of custom Trellis, Panels, and Gates. An idea was
                     pitched that would allow these hardware retail stores to
-                    receive instant quotes for these products and make their job
-                    easier. Prior to this, a sales rep would have to manually
-                    call and ask our company for a quote. The challenge was to
-                    finish a prototype before the presentation in 2 working
-                    days. Thomas (backend) and I ended up getting it in done in
-                    two iconic 11 hour shifts. Since then, the app has evolved
-                    and continues to receive rave reviews from hardware stores
-                    throughout NZ, increasing sales for the Motueka Pickets
-                    brand. In 2022, I received Genia&apos;s Innovation Award for
-                    contributing towards the goal of continuous improvement and
-                    innovation.
+                    receive instant quotes for these products and make their
+                    jobs easier. Prior to this, a sales rep would have to
+                    manually call and ask our company for a quote. The challenge
+                    was to finish a prototype before the presentation in 2
+                    working days. Thomas (backend) and I ended up getting it in
+                    done in two iconic 11 hour shifts. Since then, the app has
+                    evolved and continues to receive rave reviews from hardware
+                    stores throughout NZ, increasing sales for the Motueka
+                    Pickets brand. In 2022, I received Genia&apos;s Innovation
+                    Award for this app which contributes towards the goal of
+                    continuous improvement and innovation.
                   </div>
                   <div className="visit">
                     <Button
@@ -71,7 +71,7 @@ const Trelli = () => {
                 <div className="notes">
                   <div className="note-container">
                     <div className="label">ROLE</div>
-                    <div className="role">Front-End</div>
+                    <div className="role">Full-Stack</div>
                     <div className="role">Some Design</div>
                   </div>
                   <div className="note-container">
@@ -182,11 +182,10 @@ const Trelli = () => {
                   I am able to crank out an app for demo-purposes in under 20
                   hours. While quick, the code I produced was not carefully
                   thought of prior. Thus, architecturally, the app was built on
-                  shaky ground. When the app was more of a success than
-                  anticipated, we continued to build on-top of the codebase
-                  until realizing that adding simple features was harder than it
-                  should be. This resulted in a lengthy architectural refactor
-                  down the line.
+                  shaky grounds. As the app became more widely adopted, we
+                  continued to build on-top of the codebase until realizing that
+                  adding simple features was harder than it should be. This
+                  resulted in a lengthy architectural refactor down the line.
                 </li>
                 <li>
                   It is very easy to go overboard with animations. During

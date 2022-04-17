@@ -90,24 +90,23 @@ const Genia = () => {
         <section>
           <div className="experience">
             <p>
-              As a full-stack developer specializing in the front-end at MLC,
+              As a full-stack developer specializing in the front-end at Genia,
               the apps I have been involved with eliminate the amount of manual
-              administrative work require and help automate the inventory system
-              of the complicated lumber industry. For example, I have helped
-              make apps that scan custom barcodes on outgoing packs of lumber,
+              administrative work required and help automate the inventory
+              system of the complicated lumber industry. For example, I have
+              made apps that scan custom barcodes on outgoing packs of lumber,
               update the inventory/cost-spreading in the database, and informs
-              the clients in real-time on the changes.
+              the staff in real-time on the changes.
             </p>
           </div>
           <div>
             These apps are designed for iPads, or mobile-first, since a lot of
-            the apps are used on wireless scanner devices. I&apos;ve developed
-            such apps keeping in mind the key stakeholders, whether that be an
-            older crane-driver using a handheld scanner, or a seasoned
-            administrative employee savvy with timber-specific applications.
-            These apps were made using scrum methodology and I help continuously
-            deploy them to development, user-acceptance testing, and finally
-            production.
+            them are used on wireless scanner devices. I&apos;ve developed them
+            keeping in mind the key stakeholders; whether that be an older
+            crane-driver using a handheld scanner, or a seasoned administrative
+            employee savvy with timber-specific applications. These apps were
+            made using scrum methodology and I help continuously deploy them to
+            staging and production.
           </div>
         </section>
 
@@ -174,9 +173,9 @@ const Genia = () => {
               layout={"responsive"}
             />
             <div className="label">
-              The screen in Profile Sheets for printing product specs. I was
-              recently involved in refactoring the entire app and giving it a UI
-              overhaul.
+              The section in the app Profile Sheets for printing product specs.
+              I was recently involved in refactoring the entire app and giving
+              it a UI overhaul.
             </div>
           </div>
         </BounceIn>
@@ -209,9 +208,9 @@ const Genia = () => {
               layout={"responsive"}
             />
             <div className="label">
-              My main contribution to the Factory Planner app was to implement a
-              clipboard system. This allows a given user to store useful
-              processes/items for another session.
+              My main contribution to the beastly Factory Planner app was to
+              implement a clipboard system. This allows a given user to store
+              useful processes/items for another session.
             </div>
           </div>
         </BounceIn>
@@ -282,21 +281,22 @@ const Genia = () => {
               TimberSmart (a prominent lumber database) by office staff. This
               app aids in the streamlining of 4 main timber industry related
               processes: the Opti, Filleting, Kiln drying, and stock-take. I was
-              involved in the initial wireframing and a substantial amount of
+              involved in the initial wire-framing and a substantial amount of
               the development.
             </SpecialListStyle>
 
             <SpecialListStyle>
               <b>Transit Tracker</b> - Helps automate the inventory actions
-              required when transitioning transfers of stock between stock
-              locations. Operators use the scanning devices to create and send
-              stock transfers; admin staff receive the transfers into their
+              required when transitioning transfers of stock between locations.
+              Operators use the scanning devices to create and send stock
+              transfers; admin staff receive the transfers into their
               destination and can edit them if required.
             </SpecialListStyle>
             <SpecialListStyle>
               <b>Genia API</b> - This api ties everything together. More
               technically, it is a federated GraphQL microservice architecture.
-              I have made changes to key microservices for new features.
+              I have made changes to key microservices for new features. Thomas
+              was the genius behind it.
             </SpecialListStyle>
             <SpecialListStyle>
               <b>TimberSmart Addons</b> - Reduces the manual labour involved in
@@ -304,9 +304,9 @@ const Genia = () => {
               suppliers are automatically consumed into the application. Factory
               staff scan in the physical packs that arrive into the factory,
               then the app delivers the information to TimberSmart without
-              manual intervention. In the case that there are errors, e.g. pack
-              number not in the system, then the user can provide the required
-              missing information to the delivery documents.
+              manual intervention. In the case that there are errors, e.g. a
+              pack number not in the system, then the user can provide the
+              required missing information to the delivery documents.
             </SpecialListStyle>
             <SpecialListStyle>
               <b>Profile Sheets</b> - This app allows admin staff to view and
@@ -327,7 +327,7 @@ const Genia = () => {
             </SpecialListStyle>
             <SpecialListStyle>
               <b>Universal Print</b> - The two main portions of the app that I
-              wireframed and helped develop from the ground-up is used for
+              wire-framed and helped develop from the ground-up is used for
               real-time pack label printing during a shift. Users are able to
               enter a product code or scan the barcode of a pack in realtime.
             </SpecialListStyle>
@@ -372,10 +372,10 @@ const Genia = () => {
                 </li>
                 <li>
                   If I ever run a software team or business in the future, I
-                  will borrow a lot of ideas from Genia. They have done an
-                  amazing job expanding to a medium-sized company while keeping
-                  the vibe of a small-town family-run company that takes special
-                  care of individual employees
+                  will use a lot of ideas on employee satisfaction from Genia.
+                  They have done an amazing job expanding to a medium-sized
+                  company while keeping the vibe of a small-town family-run
+                  company that takes special care of individual employees
                 </li>
                 <li>
                   Year-end holiday gifts are taken very seriously in New Zealand

@@ -44,19 +44,18 @@ const Stellargaze = () => {
               <div className="container">
                 <div className="description-container">
                   <div className="description">
-                    STELLARGAZE is a React web project which helps find areas
-                    with low light pollution and ranks them in real-time
-                    according to both the moon phase and the nightly weather
-                    forecasts of humidity and cloud coverage. It is made for
-                    both space enthusiasts and casual observers of the sky. This
-                    was my first ever experience with React and my first real
-                    project after completing my Bachelors in Computer Science. I
-                    decided to become a professional web developer after; I had
-                    so much fun working on this with close friends at cafes all
-                    throughout Hamilton, Ontario. There are future plans to make
-                    this an experiential meditative stargazing experience using
-                    React Native and my more honed skills after working 3 years
-                    in the industry.
+                    STELLARGAZE helps find areas with low light pollution and
+                    ranks them in real-time according to both the moon phase and
+                    the nightly weather forecasts of humidity and cloud
+                    coverage. It is made for both space enthusiasts and casual
+                    observers of the sky. This was my first ever experience with
+                    React and my first real project after completing my
+                    Bachelors in Computer Science. I decided to become a
+                    professional web developer after; I had so much fun working
+                    on this with close friends at cafes all throughout Hamilton,
+                    Ontario. There are future plans to make this an experiential
+                    meditative stargazing experience using React Native and my
+                    better skills after working 3 years in the industry.
                   </div>
                   <div className="visit">
                     <Button
@@ -191,8 +190,8 @@ const Stellargaze = () => {
             />
             <div className="label">
               The result of mixing the satellite data with the GIS park data.
-              Stored parks coloured according to light pollution - the lighter
-              the colour, the more light pollution.
+              Stored parks are coloured according to light pollution - the
+              lighter the colour, the more light pollution.
             </div>
           </div>
         </BounceIn>
@@ -219,9 +218,9 @@ const Stellargaze = () => {
                 <li>
                   You can do anything to avoid unnecessary expenses, however it
                   might result in less maintainable code. For example, to avoid
-                  calling a better api to assess the real-time park weather in a
-                  given radius, we used a complicated k-means script to get an
-                  approximate score. This resulted in free api requests, but
+                  calling a pay-per-use API to assess the real-time park weather
+                  in a given radius, we used a complicated k-means script to get
+                  an approximate score. This resulted in free api requests, but
                   with less accurate data.
                 </li>
                 <li>
@@ -234,9 +233,9 @@ const Stellargaze = () => {
                   currently. To see my progress as a developer, compare this
                   repo with the{" "}
                   <Link href="/agora">
-                    <a>Agora project.</a>
+                    <a>Agora project</a>
                   </Link>{" "}
-                  (on request due to an NDA)
+                  (on request due to an NDA).
                 </li>
               </ul>
             </ListStyle>

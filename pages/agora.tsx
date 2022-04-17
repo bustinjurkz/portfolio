@@ -47,12 +47,12 @@ const Agora = () => {
                   In early 2021, my gym buddy (and Data Scientist for TD Bank)
                   approached me with an idea he had stemming from the
                   difficulties in connecting young people with mentors within
-                  larger organizations. The problem is companies often use dated
-                  tools - or none at all - in order to schedule meetings with
-                  potential hires. Thus, Agora Mentoring was born. We use data
-                  science wizardry in order to optimally connect a mentee with a
-                  mentor, thus increasing the likelihood of successful career
-                  advice and employment down the line.
+                  larger organizations. The problem was companies often use
+                  dated tools - or none at all - in order to schedule meetings
+                  with potential hires. Thus, Agora Mentoring was born. We use
+                  data science wizardry in order to optimally connect a mentee
+                  with a mentor, thus increasing the likelihood of successful
+                  career advice and employment down the line.
                   <p className="no-website">
                     <b>
                       This project is on-going and the beta version will be out
@@ -117,7 +117,7 @@ const Agora = () => {
               <p>
                 Users sign up as either a Mentor, or a Mentee. They then provide
                 demographic and technical information. A mentor optionally
-                provides their availabilities.
+                provides their availabilities in time slots.
               </p>
               <p>
                 As a mentee, you are able to request a mentor based on a match

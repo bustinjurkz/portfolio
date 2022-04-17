@@ -83,6 +83,12 @@ const HomeStyle = styled.div`
   .section {
     margin-top: 100px;
     margin-bottom: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width: 768px) {
+      padding: 0px 45px;
+    }
     .more-details {
       text-align: center;
       display: flex;
@@ -106,7 +112,7 @@ const HomeStyle = styled.div`
           margin-bottom: 0rem;
         }
       }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 780px) {
         text-align: start;
         margin-bottom: 2.5rem;
         flex-direction: row;

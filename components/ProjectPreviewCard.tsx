@@ -210,6 +210,9 @@ const ProjectPreviewCardStyle = styled.div`
     max-width: 1200px;
     align-self: center;
     padding: 0px 25px;
+    @media screen and (min-width: 768px) {
+      padding: 0px 35px;
+    }
     .video-container {
       position: relative;
       padding-bottom: 56.25%;

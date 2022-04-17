@@ -61,7 +61,7 @@ const Agora = () => {
                     I think a video game really incorporates everything there is
                     about computer science. Handits is a co-op 2D
                     puzzler/platformer where the mouse (or right joystick)
-                    controls your character&apos;s hand with 360°. Players
+                    controls your character&apos;s hand in 360°. Players
                     manipulate the handit&apos;s hand and toss, grab, snap,
                     slap, pull, wave, push, and shoot in order to safely collect
                     hidden relics.

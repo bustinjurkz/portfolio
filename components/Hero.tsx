@@ -74,18 +74,24 @@ export const Hero = () => {
               })}
             </motion.div>
           </AnimatePresence>
-          <div className="subtitle">
-            I&apos;m a Canadian{" "}
-            <a
-              href="https://github.com/bustinjurkz"
-              target={"_blank"}
-              rel="noreferrer"
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, transition: { duration: 1.2 } }}
+              className="subtitle"
             >
-              full-stack web developer
-            </a>{" "}
-            who loves good design and quirky ideas. I am available for full-time
-            & freelance projects.
-          </div>
+              I&apos;m a Canadian{" "}
+              <a
+                href="https://github.com/bustinjurkz"
+                target={"_blank"}
+                rel="noreferrer"
+              >
+                full-stack web developer
+              </a>{" "}
+              who loves good design and quirky ideas. I am available for
+              full-time & freelance projects.
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 

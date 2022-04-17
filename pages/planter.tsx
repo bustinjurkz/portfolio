@@ -42,20 +42,21 @@ const Planter = () => {
               <div className="container">
                 <div className="description-container">
                   <div className="description">
-                    Genia&apos;s Marketing Director made a static planting
-                    calendar which tells kiwis when to plant a fruit or
-                    vegetable subject to a particular climate zone. We realized
-                    that this could be a fun, dynamic user-experience, and thus
-                    Planter was born - Genia&apos;s first consumer app. As the
-                    Project Lead, I collaborated with the marketing team, an
-                    Auckland-based designer, and my fellow developers. It was
-                    quickly wire-framed and implemented, and through several
-                    rounds of UX testing which I conducted, it was further
-                    refined into the app today. The purpose is to drive
-                    Genia&apos;s social metrics and generate sales for their
-                    gardening division - Get Growing. In the future, this app
-                    will integrate with Shopify in order to further streamline
-                    the gardening process.
+                    Gardening in NZ skyrocketed in the Covid era. Our Marketing
+                    team had made a printable plant calendar which tells kiwis
+                    when to plant a fruit or vegetable subject to a particular
+                    climate zone. We realized that this could also be a fun,
+                    dynamic user-experience, and thus Planter was born -
+                    Genia&apos;s first consumer app. As the Project Lead, I
+                    collaborated with the Marketing team, an Auckland-based
+                    designer, and my fellow developers. It was quickly
+                    wire-framed and implemented, and through several rounds of
+                    UX testing which I conducted, it was further refined into
+                    the app today. The purpose is to drive Genia&apos;s social
+                    metrics and generate sales for their gardening division -
+                    Get Growing. In the future, this app will integrate with
+                    Shopify in order to further streamline the gardening
+                    process.
                   </div>
                   <div className="visit">
                     <Button
@@ -161,32 +162,32 @@ const Planter = () => {
                   UX Testing can be quite fun and can energize the test subjects
                   in the office. I organized each session into 3 major sections:
                   <SpecialListStyle>
-                    <b>Think-Aloud</b> - Users say out loud what they think the
-                    app is for and what the general impressions are.
+                    <b>Think-Aloud</b> - Users think out loud what they feel the
+                    app is for and what the general impressions are
                   </SpecialListStyle>
                   <SpecialListStyle>
                     <b>Tasks</b> - Users are asked to complete tasks, such as:
                     &quot;You are keen to grow tomatoes. You want to know what
                     level of sunlight tomatoes need and when to begin planting.
-                    How would you go about doing this?&quot;
+                    How would you go about doing this?&quot; I then assessed how
+                    difficult it was for them
                   </SpecialListStyle>
                   <SpecialListStyle>
                     <b>Adjectives</b> - Users are asked to circle 5 out of 100
                     adjectives which indicate how they feel about the UI /
-                    branding.
+                    branding
                   </SpecialListStyle>
-                  The main finding was that users initially did not the goal of
-                  the app was to help create a plan/calendar. Thus, the designer
-                  drafted a different landing page and the results were much
-                  better
+                  The main finding was that users initially did not feel the app
+                  was to help create a plan/calendar. Thus, the designer drafted
+                  a different landing page and the results were much better
                 </li>
                 <li>
-                  Working within a smaller tech team is great - I can wear
+                  Working within a smaller tech team is great - I like wearing
                   multiple hats: full-stack, design, and UX
                 </li>
                 <li>
                   For storing data on a small app, JSON can be used in lieu of a
-                  costly database
+                  database
                 </li>
               </ul>
             </ListStyle>
