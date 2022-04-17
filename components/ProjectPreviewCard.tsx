@@ -100,7 +100,11 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                         <Image
                           priority
                           className="image"
-                          src={`/${props.name.toLowerCase()}-preview.png`}
+                          src={
+                            props.name === "Timber Industry Apps"
+                              ? "/genia-preview.png"
+                              : `/${props.name.toLowerCase()}-preview.png`
+                          }
                           alt={`/${props.name.toLowerCase()}-preview`}
                           aria-label="Planter Preview Image"
                           width={1668}
