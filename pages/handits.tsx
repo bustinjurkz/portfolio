@@ -242,7 +242,7 @@ const Agora = () => {
             />
           </div>
           <div className="repo">
-            <Button text={"VIEW BLOG"} to="https://handits.ca/part1.html" />
+            <Button text={"VIEW BLOG"} to="http://handits.ca/part1.html" />
           </div>
           <div className="next">
             <Link href="/planter" passHref>
