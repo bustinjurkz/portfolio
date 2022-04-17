@@ -95,8 +95,8 @@ const Planter = () => {
 
             <div className="content">
               <p>
-                Users first select their region in NZ, then will be presented
-                with viable plants for the month. They can tap a plant for more
+                Users first select their region in NZ and will be presented with
+                viable plants for the month. They can tap a plant for more
                 specific info, and add plants to their cart. Each plant has an
                 optimal climate zone. For example, if you are in Wellington, New
                 Zealand - a Temperate climate zone - and the month is May, then

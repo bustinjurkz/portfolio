@@ -129,6 +129,7 @@ const Trelli = () => {
               height={751}
               layout={"responsive"}
             />
+
             <div className="label">
               Trelli on the bottom right during a tradeshow in Auckland.
             </div>

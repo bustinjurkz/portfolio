@@ -8,8 +8,12 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   color: #1d1e2b;
   font-size: 20px;
+
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+  }
 h1,
 h2,
 h3 {
