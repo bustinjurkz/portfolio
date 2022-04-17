@@ -13,7 +13,7 @@ export const Hero = () => {
   }, []);
 
   const line1 = "Howdy,";
-  const line2 = "I'm Dustin";
+  const line2 = "I'm Dusty";
   const letter = {
     hidden: { opacity: 0, y: 50 },
     visible: {
