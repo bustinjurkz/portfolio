@@ -148,12 +148,11 @@ const Trelli = () => {
               layout={"responsive"}
             />
             <div className="label">
-              Here is me (on the screens live from Wellington NZ) and my
-              coworkers receiving the first ever Innovation Award at the
-              company-wide meeting in Motueka. It was a nice surprise. Had I
+              My coworkers and I receiving the first ever Innovation Award at
+              the company-wide meeting in Motueka. It was a nice surprise. Had I
               known prior I probably would not have worn my Biggie Smalls tee in
               front of 100+ people with a Microsoft Teams blanket fort
-              background.
+              background (pictured on the two screens live from Wellington, NZ).
             </div>
           </div>
         </BounceIn>

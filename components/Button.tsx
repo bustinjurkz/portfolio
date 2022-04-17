@@ -4,6 +4,7 @@ import styled from "styled-components";
 export interface ButtonProps {
   text?: string;
   to?: string;
+  disabled?: boolean;
 }
 
 export const Button: React.VFC<ButtonProps> = ({ ...props }) => {
@@ -14,7 +15,8 @@ export const Button: React.VFC<ButtonProps> = ({ ...props }) => {
       target="_blank"
       style={{
         padding:
-          props.text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem;",
+          props.text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem",
+        cursor: props.disabled ? "unset" : "pointer",
       }}
     >
       {props.text}

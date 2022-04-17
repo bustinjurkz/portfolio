@@ -243,8 +243,8 @@ const Genia = () => {
               layout={"responsive"}
             />
             <div className="label">
-              Here is me and fellow Canadian Alana pretending we are architects
-              for an internet ad.
+              Fellow Canadian Alana and I pretending that we are architects for
+              an internet ad.
             </div>
           </div>
         </BounceIn>

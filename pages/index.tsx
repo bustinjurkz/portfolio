@@ -47,7 +47,8 @@ const Home: NextPage = () => {
         <div className="work-header">
           <h1 style={{ fontSize: 70 }}>WORK</h1>
           <div className="more-details">
-            Tap <Button text="More Info" /> to view full project details
+            Tap <Button text="More Info" disabled /> to view full project
+            details
           </div>
         </div>
 
