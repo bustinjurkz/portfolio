@@ -60,7 +60,7 @@ const Stellargaze = () => {
                   <div className="visit">
                     <Button
                       text={"VISIT THE WEBSITE"}
-                      to={"https://stellar-gaze.herokuapp.com/"}
+                      to={"https://stellargaze.com/"}
                     />
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Stellargaze = () => {
               </SpecialListStyle>
               <p>
                 More detailed information can be found on the{" "}
-                <Link href={"https://stellar-gaze.herokuapp.com/FAQ"}>
+                <Link href={"https://stellargaze.com/FAQ"}>
                   <a target={"_blank"} rel="noreferrer">
                     FAQs
                   </a>

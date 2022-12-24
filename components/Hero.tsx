@@ -12,7 +12,7 @@ export const Hero = () => {
     gradualFade("hero");
   }, []);
 
-  const line1 = "Howdy,";
+  const line1 = "Hello,";
   const line2 = "I'm Dusty";
   const letter = {
     hidden: { opacity: 0, y: 50 },

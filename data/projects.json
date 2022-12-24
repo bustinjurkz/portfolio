@@ -38,7 +38,7 @@
         "openstreetmaps"
       ],
       "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
-      "liveURL": "https://stellar-gaze.herokuapp.com/",
+      "liveURL": "https://stellargaze.com/",
       "repo": "https://github.com/bustinjurkz/StellarGaze"
     },
     {
