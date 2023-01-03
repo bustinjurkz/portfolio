@@ -129,9 +129,6 @@ const HeroStyle = styled.div`
       @media screen and (min-width: 768px) {
         mask-image: linear-gradient(to right, #ffffff 50%, transparent 100%);
       }
-      .image {
-        border-radius: 20px;
-      }
     }
 
     .text {

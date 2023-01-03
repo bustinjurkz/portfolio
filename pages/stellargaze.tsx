@@ -230,12 +230,7 @@ const Stellargaze = () => {
                   itself. When it comes time to refactor for a consumer app, I
                   will make sure the backend is a lot more modular, make use of
                   Typescript, and avoid the amount of client-side logic used
-                  currently. To see my progress as a developer, compare this
-                  repo with the{" "}
-                  <Link href="/agora">
-                    <a>Agora project</a>
-                  </Link>{" "}
-                  (on request due to an NDA).
+                  currently.
                 </li>
               </ul>
             </ListStyle>
