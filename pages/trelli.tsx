@@ -77,9 +77,7 @@ const Trelli = () => {
                   <div className="note-container">
                     <div className="label client">CLIENT</div>
                     <div className="client">
-                      <Link href="https://www.genia.co.nz/">
-                        <a target={"_blank"}>Genia</a>
-                      </Link>
+                      <Link href="https://www.genia.co.nz/">Genia</Link>
                     </div>
                   </div>
                   <div className="note-container">
@@ -88,11 +86,9 @@ const Trelli = () => {
                   </div>
                   <div className="note-container">
                     <div className="label client">Teammates</div>
-                    <Link href="https://thomaspearson.me/">
-                      <a target="_blank">Thomas Pearson</a>
-                    </Link>
+                    <Link href="https://thomaspearson.me/">Thomas Pearson</Link>
                     <Link href="https://www.linkedin.com/in/jesse-drummond">
-                      <a target="_blank">Jesse Drummond</a>
+                      Jesse Drummond
                     </Link>
                   </div>
                 </div>
@@ -106,6 +102,7 @@ const Trelli = () => {
               priority
               className="image"
               src={Quote}
+              alt="trelli-quote"
               aria-label="Quote"
               width={776}
               height={653}
@@ -122,6 +119,7 @@ const Trelli = () => {
           <div className="image-container">
             <Image
               priority
+              alt="trelli-tradeshow"
               className="image"
               src={Tradeshow}
               aria-label="Tradeshow"
@@ -142,6 +140,7 @@ const Trelli = () => {
               priority
               className="image"
               src={Award}
+              alt="trelli-award"
               aria-label="Award Image"
               width={1200}
               height={900}
@@ -203,9 +202,7 @@ const Trelli = () => {
         <section className="actions">
           <div className="next">
             <Link href="/genia" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>

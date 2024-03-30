@@ -53,10 +53,8 @@ const Agora = () => {
                   enough to be able to make my first video game under the
                   supervision of{" "}
                   <Link href={"http://www.cas.mcmaster.ca/~smiths/"}>
-                    <a style={{ color: "#3C9B85" }} target={"_blank"}>
-                      Dr. Spencer Smith.
-                    </a>
-                  </Link>{" "}
+                    Dr. Spencer Smith.
+                  </Link>
                   <p>
                     I think a video game really incorporates everything there is
                     about computer science. Handits is a co-op 2D
@@ -101,6 +99,7 @@ const Agora = () => {
               priority
               className="image"
               src={Level}
+              alt="handits-level-one"
               aria-label="Level One"
               width={1287}
               height={729}
@@ -121,6 +120,7 @@ const Agora = () => {
             <Image
               priority
               className="image"
+              alt="level-one-throwing"
               src={Throwing}
               aria-label="Level One"
               width={275}
@@ -140,6 +140,7 @@ const Agora = () => {
             <Image
               priority
               className="image"
+              alt="select-mentors"
               src={Whiteboard}
               aria-label="Mentors Select"
               width={1200}
@@ -246,9 +247,7 @@ const Agora = () => {
           </div>
           <div className="next">
             <Link href="/planter" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>

@@ -77,7 +77,7 @@ const Planter = () => {
                   <div className="note-container">
                     <div className="label client">CLIENT</div>
                     <Link href="https://www.genia.co.nz/">
-                      <a target={"_blank"}>Genia - Get Growing</a>
+                      Genia - Get Growing
                     </Link>
                   </div>
                   <div className="note-container">
@@ -118,6 +118,7 @@ const Planter = () => {
             <Image
               priority
               className="image"
+              alt="planer-preview"
               src={Calendar}
               aria-label="Planter Preview Image"
               width={782}
@@ -140,6 +141,7 @@ const Planter = () => {
               aria-label="Planter Preview Image"
               width={839}
               height={732}
+              alt="planter-preview-two"
               layout={"responsive"}
             />
             <div className="label">
@@ -196,9 +198,7 @@ const Planter = () => {
         <section className="actions">
           <div className="next">
             <Link href="/stellargaze" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>

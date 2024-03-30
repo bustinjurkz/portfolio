@@ -32,7 +32,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Layout>
           <AnimatePresence
             initial={false}
-            exitBeforeEnter
+            mode="wait"
             onExitComplete={() => {
               container.scrollTop = 0;
             }}

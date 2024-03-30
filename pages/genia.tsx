@@ -113,6 +113,7 @@ const Genia = () => {
         <BounceIn>
           <div className="image-container">
             <Image
+              alt="printer-app"
               priority
               className="image"
               src={UNI_PRINT}
@@ -133,6 +134,7 @@ const Genia = () => {
             <Image
               priority
               src={TS_Run}
+              alt="run-section"
               aria-label="TimberSmart Runner Run Section"
               width={302}
               height={511}
@@ -151,6 +153,7 @@ const Genia = () => {
             <Image
               priority
               src={TS_Kiln}
+              alt="kiln-section"
               aria-label="TimberSmart Runner Kiln Section"
               width={301}
               height={509}
@@ -167,6 +170,7 @@ const Genia = () => {
               priority
               className="image"
               src={PS_Print}
+              alt="print-section"
               aria-label="Profile Sheets Print"
               width={948}
               height={880}
@@ -185,6 +189,7 @@ const Genia = () => {
               priority
               className="image"
               src={PS_Main}
+              alt="profile-sheets"
               aria-label="Profile Sheets Main"
               width={1905}
               height={904}
@@ -201,6 +206,7 @@ const Genia = () => {
             <Image
               priority
               className="image"
+              alt="clipboard"
               src={FP_Clipboard}
               aria-label="FP Clipboard"
               width={1011}
@@ -221,6 +227,7 @@ const Genia = () => {
               className="image"
               src={FP_Main}
               aria-label="FP"
+              alt="factory-planner"
               width={1912}
               height={879}
               layout={"responsive"}
@@ -239,6 +246,7 @@ const Genia = () => {
               src={Promo}
               aria-label="Promo Image"
               width={602}
+              alt="genia-promo"
               height={418}
               layout={"responsive"}
             />
@@ -257,6 +265,7 @@ const Genia = () => {
               src={Speaking}
               aria-label="Promo Image"
               width={1100}
+              alt="dustin-speaking-genia"
               height={1179}
               layout={"responsive"}
             />
@@ -333,15 +342,11 @@ const Genia = () => {
             </SpecialListStyle>
             <SpecialListStyle>
               <b>Planter</b> - The gardening helper as{" "}
-              <Link href="/planter">
-                <a target={"_blank"}>mentioned here.</a>
-              </Link>
+              <Link href="/planter">mentioned here.</Link>
             </SpecialListStyle>
             <SpecialListStyle>
               <b>Trelli</b> - The trellis/panel/gate customizer as{" "}
-              <Link href="/trelli">
-                <a target={"_blank"}>mentioned here.</a>
-              </Link>
+              <Link href="/trelli">mentioned here.</Link>
             </SpecialListStyle>
           </section>
         </Fade>
@@ -387,9 +392,7 @@ const Genia = () => {
         <section className="actions">
           <div className="next">
             <Link href="/agora" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>

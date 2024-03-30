@@ -82,9 +82,7 @@ const Stellargaze = () => {
                   </div>
                   <div className="note-container">
                     <div className="label client">Teammates</div>
-                    <Link href="https://vladfalach.com/">
-                      <a target="_blank">Vlad Falach</a>
-                    </Link>
+                    <Link href="https://vladfalach.com/">Vlad Falach</Link>
                     <div className="client">Evan Reaume</div>
                   </div>
                 </div>
@@ -97,6 +95,7 @@ const Stellargaze = () => {
           <div className="image-container" style={{ marginBottom: "3rem" }}>
             <Image
               priority
+              alt="stellargaze-score"
               className="image"
               src={MainApp}
               aria-label="Stellargaze Preview Image"
@@ -137,10 +136,8 @@ const Stellargaze = () => {
                 <b>Satellite Data</b> - a satellite image provided by the Earth
                 Observations Group (EOG) at the{" "}
                 <Link href={"https://ngdc.noaa.gov/"}>
-                  <a target={"_blank"} rel="noreferrer">
-                    National Centers for Environmental Information.
-                  </a>
-                </Link>{" "}
+                  National Centers for Environmental Information.
+                </Link>
                 This Day/Night Band image captures the average radiance values
                 of North America, Australia, and New Zealand. The pixel values
                 we extract correspond to a number on the Bortle scale, which
@@ -168,11 +165,7 @@ const Stellargaze = () => {
               </SpecialListStyle>
               <p>
                 More detailed information can be found on the{" "}
-                <Link href={"https://stellargaze.com/FAQ"}>
-                  <a target={"_blank"} rel="noreferrer">
-                    FAQs
-                  </a>
-                </Link>
+                <Link href={"https://stellargaze.com/FAQ"}>FAQs</Link>
               </p>
             </div>
           </section>
@@ -184,6 +177,7 @@ const Stellargaze = () => {
               className="image"
               src={Data}
               aria-label="Park Satellite Image"
+              alt="satellite"
               width={1044}
               height={697}
               layout={"responsive"}
@@ -239,16 +233,12 @@ const Stellargaze = () => {
         <section className="actions">
           <div className="repo">
             <Link href="https://github.com/bustinjurkz/StellarGaze" passHref>
-              <a target={"_blank"}>
-                <Button text={"VIEW REPO"} />
-              </a>
+              <Button text={"VIEW REPO"} />
             </Link>
           </div>
           <div className="next">
             <Link href="/trelli" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>

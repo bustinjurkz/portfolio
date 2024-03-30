@@ -48,7 +48,6 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       case ProjectType.School:
         return (
           <div className="client">
-            {" "}
             <span className="name">{props.client}</span>
           </div>
         );
@@ -70,63 +69,59 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       >
         <ProjectPreviewCardStyle>
           <Link href={`/${props.slug}`} passHref>
-            <a>
-              <div className="header">
-                <h1 className="project-name">{props.name}</h1>
-                {whoForPrettier()}
-              </div>
-            </a>
+            <div className="header">
+              <h1 className="project-name">{props.name}</h1>
+              {whoForPrettier()}
+            </div>
           </Link>
 
           <div className="inner-container">
             <Link href={`/${props.slug}`} passHref>
-              <a>
-                <AnimatePresence>
-                  <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.35 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.1,
-                    }}
-                    variants={{
-                      visible: { scale: 1 },
-                      hidden: { scale: 0.9 },
-                    }}
-                  >
-                    <div className="image-container">
-                      {props.name !== "Handits" ? (
-                        <Image
-                          priority
-                          className="image"
-                          src={
-                            props.name === "Timber Industry Apps"
-                              ? "/genia-preview.png"
-                              : `/${props.name.toLowerCase()}-preview.png`
-                          }
-                          alt={`/${props.name.toLowerCase()}-preview`}
-                          aria-label="Planter Preview Image"
-                          width={1668}
-                          height={865}
-                          layout={"responsive"}
+              <AnimatePresence>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1,
+                  }}
+                  variants={{
+                    visible: { scale: 1 },
+                    hidden: { scale: 0.9 },
+                  }}
+                >
+                  <div className="image-container">
+                    {props.name !== "Handits" ? (
+                      <Image
+                        priority
+                        className="image"
+                        src={
+                          props.name === "Timber Industry Apps"
+                            ? "/genia-preview.png"
+                            : `/${props.name.toLowerCase()}-preview.png`
+                        }
+                        alt={`/${props.name.toLowerCase()}-preview`}
+                        aria-label="Planter Preview Image"
+                        width={1668}
+                        height={865}
+                        layout={"responsive"}
+                      />
+                    ) : (
+                      <div className="video-container">
+                        <iframe
+                          width="1668"
+                          height="865"
+                          src="https://www.youtube.com/embed/abJWSL5FRzs"
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
-                      ) : (
-                        <div className="video-container">
-                          <iframe
-                            width="1668"
-                            height="865"
-                            src="https://www.youtube.com/embed/abJWSL5FRzs"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </a>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </Link>
 
             <DividerStyle />
@@ -181,11 +176,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               </div>
               <div className="internal">
                 <Link href={`/${props.slug}`} passHref>
-                  <a>
-                    <div className="more-info">
-                      <Button text={"More Info"} to={""} />
-                    </div>
-                  </a>
+                  <div className="more-info">
+                    <Button text={"More Info"} to={""} />
+                  </div>
                 </Link>
               </div>
             </div>

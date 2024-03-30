@@ -79,10 +79,10 @@ const Agora = () => {
                   <div className="note-container">
                     <div className="label client">Teammates</div>
                     <Link href="https://www.linkedin.com/in/atinder-b-571877130/">
-                      <a target="_blank">Atinder Bharaj</a>
+                      Atinder Bharaj
                     </Link>
                     <Link href="https://www.linkedin.com/in/mariumshahana/">
-                      <a target="_blank">Marium Shahana</a>
+                      Marium Shahana
                     </Link>
                   </div>
                 </div>
@@ -95,6 +95,7 @@ const Agora = () => {
             <Image
               priority
               className="image"
+              alt="booking-modal"
               src={BookedModal}
               aria-label="Booking Modal"
               width={752}
@@ -142,6 +143,7 @@ const Agora = () => {
               priority
               className="image"
               src={Mentors}
+              alt="select-mentors"
               aria-label="Mentors Select"
               width={1004}
               height={714}
@@ -192,9 +194,7 @@ const Agora = () => {
           </div>
           <div className="next">
             <Link href="/handits" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
+              <Button text={"NEXT PROJECT"} />
             </Link>
           </div>
         </section>
