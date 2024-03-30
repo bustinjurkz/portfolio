@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
           <Image
             src={Logo}
             alt="Logo"
-            aria-label="Dusty  Logo"
+            aria-label="Dustin  Logo"
             width={115}
             height={38}
           />
@@ -33,7 +33,10 @@ const Navbar: React.FC = () => {
       </div>
       <div className="nav-links">
         <div onClick={() => handleScroll("work")} className="link work">
-          WORK
+          EXPERIENCE
+        </div>
+        <div onClick={() => handleScroll("projects")} className="link work">
+          PROJECTS
         </div>
         <div onClick={() => handleScroll("contact")} className="link">
           CONTACT
@@ -54,7 +57,7 @@ const NavbarStyle = styled.header`
   align-items: center;
   height: 80px;
   padding: 0px 15px;
-  max-width: 1000px;
+  max-width: 1030px;
   margin: auto auto;
   .logo-container {
     cursor: pointer;

@@ -67,6 +67,7 @@ export const Contact = () => {
               priority
               src={Github}
               alt="Github Logo"
+              width={50}
               aria-label="Github"
             />
           </a>
@@ -81,13 +82,20 @@ export const Contact = () => {
               src={LinkedIn}
               alt="LinkedIn Logo"
               aria-label="LinkedIn"
+              width={50}
             />
           </a>
           <a
             className="logo-container"
             href="mailto: dustinjurkaulionis@gmail.com"
           >
-            <Image priority src={Mail} alt="Mail Logo" aria-label="Mail" />
+            <Image
+              priority
+              src={Mail}
+              alt="Mail Logo"
+              aria-label="Mail"
+              width={50}
+            />
           </a>
         </div>
       </div>
@@ -113,7 +121,7 @@ const ContactStyle = styled.div`
     cursor: pointer;
     max-width: 50px;
     transition: 0.3s;
-    &:hover {
+    :hover {
       transform: translateY(-3px);
     }
   }

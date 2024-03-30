@@ -123,7 +123,6 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 </motion.div>
               </AnimatePresence>
             </Link>
-
             <DividerStyle />
             <div className="description-container">
               <h2 className="about">
@@ -338,14 +337,11 @@ const ProjectPreviewCardStyle = styled.div`
     }
   }
 `;
-
-export const DividerStyle = styled.hr`
+export const DividerStyle = styled.div`
   margin-top: 40px;
   margin-bottom: 40px;
-  border: none;
-  height: 9px;
-  background: linear-gradient(120deg, #4f5d75 0%, #f5d9d5 100%);
-  border-radius: 20px;
+  border: 3px solid black;
+  background-color: black;
+  height: 100px;
   width: 50%;
-  filter: opacity(0.2);
 `;

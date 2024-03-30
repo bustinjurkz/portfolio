@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://dustinjurkaulionis.com" />
           <meta
             property="og:image"
-            content="https://www.dustinjurkaulionis.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdustin_hero_background_2.fe5b2734.jpg&w=2736&q=75"
+            content="https://www.dustinjurkaulionis.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdustin_hero_background_3.fe5b2734.jpg&w=1000&q=75"
           />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

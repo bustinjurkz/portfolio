@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import HeroImage from "../public/dustin_hero_background_2.jpg";
+import HeroImage from "../public/dustin_hero_background_3.jpg";
 import { gradualFade } from "../gradualFade";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,7 +13,7 @@ export const Hero = () => {
   }, []);
 
   const line1 = "Hello,";
-  const line2 = "I'm Dusty";
+  const line2 = "I'm Dustin";
   const letter = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -32,8 +32,8 @@ export const Hero = () => {
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            width={2736}
-            height={3648}
+            width={1000}
+            height={1333}
             layout={"responsive"}
           />
         </div>
@@ -88,7 +88,7 @@ export const Hero = () => {
               >
                 full-stack web developer
               </a>{" "}
-              who loves good design and quirky ideas. I am available for
+              who loves cool design and offbeat ideas. <br /> I am available for
               full-time & freelance projects.
             </motion.div>
           </AnimatePresence>
@@ -103,8 +103,8 @@ export const Hero = () => {
           rel="noreferrer"
         >
           full-stack web developer
-        </a>{" "}
-        who loves good design and quirky ideas. I am available for full-time &
+        </a>
+        who loves cool design and quirky ideas. I am available for full-time &
         freelance projects.
       </div>
     </HeroStyle>
@@ -117,17 +117,18 @@ const HeroStyle = styled.div`
     flex-direction: column;
     margin-top: 2rem;
     max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9rem;
 
     @media screen and (min-width: 768px) {
       flex-direction: row;
-      margin-top: 5rem;
-      margin-bottom: 80px;
     }
 
     .gradient-container {
-      mask-image: linear-gradient(to bottom, #ffffff 50%, transparent 90%);
+      mask-image: linear-gradient(to bottom, #ffffff 60%, transparent 90%);
       @media screen and (min-width: 768px) {
-        mask-image: linear-gradient(to right, #ffffff 50%, transparent 100%);
+        mask-image: linear-gradient(to right, #ffffff 60%, transparent 100%);
       }
       width: 100%;
     }

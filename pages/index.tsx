@@ -42,10 +42,10 @@ const Home: NextPage = () => {
   return (
     <HomeStyle>
       <Hero />
-      <DividerStyle className="divider" />
-      <div id="work" className="section">
+      <div id="projects" className="section">
         <div className="work-header">
-          <h1 style={{ fontSize: 70 }}>WORK</h1>
+          <DividerStyle />
+          <h1>PROJECTS</h1>
           <div className="more-details">
             Tap <Button text="More Info" disabled /> to view full project
             details
@@ -87,9 +87,7 @@ const HomeStyle = styled.div`
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (min-width: 768px) {
-      padding: 0px 45px;
-    }
+
     .more-details {
       text-align: center;
       display: flex;
