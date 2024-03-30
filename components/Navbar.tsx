@@ -22,7 +22,13 @@ const Navbar: React.FC = () => {
     <NavbarStyle>
       <div className="logo-container">
         <Link href="/" passHref legacyBehavior>
-          <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
+          <Image
+            src={Logo}
+            alt="Logo"
+            aria-label="Dusty  Logo"
+            width={115}
+            height={38}
+          />
         </Link>
       </div>
       <div className="nav-links">
@@ -48,7 +54,7 @@ const NavbarStyle = styled.header`
   align-items: center;
   height: 80px;
   padding: 0px 15px;
-  max-width: 1400px;
+  max-width: 1000px;
   margin: auto auto;
   .logo-container {
     cursor: pointer;
@@ -59,9 +65,9 @@ const NavbarStyle = styled.header`
     font-weight: 600;
     .link {
       font-size: large;
-      :hover,
-      :active,
-      :focus {
+      &:hover,
+      &:active,
+      &:focus {
         cursor: pointer;
         transform: scale(1.05);
         color: ${(props) => props.theme.green};

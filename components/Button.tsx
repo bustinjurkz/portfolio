@@ -7,19 +7,18 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
-export const Button: React.VFC<ButtonProps> = ({ ...props }) => {
+export const Button = ({ text, to, disabled }: ButtonProps) => {
   return (
     <ButtonStyle
-      href={props.to}
+      href={to}
       role="button"
       target="_blank"
       style={{
-        padding:
-          props.text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem",
-        cursor: props.disabled ? "unset" : "pointer",
+        padding: text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem",
+        cursor: disabled ? "unset" : "pointer",
       }}
     >
-      {props.text}
+      {text}
     </ButtonStyle>
   );
 };
@@ -39,7 +38,7 @@ const ButtonStyle = styled.a`
   position: relative;
   overflow: hidden;
   z-index: 1;
-  :before {
+  &:before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -51,7 +50,7 @@ const ButtonStyle = styled.a`
     border-radius: 10rem;
     z-index: -1;
   }
-  :after {
+  &:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -62,10 +61,10 @@ const ButtonStyle = styled.a`
     border-radius: 10rem;
     z-index: -2;
   }
-  :hover {
+  &:hover {
     color: #fff;
   }
-  :hover:before {
+  &:hover:before {
     width: 100%;
   }
 `;

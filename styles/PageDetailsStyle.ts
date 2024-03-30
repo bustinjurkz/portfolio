@@ -139,7 +139,7 @@ export const PageDetailsStyle = styled.div`
             margin-bottom: 0.7rem;
             a {
               color: ${(props) => props.theme.green};
-              :hover {
+              &:hover {
                 color: ${(props) => props.theme.grey};
               }
             }
@@ -196,7 +196,7 @@ export const PageDetailsStyle = styled.div`
     margin-right: auto;
     a {
       color: ${(props) => props.theme.green};
-      :hover {
+      &:hover {
         color: ${(props) => props.theme.grey};
       }
     }
@@ -244,8 +244,8 @@ export const SpecialListStyle = styled.div`
   border-radius: 5px;
   a {
     color: ${(props) => props.theme.green};
-    :hover,
-    :focus {
+    &:hover,
+    &:focus {
       color: ${(props) => props.theme.darkBlue};
     }
   }
@@ -289,11 +289,11 @@ export const ArrowStyle = styled.div`
   width: 50px;
   border-radius: 50%;
   transition: all 0.2s linear;
-  :hover {
+  &:hover {
     transform: translate3d(0, 5px, 0);
     cursor: pointer;
   }
-  :after {
+  &:after {
     content: "";
     position: absolute;
     display: block;

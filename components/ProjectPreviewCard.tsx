@@ -253,7 +253,7 @@ const ProjectPreviewCardStyle = styled.div`
       justify-content: space-between;
     }
     cursor: pointer;
-    :hover {
+    &:hover {
       opacity: 0.93;
     }
     .project-name {
@@ -295,7 +295,7 @@ const ProjectPreviewCardStyle = styled.div`
       cursor: default;
       color: ${(props) => props.theme.white};
       margin: 5px 20px 5px 0px;
-      :hover {
+      &:hover {
         transform: scale(1.02);
       }
     }

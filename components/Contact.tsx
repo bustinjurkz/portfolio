@@ -113,7 +113,7 @@ const ContactStyle = styled.div`
     cursor: pointer;
     max-width: 50px;
     transition: 0.3s;
-    :hover {
+    &:hover {
       transform: translateY(-3px);
     }
   }

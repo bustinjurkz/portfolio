@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import HeroImage from "../public/dustin_hero_background.jpg";
+import HeroImage from "../public/dustin_hero_background_2.jpg";
 import { gradualFade } from "../gradualFade";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,12 +28,12 @@ export const Hero = () => {
         <div className="gradient-container" id="hero">
           <Image
             priority
-            className="image"
+            className="dustin_hero"
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            width={2000}
-            height={1382}
+            width={2736}
+            height={3648}
             layout={"responsive"}
           />
         </div>
@@ -116,6 +116,7 @@ const HeroStyle = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    max-width: 1000px;
 
     @media screen and (min-width: 768px) {
       flex-direction: row;
@@ -124,11 +125,11 @@ const HeroStyle = styled.div`
     }
 
     .gradient-container {
-      width: 100%;
       mask-image: linear-gradient(to bottom, #ffffff 50%, transparent 90%);
       @media screen and (min-width: 768px) {
         mask-image: linear-gradient(to right, #ffffff 50%, transparent 100%);
       }
+      width: 100%;
     }
 
     .text {

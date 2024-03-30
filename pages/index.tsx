@@ -84,7 +84,7 @@ const HomeStyle = styled.div`
   .section {
     margin-top: 100px;
     margin-bottom: 40px;
-    max-width: 1400px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     @media screen and (min-width: 768px) {
