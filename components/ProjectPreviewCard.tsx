@@ -68,7 +68,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
         }}
       >
         <ProjectPreviewCardStyle>
-          <Link href={`/${props.slug}`} passHref>
+          <Link href={`/${props.slug}`} passHref legacyBehavior>
             <div className="header">
               <h1 className="project-name">{props.name}</h1>
               {whoForPrettier()}
@@ -76,7 +76,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
           </Link>
 
           <div className="inner-container">
-            <Link href={`/${props.slug}`} passHref>
+            <Link href={`/${props.slug}`} passHref legacyBehavior>
               <AnimatePresence>
                 <motion.div
                   initial="hidden"
@@ -175,7 +175,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 )}
               </div>
               <div className="internal">
-                <Link href={`/${props.slug}`} passHref>
+                <Link href={`/${props.slug}`} passHref legacyBehavior>
                   <div className="more-info">
                     <Button text={"More Info"} to={""} />
                   </div>

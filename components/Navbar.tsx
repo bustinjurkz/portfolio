@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   return (
     <NavbarStyle>
       <div className="logo-container">
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior>
           <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
         </Link>
       </div>
