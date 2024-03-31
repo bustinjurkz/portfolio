@@ -14,7 +14,6 @@ export const Button = ({ text, to, disabled }: ButtonProps) => {
       role="button"
       target="_blank"
       style={{
-        padding: text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem",
         cursor: disabled ? "unset" : "pointer",
       }}
     >
@@ -27,7 +26,7 @@ const ButtonStyle = styled.a`
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   border-radius: 10rem;
   color: #fff;
   text-transform: uppercase;

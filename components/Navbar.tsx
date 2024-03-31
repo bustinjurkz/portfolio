@@ -19,8 +19,8 @@ export function handleScroll(scrollTo: string) {
 
 const Navbar: React.FC = () => {
   return (
-    <NavbarStyle>
-      <div className="logo-container">
+    <NavbarWrapper>
+      <LogoWrapper>
         <Link href="/" passHref legacyBehavior>
           <Image
             src={Logo}
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
             height={38}
           />
         </Link>
-      </div>
+      </LogoWrapper>
       <div className="nav-links">
         <div onClick={() => handleScroll("work")} className="link work">
           EXPERIENCE
@@ -42,13 +42,13 @@ const Navbar: React.FC = () => {
           CONTACT
         </div>
       </div>
-    </NavbarStyle>
+    </NavbarWrapper>
   );
 };
 
 export default Navbar;
 
-const NavbarStyle = styled.header`
+const NavbarWrapper = styled.header`
   position: sticky;
   top: 0;
   display: flex;
@@ -59,10 +59,7 @@ const NavbarStyle = styled.header`
   padding: 0px 15px;
   max-width: 1030px;
   margin: auto auto;
-  .logo-container {
-    cursor: pointer;
-    width: 115px;
-  }
+
   .nav-links {
     display: flex;
     font-weight: 600;
@@ -88,5 +85,14 @@ const NavbarStyle = styled.header`
         margin-right: 4rem;
       }
     }
+  }
+`;
+
+export const LogoWrapper = styled.div`
+  cursor: pointer;
+  width: 115px;
+
+  &:hover {
+    transform: scale(1.03);
   }
 `;

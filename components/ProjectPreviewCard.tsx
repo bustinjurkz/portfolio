@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { AnimatePresence, motion } from "framer-motion";
-import { ProjectType } from "../pages";
+import { BlackBar, ProjectType } from "../pages";
 
 export interface ProjectPreviewCardProps {
   name: string;
@@ -123,7 +123,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 </motion.div>
               </AnimatePresence>
             </Link>
-            <DividerStyle />
+            <BlackBar />
             <div className="description-container">
               <h2 className="about">
                 About{" "}
@@ -336,12 +336,4 @@ const ProjectPreviewCardStyle = styled.div`
       min-width: fit-content;
     }
   }
-`;
-export const DividerStyle = styled.div`
-  margin-top: 40px;
-  margin-bottom: 40px;
-  border: 3px solid black;
-  background-color: black;
-  height: 100px;
-  width: 50%;
 `;

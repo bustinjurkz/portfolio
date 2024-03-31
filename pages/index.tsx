@@ -1,9 +1,6 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
-import {
-  DividerStyle,
-  ProjectPreviewCard,
-} from "../components/ProjectPreviewCard";
+import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
@@ -40,19 +37,21 @@ const Home: NextPage = () => {
   }, [router]);
 
   return (
-    <HomeStyle>
+    <>
       <Hero />
-      <div id="projects" className="section">
-        <div className="work-header">
-          <DividerStyle />
-          <h1>PROJECTS</h1>
-          <div className="more-details">
+      <SectionWrapper id="projects" className="section">
+        <HeaderWrapper>
+          <BarHeaderWrapper>
+            <BlackBar />
+            <Header>PROJECTS</Header>
+          </BarHeaderWrapper>
+          <MoreInfoWrapper>
             Tap <Button text="More Info" disabled /> to view full project
             details
-          </div>
-        </div>
+          </MoreInfoWrapper>
+        </HeaderWrapper>
 
-        <div className="projects">
+        <>
           {data.projects.map((x, i) => {
             return (
               <ProjectPreviewCard
@@ -69,72 +68,79 @@ const Home: NextPage = () => {
               />
             );
           })}
-        </div>
-      </div>
-      <div id="contact" className="section">
+        </>
+      </SectionWrapper>
+      <SectionWrapper id="contact" className="section">
         <Contact />
-      </div>
-    </HomeStyle>
+      </SectionWrapper>
+    </>
   );
 };
 
 export default Home;
 
-const HomeStyle = styled.div`
-  .section {
-    margin-top: 100px;
-    margin-bottom: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+const SectionWrapper = styled.div`
+  margin-top: 100px;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
-    .more-details {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      flex-flow: wrap;
-      justify-content: center;
-    }
+const MoreInfoWrapper = styled.div`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: center;
+`;
 
-    .work-header {
-      display: flex;
-      flex-direction: column;
-      font-weight: 600;
-      align-items: center;
-      margin-bottom: 2.5rem;
-      a {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        margin-bottom: 0.5rem;
-        @media screen and (min-width: 768px) {
-          margin-bottom: 0rem;
-        }
-      }
-      @media screen and (min-width: 780px) {
-        text-align: start;
-        margin-bottom: 2.5rem;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      @media screen and (min-width: 768px) {
-        text-align: start;
-        margin: 0;
-      }
+const Header = styled.h1`
+  font-size: 1.25rem;
+  color: black;
+  text-align: center;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 768px) {
+    text-align: start;
+    margin: 0;
+  }
+  letter-spacing: 7px;
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  a {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0rem;
     }
   }
-
-  .divider {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    @media screen and (min-width: 1015px) {
-      margin-top: 9rem;
-    }
+  @media screen and (min-width: 780px) {
+    text-align: start;
+    margin-bottom: 2.5rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
+`;
+
+export const BlackBar = styled.div`
+  border: 3px solid black;
+  background-color: black;
+  height: 15px;
+  width: 250px;
+`;
+
+export const BarHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
 `;
