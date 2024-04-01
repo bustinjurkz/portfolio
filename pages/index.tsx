@@ -39,7 +39,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <SectionWrapper id="projects" className="section">
+      <SectionWrapper>
         <HeaderWrapper>
           <BarHeaderWrapper>
             <BlackBar />
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
           })}
         </>
       </SectionWrapper>
-      <SectionWrapper id="contact" className="section">
+      <SectionWrapper>
         <Contact />
       </SectionWrapper>
     </>
@@ -95,7 +95,7 @@ const MoreInfoWrapper = styled.div`
   justify-content: center;
 `;
 
-const Header = styled.h1`
+export const Header = styled.h1`
   font-size: 1.25rem;
   color: black;
   text-align: center;
@@ -107,7 +107,7 @@ const Header = styled.h1`
   letter-spacing: 7px;
 `;
 
-const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: 600;

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "./Footer";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -9,9 +8,7 @@ export interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <LayoutStyle id="main">
-      <ChildrenStyle>
-        {children} <Footer />
-      </ChildrenStyle>
+      <ChildrenStyle>{children}</ChildrenStyle>
     </LayoutStyle>
   );
 };
