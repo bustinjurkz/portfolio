@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import HeroImage from "../public/dustin_hero_background_3.jpg";
 import { gradualFade } from "../gradualFade";
 import { useEffect } from "react";

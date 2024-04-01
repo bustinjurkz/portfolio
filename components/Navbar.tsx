@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.png";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import router from "next/router";
 

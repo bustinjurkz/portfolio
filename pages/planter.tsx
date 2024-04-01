@@ -4,7 +4,7 @@ import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import { BounceIn } from "../components/BounceIn";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Calendar from "../public/planter/calendar.png";
 import Cart from "../public/planter/cart.png";
 import { handleScroll } from ".";

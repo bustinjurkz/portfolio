@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "../styles/theme";
 import { Button } from "./Button";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { AnimatePresence, motion } from "framer-motion";

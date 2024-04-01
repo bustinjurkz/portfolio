@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Quote from "../public/trelli/quote-summary.png";
 import Award from "../public/trelli/innovation.jpg";
 import Tradeshow from "../public/trelli/tradeshow.jpg";

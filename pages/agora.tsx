@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import BookedModal from "../public/agora/meeting-booked.png";
 import Mentors from "../public/agora/book-mentor.png";
 import { handleScroll } from ".";

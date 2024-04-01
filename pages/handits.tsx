@@ -3,7 +3,7 @@ import { ParallaxBanner } from "react-scroll-parallax";
 import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Level from "../public/handits/game-level.jpg";
 import Whiteboard from "../public/handits/whiteboard.jpg";
 import Throwing from "../public/handits/throwing-anim.gif";

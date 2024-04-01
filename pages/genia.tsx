@@ -4,7 +4,7 @@ import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import { BounceIn } from "../components/BounceIn";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Speaking from "../public/genia/speaking.jpg";
 import FP_Clipboard from "../public/genia/factoryplanner-clipboard.png";
 import FP_Main from "../public/genia/factoryplanner-main.png";

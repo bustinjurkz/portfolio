@@ -4,7 +4,7 @@ import { gradualFade } from "../gradualFade";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import { BounceIn } from "../components/BounceIn";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import MainApp from "../public/stellargaze/main-app.png";
 import Data from "../public/stellargaze/data.jpg";
 import { handleScroll } from ".";
