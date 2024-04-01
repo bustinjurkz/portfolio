@@ -7,6 +7,7 @@ import { Contact } from "../components/Contact";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Button } from "../components/Button";
+import { Timeline } from "../components/Timeline";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <SectionWrapper>
+      <SectionWrapper id="projects">
         <HeaderWrapper>
           <BarHeaderWrapper>
             <BlackBar />
@@ -71,6 +72,20 @@ const Home: NextPage = () => {
         </>
       </SectionWrapper>
       <SectionWrapper>
+        <HeaderWrapper>
+          <BarHeaderWrapper>
+            <BlackBar />
+            <Header>PROJECTS</Header>
+          </BarHeaderWrapper>
+          <MoreInfoWrapper>
+            Tap <Button text="More Info" disabled /> to view full project
+            details
+          </MoreInfoWrapper>
+        </HeaderWrapper>
+
+        <Timeline />
+      </SectionWrapper>
+      <SectionWrapper id="contact">
         <Contact />
       </SectionWrapper>
     </>

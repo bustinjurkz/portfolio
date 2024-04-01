@@ -32,11 +32,11 @@ const Navbar: React.FC = () => {
         </Link>
       </LogoWrapper>
       <div className="nav-links">
-        <div onClick={() => handleScroll("work")} className="link work">
-          EXPERIENCE
-        </div>
         <div onClick={() => handleScroll("projects")} className="link work">
           PROJECTS
+        </div>
+        <div onClick={() => handleScroll("experience")} className="link work">
+          EXPERIENCE
         </div>
         <div onClick={() => handleScroll("contact")} className="link">
           CONTACT

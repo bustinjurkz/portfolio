@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-import Github from "../public/icon-github.png";
-import LinkedIn from "../public/icon-linkedin.png";
-import Mail from "../public/icon-mail.png";
+
 import { BarHeaderWrapper, BlackBar, Header, HeaderWrapper } from "../pages";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export const Contact = () => {
   return (
@@ -22,35 +22,17 @@ export const Contact = () => {
           target={"_blank"}
           rel="noreferrer"
         >
-          <Image
-            priority
-            src={Github}
-            alt="Github Logo"
-            width={50}
-            aria-label="Github"
-          />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
         <a
           href="https://www.linkedin.com/in/dustinjurkaulionis/"
           target={"_blank"}
           rel="noreferrer"
         >
-          <Image
-            priority
-            src={LinkedIn}
-            alt="LinkedIn Logo"
-            aria-label="LinkedIn"
-            width={50}
-          />
+          <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
         <a href="mailto: dustinjurkaulionis@gmail.com">
-          <Image
-            priority
-            src={Mail}
-            alt="Mail Logo"
-            aria-label="Mail"
-            width={50}
-          />
+          <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </LogosWrapper>
     </>
@@ -67,6 +49,10 @@ const LogosWrapper = styled.div`
   a {
     &:hover {
       transform: scale(1.03);
+    }
+
+    > * {
+      font-size: 2rem;
     }
   }
 `;
