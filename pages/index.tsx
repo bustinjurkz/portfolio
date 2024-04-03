@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           </MoreInfoWrapper>
         </HeaderWrapper>
 
-        <>
+        <ProjectsWrapper>
           {data.projects.map((x, i) => {
             return (
               <ProjectPreviewCard
@@ -69,18 +69,14 @@ const Home: NextPage = () => {
               />
             );
           })}
-        </>
+        </ProjectsWrapper>
       </SectionWrapper>
-      <SectionWrapper>
+      <SectionWrapper id="experience">
         <HeaderWrapper>
           <BarHeaderWrapper>
             <BlackBar />
-            <Header>PROJECTS</Header>
+            <Header>EXPERIENCE</Header>
           </BarHeaderWrapper>
-          <MoreInfoWrapper>
-            Tap <Button text="More Info" disabled /> to view full project
-            details
-          </MoreInfoWrapper>
         </HeaderWrapper>
 
         <Timeline />
@@ -112,7 +108,7 @@ const MoreInfoWrapper = styled.div`
 
 export const Header = styled.h1`
   font-size: 1.25rem;
-  color: black;
+  color: ${(props) => props.theme.greenPrimary};
   text-align: center;
   margin-bottom: 1rem;
   @media screen and (min-width: 768px) {
@@ -145,8 +141,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const BlackBar = styled.div`
-  border: 3px solid black;
-  background-color: black;
+  background-color: ${(props) => props.theme.greenPrimary};
   height: 15px;
   width: 250px;
 `;
@@ -158,4 +153,10 @@ export const BarHeaderWrapper = styled.div`
   gap: 1rem;
   margin-top: 40px;
   margin-bottom: 40px;
+`;
+
+export const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;

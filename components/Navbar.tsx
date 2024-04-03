@@ -70,7 +70,7 @@ const NavbarWrapper = styled.header`
       &:focus {
         cursor: pointer;
         transform: scale(1.05);
-        color: ${(props) => props.theme.green};
+        color: ${(props) => props.theme.greenSecondary};
       }
     }
     .work {

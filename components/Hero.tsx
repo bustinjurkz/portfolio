@@ -118,6 +118,8 @@ const HeroTextTitle = styled(motion.div)`
   align-self: center;
   transform: translateY(-10vw);
   white-space: nowrap;
+  color: ${(props) => props.theme.greenPrimary};
+
   @media screen and (min-width: 768px) {
     align-self: auto;
     font-size: 4rem;
@@ -129,7 +131,7 @@ const HeroTextTitle = styled(motion.div)`
   }
 `;
 
-const HeroTextSubtitle = styled(motion.div)`
+const HeroTextSubtitle = styled(motion.h3)`
   margin-top: 0rem;
   margin-left: auto;
   margin-right: auto;
@@ -143,8 +145,6 @@ const HeroTextSubtitle = styled(motion.div)`
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 2rem;
-    font-size: xx-large;
     padding: 0px 40px;
   }
 
@@ -175,8 +175,7 @@ const HeroTextWrapper = styled.div`
   font-weight: 600;
 
   a {
-    display: contents;
-    color: #926542;
+    color: ${(props) => props.theme.greenSecondary};
     font-weight: 600;
   }
 `;

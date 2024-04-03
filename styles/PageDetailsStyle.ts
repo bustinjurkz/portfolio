@@ -138,7 +138,7 @@ export const PageDetailsStyle = styled.div`
             width: max-content;
             margin-bottom: 0.7rem;
             a {
-              color: ${(props) => props.theme.green};
+              color: ${(props) => props.theme.greenSecondary};
               &:hover {
                 color: ${(props) => props.theme.grey};
               }
@@ -195,7 +195,7 @@ export const PageDetailsStyle = styled.div`
     margin-left: auto;
     margin-right: auto;
     a {
-      color: ${(props) => props.theme.green};
+      color: ${(props) => props.theme.greenSecondary};
       &:hover {
         color: ${(props) => props.theme.grey};
       }
@@ -243,7 +243,7 @@ export const SpecialListStyle = styled.div`
   border: 1px solid #ebebeb;
   border-radius: 5px;
   a {
-    color: ${(props) => props.theme.green};
+    color: ${(props) => props.theme.greenSecondary};
     &:hover,
     &:focus {
       color: ${(props) => props.theme.darkBlue};

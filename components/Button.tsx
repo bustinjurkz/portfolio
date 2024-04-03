@@ -44,7 +44,7 @@ const ButtonStyle = styled.a`
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #546178;
+    background-color: ${(props) => props.theme.greenSecondary};
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
@@ -56,7 +56,7 @@ const ButtonStyle = styled.a`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #404754;
+    background-color: ${(props) => props.theme.greenPrimary};
     border-radius: 10rem;
     z-index: -2;
   }

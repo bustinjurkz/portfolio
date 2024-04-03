@@ -52,7 +52,8 @@ const LogosWrapper = styled.div`
     }
 
     > * {
-      font-size: 2rem;
+      color: ${(props) => props.theme.greenSecondary};
+      width: 50px;
     }
   }
 `;
