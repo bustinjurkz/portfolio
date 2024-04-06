@@ -28,7 +28,7 @@ export const TechStack = () => {
     <TechStackWrapper>
       {svgComponents.map((svg, index) => (
         <IconWrapper key={index}>
-          <svg.component color="black" />
+          <svg.component color={"#213821"} />
           <IconLabel>{svg.label}</IconLabel>
         </IconWrapper>
       ))}

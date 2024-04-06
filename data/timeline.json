@@ -1,8 +1,24 @@
 [
   {
-    "date": "2009 - 2013",
+    "date": "June 2022 - Present",
+    "iconType": "work",
+    "title": "Frontend Developer",
+    "subtitle": "PartsTrader - Wellington, NZ",
+    "location": "",
+    "description": "Developed an enterprise-wide Design System with React components, led UI/UX overhaul for the PTNZ webapp, supported multiple teams with React development, recruited talent from internship program, mentored, and taught UX topics to empower the devs"
+  },
+  {
+    "date": "Dec 2019 - June 2022",
+    "iconType": "work",
+    "title": "Full Stack Web Developer",
+    "subtitle": "Genia - Motueka, New Zealand",
+    "location": "",
+    "description": "Created web apps suitable for desktop and mobile scanning devices which result in significant cost-savings for the business processes in the lumber industry using React and .NET"
+  },
+  {
+    "date": "2016 - 2019",
     "iconType": "school",
-    "title": "Bachelor of Commerce (Honours)",
+    "title": "Bachelor of Comp Sci (Honours)",
     "subtitle": "McMaster University",
     "location": "Hamilton, Ontario",
     "description": ""
@@ -16,27 +32,11 @@
     "description": "Creative Direction, UX, Branding, SEO, Digital Marketing"
   },
   {
-    "date": "2016 - 2019",
+    "date": "2009 - 2013",
     "iconType": "school",
-    "title": "Bachelor of Comp Sci (Honours)",
+    "title": "Bachelor of Commerce (Honours)",
     "subtitle": "McMaster University",
     "location": "Hamilton, Ontario",
     "description": ""
-  },
-  {
-    "date": "Dec 2019 - June 2022",
-    "iconType": "work",
-    "title": "Full Stack Web Developer",
-    "subtitle": "Genia - Motueka, New Zealand",
-    "location": "",
-    "description": "Created web apps suitable for desktop and mobile scanning devices which result in significant cost-savings for the business processes in the lumber industry using React and .NET"
-  },
-  {
-    "date": "June 2022 - Present",
-    "iconType": "work",
-    "title": "Frontend Developer",
-    "subtitle": "PartsTrader - Wellington, NZ",
-    "location": "",
-    "description": "Developed an enterprise-wide Design System with React components, led UI/UX overhaul for the PTNZ webapp, supported multiple teams with React development, recruited talent from internship program, mentored, and taught UX topics to empower the devs"
   }
 ]
