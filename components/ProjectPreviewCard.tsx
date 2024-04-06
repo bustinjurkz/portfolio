@@ -25,14 +25,14 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   return (
     <ProjectPreviewCardStyle>
       <Link href={`/${props.slug}`} passHref legacyBehavior>
-        <div className="header">
-          <h1 className="project-name">{props.name}</h1>
-        </div>
+        <CardHeaderWrapper>
+          <ProjectTitle>{props.name}</ProjectTitle>
+        </CardHeaderWrapper>
       </Link>
 
-      <div className="inner-container">
+      <CardContentsWrapper>
         <Link href={`/${props.slug}`} passHref legacyBehavior>
-          <div className="image-container">
+          <>
             {props.name !== "Handits" ? (
               <Image
                 priority
@@ -49,7 +49,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 layout={"responsive"}
               />
             ) : (
-              <div className="video-container">
+              <VideoWrapper>
                 <iframe
                   width="1668"
                   height="865"
@@ -58,61 +58,17 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 />
-              </div>
+              </VideoWrapper>
             )}
-          </div>
+          </>
         </Link>
-        <div className="description-container">
-          <h2 className="about"></h2>
-          <div className="description">{props.description}</div>
-        </div>
-        <div className="tools">
-          {props.tools.map((tool, i) => (
-            <div className="tool" key={i}>
-              {tool}
-            </div>
-          ))}
-        </div>
-        <div className="links">
-          <div className="external">
-            {props.repo && (
-              <div className="repo">
-                <Button text={"View Repo"} to={props.repo} />
-              </div>
-            )}
-            {props.name === "Agora Mentoring" && (
-              <div
-                className="repo"
-                onClick={() =>
-                  Swal.fire({
-                    icon: "warning",
-                    title: "Available on Request",
-                    confirmButtonColor: "#3b4250",
-                    text: "To assess my current skills via this repo, please send me an e-mail to request access due to an NDA.",
-                  })
-                }
-              >
-                <Button text={"View Repo"} />
-              </div>
-            )}
-            {props.type && (
-              <div className="url">
-                <Button
-                  text={props.name === "Handits" ? "View Blog" : "View Live"}
-                  to={props.liveURL}
-                />
-              </div>
-            )}
-          </div>
-          <div className="internal">
-            <Link href={`/${props.slug}`} passHref legacyBehavior>
-              <div className="more-info">
-                <Button text={"More Info"} to={""} />
-              </div>
-            </Link>
-          </div>
-        </div>
-      </div>
+        <DescriptionWrapper>{props.description}</DescriptionWrapper>
+
+        <Links>
+          {props.repo && <Button text={"View Repo"} to={props.repo} />}
+          {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
+        </Links>
+      </CardContentsWrapper>
     </ProjectPreviewCardStyle>
   );
 };
@@ -131,70 +87,6 @@ const ProjectPreviewCardStyle = styled.div`
   border-radius: 20px;
   box-shadow: 0px 2px 15px 0px rgb(158 162 171);
 
-  .inner-container {
-    max-width: 1200px;
-    align-self: center;
-    padding: 0px 25px;
-    @media screen and (min-width: 768px) {
-      padding: 0px 35px;
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      padding-top: 30px;
-      height: 0;
-      overflow: hidden;
-      iframe,
-      .video-container object,
-      .video-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-  .header {
-    display: flex;
-    flex-direction: column;
-    background: ${(props) => props.theme.darkBlue};
-    border-radius: 20px 20px 0px 0px;
-    color: ${(props) => props.theme.darkBlue};
-    padding: 30px 15px;
-    margin-bottom: 60px;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-
-    width: 100%;
-    opacity: 1;
-    text-align: center;
-    transition: 0.4s;
-    justify-content: center;
-    @media screen and (min-width: 430px) {
-      padding: 30px 40px;
-      justify-content: space-between;
-    }
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      padding: 30px 40px;
-      justify-content: space-between;
-    }
-    cursor: pointer;
-    &:hover {
-      opacity: 0.93;
-    }
-    .project-name {
-      margin: 0;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      color: ${(props) => props.theme.white};
-      font-size: clamp(32px, 4vw, 48px);
-      @media screen and (min-width: 768px) {
-        margin: 0;
-      }
-    }
-  }
   .client {
     color: ${(props) => props.theme.white};
     .name {
@@ -203,60 +95,101 @@ const ProjectPreviewCardStyle = styled.div`
       font-weight: 600;
     }
   }
+`;
 
-  .tools {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
-    border-radius: 20px;
-    border: 1px solid lightgrey;
-    margin: 50px 0px;
-    font-size: 1rem;
-    @media screen and (min-width: 768px) {
-      font-size: 1.2rem;
-    }
+const DescriptionWrapper = styled.div`
+  margin: 30px 0px;
+`;
 
-    .tool {
-      padding: 8px;
-      border-radius: 10px;
-      background: ${(props) => props.theme.grey};
-      cursor: default;
-      color: ${(props) => props.theme.white};
-      margin: 5px 20px 5px 0px;
-      &:hover {
-        transform: scale(1.02);
-      }
-    }
+const Links = styled.div`
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-flow: wrap;
+
+  @media screen and (min-width: 768px) {
+    justify-content: right;
   }
+  gap: 1rem;
+`;
 
-  .description-container {
-    margin: 30px 0px;
+export const Tool = styled.div`
+  padding: 8px;
+  border-radius: 10px;
+  background: ${(props) => props.theme.grey};
+  cursor: default;
+  color: ${(props) => props.theme.white};
+  margin: 5px 20px 5px 0px;
+  &:hover {
+    transform: scale(1.02);
   }
+`;
 
-  .links {
-    margin-bottom: 20px;
-    display: flex;
+const CardHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.theme.darkBlue};
+  border-radius: 20px 20px 0px 0px;
+  color: ${(props) => props.theme.darkBlue};
+  padding: 30px 15px;
+  margin-bottom: 60px;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+
+  width: 100%;
+  opacity: 1;
+  text-align: center;
+  transition: 0.4s;
+  justify-content: center;
+  @media screen and (min-width: 430px) {
+    padding: 30px 40px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 30px 40px;
+    justify-content: space-between;
+  }
+  cursor: pointer;
+  &:hover {
+    opacity: 0.93;
+  }
+`;
+
+const ProjectTitle = styled.h1`
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: ${(props) => props.theme.white};
+  font-size: clamp(32px, 4vw, 48px);
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+`;
+
+const CardContentsWrapper = styled.div`
+  max-width: 1200px;
+  align-self: center;
+  padding: 0px 25px;
+  @media screen and (min-width: 768px) {
+    padding: 0px 35px;
+  }
+`;
+
+const VideoWrapper = styled.div`
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    justify-content: center;
-    flex-flow: wrap;
-
-    @media screen and (min-width: 768px) {
-      justify-content: right;
-    }
-    gap: 1.5%;
-    .internal,
-    .external {
-      gap: 3%;
-      @media screen and (min-width: 768px) {
-        display: flex;
-      }
-    }
-
-    .repo {
-      min-width: fit-content;
-    }
-    .url {
-      min-width: fit-content;
-    }
+    height: 100%;
   }
 `;

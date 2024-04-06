@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import { Button } from "../components/Button";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -56,8 +58,8 @@ const Home: NextPage = () => {
             <Header>PROJECTS</Header>
           </BarHeaderWrapper>
           <MoreInfoWrapper>
-            Tap <Button text="More Info" disabled /> to view full project
-            details
+            <FontAwesomeIcon icon={faCircleInfo} />
+            Tap a project to view the full details
           </MoreInfoWrapper>
         </HeaderWrapper>
 
@@ -113,6 +115,11 @@ const MoreInfoWrapper = styled.div`
   align-items: center;
   flex-flow: wrap;
   justify-content: center;
+
+  svg {
+    width: 20px;
+    margin-right: 0.4rem;
+  }
 `;
 
 export const Header = styled.h1`

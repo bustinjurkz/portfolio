@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const Hero = () => {
-  // SSR requires document to be loaded first
   useEffect(() => {
     gradualFade("hero");
   }, []);
@@ -81,13 +80,13 @@ export const Hero = () => {
               className="subtitle"
             >
               I&apos;m a Canadian{" "}
-              <a
+              <StyledLink
                 href="https://github.com/bustinjurkz"
                 target={"_blank"}
                 rel="noreferrer"
               >
                 full-stack web developer
-              </a>{" "}
+              </StyledLink>{" "}
               who loves cool design and offbeat ideas. <br /> I am available for
               full-time & freelance projects.
             </HeroTextSubtitle>
@@ -173,9 +172,10 @@ const HeroTextWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   font-weight: 600;
+`;
 
-  a {
-    color: ${(props) => props.theme.greenSecondary};
-    font-weight: 600;
-  }
+const StyledLink = styled.a`
+  color: ${(props) => props.theme.greenSecondary};
+  font-weight: 600;
+  position: relative;
 `;

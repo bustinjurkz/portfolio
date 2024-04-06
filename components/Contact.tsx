@@ -69,10 +69,6 @@ const ContactMessage = styled.span`
 `;
 
 const ContactWrapper = styled.div`
-  border-radius: 0.25em;
-  padding: 1em;
-  background: white;
-  box-shadow: 0 3px 0 #ddd;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 `;

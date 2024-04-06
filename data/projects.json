@@ -39,7 +39,7 @@
       ],
       "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
       "liveURL": "https://stellargaze.com/",
-      "repo": "https://github.com/bustinjurkz/StellarGaze"
+      "repo": "https://github.com/CyberTropic/StellarGaze"
     },
     {
       "name": "Trelli",
@@ -115,7 +115,6 @@
       "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
       "repo": "https://github.com/Evan-HR/Handits",
-      "liveURL": "http://handits.ca/part1.html",
       "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
     }
   ]
