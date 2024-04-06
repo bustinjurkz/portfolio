@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BarHeaderWrapper, BlackBar, Header, HeaderWrapper } from "../pages";
+import { BarHeaderWrapper, BlackBar, Header } from "../pages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -9,12 +9,10 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 export const Contact = () => {
   return (
     <>
-      <HeaderWrapper>
-        <BarHeaderWrapper>
-          <BlackBar />
-          <Header>CONTACT</Header>
-        </BarHeaderWrapper>
-      </HeaderWrapper>
+      <BarHeaderWrapper>
+        <BlackBar />
+        <Header>CONTACT</Header>
+      </BarHeaderWrapper>
       <ContactWrapper>
         <ContactMessage>
           Feel free to reach out! <br />

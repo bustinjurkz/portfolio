@@ -6,7 +6,6 @@ import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { Button } from "../components/Button";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
@@ -52,16 +51,15 @@ const Home: NextPage = () => {
       </SectionWrapper>
 
       <SectionWrapper id="projects">
-        <HeaderWrapper>
-          <BarHeaderWrapper>
-            <BlackBar />
-            <Header>PROJECTS</Header>
-          </BarHeaderWrapper>
+        <BarHeaderWrapper>
+          <BlackBar />
+          <Header>PROJECTS</Header>
+
           <MoreInfoWrapper>
             <FontAwesomeIcon icon={faCircleInfo} />
             Tap a project to view the full details
           </MoreInfoWrapper>
-        </HeaderWrapper>
+        </BarHeaderWrapper>
 
         <ProjectsWrapper>
           {data.projects.map((x, i) => {
@@ -83,12 +81,10 @@ const Home: NextPage = () => {
         </ProjectsWrapper>
       </SectionWrapper>
       <SectionWrapper id="experience">
-        <HeaderWrapper>
-          <BarHeaderWrapper>
-            <BlackBar />
-            <Header>EXPERIENCE</Header>
-          </BarHeaderWrapper>
-        </HeaderWrapper>
+        <BarHeaderWrapper>
+          <BlackBar />
+          <Header>EXPERIENCE</Header>
+        </BarHeaderWrapper>
 
         <Timeline />
       </SectionWrapper>
@@ -102,8 +98,8 @@ const Home: NextPage = () => {
 export default Home;
 
 const SectionWrapper = styled.div`
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin-top: 5rem;
+  margin-bottom: 9rem;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -115,6 +111,7 @@ const MoreInfoWrapper = styled.div`
   align-items: center;
   flex-flow: wrap;
   justify-content: center;
+  margin-left: auto;
 
   svg {
     width: 20px;
@@ -134,28 +131,6 @@ export const Header = styled.h1`
   letter-spacing: 7px;
 `;
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  a {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    @media screen and (min-width: 768px) {
-      margin-bottom: 0rem;
-    }
-  }
-  @media screen and (min-width: 780px) {
-    text-align: start;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
-
 export const BlackBar = styled.div`
   background-color: ${(props) => props.theme.greenPrimary};
   height: 15px;
@@ -168,7 +143,7 @@ export const BarHeaderWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 40px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 `;
 
 export const ProjectsWrapper = styled.div`
