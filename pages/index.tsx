@@ -41,7 +41,14 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <TechStack />
+      <SectionWrapper>
+        <BarHeaderWrapper>
+          <BlackBar />
+          <Header>MY TECH STACK</Header>
+        </BarHeaderWrapper>
+        <TechStack />
+      </SectionWrapper>
+
       <SectionWrapper id="projects">
         <HeaderWrapper>
           <BarHeaderWrapper>
