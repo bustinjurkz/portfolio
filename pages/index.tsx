@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Button } from "../components/Button";
 import { Timeline } from "../components/Timeline";
+import { TechStack } from "../components/TechStack";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
+      <TechStack />
       <SectionWrapper id="projects">
         <HeaderWrapper>
           <BarHeaderWrapper>
@@ -123,7 +125,8 @@ export const HeaderWrapper = styled.div`
   flex-direction: column;
   font-weight: 600;
   align-items: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+
   a {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -134,7 +137,6 @@ export const HeaderWrapper = styled.div`
   }
   @media screen and (min-width: 780px) {
     text-align: start;
-    margin-bottom: 2.5rem;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -152,7 +154,7 @@ export const BarHeaderWrapper = styled.div`
   align-items: center;
   gap: 1rem;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 `;
 
 export const ProjectsWrapper = styled.div`

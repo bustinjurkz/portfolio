@@ -15,26 +15,32 @@ export const Contact = () => {
           <Header>CONTACT</Header>
         </BarHeaderWrapper>
       </HeaderWrapper>
-
-      <LogosWrapper>
-        <a
-          href="https://github.com/bustinjurkz"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/dustinjurkaulionis/"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faLinkedinIn} />
-        </a>
-        <a href="mailto: dustinjurkaulionis@gmail.com">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
-      </LogosWrapper>
+      <ContactWrapper>
+        <ContactMessage>
+          Feel free to reach out! <br />
+          Whether you have a project in mind, want to collaborate, or simply
+          have a question, hit me up!
+        </ContactMessage>
+        <LogosWrapper>
+          <a
+            href="https://github.com/bustinjurkz"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dustinjurkaulionis/"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} />
+          </a>
+          <a href="mailto: dustinjurkaulionis@gmail.com">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+        </LogosWrapper>
+      </ContactWrapper>
     </>
   );
 };
@@ -44,7 +50,7 @@ const LogosWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
 
   a {
     &:hover {
@@ -52,8 +58,21 @@ const LogosWrapper = styled.div`
     }
 
     > * {
-      color: ${(props) => props.theme.greenSecondary};
+      color: ${(props) => props.theme.greenPrimary};
       width: 50px;
     }
   }
+`;
+
+const ContactMessage = styled.span`
+  margin-top: 2rem;
+`;
+
+const ContactWrapper = styled.div`
+  border-radius: 0.25em;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 3px 0 #ddd;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 `;
