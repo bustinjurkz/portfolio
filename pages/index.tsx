@@ -100,7 +100,7 @@ export default Home;
 const SectionWrapper = styled.div`
   margin-top: 5rem;
   margin-bottom: 9rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -119,8 +119,7 @@ const MoreInfoWrapper = styled.div`
   }
 `;
 
-export const Header = styled.h1`
-  font-size: 1.25rem;
+export const Header = styled.h2`
   color: ${(props) => props.theme.greenPrimary};
   text-align: center;
   margin-bottom: 1rem;

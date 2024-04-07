@@ -87,7 +87,7 @@ export const Hero = () => {
               >
                 full-stack web developer
               </StyledLink>{" "}
-              who loves cool design and offbeat ideas. <br /> I am available for
+              who loves cool design and offbeat ideas. I am available for
               full-time & freelance projects.
             </HeroTextSubtitle>
           </AnimatePresence>
@@ -101,7 +101,7 @@ const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 9rem;
@@ -130,17 +130,16 @@ const HeroTextTitle = styled(motion.div)`
   }
 `;
 
-const HeroTextSubtitle = styled(motion.h3)`
+const HeroTextSubtitle = styled(motion.h2)`
   margin-top: 0rem;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.25rem;
   padding: 0px 20px;
   max-width: 550px;
+  font-weight: normal;
 
   @media screen and (min-width: 450px) {
     padding: 0px 30px;
-    font-size: 1.5rem;
   }
 
   @media screen and (min-width: 768px) {

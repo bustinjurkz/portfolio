@@ -45,4 +45,10 @@ const TimelineWrapper = styled.div`
   .vertical-timeline::before {
     background: ${(props) => props.theme.whiteContrast};
   }
+  .vertical-timeline-element-content {
+    background: ${(props) => props.theme.blue};
+  }
+  .vertical-timeline-element-content-arrow {
+    border-right-color: ${(props) => props.theme.blue};
+  }
 `;

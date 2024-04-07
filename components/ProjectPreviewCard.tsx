@@ -23,58 +23,57 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
   return (
-    <ProjectPreviewCardStyle>
-      <Link href={`/${props.slug}`} passHref legacyBehavior>
+    <Link href={`/${props.slug}`} passHref legacyBehavior>
+      <ProjectPreviewCardStyle>
         <CardHeaderWrapper>
           <ProjectTitle>{props.name}</ProjectTitle>
         </CardHeaderWrapper>
-      </Link>
 
-      <CardContentsWrapper>
-        <Link href={`/${props.slug}`} passHref legacyBehavior>
-          <>
-            {props.name !== "Handits" ? (
-              <Image
-                priority
-                className="image"
-                src={
-                  props.name === "Timber Industry Apps"
-                    ? "/genia-preview.png"
-                    : `/${props.name.toLowerCase()}-preview.png`
-                }
-                alt={`/${props.name.toLowerCase()}-preview`}
-                aria-label="Planter Preview Image"
-                width={1668}
-                height={865}
-                layout={"responsive"}
-              />
-            ) : (
-              <VideoWrapper>
-                <iframe
-                  width="1668"
-                  height="865"
-                  src="https://www.youtube.com/embed/abJWSL5FRzs"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        <CardContentsWrapper>
+          <Link href={`/${props.slug}`} passHref legacyBehavior>
+            <>
+              {props.name !== "Handits" ? (
+                <Image
+                  priority
+                  className="image"
+                  src={
+                    props.name === "Timber Industry Apps"
+                      ? "/genia-preview.png"
+                      : `/${props.name.toLowerCase()}-preview.png`
+                  }
+                  alt={`/${props.name.toLowerCase()}-preview`}
+                  aria-label="Planter Preview Image"
+                  width={1668}
+                  height={865}
+                  layout={"responsive"}
                 />
-              </VideoWrapper>
-            )}
-          </>
-        </Link>
-        <DescriptionWrapper>{props.description}</DescriptionWrapper>
+              ) : (
+                <VideoWrapper>
+                  <iframe
+                    width="1668"
+                    height="865"
+                    src="https://www.youtube.com/embed/abJWSL5FRzs"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </VideoWrapper>
+              )}
+            </>
+          </Link>
+          <DescriptionWrapper>{props.description}</DescriptionWrapper>
 
-        <Links>
-          {props.repo && <Button text={"View Repo"} to={props.repo} />}
-          {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
-        </Links>
-      </CardContentsWrapper>
-    </ProjectPreviewCardStyle>
+          <Links>
+            {props.repo && <Button text={"View Repo"} to={props.repo} />}
+            {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
+          </Links>
+        </CardContentsWrapper>
+      </ProjectPreviewCardStyle>
+    </Link>
   );
 };
 
 const ProjectPreviewCardStyle = styled.div`
-  font-size: larger;
   margin: auto;
   max-width: 1200px;
   height: 100%;
@@ -84,17 +83,9 @@ const ProjectPreviewCardStyle = styled.div`
   justify-content: space-between;
   margin-bottom: 50px;
   background: ${(props) => props.theme.blue};
-  border-radius: 20px;
   box-shadow: 0px 2px 15px 0px rgb(158 162 171);
-
-  .client {
-    color: ${(props) => props.theme.white};
-    .name {
-      margin-left: 10px;
-      font-size: x-large;
-      font-weight: 600;
-    }
-  }
+  border-radius: 0.25rem;
+  cursor: pointer;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -130,10 +121,9 @@ const CardHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background: ${(props) => props.theme.darkBlue};
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 0.25rem 0.25rem 0 0;
   color: ${(props) => props.theme.darkBlue};
-  padding: 30px 15px;
-  margin-bottom: 60px;
+  margin-bottom: 1rem;
   align-items: center;
   font-family: "Inter", sans-serif;
 
@@ -142,34 +132,15 @@ const CardHeaderWrapper = styled.div`
   text-align: center;
   transition: 0.4s;
   justify-content: center;
-  @media screen and (min-width: 430px) {
-    padding: 30px 40px;
-    justify-content: space-between;
-  }
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    padding: 30px 40px;
-    justify-content: space-between;
-  }
-  cursor: pointer;
-  &:hover {
-    opacity: 0.93;
-  }
 `;
 
-const ProjectTitle = styled.h1`
-  margin: 0;
-  margin-bottom: 0.5rem;
+const ProjectTitle = styled.h3`
   text-transform: uppercase;
   color: ${(props) => props.theme.white};
-  font-size: clamp(32px, 4vw, 48px);
-  @media screen and (min-width: 768px) {
-    margin: 0;
-  }
 `;
 
 const CardContentsWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 500px;
   align-self: center;
   padding: 0px 25px;
   @media screen and (min-width: 768px) {
