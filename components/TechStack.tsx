@@ -6,20 +6,21 @@ import {
   NextJSSVG,
   GraphqlSVG,
   PrismaSVG,
-  PostgresqlSVG,
+  MySqlSVG,
   TypeScriptSVG,
   CypressSVG,
 } from "../data/TechStackSVGs";
 
 const svgComponents = [
   { component: ReactSVG, label: "React" },
+  { component: TypeScriptSVG, label: "TypeScript" },
+
   { component: DotnetSVG, label: "Dotnet" },
   { component: NodeJSSVG, label: "Node.js" },
   { component: NextJSSVG, label: "Next.js" },
   { component: GraphqlSVG, label: "GraphQL" },
   { component: PrismaSVG, label: "Prisma" },
-  { component: PostgresqlSVG, label: "PostgreSQL" },
-  { component: TypeScriptSVG, label: "TypeScript" },
+  { component: MySqlSVG, label: "mysql" },
   { component: CypressSVG, label: "Cypress" },
 ];
 
@@ -41,14 +42,14 @@ const TechStackWrapper = styled.div`
   flex-direction: row;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  gap: 1.5rem;
+  gap: 2rem;
 `;
 
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80px;
+  width: 50px;
 `;
 
 const IconLabel = styled.span`

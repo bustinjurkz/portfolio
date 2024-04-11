@@ -26,17 +26,18 @@ const ButtonStyle = styled.a`
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 10rem;
   color: #fff;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 14px;
   letter-spacing: 0.15rem;
   transition: all 0.3s;
   min-width: 55px;
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:before {
     content: "";
     position: absolute;

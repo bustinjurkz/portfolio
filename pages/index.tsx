@@ -44,7 +44,7 @@ const Home: NextPage = () => {
       <Hero />
       <SectionWrapper>
         <BarHeaderWrapper>
-          <BlackBar />
+          <DividerBar />
           <Header>MY TECH STACK</Header>
         </BarHeaderWrapper>
         <TechStack />
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
 
       <SectionWrapper id="projects">
         <BarHeaderWrapper>
-          <BlackBar />
+          <DividerBar />
           <Header>PROJECTS</Header>
 
           <MoreInfoWrapper>
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
       </SectionWrapper>
       <SectionWrapper id="experience">
         <BarHeaderWrapper>
-          <BlackBar />
+          <DividerBar />
           <Header>EXPERIENCE</Header>
         </BarHeaderWrapper>
 
@@ -130,9 +130,9 @@ export const Header = styled.h2`
   letter-spacing: 7px;
 `;
 
-export const BlackBar = styled.div`
+export const DividerBar = styled.div`
   background-color: ${(props) => props.theme.greenPrimary};
-  height: 15px;
+  height: 7px;
   width: 250px;
 `;
 
@@ -149,4 +149,5 @@ export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 1rem;
 `;

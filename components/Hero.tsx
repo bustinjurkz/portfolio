@@ -4,22 +4,12 @@ import Image from "next/legacy/image";
 import HeroImage from "../public/dustin_hero_background_3.jpg";
 import { gradualFade } from "../gradualFade";
 import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   useEffect(() => {
     gradualFade("hero");
   }, []);
-
-  const line1 = "Hello,";
-  const line2 = "I'm Dustin";
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
 
   return (
     <>
@@ -38,59 +28,22 @@ export const Hero = () => {
         </HeroGradientWrapper>
 
         <HeroTextWrapper>
-          <AnimatePresence>
-            <HeroTextTitle
-              className="title"
-              variants={{
-                hidden: {
-                  opacity: 1,
-                },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    delay: 0.5,
-                    staggerChildren: 0.08,
-                  },
-                },
-              }}
-              initial="hidden"
-              animate="visible"
+          <HeroTextTitle>
+            Hello, <br />
+            I'm Dustin
+          </HeroTextTitle>
+          <HeroTextSubtitle>
+            I&apos;m a Canadian{" "}
+            <StyledLink
+              href="https://github.com/bustinjurkz"
+              target={"_blank"}
+              rel="noreferrer"
             >
-              {line1.split("").map((char, index) => {
-                return (
-                  <motion.span key={char + "-" + index} variants={letter}>
-                    {char}
-                  </motion.span>
-                );
-              })}
-              <br />{" "}
-              {line2.split("").map((char, index) => {
-                return (
-                  <motion.span key={char + "-" + index} variants={letter}>
-                    {char}
-                  </motion.span>
-                );
-              })}
-            </HeroTextTitle>
-          </AnimatePresence>
-          <AnimatePresence>
-            <HeroTextSubtitle
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 1.2 } }}
-              className="subtitle"
-            >
-              I&apos;m a Canadian{" "}
-              <StyledLink
-                href="https://github.com/bustinjurkz"
-                target={"_blank"}
-                rel="noreferrer"
-              >
-                full-stack web developer
-              </StyledLink>{" "}
-              who loves cool design and offbeat ideas. I am available for
-              full-time & freelance projects.
-            </HeroTextSubtitle>
-          </AnimatePresence>
+              full-stack web developer
+            </StyledLink>{" "}
+            who loves cool design and offbeat ideas. I am available for
+            full-time & freelance projects.
+          </HeroTextSubtitle>
         </HeroTextWrapper>
       </HeroWrapper>
     </>
@@ -111,48 +64,18 @@ const HeroWrapper = styled.div`
   }
 `;
 
-const HeroTextTitle = styled(motion.div)`
+const HeroTextTitle = styled.h1`
   font-family: "Inter", sans-serif;
-  font-size: clamp(14.5vw, 10vw, 15vw);
-  align-self: center;
-  transform: translateY(-10vw);
   white-space: nowrap;
   color: ${(props) => props.theme.greenPrimary};
-
-  @media screen and (min-width: 768px) {
-    align-self: auto;
-    font-size: 4rem;
-    transform: translate(-5vw, 0vw);
-  }
-  @media screen and (min-width: 1025px) {
-    font-size: 5rem;
-    transform: translate(-5vw, 1vw);
-  }
+  font-size: 5rem;
+  margin: 0;
+  padding: 0;
 `;
 
-const HeroTextSubtitle = styled(motion.h2)`
-  margin-top: 0rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 20px;
+const HeroTextSubtitle = styled.h2`
   max-width: 550px;
   font-weight: normal;
-
-  @media screen and (min-width: 450px) {
-    padding: 0px 30px;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 0px 40px;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1015px) {
-    display: none;
-  }
-  @media screen and (min-width: 1016px) {
-    padding: 30px 50px;
-    max-width: 650px;
-  }
 `;
 
 const HeroGradientWrapper = styled.div`
@@ -165,9 +88,9 @@ const HeroGradientWrapper = styled.div`
 
 const HeroTextWrapper = styled.div`
   width: 100%;
-  max-height: 400px;
-  margin: auto;
+  padding-left: 3.5rem;
   display: flex;
+  align-self: center;
   flex-direction: column;
   justify-content: space-between;
   font-weight: 600;
