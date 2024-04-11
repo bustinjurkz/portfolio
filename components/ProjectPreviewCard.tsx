@@ -25,14 +25,6 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   return (
     <Link href={`/${props.slug}`} passHref legacyBehavior>
       <ProjectCardWrapper>
-        <CardHeaderWrapper>
-          <ProjectTitle>{props.name}</ProjectTitle>
-          <Links>
-            {props.repo && <Button text={"View Repo"} to={props.repo} />}
-            {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
-          </Links>
-        </CardHeaderWrapper>
-
         <CardContentsWrapper>
           <Link href={`/${props.slug}`} passHref legacyBehavior>
             <>
@@ -65,6 +57,13 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               )}
             </>
           </Link>
+          <CardHeaderWrapper>
+            <ProjectTitle>{props.name}</ProjectTitle>
+            <Links>
+              {props.repo && <Button text={"View Repo"} to={props.repo} />}
+              {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
+            </Links>
+          </CardHeaderWrapper>
           <DescriptionWrapper>{props.description}</DescriptionWrapper>
         </CardContentsWrapper>
       </ProjectCardWrapper>
@@ -73,20 +72,22 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 };
 
 const ProjectCardWrapper = styled.div`
-  padding: 0px 25px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: ${(props) => props.theme.blue};
-  box-shadow: 0 3px 0 #ddd;
+  box-shadow: 1px 4px 9px 0px #cecece;
   border-radius: 0.25rem;
   cursor: pointer;
   max-width: 500px;
+
+  &:hover {
+    box-shadow: 2px 5px 9px 0px #bebebe;
+  }
 `;
 
-const DescriptionWrapper = styled.div`
-  margin: 30px 0px;
-`;
+const DescriptionWrapper = styled.div``;
 
 const Links = styled.div`
   display: flex;
@@ -113,19 +114,20 @@ const CardHeaderWrapper = styled.div`
   flex-direction: row;
   border-radius: 0.25rem 0.25rem 0 0;
   color: ${(props) => props.theme.darkBlue};
-  margin-bottom: 0.5rem;
   align-items: center;
   font-family: "Inter", sans-serif;
   width: 100%;
   opacity: 1;
   text-align: center;
-  transition: 0.4s;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
   justify-content: center;
 `;
 
 const ProjectTitle = styled.h3`
   text-transform: uppercase;
   color: ${(props) => props.theme.greenPrimary};
+  margin: 0;
 `;
 
 const CardContentsWrapper = styled.div`

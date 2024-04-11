@@ -42,6 +42,7 @@ const TechStackWrapper = styled.div`
   flex-direction: row;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  margin-top: 2rem;
   gap: 2rem;
 `;
 

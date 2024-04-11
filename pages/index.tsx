@@ -43,23 +43,21 @@ const Home: NextPage = () => {
     <>
       <Hero />
       <SectionWrapper>
-        <BarHeaderWrapper>
-          <DividerBar />
+        <HeaderWrapper>
           <Header>MY TECH STACK</Header>
-        </BarHeaderWrapper>
+        </HeaderWrapper>
         <TechStack />
       </SectionWrapper>
 
       <SectionWrapper id="projects">
-        <BarHeaderWrapper>
-          <DividerBar />
+        <HeaderWrapper>
           <Header>PROJECTS</Header>
 
           <MoreInfoWrapper>
             <FontAwesomeIcon icon={faCircleInfo} />
             Tap a project to view the full details
           </MoreInfoWrapper>
-        </BarHeaderWrapper>
+        </HeaderWrapper>
 
         <ProjectsWrapper>
           {data.projects.map((x, i) => {
@@ -81,10 +79,9 @@ const Home: NextPage = () => {
         </ProjectsWrapper>
       </SectionWrapper>
       <SectionWrapper id="experience">
-        <BarHeaderWrapper>
-          <DividerBar />
+        <HeaderWrapper>
           <Header>EXPERIENCE</Header>
-        </BarHeaderWrapper>
+        </HeaderWrapper>
 
         <Timeline />
       </SectionWrapper>
@@ -123,26 +120,24 @@ export const Header = styled.h2`
   color: ${(props) => props.theme.greenPrimary};
   text-align: center;
   margin-bottom: 1rem;
+  letter-spacing: 7px;
+
   @media screen and (min-width: 768px) {
     text-align: start;
     margin: 0;
   }
-  letter-spacing: 7px;
 `;
 
-export const DividerBar = styled.div`
-  background-color: ${(props) => props.theme.greenPrimary};
-  height: 7px;
-  width: 250px;
-`;
-
-export const BarHeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
   margin-top: 40px;
-  margin-bottom: 2.5rem;
+  background: ${(props) => props.theme.pink};
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 `;
 
 export const ProjectsWrapper = styled.div`
@@ -150,4 +145,7 @@ export const ProjectsWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  background: ${(props) => props.theme.pink};
+  justify-content: center;
+  padding-bottom: 2.5rem;
 `;

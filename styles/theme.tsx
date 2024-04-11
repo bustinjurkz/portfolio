@@ -10,6 +10,7 @@ const theme: DefaultTheme = {
   red: "#f5d9d5",
   greenSecondary: "#518261",
   blue: "#eceff4",
+  pink: "#f3efef",
   biggestFont: "90px",
   bigFont: "70px",
   mediumFont: "50px",
