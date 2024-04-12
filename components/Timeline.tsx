@@ -1,4 +1,8 @@
-import { faBriefcase, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBriefcase,
+  faLocationDot,
+  faUserGraduate,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import timelineData from "../data/timeline.json";
 import {
@@ -23,11 +27,19 @@ export const Timeline = () => {
               />
             }
           >
-            <h3 className="vertical-timeline-element-title">{item.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              {item.subtitle}
-            </h4>
-            <p>{item.location}</p>
+            <TimelineHeader>{item.title}</TimelineHeader>
+            <OrganizationLocation>
+              <OrganizationText>{item.organization}</OrganizationText>
+
+              <LocationWrapper>
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="location-icon"
+                />
+                <LocationText>{item.location}</LocationText>
+              </LocationWrapper>
+            </OrganizationLocation>
+
             {item.description && <p>{item.description}</p>}
           </VerticalTimelineElement>
         ))}
@@ -51,4 +63,37 @@ const TimelineWrapper = styled.div`
   .vertical-timeline-element-content-arrow {
     border-right-color: ${(props) => props.theme.blue};
   }
+  .vertical-timeline-element:first-child .vertical-timeline-element-date {
+    font-weight: 600;
+  }
+`;
+
+const OrganizationLocation = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const LocationWrapper = styled.div`
+  display: flex;
+  margin-left: 1.25rem;
+
+  .location-icon {
+    width: 14px;
+    color: #3b4251b5;
+  }
+`;
+
+const LocationText = styled.span`
+  margin-left: 0.25rem;
+`;
+
+const TimelineHeader = styled.h3`
+  font-family: "Inter", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+`;
+
+const OrganizationText = styled.h3`
+  margin: 0;
+  font-size: 1rem;
 `;

@@ -69,7 +69,6 @@ const Home: NextPage = () => {
                 description={x.description}
                 name={x.name}
                 tools={x.tools}
-                repo={x.repo}
                 slug={x.slug}
                 liveURL={x.liveURL}
                 key={i}
@@ -144,7 +143,7 @@ export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   background: ${(props) => props.theme.pink};
   justify-content: center;
   padding-bottom: 2.5rem;
