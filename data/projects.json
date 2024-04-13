@@ -87,7 +87,7 @@
       "slug": "handits",
       "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
-      "description": "Handits is a 4-player puzzle/platformer game developed as a final-year Computer Science capstone project at McMaster University. Using Unity and C# scripts, players control bandits with versatile hands to explore and solve puzzles. Features include navigating dangerous terrain using grabbable objects and weapons. The development process involved game design principles, continuous playtesting, and efficient project management with Scrum methodology."
+      "description": "Handits is a 4-player puzzle/platformer game developed as a final-year Computer Science capstone project at McMaster University. Using Unity and C# scripts, players control bandits with versatile hands to grab, navigate dangerous terrain, and solve puzzles.  It involved game design principles, continuous playtesting, and Scrum methodology."
     }
   ]
 }

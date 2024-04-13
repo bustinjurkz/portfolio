@@ -37,12 +37,15 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       <Link href={`/${props.slug}`} passHref legacyBehavior>
         <ProjectCardWrapper>
           <CardContentsWrapper>
-            <ExpandButton onClick={(e: any) => handleExpand(e)}>
-              <FontAwesomeIcon
-                icon={faMagnifyingGlassPlus}
-                className="expand-image"
-              />
-            </ExpandButton>
+            {props.name !== "Handits" && (
+              <ExpandButton onClick={(e: any) => handleExpand(e)}>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlassPlus}
+                  className="expand-icon"
+                />
+              </ExpandButton>
+            )}
+
             <Link href={`/${props.slug}`} passHref legacyBehavior>
               {props.name !== "Handits" ? (
                 <Image
@@ -183,19 +186,21 @@ const VideoWrapper = styled.div`
 const ExpandButton = styled.button`
   position: absolute;
   top: 8px;
-  right: 7px;
+  right: 9px;
   border: none;
   background-color: black;
   color: #eceff4;
   z-index: 1;
   border-radius: 0.25rem;
-  padding: 7px;
+  width: 30px;
+  height: 30px;
   display: flex;
+  align-items: center;
   cursor: pointer;
 
-  &:hover > .expand-image {
+  &:hover > .expand-icon {
     color: ${(props) => props.theme.red};
-    transform: scale(1.05);
+    transform: scale(1.075);
   }
 
   &:focus {
@@ -203,8 +208,9 @@ const ExpandButton = styled.button`
     box-shadow: 0 0 0 2px ${(props) => props.theme.greenSecondary};
   }
 
-  .expand-image {
+  .expand-icon {
     width: 20px;
     height: 20px;
+    z-index: 2;
   }
 `;
