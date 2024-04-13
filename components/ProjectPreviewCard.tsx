@@ -37,42 +37,40 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
       <Link href={`/${props.slug}`} passHref legacyBehavior>
         <ProjectCardWrapper>
           <CardContentsWrapper>
+            <ExpandButton onClick={(e: any) => handleExpand(e)}>
+              <FontAwesomeIcon
+                icon={faMagnifyingGlassPlus}
+                className="expand-image"
+              />
+            </ExpandButton>
             <Link href={`/${props.slug}`} passHref legacyBehavior>
-              <>
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlassPlus}
-                  className="expand-image"
-                  onClick={(e: any) => handleExpand(e)}
+              {props.name !== "Handits" ? (
+                <Image
+                  priority
+                  className="image"
+                  src={
+                    props.name === "Timber Industry Apps"
+                      ? "/genia-preview.png"
+                      : `/${props.name.toLowerCase()}-preview.png`
+                  }
+                  alt={`/${props.name.toLowerCase()}-preview`}
+                  aria-label="Planter Preview Image"
+                  width={1668}
+                  height={865}
+                  layout={"responsive"}
                 />
-
-                {props.name !== "Handits" ? (
-                  <Image
-                    priority
-                    className="image"
-                    src={
-                      props.name === "Timber Industry Apps"
-                        ? "/genia-preview.png"
-                        : `/${props.name.toLowerCase()}-preview.png`
-                    }
-                    alt={`/${props.name.toLowerCase()}-preview`}
-                    aria-label="Planter Preview Image"
-                    width={1668}
-                    height={865}
-                    layout={"responsive"}
+              ) : (
+                <VideoWrapper>
+                  <iframe
+                    width="1668"
+                    height="865"
+                    src="https://www.youtube.com/embed/abJWSL5FRzs"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   />
-                ) : (
-                  <VideoWrapper>
-                    <iframe
-                      width="1668"
-                      height="865"
-                      src="https://www.youtube.com/embed/abJWSL5FRzs"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    />
-                  </VideoWrapper>
-                )}
-              </>
+                </VideoWrapper>
+              )}
             </Link>
             <CardHeaderWrapper>
               <ProjectTitle>{props.name}</ProjectTitle>
@@ -162,9 +160,7 @@ const ProjectTitle = styled.h3`
 
 const CardContentsWrapper = styled.div`
   align-self: center;
-  .expand-image {
-    width: 20px;
-  }
+  position: relative;
 `;
 
 const VideoWrapper = styled.div`
@@ -181,5 +177,34 @@ const VideoWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+  }
+`;
+
+const ExpandButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  border: none;
+  background-color: black;
+  color: #eceff4;
+  z-index: 1;
+  border-radius: 0.25rem;
+  padding: 7px;
+  display: flex;
+  cursor: pointer;
+
+  &:hover > .expand-image {
+    color: ${(props) => props.theme.red};
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${(props) => props.theme.greenSecondary};
+  }
+
+  .expand-image {
+    width: 20px;
+    height: 20px;
   }
 `;
