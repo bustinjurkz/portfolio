@@ -53,7 +53,7 @@ const Home: NextPage = () => {
           <Header>PROJECTS</Header>
 
           <MoreInfoWrapper>
-            Tap <Button text="View Info" disabled /> for more project details
+            Tap <Button text="Learn More" disabled /> for full project details
           </MoreInfoWrapper>
         </HeaderWrapper>
 
@@ -120,7 +120,7 @@ export const Header = styled.h2`
   color: ${(props) => props.theme.greenPrimary};
   text-align: center;
   margin-bottom: 1rem;
-  letter-spacing: 7px;
+  letter-spacing: 6px;
 
   @media screen and (min-width: 768px) {
     text-align: start;

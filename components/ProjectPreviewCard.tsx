@@ -78,10 +78,10 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             <CardHeaderWrapper>
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
-                {props.repo && <Button text={"View Repo"} to={props.repo} />}
-                {props.type && (
-                  <Button text={"Visit Site"} to={props.liveURL} />
+                {props.liveURL && (
+                  <Button text={"Visit Site"} to={props.liveURL} withinLink />
                 )}
+                <Button text={"Learn More"} to={`/${props.slug}`} />
               </Links>
             </CardHeaderWrapper>
             <DescriptionWrapper>{props.description}</DescriptionWrapper>
@@ -102,7 +102,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 };
 
 const ProjectCardWrapper = styled.div`
-  padding: 2.15rem;
+  padding: 2.05rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,8 +122,7 @@ const DescriptionWrapper = styled.div``;
 const Links = styled.div`
   display: flex;
   width: 100%;
-  flex-flow: wrap;
-  gap: 1rem;
+  gap: 0.45rem;
   justify-content: right;
 `;
 

@@ -17,7 +17,7 @@
         "azure",
         "mui"
       ],
-      "description": "Planter generates personalized gardening calendars for New Zealanders.  Users get tailored plans by location (microclimate) and season. With a database of over 50 plants, they can add their fruits and veggies to a cart and get information on optimizing growth.  Upon submission, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
+      "description": "Planter generates personalized gardening calendars for New Zealanders. With a database of over 50 plants, users can add their fruits and veggies to a cart and get information on optimizing growth based on their location (microclimate) and season.  Upon submission, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
       "liveURL": "https://planter.co.nz/"
     },
     {

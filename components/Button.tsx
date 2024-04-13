@@ -5,11 +5,26 @@ export interface ButtonProps {
   text?: string;
   to?: string;
   disabled?: boolean;
+  withinLink?: boolean;
 }
 
-export const Button = ({ text, to, disabled }: ButtonProps) => {
+export const Button = ({ text, to, disabled, withinLink }: ButtonProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!disabled && to) {
+      window.open(to, "_blank");
+    }
+  };
+
   return (
-    <ButtonStyle href={to} role="button" target="_blank" $disabled={disabled}>
+    <ButtonStyle
+      role="button"
+      target="_blank"
+      href={to}
+      $disabled={disabled}
+      onClick={withinLink ? handleClick : undefined}
+    >
       {text}
     </ButtonStyle>
   );
@@ -18,17 +33,18 @@ export const Button = ({ text, to, disabled }: ButtonProps) => {
 const ButtonStyle = styled.a<{ $disabled?: boolean }>`
   text-align: center;
   display: inline-block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.65rem;
+  min-width: 110px;
   border-radius: 10rem;
   color: #fff;
   text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.15rem;
+  font-size: 12px;
+  letter-spacing: 1px;
   transition: all 0.3s;
-  min-width: 55px;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  white-space: nowrap;
 
   &:hover {
     cursor: ${(props) => (props.$disabled ? "default" : "pointer")};
