@@ -8,8 +8,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -52,11 +50,6 @@ const Home: NextPage = () => {
       <SectionWrapper id="projects">
         <HeaderWrapper>
           <Header>PROJECTS</Header>
-
-          <MoreInfoWrapper>
-            <FontAwesomeIcon icon={faCircleInfo} />
-            Tap a project to view the full details
-          </MoreInfoWrapper>
         </HeaderWrapper>
 
         <ProjectsWrapper>
@@ -65,7 +58,6 @@ const Home: NextPage = () => {
               <ProjectPreviewCard
                 type={x.type as ProjectType}
                 client={x.client}
-                current={x.current}
                 description={x.description}
                 name={x.name}
                 tools={x.tools}
@@ -99,20 +91,6 @@ const SectionWrapper = styled.div`
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-`;
-
-const MoreInfoWrapper = styled.div`
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-flow: wrap;
-  justify-content: center;
-  margin-left: auto;
-
-  svg {
-    width: 20px;
-    margin-right: 0.4rem;
-  }
 `;
 
 export const Header = styled.h2`

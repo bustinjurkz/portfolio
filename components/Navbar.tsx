@@ -65,11 +65,11 @@ const NavbarWrapper = styled.header`
     font-weight: 600;
     .link {
       font-size: large;
+      transition: 0.5s;
       &:hover,
       &:active,
       &:focus {
         cursor: pointer;
-        transform: scale(1.05);
         color: ${(props) => props.theme.greenSecondary};
       }
     }

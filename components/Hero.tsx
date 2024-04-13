@@ -1,10 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/legacy/image";
 import HeroImage from "../public/dustin_hero_background_3.jpg";
 import { gradualFade } from "../gradualFade";
 import { useEffect } from "react";
-import { motion } from "framer-motion";
 
 export const Hero = () => {
   useEffect(() => {
@@ -17,7 +16,7 @@ export const Hero = () => {
         <HeroGradientWrapper id="hero">
           <Image
             priority
-            className="dustin_hero"
+            className="dustin-hero"
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
@@ -50,12 +49,22 @@ export const Hero = () => {
   );
 };
 
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+`;
+
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   max-width: 1100px;
   margin-left: auto;
+  animation: ${fadeInAnimation} 1s ease-out;
   margin-right: auto;
   margin-bottom: 9rem;
 
@@ -79,11 +88,13 @@ const HeroTextSubtitle = styled.h2`
 `;
 
 const HeroGradientWrapper = styled.div`
+  width: 100%;
+
   mask-image: linear-gradient(to bottom, #ffffff 60%, transparent 90%);
+
   @media screen and (min-width: 768px) {
     mask-image: linear-gradient(to right, #ffffff 60%, transparent 100%);
   }
-  width: 100%;
 `;
 
 const HeroTextWrapper = styled.div`

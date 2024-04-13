@@ -46,35 +46,35 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               </ExpandButton>
             )}
 
-            <Link href={`/${props.slug}`} passHref legacyBehavior>
-              {props.name !== "Handits" ? (
-                <Image
-                  priority
-                  className="image"
-                  src={
-                    props.name === "Timber Industry Apps"
-                      ? "/genia-preview.png"
-                      : `/${props.name.toLowerCase()}-preview.png`
-                  }
-                  alt={`/${props.name.toLowerCase()}-preview`}
-                  aria-label="Planter Preview Image"
-                  width={1668}
-                  height={865}
-                  layout={"responsive"}
+            {props.name !== "Handits" ? (
+              <Image
+                onClick={(e: any) => handleExpand(e)}
+                priority
+                className="image"
+                src={
+                  props.name === "Timber Industry Apps"
+                    ? "/genia-preview.png"
+                    : `/${props.name.toLowerCase()}-preview.png`
+                }
+                alt={`/${props.name.toLowerCase()}-preview`}
+                aria-label="Planter Preview Image"
+                width={1668}
+                height={865}
+                layout={"responsive"}
+              />
+            ) : (
+              <VideoWrapper>
+                <iframe
+                  width="1668"
+                  height="865"
+                  src="https://www.youtube.com/embed/abJWSL5FRzs"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 />
-              ) : (
-                <VideoWrapper>
-                  <iframe
-                    width="1668"
-                    height="865"
-                    src="https://www.youtube.com/embed/abJWSL5FRzs"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                </VideoWrapper>
-              )}
-            </Link>
+              </VideoWrapper>
+            )}
+
             <CardHeaderWrapper>
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
@@ -164,6 +164,12 @@ const ProjectTitle = styled.h3`
 const CardContentsWrapper = styled.div`
   align-self: center;
   position: relative;
+
+  .image {
+    &:hover {
+      transform: scale(1.005);
+    }
+  }
 `;
 
 const VideoWrapper = styled.div`
