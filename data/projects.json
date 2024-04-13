@@ -17,7 +17,7 @@
         "azure",
         "mui"
       ],
-      "description": "Planter generates personalized gardening calendars for New Zealanders.  Users get tailored plans by location (microclimate) and season. They can add plants to a cart and access information on it's optimal growth. With access to a database of over 50 plants, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
+      "description": "Planter generates personalized gardening calendars for New Zealanders.  Users get tailored plans by location (microclimate) and season. With a database of over 50 plants, they can add their fruits and veggies to a cart and get information on optimizing growth.  Upon submission, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
       "liveURL": "https://planter.co.nz/"
     },
     {
@@ -37,7 +37,7 @@
         "openweather",
         "openstreetmaps"
       ],
-      "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
+      "description": "STELLARGAZE, my first Full Stack React web app, utilizes real-time data on moon phase, light pollution, and weather forecasts to rank a user's nearby public areas by it's stargazing visibility.",
       "liveURL": "https://stellargaze.com/"
     },
     {
@@ -57,34 +57,8 @@
         "sendgrid",
         "azure"
       ],
-      "description": "Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
+      "description": "Trelli, winner of the Genia Innovation Award, simplifies custom orders for trellis, gates, and panels. Users input dimensions and design preferences. Upon submission, the backend calculates pricing, generates spec sheets, and distributes PDFs via email to sales, manufacturing teams, and the customer.",
       "liveURL": "https://trelli.co.nz/"
-    },
-    {
-      "name": "Timber Industry Apps",
-      "type": "Full-Time Workplace",
-      "current": true,
-      "client": "Genia",
-      "slug": "genia",
-      "tools": [
-        "timbersmart",
-        "react",
-        "azure",
-        "typescript",
-        "prisma",
-        "mySQL",
-        "kubernetes",
-        "docker",
-        "redux",
-        "apollo",
-        "graphQL",
-        "styled-components",
-        "dotnet",
-        "sentry",
-        "jest",
-        "express"
-      ],
-      "description": "Genia has been in the timber industry since 1993 and I am proud to have helped modernize their logistics and business-processes, as well as spearhead their consumer/marketing endeavors.  Just three of the apps I've helped design and develop is estimated to save the company over $100,000 per year."
     },
     {
       "name": "Agora Mentoring",
@@ -105,7 +79,7 @@
         "styled-components",
         "mui"
       ],
-      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections."
+      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and education backgrounds. Mentees request mentors based on match ratings, supported by PostgreSQL, Prisma, Next.js, and data science tools. Upon acceptance, Google Meet links are automatically shared. I developed AGORA Mentoring myself, handling both front end and back end."
     },
     {
       "name": "Handits",
@@ -113,7 +87,7 @@
       "slug": "handits",
       "client": "Capstone - McMaster University",
       "tools": ["unity", "c#"],
-      "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
+      "description": "Handits is a 4-player puzzle/platformer game developed as a final-year Computer Science capstone project at McMaster University. Using Unity and C# scripts, players control bandits with versatile hands to explore and solve puzzles. Features include navigating dangerous terrain using grabbable objects and weapons. The development process involved game design principles, continuous playtesting, and efficient project management with Scrum methodology."
     }
   ]
 }

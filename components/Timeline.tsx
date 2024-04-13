@@ -59,9 +59,10 @@ const TimelineWrapper = styled.div`
   }
   .vertical-timeline-element-content {
     background: ${(props) => props.theme.blue};
+    box-shadow: 0px 4px 5px 0px #cecece;
   }
   .vertical-timeline-element-content-arrow {
-    border-right-color: ${(props) => props.theme.blue};
+    border-right-color: #c6c9cf;
   }
   .vertical-timeline-element:first-child .vertical-timeline-element-date {
     font-weight: 600;

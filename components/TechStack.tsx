@@ -40,7 +40,7 @@ export const TechStack = () => {
 const TechStackWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 3.25rem;
+  margin-left: 2rem;
   margin-right: 1.5rem;
   margin-top: 2rem;
   gap: 2rem;

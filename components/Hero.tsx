@@ -39,10 +39,10 @@ export const Hero = () => {
               target={"_blank"}
               rel="noreferrer"
             >
-              full-stack web developer
+              Full Stack Web Developer
             </StyledLink>{" "}
-            who loves cool design and offbeat ideas. I am available for
-            full-time & freelance projects.
+            who loves cool design and offbeat ideas. I am available for full
+            time & freelance projects.
           </HeroTextSubtitle>
         </HeroTextWrapper>
       </HeroWrapper>
@@ -100,4 +100,9 @@ const StyledLink = styled.a`
   color: ${(props) => props.theme.greenSecondary};
   font-weight: 600;
   position: relative;
+  transition: 0.5s;
+
+  &:hover {
+    color: ${(props) => props.theme.greenPrimary};
+  }
 `;

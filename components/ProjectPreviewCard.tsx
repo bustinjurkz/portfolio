@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./Button";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import Swal from "sweetalert2";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { ProjectType } from "../pages";
 import { styled } from "styled-components";
+import { faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface ProjectPreviewCardProps {
   name: string;
@@ -22,57 +25,83 @@ export interface ProjectPreviewCardProps {
 export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   ...props
 }) => {
+  const [expandPreview, setExpandPreview] = useState("");
+
+  const handleExpand = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    setExpandPreview(`/${props.name.toLowerCase()}-preview.png`);
+  };
+
   return (
-    <Link href={`/${props.slug}`} passHref legacyBehavior>
-      <ProjectCardWrapper>
-        <CardContentsWrapper>
-          <Link href={`/${props.slug}`} passHref legacyBehavior>
-            <>
-              {props.name !== "Handits" ? (
-                <Image
-                  priority
-                  className="image"
-                  src={
-                    props.name === "Timber Industry Apps"
-                      ? "/genia-preview.png"
-                      : `/${props.name.toLowerCase()}-preview.png`
-                  }
-                  alt={`/${props.name.toLowerCase()}-preview`}
-                  aria-label="Planter Preview Image"
-                  width={1668}
-                  height={865}
-                  layout={"responsive"}
+    <>
+      <Link href={`/${props.slug}`} passHref legacyBehavior>
+        <ProjectCardWrapper>
+          <CardContentsWrapper>
+            <Link href={`/${props.slug}`} passHref legacyBehavior>
+              <>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlassPlus}
+                  className="expand-image"
+                  onClick={(e: any) => handleExpand(e)}
                 />
-              ) : (
-                <VideoWrapper>
-                  <iframe
-                    width="1668"
-                    height="865"
-                    src="https://www.youtube.com/embed/abJWSL5FRzs"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+                {props.name !== "Handits" ? (
+                  <Image
+                    priority
+                    className="image"
+                    src={
+                      props.name === "Timber Industry Apps"
+                        ? "/genia-preview.png"
+                        : `/${props.name.toLowerCase()}-preview.png`
+                    }
+                    alt={`/${props.name.toLowerCase()}-preview`}
+                    aria-label="Planter Preview Image"
+                    width={1668}
+                    height={865}
+                    layout={"responsive"}
                   />
-                </VideoWrapper>
-              )}
-            </>
-          </Link>
-          <CardHeaderWrapper>
-            <ProjectTitle>{props.name}</ProjectTitle>
-            <Links>
-              {props.repo && <Button text={"View Repo"} to={props.repo} />}
-              {props.type && <Button text={"Visit Site"} to={props.liveURL} />}
-            </Links>
-          </CardHeaderWrapper>
-          <DescriptionWrapper>{props.description}</DescriptionWrapper>
-        </CardContentsWrapper>
-      </ProjectCardWrapper>
-    </Link>
+                ) : (
+                  <VideoWrapper>
+                    <iframe
+                      width="1668"
+                      height="865"
+                      src="https://www.youtube.com/embed/abJWSL5FRzs"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    />
+                  </VideoWrapper>
+                )}
+              </>
+            </Link>
+            <CardHeaderWrapper>
+              <ProjectTitle>{props.name}</ProjectTitle>
+              <Links>
+                {props.repo && <Button text={"View Repo"} to={props.repo} />}
+                {props.type && (
+                  <Button text={"Visit Site"} to={props.liveURL} />
+                )}
+              </Links>
+            </CardHeaderWrapper>
+            <DescriptionWrapper>{props.description}</DescriptionWrapper>
+          </CardContentsWrapper>
+        </ProjectCardWrapper>
+      </Link>
+      <Lightbox
+        open={!!expandPreview}
+        close={() => setExpandPreview("")}
+        slides={[{ src: expandPreview, width: 1000 }]}
+        carousel={{ finite: true }}
+        styles={{ container: { backgroundColor: "rgb(0 0 0 / 80%)" } }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{ buttonNext: () => null, buttonPrev: () => null }}
+      />
+    </>
   );
 };
 
 const ProjectCardWrapper = styled.div`
-  padding: 1.5rem;
+  padding: 2.15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,7 +112,7 @@ const ProjectCardWrapper = styled.div`
   max-width: 500px;
 
   &:hover {
-    box-shadow: 2px 5px 9px 0px #bebebe;
+    box-shadow: 2px 5px 9px 0px #a5a5a5;
   }
 `;
 
@@ -128,10 +157,14 @@ const ProjectTitle = styled.h3`
   text-transform: uppercase;
   color: ${(props) => props.theme.greenPrimary};
   margin: 0;
+  white-space: nowrap;
 `;
 
 const CardContentsWrapper = styled.div`
   align-self: center;
+  .expand-image {
+    width: 20px;
+  }
 `;
 
 const VideoWrapper = styled.div`

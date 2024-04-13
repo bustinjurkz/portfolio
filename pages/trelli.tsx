@@ -71,7 +71,7 @@ const Trelli = () => {
                 <div className="notes">
                   <div className="note-container">
                     <div className="label">ROLE</div>
-                    <div className="role">Full-Stack</div>
+                    <div className="role">Full Stack</div>
                     <div className="role">Some Design</div>
                   </div>
                   <div className="note-container">

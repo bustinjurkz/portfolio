@@ -56,7 +56,7 @@ const LogosWrapper = styled.div`
 
     > * {
       color: ${(props) => props.theme.greenPrimary};
-      width: 50px;
+      width: 40px;
     }
   }
 `;
@@ -68,4 +68,5 @@ const ContactMessage = styled.span`
 const ContactWrapper = styled.div`
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  margin-top: 2rem;
 `;

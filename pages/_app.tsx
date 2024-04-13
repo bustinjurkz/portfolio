@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { motion, AnimatePresence } from "framer-motion";
 import smoothscroll from "smoothscroll-polyfill";
+import Head from "next/head";
 declare global {
   interface Window {
     __forceSmoothScrollPolyfill__: any;
@@ -26,43 +27,48 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <ParallaxProvider scrollContainer={container}>
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <Layout>
-          <AnimatePresence
-            initial={false}
-            mode="wait"
-            onExitComplete={() => {
-              container.scrollTop = 0;
-            }}
-          >
-            <motion.div
-              key={router.route}
-              initial="pageInitial"
-              animate="pageAnimate"
-              transition={{ duration: 0.5 }}
-              exit="pageExit"
-              variants={{
-                pageInitial: {
-                  opacity: 0,
-                  x: 250,
-                },
-                pageAnimate: {
-                  opacity: 1,
-                  x: 0,
-                },
-                pageExit: {
-                  opacity: 0,
-                  x: -250,
-                },
+    <>
+      <Head>
+        <title>DJ Portfolio</title>
+      </Head>
+      <ParallaxProvider scrollContainer={container}>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <Layout>
+            <AnimatePresence
+              initial={false}
+              mode="wait"
+              onExitComplete={() => {
+                container.scrollTop = 0;
               }}
             >
-              <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
-        </Layout>
-      </ThemeProvider>
-    </ParallaxProvider>
+              <motion.div
+                key={router.route}
+                initial="pageInitial"
+                animate="pageAnimate"
+                transition={{ duration: 0.5 }}
+                exit="pageExit"
+                variants={{
+                  pageInitial: {
+                    opacity: 0,
+                    x: 250,
+                  },
+                  pageAnimate: {
+                    opacity: 1,
+                    x: 0,
+                  },
+                  pageExit: {
+                    opacity: 0,
+                    x: -250,
+                  },
+                }}
+              >
+                <Component {...pageProps} />
+              </motion.div>
+            </AnimatePresence>
+          </Layout>
+        </ThemeProvider>
+      </ParallaxProvider>
+    </>
   );
 }

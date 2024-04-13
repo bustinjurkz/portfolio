@@ -140,11 +140,10 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const ProjectsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  place-content: center;
+  grid-gap: 1rem;
   background: ${(props) => props.theme.pink};
-  justify-content: center;
   padding-bottom: 2.5rem;
 `;
