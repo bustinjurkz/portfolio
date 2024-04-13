@@ -167,6 +167,7 @@ const CardContentsWrapper = styled.div`
 
   .image {
     &:hover {
+      cursor: zoom-in;
       transform: scale(1.005);
     }
   }
@@ -202,11 +203,10 @@ const ExpandButton = styled.button`
   height: 30px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: zoom-in;
 
   &:hover > .expand-icon {
     color: ${(props) => props.theme.red};
-    transform: scale(1.075);
   }
 
   &:focus {

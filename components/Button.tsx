@@ -9,21 +9,13 @@ export interface ButtonProps {
 
 export const Button = ({ text, to, disabled }: ButtonProps) => {
   return (
-    <ButtonStyle
-      href={to}
-      role="button"
-      target="_blank"
-      style={{
-        cursor: disabled ? "unset" : "pointer",
-      }}
-    >
+    <ButtonStyle href={to} role="button" target="_blank" $disabled={disabled}>
       {text}
     </ButtonStyle>
   );
 };
 
-const ButtonStyle = styled.a`
-  cursor: pointer;
+const ButtonStyle = styled.a<{ $disabled?: boolean }>`
   text-align: center;
   display: inline-block;
   padding: 0.5rem 0.75rem;
@@ -37,6 +29,10 @@ const ButtonStyle = styled.a`
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  &:hover {
+    cursor: ${(props) => (props.$disabled ? "default" : "pointer")};
+  }
 
   &:before {
     content: "";

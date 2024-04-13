@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
+import { Button } from "../components/Button";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -50,6 +51,10 @@ const Home: NextPage = () => {
       <SectionWrapper id="projects">
         <HeaderWrapper>
           <Header>PROJECTS</Header>
+
+          <MoreInfoWrapper>
+            Tap <Button text="View Info" disabled /> for more project details
+          </MoreInfoWrapper>
         </HeaderWrapper>
 
         <ProjectsWrapper>
@@ -91,6 +96,24 @@ const SectionWrapper = styled.div`
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+const MoreInfoWrapper = styled.div`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-left: auto;
+
+  a {
+    margin: 0 0.5rem;
+  }
+
+  svg {
+    width: 20px;
+    margin-right: 0.4rem;
+  }
 `;
 
 export const Header = styled.h2`

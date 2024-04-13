@@ -64,7 +64,7 @@ const HeroWrapper = styled.div`
   margin-top: 2rem;
   max-width: 1100px;
   margin-left: auto;
-  animation: ${fadeInAnimation} 1s ease-out;
+  animation: ${fadeInAnimation} 1.25s ease-out;
   margin-right: auto;
   margin-bottom: 9rem;
 
