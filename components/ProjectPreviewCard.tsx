@@ -79,9 +79,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
                 {props.liveURL && (
-                  <Button text={"Visit Site"} to={props.liveURL} withinLink />
+                  <Button text={"Visit Site"} to={props.liveURL} />
                 )}
-                <Button text={"Learn More"} to={`/${props.slug}`} />
+                <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
               </Links>
             </CardHeaderWrapper>
             <DescriptionWrapper>{props.description}</DescriptionWrapper>
@@ -217,5 +217,56 @@ const ExpandButton = styled.button`
     width: 20px;
     height: 20px;
     z-index: 2;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-align: center;
+  display: inline-block;
+  padding: 0.4rem 0.65rem;
+  min-width: 110px;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  white-space: nowrap;
+
+  &:hover {
+    cursor: "pointer";
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: ${(props) => props.theme.greenSecondary};
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${(props) => props.theme.greenPrimary};
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:hover {
+    color: #fff;
+  }
+  &:hover:before {
+    width: 100%;
   }
 `;

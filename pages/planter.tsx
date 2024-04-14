@@ -9,6 +9,8 @@ import {
   PageDetailsStyle,
   SpecialListStyle,
 } from "../styles/PageDetailsStyle";
+import styled from "styled-components";
+import { StyledLink } from "../components/ProjectPreviewCard";
 
 const Planter = () => {
   return (
@@ -165,9 +167,9 @@ const Planter = () => {
         </section>
         <section className="actions">
           <div className="next">
-            <Link href="/stellargaze" passHref>
-              <Button text={"NEXT PROJECT"} />
-            </Link>
+            <StyledLink href="/stellargaze" passHref>
+              NEXT PROJECT
+            </StyledLink>
           </div>
         </section>
       </div>

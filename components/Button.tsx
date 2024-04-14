@@ -5,10 +5,9 @@ export interface ButtonProps {
   text?: string;
   to?: string;
   disabled?: boolean;
-  withinLink?: boolean;
 }
 
-export const Button = ({ text, to, disabled, withinLink }: ButtonProps) => {
+export const Button = ({ text, to, disabled }: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -23,7 +22,7 @@ export const Button = ({ text, to, disabled, withinLink }: ButtonProps) => {
       target="_blank"
       href={to}
       $disabled={disabled}
-      onClick={withinLink ? handleClick : undefined}
+      onClick={handleClick}
     >
       {text}
     </ButtonStyle>

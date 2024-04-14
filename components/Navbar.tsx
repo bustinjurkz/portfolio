@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   return (
     <NavbarWrapper>
       <LogoWrapper>
-        <Link href="/" passHref legacyBehavior>
+        <Link href="/" passHref>
           <Image
             src={Logo}
             alt="Logo"
