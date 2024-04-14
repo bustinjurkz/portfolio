@@ -1,40 +1,30 @@
 import styled from "styled-components";
 
 export const PageDetailsStyle = styled.div`
-  .parallax-body-container {
-    height: 70vh;
-  }
-  .parallax-container {
-    height: 100vh;
-    margin-bottom: 6rem;
-    @media screen and (min-width: 420px) {
-      margin-bottom: 9rem;
-    }
-    .name-container {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  .name-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-      .name {
-        font-size: 2.3rem;
-        text-align: center;
-        @media screen and (min-width: 420px) {
-          font-size: 3.2rem;
-        }
-        @media screen and (min-width: 600px) {
-          font-size: 4.4rem;
-        }
-        @media screen and (min-width: 730px) {
-          font-size: 5rem;
-        }
-        background-color: ${(props) => props.theme.darkBlue};
-        padding: 20px;
-        border-radius: 20px;
-        color: ${(props) => props.theme.white};
+    .name {
+      font-size: 2.3rem;
+      text-align: center;
+      @media screen and (min-width: 420px) {
+        font-size: 3.2rem;
       }
+      @media screen and (min-width: 600px) {
+        font-size: 4.4rem;
+      }
+      @media screen and (min-width: 730px) {
+        font-size: 5rem;
+      }
+      background-color: ${(props) => props.theme.darkBlue};
+      padding: 20px;
+      border-radius: 20px;
+      color: ${(props) => props.theme.white};
     }
   }
 

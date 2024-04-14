@@ -79,7 +79,7 @@
         "styled-components",
         "mui"
       ],
-      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and education backgrounds. Mentees request mentors based on match ratings, supported by PostgreSQL, Prisma, Next.js, and data science tools. Upon acceptance, Google Meet links are automatically shared. I developed AGORA Mentoring myself, handling both front end and back end."
+      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and education backgrounds. Mentees request mentors based on match ratings, supported by PostgreSQL, Prisma, Next.js, and data science tools. Upon acceptance, Google Meet links are automatically shared. I developed AGORA Mentoring myself, handling both frontend and backend."
     },
     {
       "name": "Handits",
