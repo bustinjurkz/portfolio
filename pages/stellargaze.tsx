@@ -4,21 +4,11 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import MainApp from "../public/stellargaze/main-app.png";
 import Data from "../public/stellargaze/data.jpg";
-import { handleScroll } from ".";
-import {
-  ArrowStyle,
-  ListStyle,
-  PageDetailsStyle,
-  SpecialListStyle,
-} from "../styles/PageDetailsStyle";
+import { ProjectDetailsWrapper } from "../styles/PageDetailsStyle";
 
 const Stellargaze = () => {
   return (
-    <PageDetailsStyle>
-      <div className="name-container">
-        <h1 className="name">STELLARGAZE</h1>
-        <ArrowStyle onClick={() => handleScroll("start")} />
-      </div>
+    <ProjectDetailsWrapper>
       <div className="project-container" id="start">
         <section className="intro">
           <h1 className="header">ABOUT THE PROJECT</h1>
@@ -218,7 +208,7 @@ const Stellargaze = () => {
           </div>
         </section>
       </div>
-    </PageDetailsStyle>
+    </ProjectDetailsWrapper>
   );
 };
 

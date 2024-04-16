@@ -5,7 +5,7 @@ import Link from "next/link";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { ProjectType } from "../pages";
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 import { faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -220,7 +220,7 @@ const ExpandButton = styled.button`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
   text-align: center;
   display: inline-block;
   padding: 0.4rem 0.65rem;
@@ -235,6 +235,14 @@ export const StyledLink = styled(Link)`
   overflow: hidden;
   z-index: 1;
   white-space: nowrap;
+
+  ${(props) =>
+    props.$isLarge &&
+    css`
+      padding: 0.75rem 1rem;
+      font-size: 14px;
+      min-width: 180px;
+    `}
 
   &:hover {
     cursor: "pointer";

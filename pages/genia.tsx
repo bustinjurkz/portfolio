@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { gradualFade } from "../gradualFade";
+import React from "react";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { BounceIn } from "../components/BounceIn";
 import Image from "next/legacy/image";
 import Speaking from "../public/genia/speaking.jpg";
 import FP_Clipboard from "../public/genia/factoryplanner-clipboard.png";
@@ -19,74 +16,61 @@ import { handleScroll } from ".";
 import {
   ArrowStyle,
   ListStyle,
-  PageDetailsStyle,
+  PageDetailsWrapper,
   SpecialListStyle,
-} from "../styles/PageDetailsStyle";
-import { Fade } from "react-awesome-reveal";
+} from "../styles/PageDetailsWrapper";
 
 const Genia = () => {
-  useEffect(() => {
-    gradualFade("banner", true);
-  }, []);
-
   return (
-    <PageDetailsStyle>
-      <ParallaxBanner
-        layers={[{ image: "genia/header.jpg", speed: -10 }]}
-        className="parallax-container"
-        id="banner"
-      >
-        <div className="name-container">
-          <h1 className="name">GENIA</h1>
-          <ArrowStyle onClick={() => handleScroll("start")} />
-        </div>
-      </ParallaxBanner>
+    <PageDetailsWrapper>
+      <div className="name-container">
+        <h1 className="name">GENIA</h1>
+        <ArrowStyle onClick={() => handleScroll("start")} />
+      </div>
       <div className="project-container" id="start">
-        <Fade fraction={0} triggerOnce>
-          <section className="intro">
-            <h1 className="header">ABOUT MY TIME HERE</h1>
-            <div className="snapshot">
-              <div className="tagline">
-                I helped modernize Genia&apos;s business processes and
-                spearheaded their consumer apps.
-              </div>
-              <div className="container">
-                <div className="description-container">
-                  <div className="description">
-                    After graduating from my second bachelors, I was tired of
-                    school and keen to enter my new industry as a Full Stack Web
-                    Developer. While I had unquestionable self-belief that I
-                    could offer something valuable to any organization that
-                    would give me a chance, it seemed on paper I was a
-                    dime-a-dozen in the Toronto area.
-                    <p>
-                      A family-run lumber company in Motueka (a town of 4000 in
-                      the rugged South Island of New Zealand), gave me that
-                      chance. I will be forever grateful for it.
-                    </p>
-                  </div>
-                  <div className="visit">
-                    <Button
-                      text={"VISIT THE WEBSITE"}
-                      to={"https://www.genia.co.nz/"}
-                    />
-                  </div>
+        <section className="intro">
+          <h1 className="header">ABOUT MY TIME HERE</h1>
+          <div className="snapshot">
+            <div className="tagline">
+              I helped modernize Genia&apos;s business processes and spearheaded
+              their consumer apps.
+            </div>
+            <div className="container">
+              <div className="description-container">
+                <div className="description">
+                  After graduating from my second bachelors, I was tired of
+                  school and keen to enter my new industry as a Full Stack Web
+                  Developer. While I had unquestionable self-belief that I could
+                  offer something valuable to any organization that would give
+                  me a chance, it seemed on paper I was a dime-a-dozen in the
+                  Toronto area.
+                  <p>
+                    A family-run lumber company in Motueka (a town of 4000 in
+                    the rugged South Island of New Zealand), gave me that
+                    chance. I will be forever grateful for it.
+                  </p>
                 </div>
-                <div className="notes">
-                  <div className="note-container">
-                    <div className="label">ROLE</div>
-                    <div className="role">Full Stack Web Developer</div>
-                  </div>
+                <div className="visit">
+                  <Button
+                    text={"VISIT THE WEBSITE"}
+                    to={"https://www.genia.co.nz/"}
+                  />
+                </div>
+              </div>
+              <div className="notes">
+                <div className="note-container">
+                  <div className="label">ROLE</div>
+                  <div className="role">Full Stack Web Developer</div>
+                </div>
 
-                  <div className="note-container">
-                    <div className="label date">DATE</div>
-                    <div className="date">Dec 2019 - Current</div>
-                  </div>
+                <div className="note-container">
+                  <div className="label date">DATE</div>
+                  <div className="date">Dec 2019 - Current</div>
                 </div>
               </div>
             </div>
-          </section>
-        </Fade>
+          </div>
+        </section>
         <section>
           <div className="experience">
             <p>
@@ -110,285 +94,263 @@ const Genia = () => {
           </div>
         </section>
 
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              alt="printer-app"
-              priority
-              className="image"
-              src={UNI_PRINT}
-              aria-label="Universal Print Main"
-              width={935}
-              height={643}
-              layout={"responsive"}
-            />
-            <div className="label">
-              This app simplifies the labelling process in real-time for the
-              workers who stack timber on bales and attach a product label.
-              Previously they had to tediously write out the label manually.{" "}
-            </div>
+        <div className="image-container">
+          <Image
+            alt="printer-app"
+            priority
+            className="image"
+            src={UNI_PRINT}
+            aria-label="Universal Print Main"
+            width={935}
+            height={643}
+            layout={"responsive"}
+          />
+          <div className="label">
+            This app simplifies the labelling process in real-time for the
+            workers who stack timber on bales and attach a product label.
+            Previously they had to tediously write out the label manually.{" "}
           </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container runs">
-            <Image
-              priority
-              src={TS_Run}
-              alt="run-section"
-              aria-label="TimberSmart Runner Run Section"
-              width={302}
-              height={511}
-              layout={"responsive"}
-            />
-            <div className="label">
-              This app helps the admin staff integrate with the main timber
-              database software (TimberSmart). I was personally involved with
-              the wire-framing and UX research for this app from the start and
-              developed a significant portion of it.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container kiln">
-            <Image
-              priority
-              src={TS_Kiln}
-              alt="kiln-section"
-              aria-label="TimberSmart Runner Kiln Section"
-              width={301}
-              height={509}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Kiln Operators must digitally sign for timber compliance reasons.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={PS_Print}
-              alt="print-section"
-              aria-label="Profile Sheets Print"
-              width={948}
-              height={880}
-              layout={"responsive"}
-            />
-            <div className="label">
-              The section in the app Profile Sheets for printing product specs.
-              I was recently involved in refactoring the entire app and giving
-              it a UI overhaul.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={PS_Main}
-              alt="profile-sheets"
-              aria-label="Profile Sheets Main"
-              width={1905}
-              height={904}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Profile Sheets is where admin staff and remote workers who
-              authenticate can create and print product specs.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              alt="clipboard"
-              src={FP_Clipboard}
-              aria-label="FP Clipboard"
-              width={1011}
-              height={898}
-              layout={"responsive"}
-            />
-            <div className="label">
-              My main contribution to the beastly Factory Planner app was to
-              implement a clipboard system. This allows a given user to store
-              useful processes/items for another session.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={FP_Main}
-              aria-label="FP"
-              alt="factory-planner"
-              width={1912}
-              height={879}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Sample section of our Factory Planner app. This replaces a tedious
-              whiteboard system.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container ad">
-            <Image
-              priority
-              className="image"
-              src={Promo}
-              aria-label="Promo Image"
-              width={602}
-              alt="genia-promo"
-              height={418}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Fellow Canadian Alana and I pretending that we are architects for
-              an internet ad.
-            </div>
-          </div>
-        </BounceIn>
+        </div>
 
-        <BounceIn>
-          <div className="image-container speak">
-            <Image
-              priority
-              className="image"
-              src={Speaking}
-              aria-label="Promo Image"
-              width={1100}
-              alt="dustin-speaking-genia"
-              height={1179}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Formerly MLC Group, Genia asked me to speak at their new brand
-              launch - with 4 minutes notice in front of 150+. I was happy to be
-              the token Canadian.
-            </div>
+        <div className="image-container runs">
+          <Image
+            priority
+            src={TS_Run}
+            alt="run-section"
+            aria-label="TimberSmart Runner Run Section"
+            width={302}
+            height={511}
+            layout={"responsive"}
+          />
+          <div className="label">
+            This app helps the admin staff integrate with the main timber
+            database software (TimberSmart). I was personally involved with the
+            wire-framing and UX research for this app from the start and
+            developed a significant portion of it.
           </div>
-        </BounceIn>
+        </div>
 
-        <Fade fraction={0} triggerOnce>
-          <section className="intro">
-            <h1 className="header">APP HIGHLIGHTS</h1>
-            <span>
-              Below are some of the apps I have helped create or made
-              significant contributions to:
-            </span>
-            <SpecialListStyle>
-              <b>TS-Runner</b> - This app helps automate the repetitive and
-              tedious tasks surrounding the administrative work required in
-              TimberSmart (a prominent lumber database) by office staff. This
-              app aids in the streamlining of 4 main timber industry related
-              processes: the Opti, Filleting, Kiln drying, and stock-take. I was
-              involved in the initial wire-framing and a substantial amount of
-              the development.
-            </SpecialListStyle>
+        <div className="image-container kiln">
+          <Image
+            priority
+            src={TS_Kiln}
+            alt="kiln-section"
+            aria-label="TimberSmart Runner Kiln Section"
+            width={301}
+            height={509}
+            layout={"responsive"}
+          />
+          <div className="label">
+            Kiln Operators must digitally sign for timber compliance reasons.
+          </div>
+        </div>
+        <div className="image-container">
+          <Image
+            priority
+            className="image"
+            src={PS_Print}
+            alt="print-section"
+            aria-label="Profile Sheets Print"
+            width={948}
+            height={880}
+            layout={"responsive"}
+          />
+          <div className="label">
+            The section in the app Profile Sheets for printing product specs. I
+            was recently involved in refactoring the entire app and giving it a
+            UI overhaul.
+          </div>
+        </div>
+        <div className="image-container">
+          <Image
+            priority
+            className="image"
+            src={PS_Main}
+            alt="profile-sheets"
+            aria-label="Profile Sheets Main"
+            width={1905}
+            height={904}
+            layout={"responsive"}
+          />
+          <div className="label">
+            Profile Sheets is where admin staff and remote workers who
+            authenticate can create and print product specs.
+          </div>
+        </div>
+        <div className="image-container">
+          <Image
+            priority
+            className="image"
+            alt="clipboard"
+            src={FP_Clipboard}
+            aria-label="FP Clipboard"
+            width={1011}
+            height={898}
+            layout={"responsive"}
+          />
+          <div className="label">
+            My main contribution to the beastly Factory Planner app was to
+            implement a clipboard system. This allows a given user to store
+            useful processes/items for another session.
+          </div>
+        </div>
+        <div className="image-container">
+          <Image
+            priority
+            className="image"
+            src={FP_Main}
+            aria-label="FP"
+            alt="factory-planner"
+            width={1912}
+            height={879}
+            layout={"responsive"}
+          />
+          <div className="label">
+            Sample section of our Factory Planner app. This replaces a tedious
+            whiteboard system.
+          </div>
+        </div>
+        <div className="image-container ad">
+          <Image
+            priority
+            className="image"
+            src={Promo}
+            aria-label="Promo Image"
+            width={602}
+            alt="genia-promo"
+            height={418}
+            layout={"responsive"}
+          />
+          <div className="label">
+            Fellow Canadian Alana and I pretending that we are architects for an
+            internet ad.
+          </div>
+        </div>
 
-            <SpecialListStyle>
-              <b>Transit Tracker</b> - Helps automate the inventory actions
-              required when transitioning transfers of stock between locations.
-              Operators use the scanning devices to create and send stock
-              transfers; admin staff receive the transfers into their
-              destination and can edit them if required.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Genia API</b> - This api ties everything together. More
-              technically, it is a federated GraphQL microservice architecture.
-              I have made changes to key microservices for new features. Thomas
-              was the genius behind it.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>TimberSmart Addons</b> - Reduces the manual labour involved in
-              receipting incoming inventory. Delivery dockets sent from
-              suppliers are automatically consumed into the application. Factory
-              staff scan in the physical packs that arrive into the factory,
-              then the app delivers the information to TimberSmart without
-              manual intervention. In the case that there are errors, e.g. a
-              pack number not in the system, then the user can provide the
-              required missing information to the delivery documents.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Profile Sheets</b> - This app allows admin staff to view and
-              generate a spec sheet for a chosen customer, unit number, and
-              product, which they can then print out.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Factory-Planner</b> - Genia&apos;s custom software for planning
-              operations in the factory. This is done primarily with the concept
-              of <b>resources</b>, <b>items</b>, and <b>chaining</b>. The app
-              can be used to view and modify items, configure resources, and
-              view recent changes on the board. This app was already in
-              development when I started. I personally was involved in making
-              key improvements to the app, such as the ability for a specific
-              user to copy/paste items to a <b>clipboard</b> which helps the UX
-              and allows them to store useful processes/items for another
-              session.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Universal Print</b> - The two main portions of the app that I
-              wire-framed and helped develop from the ground-up is used for
-              real-time pack label printing during a shift. Users are able to
-              enter a product code or scan the barcode of a pack in realtime.
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Planter</b> - The gardening helper as{" "}
-              <Link href="/planter">mentioned here.</Link>
-            </SpecialListStyle>
-            <SpecialListStyle>
-              <b>Trelli</b> - The trellis/panel/gate customizer as{" "}
-              <Link href="/trelli">mentioned here.</Link>
-            </SpecialListStyle>
-          </section>
-        </Fade>
-        <Fade fraction={0} triggerOnce>
-          <section className="learnings">
-            <h1 className="header">WHAT I LEARNED</h1>
-            <ListStyle>
-              <ul>
-                <li>
-                  While I am technically a Full Stack Developer, what really
-                  separates me is my attention to detail with the front-facing
-                  portion of our apps. I can be quite obsessed with whitespace
-                  and the <u>vibe</u> of the app perhaps a bit more than I
-                  should be
-                </li>
-                <li>
-                  The importance of writing well-defined user-stories so that
-                  scope-creep, while tempting, does not happen
-                </li>
-                <li>
-                  Scoring dev tickets with story-points as a team can be a fun
-                  way to estimate the size of a sprint
-                </li>
-                <li>
-                  Sprint retrospectives should be fun and provide a way to share
-                  development learnings across the wider team, e.g.{" "}
-                  <b>gotchas</b> in services like the Shopify API
-                </li>
-                <li>
-                  If I ever run a software team or business in the future, I
-                  will use a lot of ideas on employee satisfaction from Genia.
-                  They have done an amazing job expanding to a medium-sized
-                  company while keeping the vibe of a small-town family-run
-                  company that takes special care of individual employees
-                </li>
-                <li>
-                  Year-end holiday gifts are taken very seriously in New Zealand
-                </li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
+        <div className="image-container speak">
+          <Image
+            priority
+            className="image"
+            src={Speaking}
+            aria-label="Promo Image"
+            width={1100}
+            alt="dustin-speaking-genia"
+            height={1179}
+            layout={"responsive"}
+          />
+          <div className="label">
+            Formerly MLC Group, Genia asked me to speak at their new brand
+            launch - with 4 minutes notice in front of 150+. I was happy to be
+            the token Canadian.
+          </div>
+        </div>
+
+        <section className="intro">
+          <h1 className="header">APP HIGHLIGHTS</h1>
+          <span>
+            Below are some of the apps I have helped create or made significant
+            contributions to:
+          </span>
+          <SpecialListStyle>
+            <b>TS-Runner</b> - This app helps automate the repetitive and
+            tedious tasks surrounding the administrative work required in
+            TimberSmart (a prominent lumber database) by office staff. This app
+            aids in the streamlining of 4 main timber industry related
+            processes: the Opti, Filleting, Kiln drying, and stock-take. I was
+            involved in the initial wire-framing and a substantial amount of the
+            development.
+          </SpecialListStyle>
+
+          <SpecialListStyle>
+            <b>Transit Tracker</b> - Helps automate the inventory actions
+            required when transitioning transfers of stock between locations.
+            Operators use the scanning devices to create and send stock
+            transfers; admin staff receive the transfers into their destination
+            and can edit them if required.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Genia API</b> - This api ties everything together. More
+            technically, it is a federated GraphQL microservice architecture. I
+            have made changes to key microservices for new features. Thomas was
+            the genius behind it.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>TimberSmart Addons</b> - Reduces the manual labour involved in
+            receipting incoming inventory. Delivery dockets sent from suppliers
+            are automatically consumed into the application. Factory staff scan
+            in the physical packs that arrive into the factory, then the app
+            delivers the information to TimberSmart without manual intervention.
+            In the case that there are errors, e.g. a pack number not in the
+            system, then the user can provide the required missing information
+            to the delivery documents.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Profile Sheets</b> - This app allows admin staff to view and
+            generate a spec sheet for a chosen customer, unit number, and
+            product, which they can then print out.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Factory-Planner</b> - Genia&apos;s custom software for planning
+            operations in the factory. This is done primarily with the concept
+            of <b>resources</b>, <b>items</b>, and <b>chaining</b>. The app can
+            be used to view and modify items, configure resources, and view
+            recent changes on the board. This app was already in development
+            when I started. I personally was involved in making key improvements
+            to the app, such as the ability for a specific user to copy/paste
+            items to a <b>clipboard</b> which helps the UX and allows them to
+            store useful processes/items for another session.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Universal Print</b> - The two main portions of the app that I
+            wire-framed and helped develop from the ground-up is used for
+            real-time pack label printing during a shift. Users are able to
+            enter a product code or scan the barcode of a pack in realtime.
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Planter</b> - The gardening helper as{" "}
+            <Link href="/planter">mentioned here.</Link>
+          </SpecialListStyle>
+          <SpecialListStyle>
+            <b>Trelli</b> - The trellis/panel/gate customizer as{" "}
+            <Link href="/trelli">mentioned here.</Link>
+          </SpecialListStyle>
+        </section>
+        <section className="learnings">
+          <h1 className="header">WHAT I LEARNED</h1>
+          <ListStyle>
+            <ul>
+              <li>
+                While I am technically a Full Stack Developer, what really
+                separates me is my attention to detail with the front-facing
+                portion of our apps. I can be quite obsessed with whitespace and
+                the <u>vibe</u> of the app perhaps a bit more than I should be
+              </li>
+              <li>
+                The importance of writing well-defined user-stories so that
+                scope-creep, while tempting, does not happen
+              </li>
+              <li>
+                Scoring dev tickets with story-points as a team can be a fun way
+                to estimate the size of a sprint
+              </li>
+              <li>
+                Sprint retrospectives should be fun and provide a way to share
+                development learnings across the wider team, e.g. <b>gotchas</b>{" "}
+                in services like the Shopify API
+              </li>
+              <li>
+                If I ever run a software team or business in the future, I will
+                use a lot of ideas on employee satisfaction from Genia. They
+                have done an amazing job expanding to a medium-sized company
+                while keeping the vibe of a small-town family-run company that
+                takes special care of individual employees
+              </li>
+              <li>
+                Year-end holiday gifts are taken very seriously in New Zealand
+              </li>
+            </ul>
+          </ListStyle>
+        </section>
         <section className="actions">
           <div className="next">
             <Link href="/agora" passHref>
@@ -397,7 +359,7 @@ const Genia = () => {
           </div>
         </section>
       </div>
-    </PageDetailsStyle>
+    </PageDetailsWrapper>
   );
 };
 

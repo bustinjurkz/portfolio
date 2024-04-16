@@ -9,12 +9,12 @@ import { handleScroll } from ".";
 import {
   ArrowStyle,
   ListStyle,
-  PageDetailsStyle,
-} from "../styles/PageDetailsStyle";
+  PageDetailsWrapper,
+} from "../styles/PageDetailsWrapper";
 
 const Trelli = () => {
   return (
-    <PageDetailsStyle>
+    <PageDetailsWrapper>
       <div className="name-container">
         <h1 className="name">TRELLI</h1>
         <ArrowStyle onClick={() => handleScroll("start")} />
@@ -180,7 +180,7 @@ const Trelli = () => {
           </div>
         </section>
       </div>
-    </PageDetailsStyle>
+    </PageDetailsWrapper>
   );
 };
 

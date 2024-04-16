@@ -1,228 +1,19 @@
 import styled from "styled-components";
 
-export const PageDetailsStyle = styled.div`
-  .name-container {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .name {
-      font-size: 2.3rem;
-      text-align: center;
-      @media screen and (min-width: 420px) {
-        font-size: 3.2rem;
-      }
-      @media screen and (min-width: 600px) {
-        font-size: 4.4rem;
-      }
-      @media screen and (min-width: 730px) {
-        font-size: 5rem;
-      }
-      background-color: ${(props) => props.theme.darkBlue};
-      padding: 20px;
-      border-radius: 20px;
-      color: ${(props) => props.theme.white};
-    }
+export const ProjectDetailsWrapper = styled.div`
+  @media screen and (min-width: 380px) {
+    margin: 0rem 2rem;
   }
-
-  .project-container {
-    margin: 0rem 1rem;
-
-    @media screen and (min-width: 380px) {
-      margin: 0rem 2rem;
-    }
-    @media screen and (min-width: 500px) {
-      margin: 0rem 3rem;
-    }
-    @media screen and (min-width: 700px) {
-      margin: 0rem 4rem;
-    }
-    @media screen and (min-width: 1000px) {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0rem 4rem;
-    }
+  @media screen and (min-width: 500px) {
+    margin: 0rem 3rem;
   }
-
-  section {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    /* @media screen and (min-width: 900px) {
-      margin-bottom: 5rem;
-    } */
-
-    .header {
-      font-weight: 600;
-      font-size: x-large;
-      margin-bottom: 1.5rem;
-    }
+  @media screen and (min-width: 700px) {
+    margin: 0rem 4rem;
   }
-
-  .intro {
-    .snapshot {
-      .tagline {
-        font-family: "Inter", sans-serif;
-        font-size: 1.8rem;
-        @media screen and (min-width: 600px) {
-          font-size: 2.5rem;
-        }
-        @media screen and (min-width: 800px) {
-          font-size: 3rem;
-        }
-        @media screen and (min-width: 1200px) {
-          font-size: 3.5rem;
-        }
-        font-weight: 600;
-      }
-      .container {
-        display: flex;
-        flex-flow: column;
-        margin-top: 3rem;
-        height: 100%;
-        position: relative;
-        width: 100%;
-        justify-content: space-between;
-
-        @media screen and (min-width: 900px) {
-          flex-flow: row;
-        }
-
-        .description-container {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-
-          .visit {
-            align-self: center;
-            margin: 4rem 0rem;
-            font-weight: 600;
-            @media screen and (min-width: 900px) {
-              align-self: flex-start;
-            }
-          }
-        }
-
-        .no-website {
-          margin: 3rem 0rem;
-        }
-
-        .notes {
-          display: flex;
-          flex-direction: column;
-          align-self: center;
-
-          @media screen and (min-width: 900px) {
-            align-self: auto;
-            margin-left: 2rem;
-          }
-          @media screen and (min-width: 1000px) {
-            margin-left: 3rem;
-          }
-
-          .note-container {
-            display: flex;
-            flex-direction: column;
-            width: max-content;
-            margin-bottom: 0.7rem;
-            a {
-              color: ${(props) => props.theme.greenSecondary};
-              &:hover {
-                color: ${(props) => props.theme.grey};
-              }
-            }
-          }
-          .role {
-            margin-bottom: 0.2rem;
-          }
-          .label {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-          }
-        }
-      }
-    }
-  }
-
-  .actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-
-    @media screen and (min-width: 575px) {
-      flex-direction: row;
-      align-items: flex-end;
-    }
-
-    @media screen and (min-width: 1000px) {
-      justify-content: end;
-    }
-
-    .repo {
-      margin-right: 2rem;
-      @media screen and (max-width: 575px) {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-  .technical {
-    @media screen and (min-width: 900px) {
-      margin-top: 4rem;
-    }
-  }
-  .learnings {
-    @media screen and (min-width: 900px) {
-      margin-top: 4rem;
-    }
-  }
-  .technical,
-  .learnings {
-    margin-left: auto;
-    margin-right: auto;
-    a {
-      color: ${(props) => props.theme.greenSecondary};
-      &:hover {
-        color: ${(props) => props.theme.grey};
-      }
-    }
-  }
-  .kiln,
-  .runs {
-    max-width: 380px !important;
-  }
-  .ad {
-    max-width: 602px !important;
-  }
-  .speak {
-    max-width: 602px !important;
-  }
-  .image-container {
-    background: ${(props) => props.theme.blue};
-    padding: 8px;
-    border-radius: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
-
-    @media screen and (min-width: 800px) {
-      margin-top: 4rem;
-    }
-    img {
-      border-radius: 15px;
-    }
-
-    .label {
-      padding: 15px 10px;
-      text-align: center;
-      font-size: 0.9rem;
-      text-align: left;
-    }
+  @media screen and (min-width: 1000px) {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0rem 4rem;
   }
 `;
 
@@ -272,27 +63,107 @@ export const ListStyle = styled.div`
   }
 `;
 
-export const ArrowStyle = styled.div`
+export const ProjectDetailsIntroWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin-top: 3rem;
+  height: 100%;
   position: relative;
-  background: #fff;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  transition: all 0.2s linear;
-  &:hover {
-    transform: translate3d(0, 5px, 0);
-    cursor: pointer;
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (min-width: 900px) {
+    flex-flow: row;
   }
-  &:after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0.6rem;
-    width: 20px;
-    height: 20px;
-    border-top: 5px solid #000;
-    border-left: 5px solid #000;
-    top: 7px;
-    transform: rotate(225deg);
+`;
+
+export const ProjectDetailsIntroDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const VisitWebsiteLink = styled.div`
+  align-self: center;
+  margin: 4rem 0rem;
+  @media screen and (min-width: 900px) {
+    align-self: flex-start;
   }
+`;
+
+export const ProjectSnapshotWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  @media screen and (min-width: 900px) {
+    align-self: auto;
+    margin-left: 2rem;
+  }
+  @media screen and (min-width: 1000px) {
+    margin-left: 3rem;
+  }
+`;
+
+export const SnapshotSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin-bottom: 0.7rem;
+  a {
+    color: ${(props) => props.theme.greenSecondary};
+    &:hover {
+      color: ${(props) => props.theme.grey};
+    }
+  }
+`;
+
+export const SnapshotHeader = styled.div`
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`;
+
+export const SnapshotValue = styled.div`
+  margin-bottom: 0.2rem;
+`;
+
+export const ProjectDetailsHeader = styled.h1`
+  margin: 0;
+  font-size: 2.5rem;
+`;
+
+export const NextButtonWrapper = styled.div`
+  margin-top: 2rem;
+  display: inline-flex;
+  width: 100%;
+  justify-content: right;
+`;
+
+export const ProjectImagesWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ImageContainer = styled.div`
+  background: ${(props) => props.theme.blue};
+  padding: 8px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  img {
+    border-radius: 15px;
+  }
+
+  @media screen and (min-width: 800px) {
+    margin-top: 4rem;
+  }
+`;
+
+export const ImageLabel = styled.div`
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  text-align: left;
 `;

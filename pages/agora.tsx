@@ -8,13 +8,13 @@ import { handleScroll } from ".";
 import {
   ArrowStyle,
   ListStyle,
-  PageDetailsStyle,
-} from "../styles/PageDetailsStyle";
+  PageDetailsWrapper,
+} from "../styles/PageDetailsWrapper";
 import Swal from "sweetalert2";
 
 const Agora = () => {
   return (
-    <PageDetailsStyle>
+    <PageDetailsWrapper>
       <div className="name-container">
         <h1 className="name">AGORA MENTORING</h1>
         <ArrowStyle onClick={() => handleScroll("start")} />
@@ -174,7 +174,7 @@ const Agora = () => {
           </div>
         </section>
       </div>
-    </PageDetailsStyle>
+    </PageDetailsWrapper>
   );
 };
 

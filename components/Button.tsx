@@ -1,13 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export interface ButtonProps {
   text?: string;
   to?: string;
   disabled?: boolean;
+  isLarge?: boolean;
 }
 
-export const Button = ({ text, to, disabled }: ButtonProps) => {
+export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -23,13 +24,14 @@ export const Button = ({ text, to, disabled }: ButtonProps) => {
       href={to}
       $disabled={disabled}
       onClick={handleClick}
+      $isLarge={isLarge}
     >
       {text}
     </ButtonStyle>
   );
 };
 
-const ButtonStyle = styled.a<{ $disabled?: boolean }>`
+const ButtonStyle = styled.a<{ $disabled?: boolean; $isLarge?: boolean }>`
   text-align: center;
   display: inline-block;
   padding: 0.4rem 0.65rem;
@@ -44,6 +46,14 @@ const ButtonStyle = styled.a<{ $disabled?: boolean }>`
   overflow: hidden;
   z-index: 1;
   white-space: nowrap;
+
+  ${(props) =>
+    props.$isLarge &&
+    css`
+      padding: 0.75rem 1rem;
+      font-size: 14px;
+      min-width: 180px;
+    `}
 
   &:hover {
     cursor: ${(props) => (props.$disabled ? "default" : "pointer")};
