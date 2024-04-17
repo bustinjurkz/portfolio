@@ -5,7 +5,6 @@ import Image from "next/legacy/image";
 import Calendar from "../public/planter/calendar.png";
 import Cart from "../public/planter/cart.png";
 import {
-  ProjectDetailsIntroDescription,
   ProjectDetailsIntroWrapper,
   ProjectDetailsWrapper,
   ProjectDetailsHeader,
@@ -18,10 +17,22 @@ import {
   ProjectImagesWrapper,
   ProjectDetailsHeaderWrapper,
   ProjectDetailsSection,
+  Swatch,
+  SwatchColor,
 } from "../styles/PageDetailsStyle";
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+
+const PlanterSwatch = [
+  "#73a860",
+  "#218000",
+  "#4b713c",
+  "#e9f0e7",
+  "#3e665b",
+  "#415939",
+  "#757575",
+];
 
 const Planter = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -60,7 +71,11 @@ const Planter = () => {
             <SnapshotValue>2021 - Current</SnapshotValue>
           </SnapshotSection>
         </ProjectSnapshotWrapper>
-        <ProjectDetailsIntroDescription></ProjectDetailsIntroDescription>
+        <Swatch>
+          {PlanterSwatch.map((color) => (
+            <SwatchColor $color={color} />
+          ))}
+        </Swatch>
       </ProjectDetailsIntroWrapper>
       <ProjectDetailsSection>
         <h2>PROJECT INSPIRATION</h2>

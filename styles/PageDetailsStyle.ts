@@ -118,3 +118,18 @@ export const ProjectDetailsHeaderWrapper = styled.div`
 export const ProjectDetailsSection = styled.div`
   margin-bottom: 4rem;
 `;
+
+export const Swatch = styled.div`
+  background: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0.25rem;
+  gap: 0.25rem;
+`;
+
+export const SwatchColor = styled.div<{ $color: string }>`
+  background-color: ${(props) => props.$color};
+  height: 100%;
+  width: 100%;
+`;
