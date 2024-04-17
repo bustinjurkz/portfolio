@@ -79,20 +79,22 @@ const Planter = () => {
         </Swatch>
       </ProjectDetailsIntroWrapper>
       <ProjectDetailsSection>
-        <h2>PROJECT INSPIRATION</h2>
+        <h2>BACKGROUND</h2>
         <p>
-          Gardening in NZ skyrocketed in the Covid era. Our Marketing team had
-          made a printable plant calendar which tells kiwis when to plant a
-          fruit or vegetable subject to a particular climate zone. We realized
-          that this could also be a fun, dynamic user-experience, and thus
-          Planter was born - Genia&apos;s first consumer app. As the Project
-          Lead, I collaborated with the Marketing team, an Auckland-based
-          designer, and my fellow developers. It was quickly wire-framed and
-          implemented, and through several rounds of UX testing which I
-          conducted, it was further refined into the app today. The purpose is
-          to drive Genia&apos;s social metrics and generate sales for their
-          gardening division - Get Growing. In the future, this app will
-          integrate with Shopify in order to further streamline the gardening
+          During the Covid era, the popularity of gardening in New Zealand
+          surged. Genia's Marketing team created a printable plant calendar that
+          advises Kiwis on optimal planting times based on their climate zone.
+          Recognizing the potential for a captivating and interactive user
+          experience, we conceived Planter, Genia's inaugural consumer app.
+        </p>
+        <p>
+          In my role as Project Lead, I collaborated closely with the Marketing
+          team, a designer based in Auckland, and my fellow developers. We
+          wireframed and implemented the app, iterating through multiple rounds
+          of UX testing to refine it into its current form. Planter serves a
+          dual purpose: boosting Genia's social metrics and driving sales for
+          their gardening division, Get Growing. Looking ahead, the plan is to
+          integrate the app with Shopify to further streamline the gardening
           process.
         </p>
       </ProjectDetailsSection>
@@ -101,19 +103,25 @@ const Planter = () => {
         <h2>HOW IT WORKS</h2>
         <div>
           <p>
-            Users first select their region in NZ and will be presented with
-            viable plants for the month. They can tap a plant for more specific
-            info, and add plants to their cart. Each plant has an optimal
-            climate zone. For example, if you are in Wellington, New Zealand - a
-            Temperate climate zone - and the month is May, then the app will
-            suggest plants like Bok Choy, Carrot and Chives.
+            Users begin by selecting their region in New Zealand, which then
+            prompts the app to display a curated list of viable plants for the
+            current month. By tapping on a plant, users can access detailed
+            information about it and add it to their cart. Each plant
+            recommendation aligns with the optimal climate zone for the selected
+            region and month. For instance, if a user is in Wellington, New
+            Zealand, categorized under a Temperate climate zone, and the month
+            is May, the app suggests plants such as Bok Choy, Carrot, and
+            Chives.
           </p>
+
           <p>
-            The user receives a calendar if they agree to sign-up for marketing
-            e-mails from Genia, via an Azure Function, Mailchimp, and SendGrid.
-            This calendar tells users when to sow or pot a seed, and when to
-            harvest all their selected plants. The calendar itself was made
-            using our proprietary React-to-PDF templating tool.
+            Upon agreeing to sign up for marketing emails from Genia, users
+            receive a personalized calendar through an Azure Function,
+            Mailchimp, and SendGrid integration. This calendar (seen below)
+            provides guidance on when to sow or pot seeds and when to harvest
+            all the selected plants. Leveraging our proprietary React-to-PDF
+            templating tool, we've crafted the calendar to ensure its
+            effectiveness and user-friendliness.
           </p>
         </div>
       </ProjectDetailsSection>
@@ -143,24 +151,27 @@ const Planter = () => {
 
       <ProjectDetailsSection>
         <h2>UX TESTING</h2>I conducted my first formal UX testing sessions for
-        this project. I learned it can be quite fun and can energize the test
-        subjects in the office. I organized each session into 3 major sections:
+        this project, which proved to be quite enjoyable and energizing for the
+        test subjects in the office. Each session was organized into three major
+        sections:
         <SubSection>
-          <b>Think-Aloud</b> - Users think out loud what they feel the app is
-          for and what the general impressions are
+          <b>Think-Aloud</b> - Users vocalized their thoughts as they interacted
+          with the app, sharing their impressions and understanding of its
+          purpose.
         </SubSection>
         <SubSection>
-          <b>Tasks</b> - Users are asked to complete tasks, such as: &quot;You
-          are keen to grow tomatoes. You want to know what level of sunlight
-          tomatoes need and when to begin planting. How would you go about doing
-          this?&quot; I then assessed how difficult it was for them
+          <b>Tasks</b> - Users were tasked with completing specific actions,
+          such as: "You are interested in growing tomatoes and need information
+          on sunlight levels and planting times. How would you proceed?" I then
+          evaluated the difficulty they encountered in completing these tasks.
         </SubSection>
         <SubSection>
-          <b>Adjectives</b> - Users are asked to circle 5 out of 100 adjectives
-          which indicate how they feel about the UI / branding The main finding
-          was that users initially did not feel the app was to help create a
-          plan/calendar. Thus, the designer drafted a different landing page and
-          the results were much better
+          <b>Adjectives</b> - Users were prompted to select 5 adjectives out of
+          a list of 100 that best described their feelings about the UI and
+          branding. The key discovery was that users initially did not perceive
+          the app as a tool for creating a gardening timeline. As a result, the
+          designer developed an alternative landing page yielding much clearer
+          results.
         </SubSection>
       </ProjectDetailsSection>
       <NextButtonWrapper>

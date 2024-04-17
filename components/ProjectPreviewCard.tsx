@@ -79,7 +79,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
                 {props.liveURL && (
-                  <Button text={"Visit Site"} to={props.liveURL} />
+                  <Button text={"Visit Site"} to={props.liveURL} secondary />
                 )}
                 <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
               </Links>
@@ -149,7 +149,7 @@ const CardHeaderWrapper = styled.div`
   opacity: 1;
   text-align: center;
   margin-top: 2.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
   justify-content: center;
 `;
 

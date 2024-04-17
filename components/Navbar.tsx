@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           />
         </Link>
       </LogoWrapper>
-      <div className="nav-links">
+      <NavLinksWrapper>
         <div onClick={() => handleScroll("projects")} className="link work">
           PROJECTS
         </div>
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         <div onClick={() => handleScroll("contact")} className="link">
           CONTACT
         </div>
-      </div>
+      </NavLinksWrapper>
     </NavbarWrapper>
   );
 };
@@ -56,36 +56,8 @@ const NavbarWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 0px 15px;
-  max-width: 1030px;
+  max-width: 1100px;
   margin: auto auto;
-
-  .nav-links {
-    display: flex;
-    font-weight: 600;
-    .link {
-      font-size: large;
-      transition: 0.5s;
-      &:hover,
-      &:active,
-      &:focus {
-        cursor: pointer;
-        color: ${(props) => props.theme.greenSecondary};
-      }
-    }
-    .work {
-      margin-right: 1rem;
-      @media screen and (min-width: 430px) {
-        margin-right: 2rem;
-      }
-      @media screen and (min-width: 800px) {
-        margin-right: 3rem;
-      }
-      @media screen and (min-width: 1000px) {
-        margin-right: 4rem;
-      }
-    }
-  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -94,5 +66,34 @@ export const LogoWrapper = styled.div`
 
   &:hover {
     transform: scale(1.03);
+  }
+`;
+
+const NavLinksWrapper = styled.div`
+  display: flex;
+  font-weight: 600;
+
+  .link {
+    font-size: large;
+    transition: 0.5s;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      color: ${(props) => props.theme.greenSecondary};
+    }
+  }
+
+  .work {
+    margin-right: 1rem;
+    @media screen and (min-width: 430px) {
+      margin-right: 2rem;
+    }
+    @media screen and (min-width: 800px) {
+      margin-right: 3rem;
+    }
+    @media screen and (min-width: 1000px) {
+      margin-right: 4rem;
+    }
   }
 `;

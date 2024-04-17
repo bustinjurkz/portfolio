@@ -6,9 +6,16 @@ export interface ButtonProps {
   to?: string;
   disabled?: boolean;
   isLarge?: boolean;
+  secondary?: boolean;
 }
 
-export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
+export const Button = ({
+  text,
+  to,
+  disabled,
+  isLarge,
+  secondary,
+}: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     e.stopPropagation();
@@ -25,13 +32,18 @@ export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
       $disabled={disabled}
       onClick={handleClick}
       $isLarge={isLarge}
+      $secondary={secondary}
     >
       {text}
     </ButtonStyle>
   );
 };
 
-const ButtonStyle = styled.a<{ $disabled?: boolean; $isLarge?: boolean }>`
+const ButtonStyle = styled.a<{
+  $disabled?: boolean;
+  $isLarge?: boolean;
+  $secondary?: boolean;
+}>`
   text-align: center;
   display: inline-block;
   padding: 0.4rem 0.65rem;
@@ -81,6 +93,13 @@ const ButtonStyle = styled.a<{ $disabled?: boolean; $isLarge?: boolean }>`
     background-color: ${(props) => props.theme.greenPrimary};
     border-radius: 10rem;
     z-index: -2;
+
+    ${(props) =>
+      props.$secondary &&
+      css`
+        background-color: transparent;
+        font-weight: 600;
+      `}
   }
   &:hover {
     color: #fff;
@@ -88,4 +107,11 @@ const ButtonStyle = styled.a<{ $disabled?: boolean; $isLarge?: boolean }>`
   &:hover:before {
     width: 100%;
   }
+
+  ${(props) =>
+    props.$secondary &&
+    css`
+      font-weight: 600;
+      color: ${(props) => props.theme.greenPrimary};
+    `}
 `;
