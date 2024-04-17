@@ -19,6 +19,7 @@ import {
   ProjectDetailsSection,
   Swatch,
   SwatchColor,
+  SubSection,
 } from "../styles/PageDetailsStyle";
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
@@ -68,7 +69,7 @@ const Planter = () => {
           </SnapshotSection>
           <SnapshotSection>
             <SnapshotHeader>DATE</SnapshotHeader>
-            <SnapshotValue>2021 - Current</SnapshotValue>
+            <SnapshotValue>2021</SnapshotValue>
           </SnapshotSection>
         </ProjectSnapshotWrapper>
         <Swatch>
@@ -141,34 +142,26 @@ const Planter = () => {
       </ProjectImagesWrapper>
 
       <ProjectDetailsSection>
-        <h2>UX TESTING</h2>
-
-        <ul>
-          <li>
-            UX Testing can be quite fun and can energize the test subjects in
-            the office. I organized each session into 3 major sections:
-          </li>
-          <ul>
-            <li>
-              <b>Think-Aloud</b> - Users think out loud what they feel the app
-              is for and what the general impressions are
-            </li>
-            <li>
-              <b>Tasks</b> - Users are asked to complete tasks, such as:
-              &quot;You are keen to grow tomatoes. You want to know what level
-              of sunlight tomatoes need and when to begin planting. How would
-              you go about doing this?&quot; I then assessed how difficult it
-              was for them
-            </li>
-            <li>
-              <b>Adjectives</b> - Users are asked to circle 5 out of 100
-              adjectives which indicate how they feel about the UI / branding
-              The main finding was that users initially did not feel the app was
-              to help create a plan/calendar. Thus, the designer drafted a
-              different landing page and the results were much better
-            </li>
-          </ul>
-        </ul>
+        <h2>UX TESTING</h2>I conducted my first formal UX testing sessions for
+        this project. I learned it can be quite fun and can energize the test
+        subjects in the office. I organized each session into 3 major sections:
+        <SubSection>
+          <b>Think-Aloud</b> - Users think out loud what they feel the app is
+          for and what the general impressions are
+        </SubSection>
+        <SubSection>
+          <b>Tasks</b> - Users are asked to complete tasks, such as: &quot;You
+          are keen to grow tomatoes. You want to know what level of sunlight
+          tomatoes need and when to begin planting. How would you go about doing
+          this?&quot; I then assessed how difficult it was for them
+        </SubSection>
+        <SubSection>
+          <b>Adjectives</b> - Users are asked to circle 5 out of 100 adjectives
+          which indicate how they feel about the UI / branding The main finding
+          was that users initially did not feel the app was to help create a
+          plan/calendar. Thus, the designer drafted a different landing page and
+          the results were much better
+        </SubSection>
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <StyledLink href="/stellargaze" passHref $isLarge>

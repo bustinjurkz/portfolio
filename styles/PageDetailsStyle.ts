@@ -133,3 +133,7 @@ export const SwatchColor = styled.div<{ $color: string }>`
   height: 100%;
   width: 100%;
 `;
+
+export const SubSection = styled.div`
+  margin-top: 1rem;
+`;

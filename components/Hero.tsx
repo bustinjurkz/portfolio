@@ -62,7 +62,7 @@ const HeroWrapper = styled.div`
   animation: ${fadeInAnimation} 1.25s ease-out;
   margin-right: auto;
   margin-bottom: 9rem;
-
+  line-height: initial;
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
