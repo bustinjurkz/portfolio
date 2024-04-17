@@ -17,60 +17,16 @@ export const ProjectDetailsWrapper = styled.div`
   }
 `;
 
-export const SpecialListStyle = styled.div`
-  background: white;
-  margin: 20px 0px 20px 20px;
-  padding: 20px 15px;
-  border: 1px solid #ebebeb;
-  border-radius: 5px;
-  a {
-    color: ${(props) => props.theme.greenSecondary};
-    &:hover,
-    &:focus {
-      color: ${(props) => props.theme.darkBlue};
-    }
-  }
-`;
-
-export const ListStyle = styled.div`
-  li {
-    margin: 1.5rem 0rem;
-  }
-  ul {
-    display: block;
-    margin-left: -10px;
-  }
-
-  ul li {
-    display: block;
-    position: relative;
-  }
-
-  ul li:not(:last-child) {
-    margin-bottom: 16px;
-  }
-
-  ul li:before {
-    content: "";
-    position: absolute;
-    top: 1.2em;
-    left: -30px;
-    margin-top: -0.9em;
-    background: ${(props) => props.theme.grey};
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-  }
-`;
-
 export const ProjectDetailsIntroWrapper = styled.div`
   display: flex;
   flex-flow: column;
   margin-top: 3rem;
+  margin-bottom: 5rem;
   height: 100%;
   position: relative;
   width: 100%;
   justify-content: space-between;
+  gap: 3rem;
 
   @media screen and (min-width: 900px) {
     flex-flow: row;
@@ -84,11 +40,8 @@ export const ProjectDetailsIntroDescription = styled.div`
 `;
 
 export const VisitWebsiteLink = styled.div`
+  margin-left: auto;
   align-self: center;
-  margin: 4rem 0rem;
-  @media screen and (min-width: 900px) {
-    align-self: flex-start;
-  }
 `;
 
 export const ProjectSnapshotWrapper = styled.div`
@@ -98,10 +51,10 @@ export const ProjectSnapshotWrapper = styled.div`
 
   @media screen and (min-width: 900px) {
     align-self: auto;
-    margin-left: 2rem;
+    margin-right: 2rem;
   }
   @media screen and (min-width: 1000px) {
-    margin-left: 3rem;
+    margin-right: 3rem;
   }
 `;
 
@@ -142,28 +95,26 @@ export const NextButtonWrapper = styled.div`
 export const ProjectImagesWrapper = styled.div`
   display: flex;
   flex-direction: row;
-`;
+  background-color: ${(props) => props.theme.pink};
+  padding: 3rem;
+  gap: 3rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 
-export const ImageContainer = styled.div`
-  background: ${(props) => props.theme.blue};
-  padding: 8px;
-  border-radius: 15px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
   img {
     border-radius: 15px;
-  }
-
-  @media screen and (min-width: 800px) {
-    margin-top: 4rem;
+    &:hover {
+      cursor: zoom-in;
+    }
   }
 `;
 
-export const ImageLabel = styled.div`
-  padding: 15px 10px;
-  text-align: center;
-  font-size: 0.9rem;
-  text-align: left;
+export const ProjectDetailsHeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const ProjectDetailsSection = styled.div`
+  margin-bottom: 4rem;
 `;

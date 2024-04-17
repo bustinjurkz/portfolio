@@ -167,7 +167,6 @@ const CardContentsWrapper = styled.div`
   .image {
     &:hover {
       cursor: zoom-in;
-      transform: scale(1.005);
     }
   }
 `;

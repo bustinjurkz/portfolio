@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { Hero } from "../components/Hero";
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       </SectionWrapper>
 
       <SectionWrapper id="projects">
-        <HeaderWrapper>
+        <HeaderWrapper $noBottomRadius>
           <Header>PROJECTS</Header>
 
           <MoreInfoWrapper>
@@ -128,16 +128,24 @@ export const Header = styled.h2`
   }
 `;
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  margin-top: 40px;
+  margin-top: 3rem;
   background: ${(props) => props.theme.pink};
   padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+
+  ${(props) =>
+    props.$noBottomRadius
+      ? css`
+          border-top-left-radius: 1rem;
+          border-top-right-radius: 1rem;
+        `
+      : css`
+          border-radius: 1rem;
+        `}
 `;
 
 export const ProjectsWrapper = styled.div`
