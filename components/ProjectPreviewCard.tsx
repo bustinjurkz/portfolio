@@ -134,18 +134,6 @@ const Links = styled.div`
   justify-content: right;
 `;
 
-export const Tool = styled.div`
-  padding: 8px;
-  border-radius: 10px;
-  background: ${(props) => props.theme.grey};
-  cursor: default;
-  color: ${(props) => props.theme.white};
-  margin: 5px 20px 5px 0px;
-  &:hover {
-    transform: scale(1.02);
-  }
-`;
-
 const CardHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;

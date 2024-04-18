@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import Calendar from "../public/planter/calendar.png";
 import Cart from "../public/planter/cart.png";
+import projectData from "../data/projects.json";
+
 import {
   ProjectDetailsIntroWrapper,
   ProjectDetailsWrapper,
@@ -21,19 +23,13 @@ import {
   SwatchColor,
   SubSection,
   ProjectDetailsBackgroundSection,
+  Tool,
+  StackWrapper,
 } from "../styles/PageDetailsStyle";
+
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
-const PlanterSwatch = [
-  "#73a860",
-  "#218000",
-  "#4b713c",
-  "#3e665b",
-  "#415939",
-  "#757575",
-];
 
 const Planter = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -44,6 +40,10 @@ const Planter = () => {
     event.stopPropagation();
     setExpandPreview(fileName);
   };
+
+  const planterProjectData = projectData.projects.find(
+    (project) => project.name === "Planter"
+  );
 
   return (
     <ProjectDetailsWrapper>
@@ -94,36 +94,33 @@ const Planter = () => {
       </ProjectDetailsIntroWrapper>
 
       <Swatch>
-        {PlanterSwatch.map((color) => (
+        {planterProjectData?.swatch?.map((color) => (
           <SwatchColor $color={color} />
         ))}
       </Swatch>
 
       <ProjectDetailsSection>
         <h2>HOW IT WORKS</h2>
-        <div>
-          <p>
-            Users begin by selecting their region in New Zealand, which then
-            prompts the app to display a curated list of viable plants for the
-            current month. By tapping on a plant, users can access detailed
-            information about it and add it to their cart. Each plant
-            recommendation aligns with the optimal climate zone for the selected
-            region and month. For instance, if a user is in Wellington, New
-            Zealand, categorized under a Temperate climate zone, and the month
-            is May, the app suggests plants such as Bok Choy, Carrot, and
-            Chives.
-          </p>
+        <p>
+          Users begin by selecting their region in New Zealand, which then
+          prompts the app to display a curated list of viable plants for the
+          current month. By tapping on a plant, users can access detailed
+          information about it and add it to their cart. Each plant
+          recommendation aligns with the optimal climate zone for the selected
+          region and month. For instance, if a user is in Wellington, New
+          Zealand, categorized under a Temperate climate zone, and the month is
+          May, the app suggests plants such as Bok Choy, Carrot, and Chives.
+        </p>
 
-          <p>
-            Upon agreeing to sign up for marketing emails from Genia, users
-            receive a personalized calendar through an Azure Function,
-            Mailchimp, and SendGrid integration. This calendar (seen below)
-            provides guidance on when to sow or pot seeds and when to harvest
-            all the selected plants. Leveraging our proprietary React-to-PDF
-            templating tool, we've crafted the calendar to ensure its
-            effectiveness and user-friendliness.
-          </p>
-        </div>
+        <p>
+          Upon agreeing to sign up for marketing emails from Genia, users
+          receive a personalized calendar through an Azure Function, Mailchimp,
+          and SendGrid integration. This calendar (seen below) provides guidance
+          on when to sow or pot seeds and when to harvest all the selected
+          plants. Leveraging our proprietary React-to-PDF templating tool, we've
+          crafted the calendar to ensure its effectiveness and
+          user-friendliness.
+        </p>
       </ProjectDetailsSection>
 
       <ProjectImagesWrapper>
@@ -173,6 +170,14 @@ const Planter = () => {
           designer developed an alternative landing page yielding much clearer
           results.
         </SubSection>
+      </ProjectDetailsSection>
+      <ProjectDetailsSection>
+        <h2>THE STACK</h2>
+        <StackWrapper>
+          {planterProjectData?.tools?.map((tool) => (
+            <Tool>{tool}</Tool>
+          ))}
+        </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <StyledLink href="/stellargaze" passHref $isLarge>

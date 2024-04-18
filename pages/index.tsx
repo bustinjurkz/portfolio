@@ -117,10 +117,9 @@ const MoreInfoWrapper = styled.div`
 `;
 
 export const Header = styled.h2`
-  color: ${(props) => props.theme.greenPrimary};
   text-align: center;
   margin-bottom: 1rem;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
 
   @media screen and (min-width: 768px) {
     text-align: start;

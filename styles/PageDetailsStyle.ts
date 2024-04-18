@@ -40,8 +40,9 @@ export const ProjectDetailsIntroDescription = styled.div`
 `;
 
 export const VisitWebsiteLink = styled.div`
-  margin-left: auto;
-  align-self: center;
+  display: flex;
+  width: 100%;
+  justify-content: end;
 `;
 
 export const ProjectSnapshotWrapper = styled.div`
@@ -113,6 +114,7 @@ export const ProjectImagesWrapper = styled.div`
 export const ProjectDetailsHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const ProjectDetailsSection = styled.div`
@@ -137,10 +139,32 @@ export const SwatchColor = styled.div<{ $color: string }>`
 
 export const SubSection = styled.div`
   margin-top: 1rem;
+  a {
+    color: ${(props) => props.theme.greenSecondary};
+    &:hover {
+      color: ${(props) => props.theme.grey};
+    }
+  }
 `;
 
 export const ProjectDetailsBackgroundSection = styled.div`
   h2 {
     margin-top: 0;
   }
+`;
+
+export const Tool = styled.div`
+  padding: 8px;
+  border-radius: 10px;
+  background: ${(props) => props.theme.grey};
+  cursor: default;
+  color: ${(props) => props.theme.white};
+  margin: 5px 20px 5px 0px;
+  width: fit-content;
+`;
+
+export const StackWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;

@@ -17,6 +17,14 @@
         "azure",
         "mui"
       ],
+      "swatch": [
+        "#73a860",
+        "#218000",
+        "#4b713c",
+        "#3e665b",
+        "#415939",
+        "#757575"
+      ],
       "description": "Planter generates personalized gardening calendars for New Zealanders. With a database of over 50 plants, users can add their fruits and veggies to a cart and get information on optimizing growth based on their location (microclimate) and season.  Upon submission, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
       "liveURL": "https://planter.co.nz/"
     },
@@ -24,6 +32,7 @@
       "name": "Stellargaze",
       "slug": "stellargaze",
       "type": "Personal Project",
+      "swatch": ["#111414", "#1b1c1d", "#edd9c0", "#2d333c", "#b58d66"],
       "tools": [
         "react",
         "javascript",
@@ -45,6 +54,7 @@
       "type": "Contract",
       "client": "Genia",
       "slug": "trelli",
+      "swatch": ["#355954", "#d9cec4", "#a86752", "#71504d", "#689976"],
       "tools": [
         "react",
         "vercel",
