@@ -79,7 +79,15 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
                 {props.liveURL && (
-                  <Button text={"Visit Site"} to={props.liveURL} secondary />
+                  <VisitLink
+                    href={props.liveURL}
+                    target="_blank"
+                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+                      e.stopPropagation()
+                    }
+                  >
+                    VISIT SITE
+                  </VisitLink>
                 )}
                 <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
               </Links>
@@ -275,5 +283,19 @@ export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
   }
   &:hover:before {
     width: 100%;
+  }
+`;
+
+const VisitLink = styled.a`
+  transition: 0.5s;
+  font-size: 0.75rem;
+  align-content: center;
+  margin-right: 10px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    color: ${(props) => props.theme.greenSecondary};
   }
 `;

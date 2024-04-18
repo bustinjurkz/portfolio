@@ -122,7 +122,7 @@ export const ProjectDetailsSection = styled.div`
 export const Swatch = styled.div`
   background: white;
   width: 100%;
-  height: 15px;
+  height: 10px;
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
