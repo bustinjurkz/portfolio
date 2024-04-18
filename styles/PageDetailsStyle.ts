@@ -122,7 +122,6 @@ export const ProjectDetailsSection = styled.div`
 `;
 
 export const Swatch = styled.div`
-  background: white;
   width: 100%;
   height: 10px;
   display: flex;
