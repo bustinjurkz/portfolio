@@ -44,7 +44,7 @@ const TechStackWrapper = styled.div`
   margin-left: 2rem;
   margin-right: 1.5rem;
   margin-top: 2rem;
-  gap: 2rem;
+  justify-content: space-between;
 `;
 
 const IconWrapper = styled.div`

@@ -20,6 +20,7 @@ import {
   Swatch,
   SwatchColor,
   SubSection,
+  ProjectDetailsBackgroundSection,
 } from "../styles/PageDetailsStyle";
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
@@ -72,32 +73,32 @@ const Planter = () => {
             <SnapshotValue>2021</SnapshotValue>
           </SnapshotSection>
         </ProjectSnapshotWrapper>
-        <Swatch>
-          {PlanterSwatch.map((color) => (
-            <SwatchColor $color={color} />
-          ))}
-        </Swatch>
+        <ProjectDetailsBackgroundSection>
+          <h2>BACKGROUND</h2>
+          <p>
+            During the Covid era, the popularity of gardening in New Zealand
+            surged. Genia's Marketing team created a printable plant calendar
+            that advises Kiwis on optimal planting times based on their climate
+            zone. Recognizing the potential for a captivating and interactive
+            user experience, we conceived Planter, Genia's inaugural consumer
+            app.
+          </p>
+          <p>
+            In my role as Project Lead, I collaborated closely with the
+            Marketing team, a designer based in Auckland, and my fellow
+            developers. We wireframed and implemented the app, iterating through
+            multiple rounds of UX testing to refine it into its current form.
+            Planter serves a dual purpose: boosting Genia's social metrics and
+            driving sales for their gardening division, Get Growing.
+          </p>
+        </ProjectDetailsBackgroundSection>
       </ProjectDetailsIntroWrapper>
-      <ProjectDetailsSection>
-        <h2>BACKGROUND</h2>
-        <p>
-          During the Covid era, the popularity of gardening in New Zealand
-          surged. Genia's Marketing team created a printable plant calendar that
-          advises Kiwis on optimal planting times based on their climate zone.
-          Recognizing the potential for a captivating and interactive user
-          experience, we conceived Planter, Genia's inaugural consumer app.
-        </p>
-        <p>
-          In my role as Project Lead, I collaborated closely with the Marketing
-          team, a designer based in Auckland, and my fellow developers. We
-          wireframed and implemented the app, iterating through multiple rounds
-          of UX testing to refine it into its current form. Planter serves a
-          dual purpose: boosting Genia's social metrics and driving sales for
-          their gardening division, Get Growing. Looking ahead, the plan is to
-          integrate the app with Shopify to further streamline the gardening
-          process.
-        </p>
-      </ProjectDetailsSection>
+
+      <Swatch>
+        {PlanterSwatch.map((color) => (
+          <SwatchColor $color={color} />
+        ))}
+      </Swatch>
 
       <ProjectDetailsSection>
         <h2>HOW IT WORKS</h2>

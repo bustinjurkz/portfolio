@@ -122,10 +122,11 @@ export const ProjectDetailsSection = styled.div`
 export const Swatch = styled.div`
   background: white;
   width: 100%;
+  height: 15px;
   display: flex;
   flex-direction: row;
-  padding: 0.25rem;
   gap: 0.25rem;
+  margin-bottom: 4rem;
 `;
 
 export const SwatchColor = styled.div<{ $color: string }>`
@@ -136,4 +137,10 @@ export const SwatchColor = styled.div<{ $color: string }>`
 
 export const SubSection = styled.div`
   margin-top: 1rem;
+`;
+
+export const ProjectDetailsBackgroundSection = styled.div`
+  h2 {
+    margin-top: 0;
+  }
 `;
