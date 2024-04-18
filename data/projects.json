@@ -75,6 +75,7 @@
       "type": "Contract",
       "client": "Agora",
       "slug": "agora",
+      "swatch": ["#268F00", "#F89100", "#EF6567", "#195636"],
       "tools": [
         "next.js",
         "vercel",

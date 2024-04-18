@@ -1,180 +1,214 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import Cart from "../public/planter/cart.png";
+import projectData from "../data/projects.json";
+
+import {
+  ProjectDetailsIntroWrapper,
+  ProjectDetailsWrapper,
+  ProjectDetailsHeader,
+  ProjectSnapshotWrapper,
+  SnapshotHeader,
+  SnapshotSection,
+  SnapshotValue,
+  VisitWebsiteLink,
+  NextButtonWrapper,
+  ProjectImagesWrapper,
+  ProjectDetailsHeaderWrapper,
+  ProjectDetailsSection,
+  Swatch,
+  SwatchColor,
+  SubSection,
+  ProjectDetailsBackgroundSection,
+  Tool,
+  StackWrapper,
+} from "../styles/PageDetailsStyle";
+
+import { StyledLink } from "../components/ProjectPreviewCard";
+import Lightbox from "yet-another-react-lightbox";
+
+import "yet-another-react-lightbox/styles.css";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import BookedModal from "../public/agora/meeting-booked.png";
 import Mentors from "../public/agora/book-mentor.png";
 import { handleScroll } from ".";
-import {
-  ArrowStyle,
-  ListStyle,
-  PageDetailsWrapper,
-} from "../styles/PageDetailsWrapper";
-import Swal from "sweetalert2";
 
 const Agora = () => {
+  const [expandPreview, setExpandPreview] = useState("");
+  const handleExpand = (
+    event: React.MouseEvent<HTMLElement>,
+    fileName: string
+  ) => {
+    event.stopPropagation();
+    setExpandPreview(fileName);
+  };
+
+  const agoraProjectData = projectData.projects.find(
+    (project) => project.name === "Agora Mentoring"
+  );
+
   return (
-    <PageDetailsWrapper>
-      <div className="name-container">
-        <h1 className="name">AGORA MENTORING</h1>
-        <ArrowStyle onClick={() => handleScroll("start")} />
-      </div>
+    <ProjectDetailsWrapper>
+      <ProjectDetailsHeaderWrapper>
+        <ProjectDetailsHeader>AGORA MENTORING</ProjectDetailsHeader>
 
-      <div className="project-container" id="start">
-        <section className="intro">
-          <h1 className="header">ABOUT THE PROJECT</h1>
-          <div className="snapshot">
-            <div className="tagline">
-              Using AI to find mentors more effectively.
-            </div>
-            <div className="container">
-              <div className="description">
-                In early 2021, my gym buddy (and Data Scientist for TD Bank)
-                approached me with an idea he had stemming from the difficulties
-                in connecting young people with mentors within larger
-                organizations. The problem was companies often use dated tools -
-                or none at all - in order to schedule meetings with potential
-                hires. Thus, Agora Mentoring was born. We use data science
-                wizardry in order to optimally connect a mentee with a mentor,
-                thus increasing the likelihood of successful career advice and
-                employment down the line.
-                <p className="no-website">
-                  <b>
-                    This project is on-going and the beta version will be out
-                    sometime in 2023. Live preview and repo available upon
-                    request.
-                  </b>
-                </p>
-              </div>
-              <div className="notes">
-                <div className="note-container">
-                  <div className="label">ROLE</div>
-                  <div className="role">Technical Lead</div>
-                  <div className="role">Full-Stack Developer</div>
-                  <div className="role">Some Design/UX</div>
-                </div>
-                <div className="note-container">
-                  <div className="label client">CLIENT</div>
-                  <div className="client">Agora</div>
-                </div>
-                <div className="note-container">
-                  <div className="label date">DATE</div>
-                  <div className="date">June 2021 - Current</div>
-                </div>
-                <div className="note-container">
-                  <div className="label client">Teammates</div>
-                  <Link href="https://www.linkedin.com/in/atinder-b-571877130/">
-                    Atinder Bharaj
-                  </Link>
-                  <Link href="https://www.linkedin.com/in/mariumshahana/">
-                    Marium Shahana
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <div className="image-container">
-          <Image
-            priority
-            className="image"
-            alt="booking-modal"
-            src={BookedModal}
-            aria-label="Booking Modal"
-            width={752}
-            height={718}
-            layout={"responsive"}
-          />
-          <div className="label">
-            The mentor has successfully booked a meeting with a Student
-            interested in learning about the Skills for Success with respect to
-            the mentor&apos;s industry.
-          </div>
-        </div>
+        <VisitWebsiteLink>
+          <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+        </VisitWebsiteLink>
+      </ProjectDetailsHeaderWrapper>
+      <ProjectDetailsIntroWrapper>
+        <ProjectSnapshotWrapper>
+          <SnapshotSection>
+            <SnapshotHeader>ROLE</SnapshotHeader>
+            <SnapshotValue>Technical Lead</SnapshotValue>
+            <SnapshotValue>Full Stack Developer</SnapshotValue>
+            <SnapshotValue>Dash of UI/UX</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>TEAMMATES</SnapshotHeader>
+            <SnapshotValue>
+              <a
+                href="https://www.linkedin.com/in/atinder-b-571877130"
+                target="_blank"
+              >
+                Atinder Bharaj
+              </a>
+            </SnapshotValue>
+            <SnapshotValue>
+              <a
+                href="https://www.linkedin.com/in/mariumshahana"
+                target="_blank"
+              >
+                Marium Shahana
+              </a>
+            </SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>DATE</SnapshotHeader>
+            <SnapshotValue>June - November 2021</SnapshotValue>
+          </SnapshotSection>
+        </ProjectSnapshotWrapper>
+        <ProjectDetailsBackgroundSection>
+          <h2>BACKGROUND</h2>
+          <p>
+            During the Covid era, the popularity of gardening in New Zealand
+            surged. Genia's Marketing team created a printable plant calendar
+            that advises Kiwis on optimal planting times based on their climate
+            zone. Recognizing the potential for a captivating and interactive
+            user experience, we conceived Planter, Genia's inaugural consumer
+            app.
+          </p>
+          <p>
+            In my role as Project Lead, I collaborated closely with the
+            Marketing team, a designer based in Auckland, and my fellow
+            developers. We wireframed and implemented the app, iterating through
+            multiple rounds of UX testing to refine it into its current form.
+            Planter serves a dual purpose: boosting Genia's social metrics and
+            driving sales for their gardening division, Get Growing.
+          </p>
+        </ProjectDetailsBackgroundSection>
+      </ProjectDetailsIntroWrapper>
 
-        <section className="technical">
-          <h1 className="header">HOW IT WORKS</h1>
+      <Swatch>
+        {agoraProjectData?.swatch?.map((color) => (
+          <SwatchColor $color={color} />
+        ))}
+      </Swatch>
 
-          <div className="content">
-            <p>
-              Users sign up as either a Mentor, or a Mentee. They then provide
-              demographic and technical information. A mentor optionally
-              provides their availabilities in time slots.
-            </p>
-            <p>
-              As a mentee, you are able to request a mentor based on a match
-              rating. This rating is determined by the demographic and technical
-              information as mentioned above, along with our proprietary scoring
-              algorithm. Once requested, the mentor must accept and select a
-              given time in which both parties are available.
-            </p>
-            <p>
-              As a mentor, once you accept a meeting with a mentee, both parties
-              are automatically given a Google Meet room link sent to their
-              e-mails provided.
-            </p>
-          </div>
-        </section>
+      <ProjectDetailsSection>
+        <h2>HOW IT WORKS</h2>
+        <p>
+          Users begin by selecting their region in New Zealand, which then
+          prompts the app to display a curated list of viable plants for the
+          current month. By tapping on a plant, users can access detailed
+          information about it and add it to their cart. Each plant
+          recommendation aligns with the optimal climate zone for the selected
+          region and month. For instance, if a user is in Wellington, New
+          Zealand, categorized under a Temperate climate zone, and the month is
+          May, the app suggests plants such as Bok Choy, Carrot, and Chives.
+        </p>
 
-        <div className="image-container">
-          <Image
-            priority
-            className="image"
-            src={Mentors}
-            alt="select-mentors"
-            aria-label="Mentors Select"
-            width={1004}
-            height={714}
-            layout={"responsive"}
-          />
-          <div className="label">
-            The mentee can request a meeting with a mentor based on the match
-            percentage - a higher number indicates more potential chemistry in
-            the meeting.
-          </div>
-        </div>
-        <section className="learnings">
-          <h1 className="header">WHAT I LEARNED</h1>
-          <ListStyle>
-            <ul>
-              <li>
-                I made this app during the Southern Hemisphere Winter of 2021
-                while holding another full time developer role. I learned coding
-                55-60 hours per week was not fun.
-              </li>
-              <li>
-                There is significant interest amongst HR reps for this app. It
-                vastly simplifies their networking/mentoring process.
-              </li>
-              <li>
-                This was my first attempt at creating an entire backend myself
-                (with a few tips from my coworkers), and I was successful.
-              </li>
-            </ul>
-          </ListStyle>
-        </section>
-        <section className="actions">
-          <div
-            className="repo"
-            onClick={() =>
-              Swal.fire({
-                icon: "warning",
-                title: "Available on Request",
-                confirmButtonColor: "#3b4250",
-                text: "To assess my current skills via this repo, please send me an e-mail to request access due to an NDA.",
-              })
-            }
-          >
-            <Button text={"VIEW REPO"} />
-          </div>
-          <div className="next">
-            <Link href="/handits" passHref>
-              <Button text={"NEXT PROJECT"} />
-            </Link>
-          </div>
-        </section>
-      </div>
-    </PageDetailsWrapper>
+        <p>
+          Upon agreeing to sign up for marketing emails from Genia, users
+          receive a personalized calendar through an Azure Function, Mailchimp,
+          and SendGrid integration. This calendar (seen below) provides guidance
+          on when to sow or pot seeds and when to harvest all the selected
+          plants. Leveraging our proprietary React-to-PDF templating tool, we've
+          crafted the calendar to ensure its effectiveness and
+          user-friendliness.
+        </p>
+      </ProjectDetailsSection>
+
+      <ProjectImagesWrapper>
+        <Image
+          priority
+          onClick={(e: any) => handleExpand(e, BookedModal.src)}
+          src={BookedModal}
+          aria-label="Booking Modal"
+          width={752}
+          height={718}
+          alt="booking-modal"
+        />
+        <Image
+          priority
+          onClick={(e: any) => handleExpand(e, Mentors.src)}
+          src={Mentors}
+          alt="select-mentors"
+          aria-label="Mentors Select"
+          width={1004}
+          height={714}
+        />
+      </ProjectImagesWrapper>
+
+      <ProjectDetailsSection>
+        <h2>UX TESTING</h2>I conducted my first formal UX testing sessions for
+        this project, which proved to be quite enjoyable and energizing for the
+        test subjects in the office. Each session was organized into three major
+        sections:
+        <SubSection>
+          <b>Think-Aloud</b> - Users vocalized their thoughts as they interacted
+          with the app, sharing their impressions and understanding of its
+          purpose.
+        </SubSection>
+        <SubSection>
+          <b>Tasks</b> - Users were tasked with completing specific actions,
+          such as: "You are interested in growing tomatoes and need information
+          on sunlight levels and planting times. How would you proceed?" I then
+          evaluated the difficulty they encountered in completing these tasks.
+        </SubSection>
+        <SubSection>
+          <b>Adjectives</b> - Users were prompted to select 5 adjectives out of
+          a list of 100 that best described their feelings about the UI and
+          branding. The key discovery was that users initially did not perceive
+          the app as a tool for creating a gardening timeline. As a result, the
+          designer developed an alternative landing page yielding much clearer
+          results.
+        </SubSection>
+      </ProjectDetailsSection>
+      <ProjectDetailsSection>
+        <h2>THE STACK</h2>
+        <StackWrapper>
+          {agoraProjectData?.tools?.map((tool) => (
+            <Tool>{tool}</Tool>
+          ))}
+        </StackWrapper>
+      </ProjectDetailsSection>
+      <NextButtonWrapper>
+        <StyledLink href="/stellargaze" passHref $isLarge>
+          NEXT PROJECT
+        </StyledLink>
+      </NextButtonWrapper>
+      <Lightbox
+        open={!!expandPreview}
+        close={() => setExpandPreview("")}
+        slides={[{ src: expandPreview, width: 1000 }]}
+        carousel={{ finite: true }}
+        styles={{ container: { backgroundColor: "rgb(0 0 0 / 80%)" } }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{ buttonNext: () => null, buttonPrev: () => null }}
+      />
+    </ProjectDetailsWrapper>
   );
 };
 

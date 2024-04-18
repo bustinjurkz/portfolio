@@ -65,7 +65,7 @@ const Planter = () => {
           </SnapshotSection>
           <SnapshotSection>
             <SnapshotHeader>CLIENT</SnapshotHeader>
-            <Link href="https://www.genia.co.nz/">Genia - Get Growing</Link>
+            <Link href="https://getgrowing.nz/">Genia - Get Growing</Link>
           </SnapshotSection>
           <SnapshotSection>
             <SnapshotHeader>DATE</SnapshotHeader>

@@ -84,6 +84,7 @@ export const SnapshotValue = styled.div`
 export const ProjectDetailsHeader = styled.h1`
   margin: 0;
   font-size: 2.5rem;
+  white-space: nowrap;
 `;
 
 export const NextButtonWrapper = styled.div`
