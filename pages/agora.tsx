@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Cart from "../public/planter/cart.png";
 import projectData from "../data/projects.json";
 
 import {

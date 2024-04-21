@@ -50,12 +50,8 @@ const LogosWrapper = styled.div`
   margin-top: 2rem;
 
   a {
-    &:hover {
-      transform: scale(1.03);
-    }
-
     > * {
-      color: ${(props) => props.theme.greenPrimary};
+      color: ${(props) => props.theme.primary};
       width: 40px;
     }
   }

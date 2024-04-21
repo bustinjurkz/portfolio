@@ -2,7 +2,6 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/legacy/image";
 import HeroImage from "../public/dustin_hero_background_3.jpg";
-import { useEffect } from "react";
 
 export const Hero = () => {
   return (
@@ -71,7 +70,7 @@ const HeroWrapper = styled.div`
 const HeroTextTitle = styled.h1`
   font-family: "Inter", sans-serif;
   white-space: nowrap;
-  color: ${(props) => props.theme.greenPrimary};
+  color: ${(props) => props.theme.primary};
   font-size: 5rem;
   margin: 0;
   padding: 0;
@@ -103,12 +102,12 @@ const HeroTextWrapper = styled.div`
 `;
 
 const StyledLink = styled.a`
-  color: ${(props) => props.theme.greenSecondary};
+  color: ${(props) => props.theme.secondary};
   font-weight: 600;
   position: relative;
   transition: 0.5s;
 
   &:hover {
-    color: ${(props) => props.theme.greenPrimary};
+    color: ${(props) => props.theme.primary};
   }
 `;

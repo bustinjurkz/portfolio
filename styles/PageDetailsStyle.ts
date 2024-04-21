@@ -65,9 +65,9 @@ export const SnapshotSection = styled.div`
   width: max-content;
   margin-bottom: 0.7rem;
   a {
-    color: ${(props) => props.theme.greenSecondary};
+    color: ${(props) => props.theme.secondary};
     &:hover {
-      color: ${(props) => props.theme.grey};
+      color: ${(props) => props.theme.primary};
     }
   }
 `;
@@ -140,9 +140,9 @@ export const SwatchColor = styled.div<{ $color: string }>`
 export const SubSection = styled.div`
   margin-top: 1rem;
   a {
-    color: ${(props) => props.theme.greenSecondary};
+    color: ${(props) => props.theme.secondary};
     &:hover {
-      color: ${(props) => props.theme.grey};
+      color: ${(props) => props.theme.primary};
     }
   }
 `;

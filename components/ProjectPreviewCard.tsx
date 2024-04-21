@@ -151,7 +151,7 @@ const CardHeaderWrapper = styled.div`
 
 const ProjectTitle = styled.h3`
   text-transform: uppercase;
-  color: ${(props) => props.theme.greenPrimary};
+  color: ${(props) => props.theme.primary};
   margin: 0;
   white-space: nowrap;
 `;
@@ -205,7 +205,7 @@ const ExpandButton = styled.button`
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px ${(props) => props.theme.greenSecondary};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.secondary};
   }
 
   .expand-icon {
@@ -250,7 +250,7 @@ export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: ${(props) => props.theme.greenSecondary};
+    background-color: ${(props) => props.theme.secondary};
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
@@ -262,7 +262,7 @@ export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${(props) => props.theme.greenPrimary};
+    background-color: ${(props) => props.theme.primary};
     border-radius: 10rem;
     z-index: -2;
   }
@@ -284,6 +284,6 @@ const VisitLink = styled.a`
   &:active,
   &:focus {
     cursor: pointer;
-    color: ${(props) => props.theme.greenSecondary};
+    color: ${(props) => props.theme.secondary};
   }
 `;

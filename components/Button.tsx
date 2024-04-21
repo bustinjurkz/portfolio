@@ -78,7 +78,7 @@ const ButtonStyle = styled.a<{
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: ${(props) => props.theme.greenSecondary};
+    background-color: ${(props) => props.theme.secondary};
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
@@ -90,7 +90,7 @@ const ButtonStyle = styled.a<{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${(props) => props.theme.greenPrimary};
+    background-color: ${(props) => props.theme.primary};
     border-radius: 10rem;
     z-index: -2;
 
@@ -112,6 +112,6 @@ const ButtonStyle = styled.a<{
     props.$secondary &&
     css`
       font-weight: 600;
-      color: ${(props) => props.theme.greenPrimary};
+      color: ${(props) => props.theme.primary};
     `}
 `;

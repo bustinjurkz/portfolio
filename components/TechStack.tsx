@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { styled } from "styled-components";
 import {
   ReactSVG,
@@ -15,7 +14,6 @@ import {
 const svgComponents = [
   { component: ReactSVG, label: "React" },
   { component: TypeScriptSVG, label: "TypeScript" },
-
   { component: DotnetSVG, label: "Dotnet" },
   { component: NodeJSSVG, label: "Node.js" },
   { component: NextJSSVG, label: "Next.js" },
@@ -30,7 +28,7 @@ export const TechStack = () => {
     <TechStackWrapper>
       {svgComponents.map((svg, index) => (
         <IconWrapper key={index}>
-          <svg.component color={"#213821"} />
+          <svg.component color={"#3b4250"} />
           <IconLabel>{svg.label}</IconLabel>
         </IconWrapper>
       ))}

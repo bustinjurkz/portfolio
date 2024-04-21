@@ -80,7 +80,7 @@ const NavLinksWrapper = styled.div`
     &:active,
     &:focus {
       cursor: pointer;
-      color: ${(props) => props.theme.greenSecondary};
+      color: ${(props) => props.theme.secondary};
     }
   }
 

@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../components/Button";
-import Link from "next/link";
 import Image from "next/legacy/image";
 import Quote from "../public/trelli/quote-summary.png";
 import Award from "../public/trelli/innovation.jpg";
 import Tradeshow from "../public/trelli/tradeshow.jpg";
-import { handleScroll } from ".";
-
-import Calendar from "../public/planter/calendar.png";
-import Cart from "../public/planter/cart.png";
 import projectData from "../data/projects.json";
 
 import {
@@ -26,7 +21,6 @@ import {
   ProjectDetailsSection,
   Swatch,
   SwatchColor,
-  SubSection,
   ProjectDetailsBackgroundSection,
   Tool,
   StackWrapper,

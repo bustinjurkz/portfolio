@@ -49,7 +49,7 @@ export const Timeline = () => {
 };
 
 const IconStyle = {
-  background: "#213821",
+  background: "#3b4250",
   color: "#f6faf6",
 };
 
