@@ -172,7 +172,7 @@ const Stellargaze = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/stellargaze" passHref $isLarge>
+        <StyledLink href="/trelli" passHref $isLarge>
           NEXT PROJECT
         </StyledLink>
       </NextButtonWrapper>

@@ -92,20 +92,14 @@ const Agora = () => {
         <ProjectDetailsBackgroundSection>
           <h2>BACKGROUND</h2>
           <p>
-            During the Covid era, the popularity of gardening in New Zealand
-            surged. Genia's Marketing team created a printable plant calendar
-            that advises Kiwis on optimal planting times based on their climate
-            zone. Recognizing the potential for a captivating and interactive
-            user experience, we conceived Planter, Genia's inaugural consumer
-            app.
-          </p>
-          <p>
-            In my role as Project Lead, I collaborated closely with the
-            Marketing team, a designer based in Auckland, and my fellow
-            developers. We wireframed and implemented the app, iterating through
-            multiple rounds of UX testing to refine it into its current form.
-            Planter serves a dual purpose: boosting Genia's social metrics and
-            driving sales for their gardening division, Get Growing.
+            In early 2021, my gym buddy, a Data Scientist at TD Bank, proposed a
+            solution for the challenge of connecting young professionals with
+            mentors in large organizations. Many companies use outdated tools or
+            lack systems to schedule meetings with potential hires. This
+            inspired the Agora Mentoring project demo, which leverages data
+            science to efficiently pair mentees with mentors. By optimizing
+            these connections, we enhance the chances of successful career
+            guidance and employment opportunities.
           </p>
         </ProjectDetailsBackgroundSection>
       </ProjectDetailsIntroWrapper>
@@ -119,24 +113,21 @@ const Agora = () => {
       <ProjectDetailsSection>
         <h2>HOW IT WORKS</h2>
         <p>
-          Users begin by selecting their region in New Zealand, which then
-          prompts the app to display a curated list of viable plants for the
-          current month. By tapping on a plant, users can access detailed
-          information about it and add it to their cart. Each plant
-          recommendation aligns with the optimal climate zone for the selected
-          region and month. For instance, if a user is in Wellington, New
-          Zealand, categorized under a Temperate climate zone, and the month is
-          May, the app suggests plants such as Bok Choy, Carrot, and Chives.
+          When you sign up, you choose whether to be a Mentor or a Mentee. Next,
+          you provide your demographic and technical information. Mentors can
+          also share their available time slots.
         </p>
-
         <p>
-          Upon agreeing to sign up for marketing emails from Genia, users
-          receive a personalized calendar through an Azure Function, Mailchimp,
-          and SendGrid integration. This calendar (seen below) provides guidance
-          on when to sow or pot seeds and when to harvest all the selected
-          plants. Leveraging our proprietary React-to-PDF templating tool, we've
-          crafted the calendar to ensure its effectiveness and
-          user-friendliness.
+          Mentees can request a Mentor based on a match rating. This rating is
+          calculated using the provided demographic and technical information,
+          combined with our proprietary scoring algorithm. Once a request is
+          made, the Mentor must accept and choose a time slot when both parties
+          are available.
+        </p>
+        <p>
+          After a Mentor agrees to meet with a Mentee, both receive a Google
+          Meet link via email. This link allows them to connect at the scheduled
+          time.
         </p>
       </ProjectDetailsSection>
 
@@ -162,31 +153,6 @@ const Agora = () => {
       </ProjectImagesWrapper>
 
       <ProjectDetailsSection>
-        <h2>UX TESTING</h2>I conducted my first formal UX testing sessions for
-        this project, which proved to be quite enjoyable and energizing for the
-        test subjects in the office. Each session was organized into three major
-        sections:
-        <SubSection>
-          <b>Think-Aloud</b> - Users vocalized their thoughts as they interacted
-          with the app, sharing their impressions and understanding of its
-          purpose.
-        </SubSection>
-        <SubSection>
-          <b>Tasks</b> - Users were tasked with completing specific actions,
-          such as: "You are interested in growing tomatoes and need information
-          on sunlight levels and planting times. How would you proceed?" I then
-          evaluated the difficulty they encountered in completing these tasks.
-        </SubSection>
-        <SubSection>
-          <b>Adjectives</b> - Users were prompted to select 5 adjectives out of
-          a list of 100 that best described their feelings about the UI and
-          branding. The key discovery was that users initially did not perceive
-          the app as a tool for creating a gardening timeline. As a result, the
-          designer developed an alternative landing page yielding much clearer
-          results.
-        </SubSection>
-      </ProjectDetailsSection>
-      <ProjectDetailsSection>
         <h2>THE STACK</h2>
         <StackWrapper>
           {agoraProjectData?.tools?.map((tool) => (
@@ -195,7 +161,7 @@ const Agora = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/stellargaze" passHref $isLarge>
+        <StyledLink href="/handits" passHref $isLarge>
           NEXT PROJECT
         </StyledLink>
       </NextButtonWrapper>
