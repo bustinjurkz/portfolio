@@ -29,6 +29,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <>
       <Head>
         <title>DJ Portfolio</title>
+        <meta
+          name="description"
+          content="Dustin Jurkaulionis' portfolio - view my past and current projects. Let's collaborate!"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <Navbar />

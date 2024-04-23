@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
           <meta property="og:title" content="Dustin Jurkaulionis - Portfolio" />
           <meta
             property="og:description"
-            content="View my past and current projects. Let's collaborate!"
+            content="Dustin Jurkaulionis' portfolio - view my past and current projects. Let's collaborate!"
           />
           <meta property="og:url" content="https://dustinjurkaulionis.com" />
           <meta
