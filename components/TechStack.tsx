@@ -45,7 +45,7 @@ export const TechStack = () => {
                 translateY: -20,
               }}
               animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-              transition={{ duration: 0.2, delay: 0.35 + index * 0.2 }}
+              transition={{ duration: 0.2, delay: 0.1 + index * 0.2 }}
             >
               <IconWrapper>
                 <svg.component color={"#3b4250"} />
