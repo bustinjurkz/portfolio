@@ -49,7 +49,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             {props.name !== "Handits" ? (
               <Image
                 onClick={(e: any) => handleExpand(e)}
-                priority
+                loading="lazy"
                 className="image"
                 src={
                   props.name === "Timber Industry Apps"

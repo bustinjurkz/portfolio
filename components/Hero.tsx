@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Image from "next/legacy/image";
-import HeroImage from "../public/dustin_hero_background_3.jpg";
+import HeroImage from "../public/dustin_hero_background_low_qual.jpg";
 
 export const Hero = () => {
   return (

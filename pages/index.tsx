@@ -9,7 +9,6 @@ import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { Button } from "../components/Button";
-import { AnimatePresence, motion, useInView } from "framer-motion";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
