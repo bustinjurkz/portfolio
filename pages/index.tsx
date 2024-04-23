@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       </SectionWrapper>
 
       <SectionWrapper id="projects">
-        <HeaderWrapper $noBottomRadius>
+        <HeaderWrapper>
           <Header>PROJECTS</Header>
 
           <MoreInfoWrapper>
@@ -151,7 +151,7 @@ export const ProjectsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 500px);
   place-content: center;
-  grid-gap: 1rem;
-  background: ${(props) => props.theme.pink};
+  grid-gap: 2rem;
   padding-bottom: 2.5rem;
+  margin-top: 2rem;
 `;
