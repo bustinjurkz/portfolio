@@ -4,11 +4,12 @@ import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { Button } from "../components/Button";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
