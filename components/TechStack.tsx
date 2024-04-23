@@ -29,32 +29,29 @@ export const TechStack = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    amount: "all",
+    amount: 1,
   });
 
   return (
     <TechStackWrapper ref={ref}>
-      {svgComponents.map((svg, index) => (
-        <>
-          {isInView && (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                translateX: index % 2 === 0 ? -50 : 50,
-                translateY: -20,
-              }}
-              animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-              transition={{ duration: 0.2, delay: 0.1 + index * 0.2 }}
-            >
-              <IconWrapper>
-                <svg.component color={"#3b4250"} />
-                <IconLabel>{svg.label}</IconLabel>
-              </IconWrapper>
-            </motion.div>
-          )}
-        </>
-      ))}
+      {isInView &&
+        svgComponents.map((svg, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              translateX: index % 2 === 0 ? -50 : 50,
+              translateY: -20,
+            }}
+            animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+            transition={{ duration: 0.2, delay: 0.15 + index * 0.2 }}
+          >
+            <IconWrapper>
+              <svg.component color={"#3b4250"} />
+              <IconLabel>{svg.label}</IconLabel>
+            </IconWrapper>
+          </motion.div>
+        ))}
     </TechStackWrapper>
   );
 };
