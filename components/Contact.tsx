@@ -48,6 +48,7 @@ const LogosWrapper = styled.div`
   align-items: center;
   gap: 1.5rem;
   margin-top: 2rem;
+  align-items: baseline;
 
   a {
     > * {
@@ -62,7 +63,5 @@ const ContactMessage = styled.span`
 `;
 
 const ContactWrapper = styled.div`
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
   margin-top: 2rem;
 `;

@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         </ArrowStackWrapper>
       </SectionWrapper>
 
-      <SectionWrapper id="projects">
+      <SectionWrapper id="projects" $first>
         <HeaderWrapper>
           <Header>PROJECTS</Header>
 
@@ -96,12 +96,18 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const SectionWrapper = styled.div`
+const SectionWrapper = styled.div<{ $first?: boolean }>`
   margin-top: 5rem;
   margin-bottom: 9rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+
+  ${(props) =>
+    props.$first &&
+    css`
+      margin-top: 13rem;
+    `}
 `;
 
 const MoreInfoWrapper = styled.div`
@@ -139,18 +145,6 @@ export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
   align-items: center;
   gap: 1rem;
   margin-top: 3rem;
-  background: ${(props) => props.theme.pink};
-  padding: 1rem;
-
-  ${(props) =>
-    props.$noBottomRadius
-      ? css`
-          border-top-left-radius: 1rem;
-          border-top-right-radius: 1rem;
-        `
-      : css`
-          border-radius: 1rem;
-        `}
 `;
 
 export const ProjectsWrapper = styled.div`
@@ -174,7 +168,7 @@ const Arrow = styled.div`
   box-sizing: border-box;
   position: relative;
   display: block;
-  background: ${(props) => props.theme.secondary};
+  background: ${(props) => props.theme.primary};
   height: 60px;
   width: 5px;
   transition: transform 0.75s ease;
@@ -186,7 +180,7 @@ const Arrow = styled.div`
     height: 12px;
     border-bottom: 5px solid;
     border-right: 5px solid;
-    border-color: ${(props) => props.theme.secondary};
+    border-color: ${(props) => props.theme.primary};
     transform: rotate(45deg);
     bottom: 0px;
     left: -6px;
@@ -196,7 +190,7 @@ const Arrow = styled.div`
 const ArrowBox = styled.div`
   height: 60px;
   width: 40px;
-  transform: translateX(-20px);
+  transform: translateX(-13px);
 
   :first-child {
     margin: auto;

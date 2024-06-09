@@ -40,7 +40,7 @@ export const Timeline = () => {
               </LocationWrapper>
             </OrganizationLocation>
 
-            {item.description && <p>{item.description}</p>}
+            {item.description && <Description>{item.description}</Description>}
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
@@ -59,13 +59,11 @@ const TimelineWrapper = styled.div`
   }
   .vertical-timeline-element-content {
     background: ${(props) => props.theme.blue};
-    box-shadow: 0px 4px 5px 0px #cecece;
+    border-radius: 0px;
+    box-shadow: none;
   }
   .vertical-timeline-element-content-arrow {
     border-right-color: #c6c9cf;
-  }
-  .vertical-timeline-element:first-child .vertical-timeline-element-date {
-    font-weight: 600;
   }
 `;
 
@@ -96,4 +94,9 @@ const TimelineHeader = styled.h3`
 const OrganizationText = styled.h3`
   margin: 0;
   font-size: 1rem;
+`;
+
+const Description = styled.div`
+  margin-top: 1rem;
+  font-weight: 400;
 `;

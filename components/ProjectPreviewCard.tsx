@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "./Button";
+import { Button, ButtonMixin } from "./Button";
 import Image from "next/legacy/image";
 import Link from "next/link";
 import Lightbox from "yet-another-react-lightbox";
@@ -115,13 +115,13 @@ const ProjectCardWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   background: ${(props) => props.theme.blue};
-  box-shadow: 1px 4px 9px 0px #cecece;
-  border-radius: 0.25rem;
-  cursor: pointer;
   max-width: 500px;
+  border: 11px solid #3b425008;
+  transition: 0.5s ease;
 
   &:hover {
-    box-shadow: 2px 5px 9px 0px #a5a5a5;
+    cursor: pointer;
+    border-color: #3b425017;
   }
 `;
 
@@ -215,20 +215,7 @@ const ExpandButton = styled.button`
 `;
 
 export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
-  text-align: center;
-  display: inline-block;
-  padding: 0.4rem 0.65rem;
-  min-width: 110px;
-  border-radius: 10rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  white-space: nowrap;
+  ${ButtonMixin};
 
   ${(props) =>
     props.$isLarge &&
@@ -237,40 +224,6 @@ export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
       font-size: 14px;
       min-width: 180px;
     `}
-
-  &:hover {
-    cursor: "pointer";
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: ${(props) => props.theme.secondary};
-    transition: all 0.3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${(props) => props.theme.primary};
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  &:hover {
-    color: #fff;
-  }
-  &:hover:before {
-    width: 100%;
-  }
 `;
 
 const VisitLink = styled.a`

@@ -100,9 +100,10 @@ export const ProjectImagesWrapper = styled.div`
   background-color: ${(props) => props.theme.pink};
   padding: 3rem;
   gap: 3rem;
-  border-radius: 1rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
+  outline: 1px solid white;
+  outline-offset: -5px;
 
   img {
     border-radius: 15px;
@@ -155,7 +156,6 @@ export const ProjectDetailsBackgroundSection = styled.div`
 
 export const Tool = styled.div`
   padding: 8px;
-  border-radius: 10px;
   background: ${(props) => props.theme.grey};
   cursor: default;
   color: ${(props) => props.theme.white};
