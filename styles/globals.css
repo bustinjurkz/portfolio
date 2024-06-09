@@ -3,12 +3,11 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-family: "Inter", sans-serif;
-  font-family: "Source Sans Pro", sans-serif;
   color: #1d1e2b;
   font-size: 18px;
   line-height: 1.5em;
   height: 100vh;
+  font-family: "PP Neue Montreal Medium";
 
   background-image: linear-gradient(
       22.5deg,
@@ -72,11 +71,6 @@ h3 {
 h2,
 h3 {
   color: #3b4250;
-}
-
-h1,
-h2 {
-  font-family: "Inter", sans-serif;
 }
 
 a {

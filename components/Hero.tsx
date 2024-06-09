@@ -1,12 +1,15 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import Image from "next/legacy/image";
-import HeroImage from "../public/dustin_hero_background_low_qual.jpg";
+import HeroImage from "../public/dustin_hero_graffiti.png";
 
 export const Hero = () => {
   return (
     <>
       <HeroWrapper>
+        <HeroTextTitle>
+          FRONT END <br /> DEVELOPER
+        </HeroTextTitle>
         <HeroGradientWrapper id="hero">
           <Image
             priority
@@ -14,30 +17,25 @@ export const Hero = () => {
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            width={1000}
-            height={1333}
             layout={"responsive"}
           />
         </HeroGradientWrapper>
-
-        <HeroTextWrapper>
-          <HeroTextTitle>
-            Hello, <br />
-            I'm Dustin
-          </HeroTextTitle>
-          <HeroTextSubtitle>
-            I&apos;m a Canadian{" "}
-            <StyledLink
-              href="https://github.com/bustinjurkz"
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              Full Stack Web Developer
-            </StyledLink>{" "}
-            who loves cool design and offbeat ideas. I am available for full
-            time & freelance projects.
-          </HeroTextSubtitle>
-        </HeroTextWrapper>
+        <HeroTextTitle $isName>
+          DUSTIN <br />
+          JURKAULIONIS
+        </HeroTextTitle>
+        {/* <HeroTextSubtitle>
+          I&apos;m a Canadian{" "}
+          <StyledLink
+            href="https://github.com/bustinjurkz"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            Full Stack Web Developer
+          </StyledLink>{" "}
+          who loves cool design and offbeat ideas. I am available for full time
+          & freelance projects.
+        </HeroTextSubtitle> */}
       </HeroWrapper>
     </>
   );
@@ -60,20 +58,25 @@ const HeroWrapper = styled.div`
   margin-left: auto;
   animation: ${fadeInAnimation} 1.25s ease-out;
   margin-right: auto;
-  margin-bottom: 9rem;
   line-height: initial;
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-  }
+  gap: 1.5rem;
 `;
 
-const HeroTextTitle = styled.h1`
-  font-family: "Inter", sans-serif;
+const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
   white-space: nowrap;
   color: ${(props) => props.theme.primary};
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 0;
-  padding: 0;
+  line-height: 70px;
+  letter-spacing: 4px;
+
+  ${(props) =>
+    props.$isName &&
+    css`
+      text-align: right;
+      line-height: 100px;
+      font-size: 6rem;
+    `}
 `;
 
 const HeroTextSubtitle = styled.h2`
@@ -82,23 +85,7 @@ const HeroTextSubtitle = styled.h2`
 `;
 
 const HeroGradientWrapper = styled.div`
-  width: 100%;
-
-  mask-image: linear-gradient(to bottom, #ffffff 60%, transparent 90%);
-
-  @media screen and (min-width: 768px) {
-    mask-image: linear-gradient(to right, #ffffff 60%, transparent 100%);
-  }
-`;
-
-const HeroTextWrapper = styled.div`
-  width: 100%;
-  padding-left: 3.5rem;
-  display: flex;
-  align-self: center;
-  flex-direction: column;
-  justify-content: space-between;
-  font-weight: 600;
+  width: 55%;
 `;
 
 const StyledLink = styled.a`

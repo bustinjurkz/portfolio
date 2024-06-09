@@ -140,7 +140,6 @@ const CardHeaderWrapper = styled.div`
   border-radius: 0.25rem 0.25rem 0 0;
   color: ${(props) => props.theme.darkBlue};
   align-items: center;
-  font-family: "Inter", sans-serif;
   width: 100%;
   opacity: 1;
   text-align: center;

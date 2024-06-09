@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { Button } from "../components/Button";
+import { keyframes } from "styled-components";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -42,10 +43,10 @@ const Home: NextPage = () => {
     <>
       <Hero />
       <SectionWrapper>
-        <HeaderWrapper>
-          <Header>MY TECH STACK</Header>
-        </HeaderWrapper>
-        <TechStack />
+        <ArrowStackWrapper>
+          <Arrow />
+          <TechStack />
+        </ArrowStackWrapper>
       </SectionWrapper>
 
       <SectionWrapper id="projects">
@@ -154,4 +155,41 @@ export const ProjectsWrapper = styled.div`
   grid-gap: 2rem;
   padding-bottom: 2.5rem;
   margin-top: 2rem;
+`;
+
+const ArrowStackWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const upAndDown = keyframes`
+  0% { transform: translateY(10px); }
+  50% { transform: translateY(0px); }
+  100% { transform: translateY(10px); }
+`;
+
+const Arrow = styled.div`
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  background: ${(props) => props.theme.secondary};
+  height: 60px;
+  width: 5px;
+  animation: ${upAndDown} 3s infinite;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-color: ${(props) => props.theme.secondary};
+    transform: rotate(45deg);
+    bottom: 0px;
+    left: -6px;
+  }
 `;

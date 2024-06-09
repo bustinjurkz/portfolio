@@ -8,11 +8,27 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import smoothscroll from "smoothscroll-polyfill";
 import Head from "next/head";
+import localFont from "@next/font/local";
+
 declare global {
   interface Window {
     __forceSmoothScrollPolyfill__: any;
   }
 }
+const myFont = localFont({
+  src: [
+    {
+      path: "../public/ppneuemontreal-book.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/ppneuemontreal-medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+});
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [container, setContainer] = useState<any>(undefined);
@@ -26,7 +42,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <>
+    <main className={myFont.className}>
       <Head>
         <title>DJ Portfolio</title>
         <meta
@@ -70,6 +86,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
           </AnimatePresence>
         </Layout>
       </ThemeProvider>
-    </>
+    </main>
   );
 }

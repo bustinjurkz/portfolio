@@ -32,14 +32,14 @@ const Navbar: React.FC = () => {
         </Link>
       </LogoWrapper>
       <NavLinksWrapper>
-        <div onClick={() => handleScroll("projects")} className="link work">
-          PROJECTS
+        <div onClick={() => handleScroll("projects")} className="link">
+          Projects
         </div>
-        <div onClick={() => handleScroll("experience")} className="link work">
-          EXPERIENCE
+        <div onClick={() => handleScroll("experience")} className="link">
+          Experience
         </div>
         <div onClick={() => handleScroll("contact")} className="link">
-          CONTACT
+          Contact
         </div>
       </NavLinksWrapper>
     </NavbarWrapper>
@@ -62,38 +62,22 @@ const NavbarWrapper = styled.header`
 
 export const LogoWrapper = styled.div`
   cursor: pointer;
-  width: 115px;
-
-  &:hover {
-    transform: scale(1.03);
-  }
+  width: 100px;
 `;
 
 const NavLinksWrapper = styled.div`
   display: flex;
   font-weight: 600;
+  letter-spacing: 3px;
+  gap: 1.5rem;
 
   .link {
-    font-size: large;
     transition: 0.5s;
     &:hover,
     &:active,
     &:focus {
       cursor: pointer;
       color: ${(props) => props.theme.secondary};
-    }
-  }
-
-  .work {
-    margin-right: 1rem;
-    @media screen and (min-width: 430px) {
-      margin-right: 2rem;
-    }
-    @media screen and (min-width: 800px) {
-      margin-right: 3rem;
-    }
-    @media screen and (min-width: 1000px) {
-      margin-right: 4rem;
     }
   }
 `;

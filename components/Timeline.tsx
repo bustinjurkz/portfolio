@@ -89,7 +89,6 @@ const LocationText = styled.span`
 `;
 
 const TimelineHeader = styled.h3`
-  font-family: "Inter", sans-serif;
   margin-top: 0;
   margin-bottom: 0.35rem;
 `;

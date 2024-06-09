@@ -48,16 +48,6 @@ export default class MyDocument extends Document {
             property="og:image"
             content="https://www.dustinjurkaulionis.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdustin_hero_background_3.fe5b2734.jpg&w=1000&q=75"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />

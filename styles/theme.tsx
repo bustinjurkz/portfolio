@@ -8,7 +8,7 @@ const theme: DefaultTheme = {
   grey: "#8b93a3",
   darkGrey: "#4F5D75",
   red: "#f5d9d5",
-  secondary: "#7e5633",
+  secondary: "#783c3d",
   blue: "#eceff4",
   pink: "#f3efef",
   biggestFont: "90px",
