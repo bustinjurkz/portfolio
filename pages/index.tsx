@@ -31,8 +31,11 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath.split("#")[1] === "work") {
-      handleScroll("work");
+    if (router.asPath.split("#")[1] === "projects") {
+      handleScroll("projects");
+    }
+    if (router.asPath.split("#")[1] === "experience") {
+      handleScroll("experience");
     }
     if (router.asPath.split("#")[1] === "contact") {
       handleScroll("contact");
@@ -44,7 +47,9 @@ const Home: NextPage = () => {
       <Hero />
       <SectionWrapper>
         <ArrowStackWrapper>
-          <Arrow />
+          <ArrowBox onClick={() => handleScroll("projects")}>
+            <Arrow />
+          </ArrowBox>
           <TechStack />
         </ArrowStackWrapper>
       </SectionWrapper>
@@ -165,12 +170,6 @@ const ArrowStackWrapper = styled.div`
   align-items: center;
 `;
 
-const upAndDown = keyframes`
-  0% { transform: translateY(10px); }
-  50% { transform: translateY(0px); }
-  100% { transform: translateY(10px); }
-`;
-
 const Arrow = styled.div`
   box-sizing: border-box;
   position: relative;
@@ -178,7 +177,7 @@ const Arrow = styled.div`
   background: ${(props) => props.theme.secondary};
   height: 60px;
   width: 5px;
-  animation: ${upAndDown} 3s infinite;
+  transition: transform 0.75s ease;
 
   &:after {
     content: "";
@@ -191,5 +190,23 @@ const Arrow = styled.div`
     transform: rotate(45deg);
     bottom: 0px;
     left: -6px;
+  }
+`;
+
+const ArrowBox = styled.div`
+  height: 60px;
+  width: 40px;
+  transform: translateX(-20px);
+
+  :first-child {
+    margin: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover ${Arrow} {
+    transform: translateY(5px);
   }
 `;
