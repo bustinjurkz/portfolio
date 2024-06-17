@@ -4,12 +4,11 @@ import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { Button } from "../components/Button";
-import { keyframes } from "styled-components";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -116,7 +115,7 @@ const MoreInfoWrapper = styled.div`
   align-items: center;
   flex-flow: wrap;
   justify-content: center;
-  margin-left: auto;
+  margin-left: 2rem;
 
   a {
     margin: 0 0.5rem;
@@ -148,9 +147,10 @@ export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
 `;
 
 export const ProjectsWrapper = styled.div`
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.75rem;
 `;
 
 const ArrowStackWrapper = styled.div`

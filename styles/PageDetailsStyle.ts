@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const ProjectDetailsWrapper = styled.div`
+  h2 {
+    font-size: 1.5rem;
+  }
+
   @media screen and (min-width: 380px) {
     margin: 0rem 2rem;
   }

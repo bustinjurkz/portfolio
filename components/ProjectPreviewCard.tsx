@@ -53,7 +53,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 className="image"
                 src={`/${props.name.toLowerCase()}-preview.png`}
                 alt={`/${props.name.toLowerCase()}-preview`}
-                aria-label="Planter Preview Image"
+                aria-label={`/${props.name.toLowerCase()} preview image`}
                 width={1668}
                 height={865}
                 layout={"responsive"}
@@ -113,12 +113,10 @@ const ProjectCardWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   background: ${(props) => props.theme.blue};
-  border: 11px solid #3b425008;
-  transition: 0.5s ease;
+  gap: 2rem;
 
   &:hover {
     cursor: pointer;
-    border-color: #3b425017;
   }
 `;
 
@@ -134,15 +132,8 @@ const Links = styled.div`
 const CardHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  border-radius: 0.25rem 0.25rem 0 0;
-  color: ${(props) => props.theme.darkBlue};
   align-items: center;
-  width: 100%;
-  opacity: 1;
-  text-align: center;
-  margin-top: 2.25rem;
   margin-bottom: 1.15rem;
-  justify-content: center;
 `;
 
 const ProjectTitle = styled.h3`
@@ -150,19 +141,12 @@ const ProjectTitle = styled.h3`
   color: ${(props) => props.theme.primary};
   margin: 0;
   white-space: nowrap;
-`;
-
-const CardContentsWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: row;
+  font-size: 28px;
 `;
 
 const VideoWrapper = styled.div`
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
   overflow: hidden;
   iframe,
   object,
@@ -235,11 +219,13 @@ const VisitLink = styled.a`
 const CardInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60%;
 `;
 
 const CardImageWrapper = styled.div`
   position: relative;
-  width: 500px;
+  width: 40%;
+
   .image {
     &:hover {
       cursor: zoom-in;

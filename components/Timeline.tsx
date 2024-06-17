@@ -54,6 +54,7 @@ const IconStyle = {
 };
 
 const TimelineWrapper = styled.div`
+  margin-top: 2.75rem;
   .vertical-timeline::before {
     background: ${(props) => props.theme.whiteContrast};
   }

@@ -63,5 +63,5 @@ const ContactMessage = styled.span`
 `;
 
 const ContactWrapper = styled.div`
-  margin-top: 2rem;
+  margin-top: 2.75rem;
 `;

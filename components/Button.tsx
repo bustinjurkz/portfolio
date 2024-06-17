@@ -47,32 +47,11 @@ export const ButtonMixin = css`
   z-index: 1;
   white-space: nowrap;
 
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: ${(props) => props.theme.secondary};
-    transition: all 0.3s;
-    z-index: -1;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${(props) => props.theme.primary};
-    z-index: -2;
-  }
+  background-color: ${(props) => props.theme.primary};
+
   &:hover {
     color: #fff;
-  }
-  &:hover:before {
-    width: 100%;
+    background-color: ${(props) => props.theme.secondary};
   }
 `;
 
@@ -90,7 +69,9 @@ const ButtonStyle = styled.a<{
       min-width: 180px;
     `}
 
-  &:hover {
-    cursor: ${(props) => (props.$disabled ? "default" : "pointer")};
-  }
+  ${(props) =>
+    props.$disabled &&
+    css`
+      cursor: default;
+    `}
 `;
