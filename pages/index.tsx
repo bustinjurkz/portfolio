@@ -148,12 +148,9 @@ export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
 `;
 
 export const ProjectsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 500px);
-  place-content: center;
-  grid-gap: 2rem;
-  padding-bottom: 2.5rem;
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ArrowStackWrapper = styled.div`

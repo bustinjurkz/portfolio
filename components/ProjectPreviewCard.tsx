@@ -36,7 +36,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
     <>
       <Link href={`/${props.slug}`} passHref legacyBehavior>
         <ProjectCardWrapper>
-          <CardContentsWrapper>
+          <CardImageWrapper>
             {props.name !== "Handits" && (
               <ExpandButton onClick={(e: any) => handleExpand(e)}>
                 <FontAwesomeIcon
@@ -51,11 +51,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 onClick={(e: any) => handleExpand(e)}
                 loading="eager"
                 className="image"
-                src={
-                  props.name === "Timber Industry Apps"
-                    ? "/genia-preview.png"
-                    : `/${props.name.toLowerCase()}-preview.png`
-                }
+                src={`/${props.name.toLowerCase()}-preview.png`}
                 alt={`/${props.name.toLowerCase()}-preview`}
                 aria-label="Planter Preview Image"
                 width={1668}
@@ -74,7 +70,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 />
               </VideoWrapper>
             )}
+          </CardImageWrapper>
 
+          <CardInfoWrapper>
             <CardHeaderWrapper>
               <ProjectTitle>{props.name}</ProjectTitle>
               <Links>
@@ -93,7 +91,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
               </Links>
             </CardHeaderWrapper>
             <DescriptionWrapper>{props.description}</DescriptionWrapper>
-          </CardContentsWrapper>
+          </CardInfoWrapper>
         </ProjectCardWrapper>
       </Link>
       <Lightbox
@@ -112,10 +110,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 const ProjectCardWrapper = styled.div`
   padding: 2.05rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   background: ${(props) => props.theme.blue};
-  max-width: 500px;
   border: 11px solid #3b425008;
   transition: 0.5s ease;
 
@@ -156,14 +153,9 @@ const ProjectTitle = styled.h3`
 `;
 
 const CardContentsWrapper = styled.div`
-  align-self: center;
   position: relative;
-
-  .image {
-    &:hover {
-      cursor: zoom-in;
-    }
-  }
+  display: flex;
+  flex-direction: row;
 `;
 
 const VideoWrapper = styled.div`
@@ -237,5 +229,20 @@ const VisitLink = styled.a`
   &:focus {
     cursor: pointer;
     color: ${(props) => props.theme.secondary};
+  }
+`;
+
+const CardInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CardImageWrapper = styled.div`
+  position: relative;
+  width: 500px;
+  .image {
+    &:hover {
+      cursor: zoom-in;
+    }
   }
 `;

@@ -155,16 +155,13 @@ export const ProjectDetailsBackgroundSection = styled.div`
 `;
 
 export const Tool = styled.div`
-  padding: 8px;
-  background: ${(props) => props.theme.grey};
   cursor: default;
-  color: ${(props) => props.theme.white};
-  margin: 5px 20px 5px 0px;
-  width: fit-content;
+  color: ${(props) => props.theme.primary};
 `;
 
 export const StackWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 1.75rem;
 `;
