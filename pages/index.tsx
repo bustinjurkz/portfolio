@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
 import { Button } from "../components/Button";
+import { ZebraPattern } from "../components/ZebraPattern";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -79,6 +80,7 @@ const Home: NextPage = () => {
           })}
         </ProjectsWrapper>
       </SectionWrapper>
+
       <SectionWrapper id="experience">
         <HeaderWrapper>
           <Header>EXPERIENCE</Header>
@@ -88,6 +90,7 @@ const Home: NextPage = () => {
       </SectionWrapper>
       <SectionWrapper id="contact">
         <Contact />
+        <ZebraPattern />
       </SectionWrapper>
     </>
   );

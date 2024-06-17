@@ -101,7 +101,6 @@ export const NextButtonWrapper = styled.div`
 export const ProjectImagesWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: ${(props) => props.theme.pink};
   padding: 3rem;
   gap: 3rem;
   margin-top: 4rem;
