@@ -90,7 +90,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
               </Links>
             </CardHeaderWrapper>
-            <DescriptionWrapper>{props.description}</DescriptionWrapper>
+            <DescriptionWrapper>
+              <span>{props.description}</span>
+            </DescriptionWrapper>
           </CardInfoWrapper>
         </ProjectCardWrapper>
       </Link>
@@ -112,11 +114,15 @@ const ProjectCardWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: ${(props) => props.theme.blue};
   gap: 2rem;
+
+  border-radius: 32px;
+  box-shadow: 11px 11px 20px #dedede, -11px -11px 20px #ffffff;
+  transition: 0.5s;
 
   &:hover {
     cursor: pointer;
+    box-shadow: 12px 12px 20px #eceff4, -12px -12px 20px #f1f1f1;
   }
 `;
 
@@ -193,13 +199,15 @@ const ExpandButton = styled.button`
 export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
   ${ButtonMixin};
 
+  height: min-content;
+
   ${(props) =>
     props.$isLarge &&
     css`
       padding: 0.75rem 1rem;
       font-size: 14px;
       min-width: 180px;
-    `}
+    `};
 `;
 
 const VisitLink = styled.a`

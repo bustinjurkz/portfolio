@@ -4,8 +4,6 @@ export const ZebraPattern = () => {
   return (
     <ZebraWrapper>
       <svg
-        x="0px"
-        y="0px"
         viewBox="0 0 1916.6482 130.02601"
         xmlSpace="preserve"
         xmlns="http://www.w3.org/2000/svg"
@@ -19,10 +17,12 @@ export const ZebraPattern = () => {
 };
 
 const ZebraWrapper = styled.div`
-  margin-top: 3rem;
   mask-image: url("grit.png");
   height: 74px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  transform: translateY(-1px);
 
   svg {
     fill: ${(props) => props.theme.primary};

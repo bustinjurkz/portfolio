@@ -8,7 +8,6 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
 import { TechStack } from "../components/TechStack";
-import { Button } from "../components/Button";
 import { ZebraPattern } from "../components/ZebraPattern";
 
 export enum ProjectType {
@@ -57,10 +56,7 @@ const Home: NextPage = () => {
       <SectionWrapper id="projects" $first>
         <HeaderWrapper>
           <Header>PROJECTS</Header>
-
-          <MoreInfoWrapper>
-            Tap <Button text="Learn More" disabled /> for full project details
-          </MoreInfoWrapper>
+          <ZebraPattern />
         </HeaderWrapper>
 
         <ProjectsWrapper>
@@ -84,13 +80,13 @@ const Home: NextPage = () => {
       <SectionWrapper id="experience">
         <HeaderWrapper>
           <Header>EXPERIENCE</Header>
+          <ZebraPattern />
         </HeaderWrapper>
 
         <Timeline />
       </SectionWrapper>
       <SectionWrapper id="contact">
         <Contact />
-        <ZebraPattern />
       </SectionWrapper>
     </>
   );
@@ -112,48 +108,33 @@ const SectionWrapper = styled.div<{ $first?: boolean }>`
     `}
 `;
 
-const MoreInfoWrapper = styled.div`
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-flow: wrap;
-  justify-content: center;
-  margin-left: 2rem;
-
-  a {
-    margin: 0 0.5rem;
-  }
-
-  svg {
-    width: 20px;
-    margin-right: 0.4rem;
-  }
-`;
-
 export const Header = styled.h2`
-  text-align: center;
-  margin-bottom: 1rem;
   letter-spacing: 3px;
-
-  @media screen and (min-width: 768px) {
-    text-align: start;
-    margin: 0;
-  }
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.white};
+  align-content: center;
+  position: absolute;
+  z-index: 1;
+  height: inherit;
+  width: 472px;
+  text-align: center;
+  margin: 0;
 `;
 
 export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
   margin-top: 3rem;
+  width: 100%;
+  height: 74px;
+  margin-bottom: 3rem;
 `;
 
 export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2.75rem;
+  gap: 3rem;
 `;
 
 const ArrowStackWrapper = styled.div`

@@ -5,18 +5,19 @@ import { HeaderWrapper, Header } from "../pages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { ZebraPattern } from "./ZebraPattern";
 
 export const Contact = () => {
   return (
     <>
       <HeaderWrapper>
         <Header>CONTACT</Header>
+        <ZebraPattern />
       </HeaderWrapper>
       <ContactWrapper>
         <ContactMessage>
-          Feel free to reach out! <br />
-          Whether you have a project in mind, want to collaborate, or simply
-          have a question, hit me up!
+          Whether you want to collaborate, or simply have a question - <br />
+          Feel free to reach out.
         </ContactMessage>
         <LogosWrapper>
           <a
@@ -62,6 +63,4 @@ const ContactMessage = styled.span`
   margin-top: 2rem;
 `;
 
-const ContactWrapper = styled.div`
-  margin-top: 2.75rem;
-`;
+const ContactWrapper = styled.div``;
