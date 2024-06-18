@@ -85,7 +85,7 @@ const Home: NextPage = () => {
 
         <Timeline />
       </SectionWrapper>
-      <SectionWrapper id="contact">
+      <SectionWrapper id="contact" $last>
         <Contact />
       </SectionWrapper>
     </>
@@ -94,7 +94,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const SectionWrapper = styled.div<{ $first?: boolean }>`
+const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
   margin-top: 5rem;
   margin-bottom: 9rem;
   max-width: 1100px;
@@ -105,6 +105,12 @@ const SectionWrapper = styled.div<{ $first?: boolean }>`
     props.$first &&
     css`
       margin-top: 13rem;
+    `}
+
+  ${(props) =>
+    props.$last &&
+    css`
+      margin-bottom: 3rem;
     `}
 `;
 
