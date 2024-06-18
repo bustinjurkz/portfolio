@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import projectData from "../data/projects.json";
-import Level from "../public/handits/game-level.jpg";
+import Level from "../public/handits/game-level.webp";
 import Throwing from "../public/handits/throwing-anim.gif";
 
 import {

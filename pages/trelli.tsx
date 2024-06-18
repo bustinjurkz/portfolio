@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "../components/Button";
 import Image from "next/legacy/image";
-import Quote from "../public/trelli/quote-summary.png";
-import Award from "../public/trelli/innovation.jpg";
-import Tradeshow from "../public/trelli/tradeshow.jpg";
+import Quote from "../public/trelli/quote-summary.webp";
+import Award from "../public/trelli/innovation.webp";
+import Tradeshow from "../public/trelli/tradeshow.webp";
 import projectData from "../data/projects.json";
 
 import {

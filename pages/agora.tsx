@@ -29,8 +29,8 @@ import "yet-another-react-lightbox/styles.css";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import BookedModal from "../public/agora/meeting-booked.png";
-import Mentors from "../public/agora/book-mentor.png";
+import BookedModal from "../public/agora/meeting-booked.webp";
+import Mentors from "../public/agora/book-mentor.webp";
 import { handleScroll } from ".";
 
 const Agora = () => {

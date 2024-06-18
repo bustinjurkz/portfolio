@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button } from "../components/Button";
 import projectData from "../data/projects.json";
 import Image from "next/legacy/image";
-import MainApp from "../public/stellargaze/main-app.png";
-import Data from "../public/stellargaze/data.jpg";
+import MainApp from "../public/stellargaze/main-app.webp";
+import Data from "../public/stellargaze/data.webp";
 import {
   NextButtonWrapper,
   ProjectDetailsBackgroundSection,

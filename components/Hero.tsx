@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css, keyframes } from "styled-components";
 import Image from "next/legacy/image";
-import HeroImage from "../public/dustin_hero_graffiti.png";
+import HeroImage from "../public/dustin_hero_graffiti.webp";
 
 export const Hero = () => {
   return (

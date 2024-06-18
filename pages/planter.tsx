@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button } from "../components/Button";
 import Link from "next/link";
 import Image from "next/legacy/image";
-import Calendar from "../public/planter/calendar.png";
-import Cart from "../public/planter/cart.png";
+import Calendar from "../public/planter/calendar.webp";
+import Cart from "../public/planter/cart.webp";
 import projectData from "../data/projects.json";
 
 import {

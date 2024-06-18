@@ -29,7 +29,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 
   const handleExpand = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
-    setExpandPreview(`/${props.name.toLowerCase()}-preview.png`);
+    setExpandPreview(`/${props.name.toLowerCase()}-preview.webp`);
   };
 
   return (
@@ -51,7 +51,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
                 onClick={(e: any) => handleExpand(e)}
                 loading="eager"
                 className="image"
-                src={`/${props.name.toLowerCase()}-preview.png`}
+                src={`/${props.name.toLowerCase()}-preview.webp`}
                 alt={`/${props.name.toLowerCase()}-preview`}
                 aria-label={`/${props.name.toLowerCase()} preview image`}
                 width={1668}

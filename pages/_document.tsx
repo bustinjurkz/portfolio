@@ -44,10 +44,6 @@ export default class MyDocument extends Document {
             content="Dustin Jurkaulionis' portfolio - view my past and current projects. Let's collaborate!"
           />
           <meta property="og:url" content="https://dustinjurkaulionis.com" />
-          <meta
-            property="og:image"
-            content="https://www.dustinjurkaulionis.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdustin_hero_background_3.fe5b2734.jpg&w=1000&q=75"
-          />
         </Head>
         <body>
           <Main />
