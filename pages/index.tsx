@@ -135,6 +135,7 @@ export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding: 0 1.5rem;
 `;
 
 const ArrowStackWrapper = styled.div`

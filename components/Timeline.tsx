@@ -65,6 +65,9 @@ const TimelineWrapper = styled.div`
   .vertical-timeline-element-content-arrow {
     border-right-color: #c6c9cf;
   }
+  .vertical-timeline-element-icon {
+    border-radius: 0;
+  }
 `;
 
 const OrganizationLocation = styled.div`

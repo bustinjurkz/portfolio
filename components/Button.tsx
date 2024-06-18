@@ -35,8 +35,9 @@ export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
 export const ButtonMixin = css`
   text-align: center;
   display: inline-block;
-  padding: 4px 7px;
+  padding: 4px 12px;
   min-width: 110px;
+  border-radius: 15px;
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
