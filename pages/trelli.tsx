@@ -29,6 +29,7 @@ import {
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
 
 const Trelli = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -49,7 +50,9 @@ const Trelli = () => {
         <ProjectDetailsHeader>TRELLI</ProjectDetailsHeader>
 
         <VisitWebsiteLink>
-          <Button text={"VISIT THE WEBSITE"} to={"https://trelli.co.nz"} />
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button text={"VISIT THE WEBSITE"} to={"https://trelli.co.nz"} />
+          </motion.div>
         </VisitWebsiteLink>
       </ProjectDetailsHeaderWrapper>
       <ProjectDetailsIntroWrapper>
@@ -152,9 +155,11 @@ const Trelli = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/agora" passHref $isLarge>
-          NEXT PROJECT
-        </StyledLink>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/agora" passHref $isLarge>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
       </NextButtonWrapper>
       <Lightbox
         open={!!expandPreview}

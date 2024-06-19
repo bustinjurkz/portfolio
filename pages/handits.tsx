@@ -27,6 +27,7 @@ import Lightbox from "yet-another-react-lightbox";
 
 import "yet-another-react-lightbox/styles.css";
 import Image from "next/legacy/image";
+import { motion } from "framer-motion";
 
 const Handits = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -170,9 +171,11 @@ const Handits = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/planter" passHref $isLarge>
-          NEXT PROJECT
-        </StyledLink>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/planter" passHref $isLarge>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
       </NextButtonWrapper>
       <Lightbox
         open={!!expandPreview}

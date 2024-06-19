@@ -30,6 +30,7 @@ import {
 import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
 
 const Planter = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -51,7 +52,9 @@ const Planter = () => {
         <ProjectDetailsHeader>PLANTER</ProjectDetailsHeader>
 
         <VisitWebsiteLink>
-          <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+          </motion.div>
         </VisitWebsiteLink>
       </ProjectDetailsHeaderWrapper>
       <ProjectDetailsIntroWrapper>
@@ -178,9 +181,11 @@ const Planter = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/stellargaze" passHref $isLarge>
-          NEXT PROJECT
-        </StyledLink>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/stellargaze" passHref $isLarge>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
       </NextButtonWrapper>
       <Lightbox
         open={!!expandPreview}

@@ -8,6 +8,7 @@ import { ProjectType } from "../pages";
 import { css, styled } from "styled-components";
 import { faMagnifyingGlassPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 
 export interface ProjectPreviewCardProps {
   name: string;
@@ -35,69 +36,71 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
   return (
     <>
       <Link href={`/${props.slug}`} passHref legacyBehavior>
-        <ProjectCardWrapper>
-          <CardImageWrapper>
-            {props.name !== "Handits" && (
-              <ExpandButton
-                onClick={(e: any) => handleExpand(e)}
-                aria-label="expand-button"
-              >
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlassPlus}
-                  className="expand-icon"
-                />
-              </ExpandButton>
-            )}
+        <motion.div whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.98 }}>
+          <ProjectCardWrapper>
+            <CardImageWrapper>
+              {props.name !== "Handits" && (
+                <ExpandButton
+                  onClick={(e: any) => handleExpand(e)}
+                  aria-label="expand-button"
+                >
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlassPlus}
+                    className="expand-icon"
+                  />
+                </ExpandButton>
+              )}
 
-            {props.name !== "Handits" ? (
-              <Image
-                onClick={(e: any) => handleExpand(e)}
-                loading="lazy"
-                src={`/${props.name.toLowerCase()}-preview.webp`}
-                alt={`/${props.name.toLowerCase()}-preview`}
-                aria-label={`/${props.name.toLowerCase()} preview image`}
-                width={1000}
-                height={518}
-                layout={"responsive"}
-              />
-            ) : (
-              <VideoWrapper>
-                <iframe
-                  width="1668"
+              {props.name !== "Handits" ? (
+                <Image
+                  onClick={(e: any) => handleExpand(e)}
                   loading="lazy"
-                  height="865"
-                  src="https://www.youtube.com/embed/abJWSL5FRzs"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src={`/${props.name.toLowerCase()}-preview.webp`}
+                  alt={`/${props.name.toLowerCase()}-preview`}
+                  aria-label={`/${props.name.toLowerCase()} preview image`}
+                  width={1000}
+                  height={518}
+                  layout={"responsive"}
                 />
-              </VideoWrapper>
-            )}
-          </CardImageWrapper>
+              ) : (
+                <VideoWrapper>
+                  <iframe
+                    width="1668"
+                    loading="lazy"
+                    height="865"
+                    src="https://www.youtube.com/embed/abJWSL5FRzs"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </VideoWrapper>
+              )}
+            </CardImageWrapper>
 
-          <CardInfoWrapper>
-            <CardHeaderWrapper>
-              <ProjectTitle>{props.name}</ProjectTitle>
-              <Links>
-                {props.liveURL && (
-                  <VisitLink
-                    href={props.liveURL}
-                    target="_blank"
-                    onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                      e.stopPropagation()
-                    }
-                  >
-                    VISIT SITE
-                  </VisitLink>
-                )}
-                <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
-              </Links>
-            </CardHeaderWrapper>
-            <DescriptionWrapper>
-              <span>{props.description}</span>
-            </DescriptionWrapper>
-          </CardInfoWrapper>
-        </ProjectCardWrapper>
+            <CardInfoWrapper>
+              <CardHeaderWrapper>
+                <ProjectTitle>{props.name}</ProjectTitle>
+                <Links>
+                  {props.liveURL && (
+                    <VisitLink
+                      href={props.liveURL}
+                      target="_blank"
+                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+                        e.stopPropagation()
+                      }
+                    >
+                      VISIT SITE
+                    </VisitLink>
+                  )}
+                  <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
+                </Links>
+              </CardHeaderWrapper>
+              <DescriptionWrapper>
+                <span>{props.description}</span>
+              </DescriptionWrapper>
+            </CardInfoWrapper>
+          </ProjectCardWrapper>
+        </motion.div>
       </Link>
       <Lightbox
         open={!!expandPreview}

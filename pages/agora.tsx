@@ -32,6 +32,7 @@ import Image from "next/legacy/image";
 import BookedModal from "../public/agora/meeting-booked.webp";
 import Mentors from "../public/agora/book-mentor.webp";
 import { handleScroll } from ".";
+import { motion } from "framer-motion";
 
 const Agora = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -53,7 +54,9 @@ const Agora = () => {
         <ProjectDetailsHeader>AGORA MENTORING</ProjectDetailsHeader>
 
         <VisitWebsiteLink>
-          <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+          </motion.div>
         </VisitWebsiteLink>
       </ProjectDetailsHeaderWrapper>
       <ProjectDetailsIntroWrapper>
@@ -160,9 +163,11 @@ const Agora = () => {
         </StackWrapper>
       </ProjectDetailsSection>
       <NextButtonWrapper>
-        <StyledLink href="/handits" passHref $isLarge>
-          NEXT PROJECT
-        </StyledLink>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/handits" passHref $isLarge>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
       </NextButtonWrapper>
       <Lightbox
         open={!!expandPreview}

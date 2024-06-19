@@ -4,6 +4,7 @@ import Logo from "../public/script_logo.webp";
 import Image from "next/legacy/image";
 import Link from "next/link";
 import router from "next/router";
+import { motion } from "framer-motion";
 
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
@@ -22,19 +23,35 @@ export const Navbar = () => {
     <NavbarWrapper>
       <LogoWrapper>
         <Link href="/" passHref>
-          <Image
-            src={Logo}
-            alt="Logo"
-            aria-label="Dustin  Logo"
-            width={115}
-            height={38}
-          />
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Image
+              src={Logo}
+              alt="Logo"
+              aria-label="Dustin  Logo"
+              width={115}
+              height={38}
+            />
+          </motion.div>
         </Link>
       </LogoWrapper>
       <NavLinksWrapper>
-        <NavLink onClick={() => handleScroll("projects")}>Projects</NavLink>
-        <NavLink onClick={() => handleScroll("experience")}>Experience</NavLink>
-        <NavLink onClick={() => handleScroll("contact")}>Contact</NavLink>
+        <NavLink onClick={() => handleScroll("projects")}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Projects
+          </motion.div>
+        </NavLink>
+        <NavLink onClick={() => handleScroll("experience")}>
+          {" "}
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Experience{" "}
+          </motion.div>
+        </NavLink>
+        <NavLink onClick={() => handleScroll("contact")}>
+          {" "}
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Contact{" "}
+          </motion.div>
+        </NavLink>
       </NavLinksWrapper>
     </NavbarWrapper>
   );
