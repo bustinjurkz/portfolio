@@ -7,7 +7,6 @@ import { Contact } from "../components/Contact";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
-import { TechStack } from "../components/TechStack";
 import { ZebraPattern } from "../components/ZebraPattern";
 
 export enum ProjectType {
@@ -44,14 +43,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Hero />
-      <SectionWrapper>
-        <ArrowStackWrapper>
-          <ArrowBox onClick={() => handleScroll("projects")}>
-            <Arrow />
-          </ArrowBox>
-          <TechStack />
-        </ArrowStackWrapper>
-      </SectionWrapper>
 
       <SectionWrapper id="projects" $first>
         <HeaderWrapper>
@@ -104,7 +95,7 @@ const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
   ${(props) =>
     props.$first &&
     css`
-      margin-top: 13rem;
+      margin-top: 12rem;
     `}
 
   ${(props) =>
@@ -142,53 +133,4 @@ export const ProjectsWrapper = styled.div`
   flex-direction: column;
   gap: 3rem;
   padding: 0 1.5rem;
-`;
-
-const ArrowStackWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Arrow = styled.div`
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  background: ${(props) => props.theme.primary};
-  height: 60px;
-  width: 5px;
-  transition: transform 0.75s ease;
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-bottom: 5px solid;
-    border-right: 5px solid;
-    border-color: ${(props) => props.theme.primary};
-    transform: rotate(45deg);
-    bottom: 0px;
-    left: -6px;
-  }
-`;
-
-const ArrowBox = styled.div`
-  height: 60px;
-  width: 40px;
-  transform: translateX(-13px);
-
-  :first-child {
-    margin: auto;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover ${Arrow} {
-    transform: translateY(5px);
-  }
 `;

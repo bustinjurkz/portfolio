@@ -2,6 +2,8 @@ import React from "react";
 import styled, { css, keyframes } from "styled-components";
 import Image from "next/legacy/image";
 import HeroImage from "../public/dustin_hero_graffiti.webp";
+import { handleScroll } from "../pages";
+import { TechStack } from "./TechStack";
 
 export const Hero = () => {
   return (
@@ -25,6 +27,12 @@ export const Hero = () => {
           DUSTIN <br />
           JURKAULIONIS
         </HeroTextTitle>
+        <ArrowStackWrapper>
+          <ArrowBox onClick={() => handleScroll("projects")}>
+            <Arrow />
+          </ArrowBox>
+          <TechStack />
+        </ArrowStackWrapper>
       </HeroWrapper>
     </>
   );
@@ -49,6 +57,7 @@ const HeroWrapper = styled.div`
   margin-right: auto;
   line-height: initial;
   gap: 1.5rem;
+  height: calc(100vh - 80px - 2rem);
 `;
 
 const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
@@ -70,4 +79,54 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
 
 const HeroGradientWrapper = styled.div`
   width: 55%;
+`;
+
+const ArrowStackWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+const Arrow = styled.div`
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  background: ${(props) => props.theme.primary};
+  height: 60px;
+  width: 5px;
+  transition: transform 0.75s ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-color: ${(props) => props.theme.primary};
+    transform: rotate(45deg);
+    bottom: 0px;
+    left: -6px;
+  }
+`;
+
+const ArrowBox = styled.div`
+  height: 60px;
+  width: 40px;
+  transform: translateX(-13px);
+
+  :first-child {
+    margin: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover ${Arrow} {
+    transform: translateY(5px);
+  }
 `;

@@ -1,5 +1,4 @@
 import { motion, useInView } from "framer-motion";
-import { MutableRefObject, useRef } from "react";
 import { styled } from "styled-components";
 import {
   ReactSVG,
@@ -26,10 +25,8 @@ const svgComponents = [
 ];
 
 export const TechStack = () => {
-  const ref = useRef(null);
-
   return (
-    <TechStackWrapper ref={ref}>
+    <TechStackWrapper>
       {svgComponents.map((svg, index) => (
         <IconWrapper key={index}>
           <svg.component color={"#3b4250"} />
