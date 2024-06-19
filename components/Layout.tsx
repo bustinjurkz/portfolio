@@ -14,12 +14,8 @@ export const Layout = ({ children }: LayoutProps) => {
 };
 
 const LayoutStyle = styled.div`
-  position: absolute;
-  overflow-y: scroll;
-  top: 80px;
   overflow-x: hidden;
   width: 100%;
-  bottom: 0;
   background-color: ${(props) => props.theme.lightestGreen};
 `;
 

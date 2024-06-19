@@ -39,7 +39,6 @@ export const TechStack = () => {
 
 const TechStackWrapper = styled.div`
   display: flex;
-  max-width: 1100px;
   flex-direction: row;
   gap: 3rem;
 `;

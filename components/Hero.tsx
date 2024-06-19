@@ -51,7 +51,6 @@ const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  max-width: 1100px;
   margin-left: auto;
   animation: ${fadeInAnimation} 1.25s ease-out;
   margin-right: auto;
@@ -63,10 +62,10 @@ const HeroWrapper = styled.div`
 const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
   white-space: nowrap;
   color: ${(props) => props.theme.primary};
-  font-size: 4rem;
   margin: 0;
   line-height: 70px;
   letter-spacing: 4px;
+  font-size: 4rem;
 
   ${(props) =>
     props.$isName &&

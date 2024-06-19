@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import smoothscroll from "smoothscroll-polyfill";
 import Head from "next/head";
 import localFont from "@next/font/local";
+import { ContentsWrapper, InnerWrapper } from "../styles/ContentsStyle";
 
 declare global {
   interface Window {
@@ -51,40 +52,44 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Layout>
-          <AnimatePresence
-            initial={false}
-            mode="wait"
-            onExitComplete={() => {
-              container.scrollTop = 0;
-            }}
-          >
-            <motion.div
-              key={router.route}
-              initial="pageInitial"
-              animate="pageAnimate"
-              transition={{ duration: 0.5 }}
-              exit="pageExit"
-              variants={{
-                pageInitial: {
-                  opacity: 0,
-                  x: 250,
-                },
-                pageAnimate: {
-                  opacity: 1,
-                  x: 0,
-                },
-                pageExit: {
-                  opacity: 0,
-                  x: -250,
-                },
-              }}
-            >
-              <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
-        </Layout>
+        <ContentsWrapper>
+          <InnerWrapper>
+            <Navbar />
+            <Layout>
+              <AnimatePresence
+                initial={false}
+                mode="wait"
+                onExitComplete={() => {
+                  container.scrollTop = 0;
+                }}
+              >
+                <motion.div
+                  key={router.route}
+                  initial="pageInitial"
+                  animate="pageAnimate"
+                  transition={{ duration: 0.5 }}
+                  exit="pageExit"
+                  variants={{
+                    pageInitial: {
+                      opacity: 0,
+                      x: 250,
+                    },
+                    pageAnimate: {
+                      opacity: 1,
+                      x: 0,
+                    },
+                    pageExit: {
+                      opacity: 0,
+                      x: -250,
+                    },
+                  }}
+                >
+                  <Component {...pageProps} />
+                </motion.div>
+              </AnimatePresence>
+            </Layout>
+          </InnerWrapper>
+        </ContentsWrapper>
       </ThemeProvider>
     </main>
   );

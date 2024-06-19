@@ -15,7 +15,7 @@ export const ProjectDetailsWrapper = styled.div`
     margin: 0rem 4rem;
   }
   @media screen and (min-width: 1000px) {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 5rem auto;
     padding: 0rem 4rem;
   }
