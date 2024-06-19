@@ -24,6 +24,7 @@ export const Contact = () => {
             href="https://github.com/bustinjurkz"
             target={"_blank"}
             rel="noreferrer"
+            aria-label="Dustin Jurkaulionis GitHub Account"
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -31,10 +32,14 @@ export const Contact = () => {
             href="https://www.linkedin.com/in/dustinjurkaulionis/"
             target={"_blank"}
             rel="noreferrer"
+            aria-label="Dustin Jurkaulionis LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedinIn} />
           </a>
-          <a href="mailto: dustinjurkaulionis@gmail.com">
+          <a
+            href="mailto: dustinjurkaulionis@gmail.com"
+            aria-label="Dustin Jurkaulionis E-mail"
+          >
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </LogosWrapper>

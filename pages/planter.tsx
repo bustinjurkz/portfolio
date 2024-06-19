@@ -125,8 +125,7 @@ const Planter = () => {
 
       <ProjectImagesWrapper>
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Calendar.src)}
           alt="planer-preview"
           src={Calendar}
@@ -135,8 +134,7 @@ const Planter = () => {
           height={786}
         />
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Cart.src)}
           src={Cart}
           aria-label="Planter Preview Image"

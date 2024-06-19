@@ -132,7 +132,7 @@ const Agora = () => {
 
       <ProjectImagesWrapper>
         <Image
-          priority
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, BookedModal.src)}
           src={BookedModal}
           aria-label="Booking Modal"
@@ -141,7 +141,7 @@ const Agora = () => {
           alt="booking-modal"
         />
         <Image
-          priority
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Mentors.src)}
           src={Mentors}
           alt="select-mentors"

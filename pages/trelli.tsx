@@ -124,8 +124,7 @@ const Trelli = () => {
 
       <ProjectImagesWrapper>
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Quote.src)}
           src={Quote.src}
           alt="trelli-quote"
@@ -134,8 +133,7 @@ const Trelli = () => {
           height={653}
         />
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Tradeshow.src)}
           src={Tradeshow.src}
           aria-label="Tradeshow"

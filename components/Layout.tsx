@@ -5,15 +5,13 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <LayoutStyle id="main">
       <ChildrenStyle>{children}</ChildrenStyle>
     </LayoutStyle>
   );
 };
-
-export default Layout;
 
 const LayoutStyle = styled.div`
   position: absolute;

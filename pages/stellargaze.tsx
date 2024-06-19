@@ -110,8 +110,7 @@ const Stellargaze = () => {
 
       <ProjectImagesWrapper>
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, MainApp.src)}
           alt="Stellargaze Preview"
           src={MainApp}
@@ -120,8 +119,7 @@ const Stellargaze = () => {
           height={914}
         />
         <Image
-          priority
-          className="image"
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Data.src)}
           src={Data}
           aria-label="Park Satellite Image"

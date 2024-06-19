@@ -26,6 +26,7 @@ export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
       $disabled={disabled}
       onClick={handleClick}
       $isLarge={isLarge}
+      aria-label={`${text}-button`}
     >
       {text}
     </ButtonStyle>

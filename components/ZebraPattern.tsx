@@ -17,7 +17,7 @@ export const ZebraPattern = () => {
 };
 
 const ZebraWrapper = styled.div`
-  mask-image: url("grit.webp");
+  mask-image: url("grit.png");
   height: 74px;
   overflow: hidden;
   position: relative;

@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "styled-components";
 import type { AppProps } from "next/app";
-import Navbar from "../components/Navbar";
-import Layout from "../components/Layout";
+import { Navbar } from "../components/Navbar";
+import { Layout } from "../components/Layout";
 import { theme } from "../styles/theme";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";

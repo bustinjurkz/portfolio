@@ -13,29 +13,18 @@ export const Hero = () => {
         <HeroGradientWrapper id="hero">
           <Image
             priority
-            className="dustin-hero"
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            layout={"responsive"}
+            width={605}
+            height={186}
+            loading="eager"
           />
         </HeroGradientWrapper>
         <HeroTextTitle $isName>
           DUSTIN <br />
           JURKAULIONIS
         </HeroTextTitle>
-        {/* <HeroTextSubtitle>
-          I&apos;m a Canadian{" "}
-          <StyledLink
-            href="https://github.com/bustinjurkz"
-            target={"_blank"}
-            rel="noreferrer"
-          >
-            Full Stack Web Developer
-          </StyledLink>{" "}
-          who loves cool design and offbeat ideas. I am available for full time
-          & freelance projects.
-        </HeroTextSubtitle> */}
       </HeroWrapper>
     </>
   );
@@ -79,22 +68,6 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
     `}
 `;
 
-const HeroTextSubtitle = styled.h2`
-  max-width: 550px;
-  font-weight: normal;
-`;
-
 const HeroGradientWrapper = styled.div`
   width: 55%;
-`;
-
-const StyledLink = styled.a`
-  color: ${(props) => props.theme.secondary};
-  font-weight: 600;
-  position: relative;
-  transition: 0.5s;
-
-  &:hover {
-    color: ${(props) => props.theme.primary};
-  }
 `;

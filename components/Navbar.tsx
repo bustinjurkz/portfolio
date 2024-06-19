@@ -17,7 +17,7 @@ export function handleScroll(scrollTo: string) {
   }
 }
 
-const Navbar: React.FC = () => {
+export const Navbar = () => {
   return (
     <NavbarWrapper>
       <LogoWrapper>
@@ -32,21 +32,13 @@ const Navbar: React.FC = () => {
         </Link>
       </LogoWrapper>
       <NavLinksWrapper>
-        <div onClick={() => handleScroll("projects")} className="link">
-          Projects
-        </div>
-        <div onClick={() => handleScroll("experience")} className="link">
-          Experience
-        </div>
-        <div onClick={() => handleScroll("contact")} className="link">
-          Contact
-        </div>
+        <NavLink onClick={() => handleScroll("projects")}>Projects</NavLink>
+        <NavLink onClick={() => handleScroll("experience")}>Experience</NavLink>
+        <NavLink onClick={() => handleScroll("contact")}>Contact</NavLink>
       </NavLinksWrapper>
     </NavbarWrapper>
   );
 };
-
-export default Navbar;
 
 const NavbarWrapper = styled.header`
   position: sticky;
@@ -60,7 +52,7 @@ const NavbarWrapper = styled.header`
   margin: auto auto;
 `;
 
-export const LogoWrapper = styled.div`
+const LogoWrapper = styled.div`
   cursor: pointer;
   width: 100px;
 `;
@@ -70,14 +62,14 @@ const NavLinksWrapper = styled.div`
   font-weight: 600;
   letter-spacing: 3px;
   gap: 1.5rem;
+`;
 
-  .link {
-    transition: 0.5s;
-    &:hover,
-    &:active,
-    &:focus {
-      cursor: pointer;
-      color: ${(props) => props.theme.secondary};
-    }
+const NavLink = styled.div`
+  transition: 0.5s;
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    color: ${(props) => props.theme.secondary};
   }
 `;

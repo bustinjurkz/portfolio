@@ -143,7 +143,7 @@ const Handits = () => {
 
       <ProjectImagesWrapper>
         <Image
-          priority
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Throwing.src)}
           alt="handits throwing"
           src={Throwing}
@@ -151,7 +151,7 @@ const Handits = () => {
           width={800}
         />
         <Image
-          priority
+          loading="lazy"
           onClick={(e: any) => handleExpand(e, Level.src)}
           src={Level}
           alt="handits level one"

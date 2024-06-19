@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, ButtonMixin } from "./Button";
+import { ButtonMixin } from "./Button";
 import Image from "next/legacy/image";
 import Link from "next/link";
 import Lightbox from "yet-another-react-lightbox";
@@ -38,7 +38,10 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
         <ProjectCardWrapper>
           <CardImageWrapper>
             {props.name !== "Handits" && (
-              <ExpandButton onClick={(e: any) => handleExpand(e)}>
+              <ExpandButton
+                onClick={(e: any) => handleExpand(e)}
+                aria-label="expand-button"
+              >
                 <FontAwesomeIcon
                   icon={faMagnifyingGlassPlus}
                   className="expand-icon"
@@ -49,19 +52,19 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
             {props.name !== "Handits" ? (
               <Image
                 onClick={(e: any) => handleExpand(e)}
-                loading="eager"
-                className="image"
+                loading="lazy"
                 src={`/${props.name.toLowerCase()}-preview.webp`}
                 alt={`/${props.name.toLowerCase()}-preview`}
                 aria-label={`/${props.name.toLowerCase()} preview image`}
-                width={1668}
-                height={865}
+                width={1000}
+                height={518}
                 layout={"responsive"}
               />
             ) : (
               <VideoWrapper>
                 <iframe
                   width="1668"
+                  loading="lazy"
                   height="865"
                   src="https://www.youtube.com/embed/abJWSL5FRzs"
                   title="YouTube video player"
