@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { ZebraPattern } from "./ZebraPattern";
+import { motion } from "framer-motion";
 
 export const Contact = () => {
   return (
@@ -26,7 +27,9 @@ export const Contact = () => {
             rel="noreferrer"
             aria-label="Dustin Jurkaulionis GitHub Account"
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faGithub} />
+            </motion.div>
           </a>
           <a
             href="https://www.linkedin.com/in/dustinjurkaulionis/"
@@ -34,13 +37,17 @@ export const Contact = () => {
             rel="noreferrer"
             aria-label="Dustin Jurkaulionis LinkedIn"
           >
-            <FontAwesomeIcon icon={faLinkedinIn} />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </motion.div>
           </a>
           <a
             href="mailto: dustinjurkaulionis@gmail.com"
             aria-label="Dustin Jurkaulionis E-mail"
           >
-            <FontAwesomeIcon icon={faEnvelope} />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </motion.div>
           </a>
         </LogosWrapper>
       </ContactWrapper>

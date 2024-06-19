@@ -30,6 +30,7 @@ import { StyledLink } from "../components/ProjectPreviewCard";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "../utils/anims";
 
 const Trelli = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -149,8 +150,17 @@ const Trelli = () => {
       <ProjectDetailsSection>
         <h2>THE STACK</h2>
         <StackWrapper>
-          {trelliProjectData?.tools?.map((tool) => (
-            <Tool>{tool}</Tool>
+          {trelliProjectData?.tools?.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <Tool>{tool}</Tool>
+            </motion.div>
           ))}
         </StackWrapper>
       </ProjectDetailsSection>

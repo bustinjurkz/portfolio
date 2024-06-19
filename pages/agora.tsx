@@ -33,6 +33,7 @@ import BookedModal from "../public/agora/meeting-booked.webp";
 import Mentors from "../public/agora/book-mentor.webp";
 import { handleScroll } from ".";
 import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "../utils/anims";
 
 const Agora = () => {
   const [expandPreview, setExpandPreview] = useState("");
@@ -157,8 +158,17 @@ const Agora = () => {
       <ProjectDetailsSection>
         <h2>THE STACK</h2>
         <StackWrapper>
-          {agoraProjectData?.tools?.map((tool) => (
-            <Tool>{tool}</Tool>
+          {agoraProjectData?.tools?.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <Tool>{tool}</Tool>
+            </motion.div>
           ))}
         </StackWrapper>
       </ProjectDetailsSection>
