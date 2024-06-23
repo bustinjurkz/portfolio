@@ -49,9 +49,9 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
           ref={ref}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
         >
-          <motion.div whileTap={{ scale: 0.98 }}>
+          <motion.div>
             <ProjectCardWrapper>
-              <CardImageWrapper>
+              <CardImageWrapper whileHover={{ translateX: -5 }}>
                 {props.name !== "Handits" && (
                   <ExpandButton
                     onClick={(e: any) => handleExpand(e)}
@@ -250,7 +250,7 @@ const CardInfoWrapper = styled.div`
   width: 60%;
 `;
 
-const CardImageWrapper = styled.div`
+const CardImageWrapper = styled(motion.div)`
   position: relative;
   width: 40%;
 
