@@ -109,6 +109,7 @@ const NavLinksWrapper = styled.div`
 `;
 
 const NavLink = styled.div`
+  font-size: 18px;
   transition: 0.5s;
   &:hover,
   &:active,
