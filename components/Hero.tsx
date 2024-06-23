@@ -73,8 +73,7 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
     props.$isName &&
     css`
       text-align: right;
-      line-height: 100px;
-      font-size: 6rem;
+      font-size: clamp(4rem, 6vw + 1rem, 6rem);
     `}
 `;
 
