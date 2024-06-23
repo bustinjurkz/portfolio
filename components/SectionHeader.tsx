@@ -10,7 +10,7 @@ export const SectionHeader = ({ headerText }: SectionHeaderProps) => {
 
       <ZebraPatternWrapper>
         <svg
-          viewBox="0 0 1916.6482 130.02601"
+          viewBox="0 0 900 400"
           xmlSpace="preserve"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -24,11 +24,10 @@ export const SectionHeader = ({ headerText }: SectionHeaderProps) => {
 };
 
 const ZebraPatternWrapper = styled.div`
-  mask-image: url("grit.png");
-  height: 74px;
   overflow: hidden;
-  width: 100%;
+  width: 57%;
   transform: translateY(-1px);
+  height: 74px;
 
   svg {
     fill: ${(props) => props.theme.primary};
@@ -36,11 +35,13 @@ const ZebraPatternWrapper = styled.div`
 `;
 
 const SectionHeaderWrapper = styled.div`
-  position: relative;
   align-items: center;
   margin-top: 3rem;
-  height: 74px;
   margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 73px;
 `;
 
 const SectionHeaderText = styled.h2`
@@ -48,11 +49,9 @@ const SectionHeaderText = styled.h2`
   background: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.white};
   align-content: center;
-  position: absolute;
-  top: 0;
   z-index: 1;
   height: inherit;
-  width: 472px;
+  width: 43%;
   text-align: center;
-  margin: 0;
+  margin-right: 2px;
 `;

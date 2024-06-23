@@ -1,4 +1,3 @@
-import { motion, useInView } from "framer-motion";
 import { styled } from "styled-components";
 import {
   ReactSVG,
