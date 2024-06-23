@@ -51,7 +51,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
         >
           <motion.div>
             <ProjectCardWrapper>
-              <CardImageWrapper whileHover={{ translateX: -5 }}>
+              <CardImageWrapper whileHover={{ scale: 1.01 }}>
                 {props.name !== "Handits" && (
                   <ExpandButton
                     onClick={(e: any) => handleExpand(e)}
