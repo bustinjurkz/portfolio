@@ -1,9 +1,6 @@
 import { styled } from "styled-components";
 
-export const ContentsWrapper = styled.div`
-  height: 100vh;
-  overflow-y: scroll;
-`;
+export const ContentsWrapper = styled.div``;
 
 export const InnerWrapper = styled.div`
   padding: 0 3rem;

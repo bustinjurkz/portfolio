@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Logo from "../public/script_logo.webp";
 import Image from "next/legacy/image";
@@ -19,8 +19,33 @@ export function handleScroll(scrollTo: string) {
 }
 
 export const Navbar = () => {
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 50) {
+        setIsNavbarVisible(false);
+      } else {
+        setIsNavbarVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
-    <NavbarWrapper id="navbar-element">
+    <NavbarWrapper
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isNavbarVisible ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+      $isHidden={!isNavbarVisible}
+    >
       <LogoWrapper>
         <Link href="/" passHref>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -41,15 +66,13 @@ export const Navbar = () => {
           </motion.div>
         </NavLink>
         <NavLink onClick={() => handleScroll("experience")}>
-          {" "}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            Experience{" "}
+            Experience
           </motion.div>
         </NavLink>
         <NavLink onClick={() => handleScroll("contact")}>
-          {" "}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            Contact{" "}
+            Contact
           </motion.div>
         </NavLink>
       </NavLinksWrapper>
@@ -57,7 +80,7 @@ export const Navbar = () => {
   );
 };
 
-const NavbarWrapper = styled.header`
+const NavbarWrapper = styled(motion.header)<{ $isHidden?: boolean }>`
   display: flex;
   z-index: 2;
   justify-content: space-between;
@@ -65,6 +88,7 @@ const NavbarWrapper = styled.header`
   position: sticky;
   top: 0;
   height: 80px;
+  pointer-events: ${(props) => (props.$isHidden ? "none" : "visible")};
 `;
 
 const LogoWrapper = styled.div`

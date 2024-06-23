@@ -89,7 +89,7 @@ const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
   ${(props) =>
     props.$first &&
     css`
-      margin-top: 12rem;
+      margin-top: 10rem;
     `}
 
   ${(props) =>

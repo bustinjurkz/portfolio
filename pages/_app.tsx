@@ -52,7 +52,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <ContentsWrapper id="scrollable-element">
+        <ContentsWrapper>
           <InnerWrapper>
             <Navbar />
             <Layout>

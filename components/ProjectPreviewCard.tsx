@@ -128,7 +128,7 @@ const ProjectCardWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 12px 12px 20px #eceff4, -12px -12px 20px #f1f1f1;
+    box-shadow: 11px 14px 25px #d8d7d7, -11px -11px 20px #ffffff;
   }
 `;
 

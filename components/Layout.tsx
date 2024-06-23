@@ -7,7 +7,7 @@ export interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <LayoutStyle>
+    <LayoutStyle id="scrollable-element">
       <ChildrenStyle>{children}</ChildrenStyle>
     </LayoutStyle>
   );

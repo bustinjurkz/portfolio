@@ -56,6 +56,7 @@ const HeroWrapper = styled.div`
   line-height: initial;
   gap: 1.5rem;
   height: calc(100vh - 80px - 2rem);
+  animation: ${fadeInAnimation} 1.25s ease-out;
 `;
 
 const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
