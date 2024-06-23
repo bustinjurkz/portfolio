@@ -1,20 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import { HeaderWrapper, Header } from "../pages";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { ZebraPattern } from "./ZebraPattern";
+import { SectionHeader } from "./SectionHeader";
 import { motion } from "framer-motion";
 
 export const Contact = () => {
   return (
     <>
-      <HeaderWrapper>
-        <Header>CONTACT</Header>
-        <ZebraPattern />
-      </HeaderWrapper>
+      <SectionHeader headerText="CONTACT" />
       <ContactWrapper>
         <ContactMessage>
           Whether you want to collaborate, or simply have a question - <br />

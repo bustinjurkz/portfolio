@@ -7,16 +7,14 @@ export interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <LayoutStyle id="main">
+    <LayoutStyle>
       <ChildrenStyle>{children}</ChildrenStyle>
     </LayoutStyle>
   );
 };
 
 const LayoutStyle = styled.div`
-  overflow-x: hidden;
   width: 100%;
-  background-color: ${(props) => props.theme.lightestGreen};
 `;
 
 const ChildrenStyle = styled.div`

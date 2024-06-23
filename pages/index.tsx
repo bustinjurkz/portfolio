@@ -7,7 +7,7 @@ import { Contact } from "../components/Contact";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import { Timeline } from "../components/Timeline";
-import { ZebraPattern } from "../components/ZebraPattern";
+import { SectionHeader } from "../components/SectionHeader";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -45,10 +45,7 @@ const Home: NextPage = () => {
       <Hero />
 
       <SectionWrapper id="projects" $first>
-        <HeaderWrapper>
-          <Header>PROJECTS</Header>
-          <ZebraPattern />
-        </HeaderWrapper>
+        <SectionHeader headerText="PROJECTS" />
 
         <ProjectsWrapper>
           {data.projects.map((x, i) => {
@@ -69,10 +66,7 @@ const Home: NextPage = () => {
       </SectionWrapper>
 
       <SectionWrapper id="experience">
-        <HeaderWrapper>
-          <Header>EXPERIENCE</Header>
-          <ZebraPattern />
-        </HeaderWrapper>
+        <SectionHeader headerText="EXPERIENCE" />
 
         <Timeline />
       </SectionWrapper>
@@ -103,29 +97,6 @@ const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
     css`
       margin-bottom: 3rem;
     `}
-`;
-
-export const Header = styled.h2`
-  letter-spacing: 3px;
-  background: ${(props) => props.theme.primary};
-  color: ${(props) => props.theme.white};
-  align-content: center;
-  position: absolute;
-  z-index: 1;
-  height: inherit;
-  width: 472px;
-  text-align: center;
-  margin: 0;
-`;
-
-export const HeaderWrapper = styled.div<{ $noBottomRadius?: boolean }>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 3rem;
-  width: 100%;
-  height: 74px;
-  margin-bottom: 3rem;
 `;
 
 export const ProjectsWrapper = styled.div`

@@ -6,7 +6,6 @@ export const ContentsWrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
-  height: 100%;
   padding: 0 3rem;
   max-width: 1100px;
   margin: auto;

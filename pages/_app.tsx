@@ -33,13 +33,13 @@ const myFont = localFont({
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [container, setContainer] = useState<any>(undefined);
-  // Main scrolling container is 'main' component in this app
+
   useEffect(() => {
     if (window != undefined) {
       window.__forceSmoothScrollPolyfill__ = true;
       smoothscroll.polyfill();
     }
-    setContainer(document.getElementById("main"));
+    setContainer(document.getElementById("scrollable-element"));
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <ContentsWrapper>
+        <ContentsWrapper id="scrollable-element">
           <InnerWrapper>
             <Navbar />
             <Layout>

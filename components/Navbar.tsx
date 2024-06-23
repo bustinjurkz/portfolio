@@ -20,7 +20,7 @@ export function handleScroll(scrollTo: string) {
 
 export const Navbar = () => {
   return (
-    <NavbarWrapper>
+    <NavbarWrapper id="navbar-element">
       <LogoWrapper>
         <Link href="/" passHref>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
