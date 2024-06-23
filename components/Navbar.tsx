@@ -10,14 +10,19 @@ export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
 
   if (elem) {
-    elem.scrollIntoView({
+    const offset = 30;
+    const elementPosition =
+      elem.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
       behavior: "smooth",
     });
   } else {
     router.push(`/#${scrollTo}`);
   }
 }
-
 export const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
