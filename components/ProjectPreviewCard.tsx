@@ -44,76 +44,74 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 
   return (
     <>
-      <Link href={`/${props.slug}`} passHref legacyBehavior>
+      <Link href={`/${props.slug}`} passHref legacyBehavior scroll={false}>
         <motion.div
           ref={ref}
           style={{ scale: scaleProgress, opacity: opacityProgress }}
         >
-          <motion.div>
-            <ProjectCardWrapper>
-              <CardImageWrapper whileHover={{ scale: 1.01 }}>
-                {props.name !== "Handits" && (
-                  <ExpandButton
-                    onClick={(e: any) => handleExpand(e)}
-                    aria-label="expand-button"
-                  >
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlassPlus}
-                      className="expand-icon"
-                    />
-                  </ExpandButton>
-                )}
-
-                {props.name !== "Handits" ? (
-                  <Image
-                    onClick={(e: any) => handleExpand(e)}
-                    loading="lazy"
-                    src={`/${props.name.toLowerCase()}-preview.webp`}
-                    alt={`/${props.name.toLowerCase()}-preview`}
-                    aria-label={`/${props.name.toLowerCase()} preview image`}
-                    width={1000}
-                    height={518}
-                    layout={"responsive"}
+          <ProjectCardWrapper>
+            <CardImageWrapper whileHover={{ scale: 1.01 }}>
+              {props.name !== "Handits" && (
+                <ExpandButton
+                  onClick={(e: any) => handleExpand(e)}
+                  aria-label="expand-button"
+                >
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlassPlus}
+                    className="expand-icon"
                   />
-                ) : (
-                  <VideoWrapper>
-                    <iframe
-                      width="1668"
-                      loading="lazy"
-                      height="865"
-                      src="https://www.youtube.com/embed/abJWSL5FRzs"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    />
-                  </VideoWrapper>
-                )}
-              </CardImageWrapper>
+                </ExpandButton>
+              )}
 
-              <CardInfoWrapper>
-                <CardHeaderWrapper>
-                  <ProjectTitle>{props.name}</ProjectTitle>
-                  <Links>
-                    {props.liveURL && (
-                      <VisitLink
-                        href={props.liveURL}
-                        target="_blank"
-                        onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
-                          e.stopPropagation()
-                        }
-                      >
-                        VISIT SITE
-                      </VisitLink>
-                    )}
-                    <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
-                  </Links>
-                </CardHeaderWrapper>
-                <DescriptionWrapper>
-                  <span>{props.description}</span>
-                </DescriptionWrapper>
-              </CardInfoWrapper>
-            </ProjectCardWrapper>
-          </motion.div>
+              {props.name !== "Handits" ? (
+                <Image
+                  onClick={(e: any) => handleExpand(e)}
+                  loading="lazy"
+                  src={`/${props.name.toLowerCase()}-preview.webp`}
+                  alt={`/${props.name.toLowerCase()}-preview`}
+                  aria-label={`/${props.name.toLowerCase()} preview image`}
+                  width={1000}
+                  height={518}
+                  layout={"responsive"}
+                />
+              ) : (
+                <VideoWrapper>
+                  <iframe
+                    width="1668"
+                    loading="lazy"
+                    height="865"
+                    src="https://www.youtube.com/embed/abJWSL5FRzs"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </VideoWrapper>
+              )}
+            </CardImageWrapper>
+
+            <CardInfoWrapper>
+              <CardHeaderWrapper>
+                <ProjectTitle>{props.name}</ProjectTitle>
+                <Links>
+                  {props.liveURL && (
+                    <VisitLink
+                      href={props.liveURL}
+                      target="_blank"
+                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+                        e.stopPropagation()
+                      }
+                    >
+                      VISIT SITE
+                    </VisitLink>
+                  )}
+                  <StyledLink href={`/${props.slug}`}>Learn More</StyledLink>
+                </Links>
+              </CardHeaderWrapper>
+              <DescriptionWrapper>
+                <span>{props.description}</span>
+              </DescriptionWrapper>
+            </CardInfoWrapper>
+          </ProjectCardWrapper>
         </motion.div>
       </Link>
       <Lightbox
@@ -142,7 +140,7 @@ const ProjectCardWrapper = styled.div`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 11px 14px 25px #d8d7d7, -11px -11px 20px #ffffff;
+    box-shadow: 11px 14px 25px #d0cfcf, -11px -11px 20px #ffffff;
   }
 `;
 

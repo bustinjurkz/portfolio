@@ -184,7 +184,7 @@ const Stellargaze = () => {
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <StyledLink href="/trelli" passHref $isLarge>
+          <StyledLink href="/trelli" passHref $isLarge scroll={false}>
             NEXT PROJECT
           </StyledLink>
         </motion.div>

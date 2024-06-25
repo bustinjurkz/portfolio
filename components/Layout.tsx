@@ -15,6 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
 const LayoutStyle = styled.div`
   width: 100%;
+  position: relative;
 `;
 
 const ChildrenStyle = styled.div`

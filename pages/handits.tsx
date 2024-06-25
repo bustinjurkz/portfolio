@@ -182,7 +182,7 @@ const Handits = () => {
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <StyledLink href="/planter" passHref $isLarge>
+          <StyledLink href="/planter" passHref $isLarge scroll={false}>
             NEXT PROJECT
           </StyledLink>
         </motion.div>

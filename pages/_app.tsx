@@ -42,6 +42,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
     setContainer(document.getElementById("scrollable-element"));
   }, []);
 
+  const handleExitComplete = () => {
+    window.scrollTo({ top: 0 });
+  };
+
   return (
     <main className={myFont.className}>
       <Head>
@@ -59,20 +63,18 @@ export default function App({ Component, pageProps, router }: AppProps) {
               <AnimatePresence
                 initial={false}
                 mode="wait"
-                onExitComplete={() => {
-                  container.scrollTop = 0;
-                }}
+                onExitComplete={handleExitComplete}
               >
                 <motion.div
                   key={router.route}
                   initial="pageInitial"
                   animate="pageAnimate"
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.35 }}
                   exit="pageExit"
                   variants={{
                     pageInitial: {
                       opacity: 0,
-                      x: 250,
+                      x: 50,
                     },
                     pageAnimate: {
                       opacity: 1,
@@ -80,7 +82,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
                     },
                     pageExit: {
                       opacity: 0,
-                      x: -250,
+                      x: -50,
                     },
                   }}
                 >

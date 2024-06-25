@@ -166,7 +166,7 @@ const Trelli = () => {
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <StyledLink href="/agora" passHref $isLarge>
+          <StyledLink href="/agora" passHref $isLarge scroll={false}>
             NEXT PROJECT
           </StyledLink>
         </motion.div>

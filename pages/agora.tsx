@@ -174,7 +174,7 @@ const Agora = () => {
       </ProjectDetailsSection>
       <NextButtonWrapper>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <StyledLink href="/handits" passHref $isLarge>
+          <StyledLink href="/handits" passHref $isLarge scroll={false}>
             NEXT PROJECT
           </StyledLink>
         </motion.div>
