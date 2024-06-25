@@ -61,12 +61,16 @@ const TimelineWrapper = styled.div`
     background: ${(props) => props.theme.blue};
     border-radius: 0px;
     box-shadow: none;
+    padding: 1.25rem;
   }
   .vertical-timeline-element-content-arrow {
     border-right-color: #c6c9cf;
   }
   .vertical-timeline-element-icon {
     border-radius: 0;
+  }
+  .vertical-timeline-element-date {
+    padding-bottom: 0;
   }
 `;
 

@@ -103,5 +103,9 @@ export const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 0 1.5rem;
+  padding: 0;
+
+  @media (min-width: 850px) {
+    padding: 0 1.5rem;
+  }
 `;

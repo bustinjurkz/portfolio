@@ -12,7 +12,7 @@ export const Hero = () => {
         <HeroTextTitle>
           FRONT END <br /> DEVELOPER
         </HeroTextTitle>
-        <HeroGradientWrapper id="hero">
+        <HeroImageWrapper id="hero">
           <Image
             priority
             src={HeroImage}
@@ -22,7 +22,7 @@ export const Hero = () => {
             height={186}
             loading="eager"
           />
-        </HeroGradientWrapper>
+        </HeroImageWrapper>
         <HeroTextTitle $isName>
           DUSTIN <br />
           JURKAULIONIS
@@ -67,18 +67,18 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
   letter-spacing: 4px;
   font-size: 4rem;
   letter-spacing: 4px;
-  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 4vw + 0.75rem, 4rem);
 
   ${(props) =>
     props.$isName &&
     css`
       text-align: right;
-      font-size: clamp(4rem, 6vw + 1rem, 6rem);
+      font-size: clamp(1.75rem, 6vw + 1rem, 6rem);
     `}
 `;
 
-const HeroGradientWrapper = styled.div`
-  width: 55%;
+const HeroImageWrapper = styled.div`
+  width: 60%;
 `;
 
 const ArrowStackWrapper = styled.div`

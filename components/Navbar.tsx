@@ -98,7 +98,10 @@ const NavbarWrapper = styled(motion.header)<{ $isHidden?: boolean }>`
 
 const LogoWrapper = styled.div`
   cursor: pointer;
-  width: 100px;
+  width: 90px;
+  @media (min-width: 900px) {
+    width: 100px;
+  }
 `;
 
 const NavLinksWrapper = styled.div`
@@ -109,7 +112,7 @@ const NavLinksWrapper = styled.div`
 `;
 
 const NavLink = styled.div`
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.125rem);
   transition: 0.5s;
   &:hover,
   &:active,

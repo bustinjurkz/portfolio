@@ -128,11 +128,11 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 };
 
 const ProjectCardWrapper = styled.div`
-  padding: 2.05rem;
+  padding: 2.05rem 1.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.45rem;
 
   border-radius: 32px;
   box-shadow: 11px 11px 20px #dedede, -11px -11px 20px #ffffff;
@@ -141,6 +141,11 @@ const ProjectCardWrapper = styled.div`
   &:hover {
     cursor: pointer;
     box-shadow: 11px 14px 25px #d0cfcf, -11px -11px 20px #ffffff;
+  }
+
+  @media screen and (min-width: 850px) {
+    padding: 2.05rem;
+    gap: 2rem;
   }
 `;
 
@@ -165,7 +170,6 @@ const ProjectTitle = styled.h3`
   color: ${(props) => props.theme.primary};
   margin: 0;
   white-space: nowrap;
-  font-size: 22px;
 `;
 
 const VideoWrapper = styled.div`

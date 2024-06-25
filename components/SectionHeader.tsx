@@ -27,7 +27,7 @@ const ZebraPatternWrapper = styled.div`
   overflow: hidden;
   width: 57%;
   transform: translateY(-1px);
-  height: 74px;
+  height: 55px;
 
   svg {
     fill: ${(props) => props.theme.primary};
@@ -41,7 +41,7 @@ const SectionHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 73px;
+  height: 55px;
 `;
 
 const SectionHeaderText = styled.h2`

@@ -39,17 +39,37 @@ export const TechStack = () => {
 const TechStackWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    gap: 2.15rem;
+  }
+  @media (min-width: 850px) {
+    gap: 2.25rem;
+  }
+  @media (min-width: 1015px) {
+    gap: 3rem;
+  }
 `;
 
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50px;
+  width: 35px;
+
+  @media (min-width: 850px) {
+    width: 40px;
+  }
+
+  @media (min-width: 1015px) {
+    width: 45px;
+  }
 `;
 
 const IconLabel = styled.span`
-  color: black;
+  color: ${(props) => props.theme.primary};
   margin-top: 0.25rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 `;
