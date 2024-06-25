@@ -1,24 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectDetailsWrapper = styled.div`
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  @media screen and (min-width: 380px) {
-    margin: 0rem 2rem;
-  }
-  @media screen and (min-width: 500px) {
-    margin: 0rem 3rem;
-  }
-  @media screen and (min-width: 700px) {
-    margin: 0rem 4rem;
-  }
-  @media screen and (min-width: 1000px) {
-    max-width: 1100px;
-    margin: 5rem auto;
-    padding: 0rem 4rem;
-  }
+  margin: 2rem 0;
 `;
 
 export const ProjectDetailsIntroWrapper = styled.div`
@@ -31,10 +14,6 @@ export const ProjectDetailsIntroWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   gap: 3rem;
-
-  @media screen and (min-width: 900px) {
-    flex-flow: row;
-  }
 `;
 
 export const ProjectDetailsIntroDescription = styled.div`
@@ -51,16 +30,8 @@ export const VisitWebsiteLink = styled.div`
 
 export const ProjectSnapshotWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  align-self: center;
-
-  @media screen and (min-width: 900px) {
-    align-self: auto;
-    margin-right: 2rem;
-  }
-  @media screen and (min-width: 1000px) {
-    margin-right: 3rem;
-  }
+  flex-direction: row;
+  gap: 2rem;
 `;
 
 export const SnapshotSection = styled.div`

@@ -82,7 +82,6 @@ export default Home;
 const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
   margin-top: 5rem;
   margin-bottom: 9rem;
-  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 

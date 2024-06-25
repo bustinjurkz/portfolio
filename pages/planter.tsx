@@ -67,13 +67,14 @@ const Planter = () => {
             <SnapshotValue>UX Testing</SnapshotValue>
             <SnapshotValue>Dash of Design</SnapshotValue>
           </SnapshotSection>
-          <SnapshotSection>
-            <SnapshotHeader>CLIENT</SnapshotHeader>
-            <Link href="https://getgrowing.nz/">Genia - Get Growing</Link>
-          </SnapshotSection>
+
           <SnapshotSection>
             <SnapshotHeader>DATE</SnapshotHeader>
             <SnapshotValue>2021</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>CLIENT</SnapshotHeader>
+            <Link href="https://getgrowing.nz/">Genia - Get Growing</Link>
           </SnapshotSection>
         </ProjectSnapshotWrapper>
         <ProjectDetailsBackgroundSection>

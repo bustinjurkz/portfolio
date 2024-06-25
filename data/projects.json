@@ -25,7 +25,7 @@
         "#415939",
         "#757575"
       ],
-      "description": "Planter generates personalized gardening calendars for New Zealanders. With a database of over 50 plants, users can add their fruits and veggies to a cart and get information on optimizing growth based on their location (microclimate) and season.  Upon submission, users receive sow-to-harvest timelines as a stylized PDF sent via email.",
+      "description": "Planter generates personalized gardening calendars for New Zealanders. With a database of over 50 plants, users can add their fruits and veggies to a cart and get information on optimizing growth based on their location.  Upon submission, users are e-mailed a sow-to-harvest timelines as a stylized PDF.",
       "liveURL": "https://planter.co.nz/"
     },
     {
@@ -46,7 +46,7 @@
         "openweather",
         "openstreetmaps"
       ],
-      "description": "STELLARGAZE, my first Full Stack React web app, utilizes real-time data on moon phase, light pollution, and weather forecasts to rank a user's nearby public areas by it's stargazing visibility.",
+      "description": "My first React project, STELLARGAZE utilizes real-time data on moon phase, light pollution, and weather forecasts to rank a user's nearby public areas by it's stargazing visibility.",
       "liveURL": "https://stellargaze.com/"
     },
     {
@@ -67,7 +67,7 @@
         "sendgrid",
         "azure"
       ],
-      "description": "Trelli, winner of the Genia Innovation Award, simplifies custom orders for trellis, gates, and panels. Users input dimensions and design preferences. Upon submission, the backend calculates pricing, generates spec sheets, and distributes PDFs via email to sales, manufacturing teams, and the customer.",
+      "description": "Winner of the Genia Innovation Award, Trelli simplifies custom orders for trellis, gates, and panels. Users input dimensions and design preferences. Upon submission, the backend calculates pricing, generates spec sheets, and distributes PDFs via email to sales, manufacturing teams, and the customer.",
       "liveURL": "https://trelli.co.nz/"
     },
     {
@@ -90,7 +90,7 @@
         "styled-components",
         "mui"
       ],
-      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and education backgrounds. Mentees request Mentors based on match ratings, and upon Mentor acceptance, Google Meet links are automatically shared."
+      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and demographic information. Mentees request Mentors based on match ratings, and upon Mentor acceptance, Google Meet links are automatically shared."
     },
     {
       "name": "Handits",
