@@ -97,8 +97,15 @@ const NavbarWrapper = styled(motion.header)<{ $isHidden?: boolean }>`
 `;
 
 const LogoWrapper = styled.div`
-  cursor: pointer;
-  width: 90px;
+  display: none;
+
+  @media (min-width: 485px) {
+    display: block;
+    cursor: pointer;
+    width: 90px;
+    transform: translateY(3px);
+  }
+
   @media (min-width: 900px) {
     width: 100px;
   }
