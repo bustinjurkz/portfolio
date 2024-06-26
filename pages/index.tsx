@@ -84,6 +84,7 @@ const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
   margin-bottom: 7rem;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 
   ${(props) =>
     props.$first &&

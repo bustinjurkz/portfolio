@@ -3,12 +3,12 @@ import { styled } from "styled-components";
 export const ContentsWrapper = styled.div``;
 
 export const InnerWrapper = styled.div`
-  padding: 0 1rem;
+  padding: 0 1.75rem;
   max-width: 1100px;
   margin: auto;
 
   @media (min-width: 450px) {
-    padding: 0 1.5rem;
+    padding: 0 2.25rem;
   }
 
   @media (min-width: 525px) {
