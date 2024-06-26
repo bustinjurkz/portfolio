@@ -65,12 +65,6 @@ const Trelli = () => {
             <SnapshotValue>Dash of Design</SnapshotValue>
           </SnapshotSection>
           <SnapshotSection>
-            <SnapshotHeader>CLIENT</SnapshotHeader>
-            <a href="https://www.genia.co.nz/" target="_blank">
-              Genia
-            </a>
-          </SnapshotSection>
-          <SnapshotSection>
             <SnapshotHeader>TEAMMATES</SnapshotHeader>
             <a href="https://thomaspearson.me/" target="_blank">
               Thomas Pearson
@@ -83,18 +77,20 @@ const Trelli = () => {
             </a>
           </SnapshotSection>
           <SnapshotSection>
-            <SnapshotHeader>DATE</SnapshotHeader>
-            <SnapshotValue>Early 2020</SnapshotValue>
+            <SnapshotHeader>CLIENT</SnapshotHeader>
+            <a href="https://www.genia.co.nz/" target="_blank">
+              Genia
+            </a>
           </SnapshotSection>
         </ProjectSnapshotWrapper>
         <ProjectDetailsBackgroundSection>
           <h2>BACKGROUND</h2>
           <p>
-            Genia's sales department needed to present their new line of custom
-            Trellis, Panels, and Gates to hardware stores across New Zealand. An
-            idea emerged to streamline the process by enabling instant quotes
-            for these products, eliminating the need for sales reps to call the
-            company every time.
+            In early 2020, Genia's sales department needed to present their new
+            line of custom Trellis, Panels, and Gates to hardware stores across
+            New Zealand. An idea emerged to streamline the process by enabling
+            instant quotes for these products, eliminating the need for sales
+            reps to call the company every time.
           </p>
           <p>
             The challenge was to develop a prototype before the presentation in

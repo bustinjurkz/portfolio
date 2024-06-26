@@ -24,7 +24,6 @@ export const ProjectDetailsIntroDescription = styled.div`
 
 export const VisitWebsiteLink = styled.div`
   display: flex;
-  width: 100%;
   transform: translateY(3px);
 `;
 
@@ -59,7 +58,7 @@ export const SnapshotValue = styled.div`
 export const ProjectDetailsHeader = styled.h1`
   margin: 0;
   font-size: 2.5rem;
-  white-space: nowrap;
+  line-height: normal;
 `;
 
 export const NextButtonWrapper = styled.div`
@@ -71,13 +70,22 @@ export const NextButtonWrapper = styled.div`
 
 export const ProjectImagesWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  padding: 3rem;
+  flex-direction: column;
+
   gap: 3rem;
+  padding: 0.5rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
   outline: 1px solid white;
   outline-offset: -5px;
+
+  @media (min-width: 550px) {
+    padding: 2rem;
+  }
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
 
   img {
     border-radius: 15px;
@@ -90,16 +98,15 @@ export const ProjectImagesWrapper = styled.div`
 export const ProjectDetailsHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   float: left;
   margin-bottom: 3rem;
-  gap: 1.75rem;
+  gap: 1.25rem;
 
   @media (min-width: 768px) {
+    align-items: center;
     flex-direction: row;
     float: unset;
-    margin-bottom: 0;
-    gap: 0;
+    gap: 1.75rem;
   }
 `;
 
@@ -147,5 +154,9 @@ export const StackWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1.75rem;
+  gap: 1.25rem;
+
+  @media (min-width: 768px) {
+    gap: 1.75rem;
+  }
 `;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import projectData from "../data/projects.json";
 import Level from "../public/handits/game-level.webp";
-import Throwing from "../public/handits/throwing-anim.gif";
 
 import {
   ProjectDetailsIntroWrapper,
@@ -57,10 +56,7 @@ const Handits = () => {
             <SnapshotValue>Sound Design</SnapshotValue>
             <SnapshotValue>Level Design</SnapshotValue>
           </SnapshotSection>
-          <SnapshotSection>
-            <SnapshotHeader>School</SnapshotHeader>
-            <SnapshotValue>McMaster University</SnapshotValue>
-          </SnapshotSection>
+
           <SnapshotSection>
             <SnapshotHeader>TEAMMATES</SnapshotHeader>
             <SnapshotValue>Evan Reaume</SnapshotValue>
@@ -144,14 +140,6 @@ const Handits = () => {
       </ProjectDetailsSection>
 
       <ProjectImagesWrapper>
-        <Image
-          loading="lazy"
-          onClick={(e: any) => handleExpand(e, Throwing.src)}
-          alt="handits throwing"
-          src={Throwing}
-          aria-label="Handits throwing"
-          width={800}
-        />
         <Image
           loading="lazy"
           onClick={(e: any) => handleExpand(e, Level.src)}
