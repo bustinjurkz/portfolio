@@ -101,6 +101,7 @@ const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
     props.$first &&
     css`
       margin-top: 10rem;
+      overflow-x: visible;
     `}
 
   ${(props) =>
