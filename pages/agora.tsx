@@ -27,11 +27,9 @@ import Lightbox from "yet-another-react-lightbox";
 
 import "yet-another-react-lightbox/styles.css";
 import { Button } from "../components/Button";
-import Link from "next/link";
 import Image from "next/legacy/image";
 import BookedModal from "../public/agora/meeting-booked.webp";
 import Mentors from "../public/agora/book-mentor.webp";
-import { handleScroll } from ".";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "../utils/anims";
 

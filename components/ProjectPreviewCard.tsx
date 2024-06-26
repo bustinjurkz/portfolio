@@ -130,7 +130,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
 const ProjectCardWrapper = styled.div`
   padding: 2.05rem 1.25rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   gap: 1.45rem;
 
@@ -143,13 +143,27 @@ const ProjectCardWrapper = styled.div`
     box-shadow: 11px 14px 25px #d0cfcf, -11px -11px 20px #ffffff;
   }
 
+  @media screen and (min-width: 768px) {
+    padding: 2.05rem;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
   @media screen and (min-width: 850px) {
     padding: 2.05rem;
     gap: 2rem;
   }
 `;
 
-const DescriptionWrapper = styled.div``;
+const DescriptionWrapper = styled.div`
+  span {
+    font-size: 0.875rem;
+
+    @media screen and (min-width: 450px) {
+      font-size: 1rem;
+    }
+  }
+`;
 
 const Links = styled.div`
   display: flex;
@@ -169,7 +183,17 @@ const ProjectTitle = styled.h3`
   text-transform: uppercase;
   color: ${(props) => props.theme.primary};
   margin: 0;
-  white-space: nowrap;
+
+  font-size: 1.25rem;
+  white-space: pre-wrap;
+
+  @media screen and (min-width: 415px) {
+    white-space: nowrap;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -233,28 +257,40 @@ export const StyledLink = styled(Link)<{ $isLarge?: boolean }>`
 `;
 
 const VisitLink = styled.a`
-  transition: 0.5s;
-  font-size: 0.75rem;
-  align-content: center;
-  margin-right: 10px;
+  display: none;
 
-  &:hover,
-  &:active,
-  &:focus {
-    cursor: pointer;
-    color: ${(props) => props.theme.secondary};
+  @media screen and (min-width: 768px) {
+    display: block;
+    transition: 0.5s;
+    font-size: 0.75rem;
+    align-content: center;
+    margin-right: 10px;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      color: ${(props) => props.theme.secondary};
+    }
   }
 `;
 
 const CardInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const CardImageWrapper = styled(motion.div)`
   position: relative;
-  width: 40%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 
   .image {
     &:hover {
