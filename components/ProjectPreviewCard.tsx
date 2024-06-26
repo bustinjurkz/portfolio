@@ -39,7 +39,7 @@ export const ProjectPreviewCard: React.FC<ProjectPreviewCardProps> = ({
     offset: ["0 1", "1.33 1"],
   });
 
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.65, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (

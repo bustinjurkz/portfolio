@@ -55,8 +55,12 @@ const HeroWrapper = styled.div`
   margin-right: auto;
   line-height: initial;
   gap: 1.5rem;
-  height: calc(100vh - 80px - 2rem);
   animation: ${fadeInAnimation} 1.25s ease-out;
+
+  @media (max-height: 758px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
@@ -75,6 +79,10 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
       text-align: right;
       font-size: clamp(1.75rem, 6vw + 1rem, 6rem);
     `}
+
+  @media (max-height: 758px) {
+    font-size: clamp(1.75rem, 6vw + 1rem, 4rem);
+  }
 `;
 
 const HeroImageWrapper = styled.div`
