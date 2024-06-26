@@ -76,12 +76,21 @@ const TimelineWrapper = styled.div`
 
 const OrganizationLocation = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 0;
+  }
 `;
 
 const LocationWrapper = styled.div`
   display: flex;
-  margin-left: 1.25rem;
+
+  @media (min-width: 768px) {
+    margin-left: 1.25rem;
+  }
 
   .location-icon {
     width: 14px;
@@ -95,7 +104,11 @@ const LocationText = styled.span`
 
 const TimelineHeader = styled.h3`
   margin-top: 0;
-  margin-bottom: 0.35rem;
+  margin-bottom: 1rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0.35rem;
+  }
 `;
 
 const OrganizationText = styled.h3`
