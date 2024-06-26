@@ -1,123 +1,74 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
-import Github from "../public/icon-github.png";
-import LinkedIn from "../public/icon-linkedin.png";
-import Mail from "../public/icon-mail.png";
-import { AnimatePresence, motion } from "framer-motion";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { SectionHeader } from "./SectionHeader";
+import { motion } from "framer-motion";
 
 export const Contact = () => {
-  const line1 = "Let's collaborate!";
-  const line2 = "Anytime, anywhere.";
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
   return (
-    <ContactStyle>
-      <h1 style={{ fontSize: 70 }}>Contact</h1>
-      <div className="container">
-        <AnimatePresence>
-          <motion.h2
-            className="collab"
-            whileInView="visible"
-            initial="hidden"
-            viewport={{ amount: 0.3, once: true }}
-            variants={{
-              hidden: {
-                opacity: 1,
-              },
-              visible: {
-                opacity: 1,
-                transition: {
-                  delay: 0.5,
-                  staggerChildren: 0.015,
-                },
-              },
-            }}
-          >
-            {line1.split("").map((char, index) => {
-              return (
-                <motion.span key={char + "-" + index} variants={letter}>
-                  {char}
-                </motion.span>
-              );
-            })}
-            <br />{" "}
-            {line2.split("").map((char, index) => {
-              return (
-                <motion.span key={char + "-" + index} variants={letter}>
-                  {char}
-                </motion.span>
-              );
-            })}
-          </motion.h2>
-        </AnimatePresence>
-        <div className="logos">
+    <>
+      <SectionHeader headerText="CONTACT" />
+      <ContactWrapper>
+        <ContactMessage>
+          Whether you want to collaborate, or simply have a question - <br />
+          Feel free to reach out.
+        </ContactMessage>
+        <LogosWrapper>
           <a
-            className="logo-container"
             href="https://github.com/bustinjurkz"
             target={"_blank"}
             rel="noreferrer"
+            aria-label="Dustin Jurkaulionis GitHub Account"
           >
-            <Image
-              priority
-              src={Github}
-              alt="Github Logo"
-              aria-label="Github"
-            />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faGithub} />
+            </motion.div>
           </a>
           <a
-            className="logo-container middle"
             href="https://www.linkedin.com/in/dustinjurkaulionis/"
             target={"_blank"}
             rel="noreferrer"
+            aria-label="Dustin Jurkaulionis LinkedIn"
           >
-            <Image
-              priority
-              src={LinkedIn}
-              alt="LinkedIn Logo"
-              aria-label="LinkedIn"
-            />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </motion.div>
           </a>
           <a
-            className="logo-container"
             href="mailto: dustinjurkaulionis@gmail.com"
+            aria-label="Dustin Jurkaulionis E-mail"
           >
-            <Image priority src={Mail} alt="Mail Logo" aria-label="Mail" />
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </motion.div>
           </a>
-        </div>
-      </div>
-    </ContactStyle>
+        </LogosWrapper>
+      </ContactWrapper>
+    </>
   );
 };
 
-const ContactStyle = styled.div`
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .collab {
-      text-align: center;
+const LogosWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  align-items: baseline;
+
+  a {
+    > * {
+      color: ${(props) => props.theme.primary};
+      width: 40px;
     }
-  }
-  .logos {
-    display: flex;
-    align-items: self-end;
-    margin: 1rem 0rem;
-  }
-  .logo-container {
-    cursor: pointer;
-    max-width: 50px;
-    transition: 0.3s;
-    :hover {
-      transform: translateY(-3px);
-    }
-  }
-  .middle {
-    margin: 0px 20px;
   }
 `;
+
+const ContactMessage = styled.span`
+  margin-top: 2rem;
+`;
+
+const ContactWrapper = styled.div``;

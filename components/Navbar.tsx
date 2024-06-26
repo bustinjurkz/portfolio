@@ -1,83 +1,130 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Logo from "../public/script_logo.png";
-import Image from "next/image";
+import Logo from "../public/script_logo.webp";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import router from "next/router";
+import { motion } from "framer-motion";
 
 export function handleScroll(scrollTo: string) {
   const elem = document.getElementById(scrollTo);
 
   if (elem) {
-    elem.scrollIntoView({
+    const offset = 30;
+    const elementPosition =
+      elem.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
       behavior: "smooth",
     });
   } else {
     router.push(`/#${scrollTo}`);
   }
 }
+export const Navbar = () => {
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-const Navbar: React.FC = () => {
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 50) {
+        setIsNavbarVisible(false);
+      } else {
+        setIsNavbarVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (
-    <NavbarStyle>
-      <div className="logo-container">
+    <NavbarWrapper
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isNavbarVisible ? 1 : 0 }}
+      transition={{ duration: 0.3 }}
+      $isHidden={!isNavbarVisible}
+    >
+      <LogoWrapper>
         <Link href="/" passHref>
-          <Image src={Logo} alt="Logo" aria-label="Dusty  Logo" />
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Image
+              src={Logo}
+              alt="Logo"
+              aria-label="Dustin  Logo"
+              width={115}
+              height={38}
+            />
+          </motion.div>
         </Link>
-      </div>
-      <div className="nav-links">
-        <div onClick={() => handleScroll("work")} className="link work">
-          WORK
-        </div>
-        <div onClick={() => handleScroll("contact")} className="link">
-          CONTACT
-        </div>
-      </div>
-    </NavbarStyle>
+      </LogoWrapper>
+      <NavLinksWrapper>
+        <NavLink onClick={() => handleScroll("projects")}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Projects
+          </motion.div>
+        </NavLink>
+        <NavLink onClick={() => handleScroll("experience")}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Experience
+          </motion.div>
+        </NavLink>
+        <NavLink onClick={() => handleScroll("contact")}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            Contact
+          </motion.div>
+        </NavLink>
+      </NavLinksWrapper>
+    </NavbarWrapper>
   );
 };
 
-export default Navbar;
-
-const NavbarStyle = styled.header`
-  position: sticky;
-  top: 0;
+const NavbarWrapper = styled(motion.header)<{ $isHidden?: boolean }>`
   display: flex;
-  background: ${(props) => props.theme.background};
+  z-index: 2;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
   height: 80px;
-  padding: 0px 15px;
-  max-width: 1400px;
-  margin: auto auto;
-  .logo-container {
+  pointer-events: ${(props) => (props.$isHidden ? "none" : "visible")};
+`;
+
+const LogoWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 485px) {
+    display: block;
     cursor: pointer;
-    width: 115px;
+    width: 90px;
+    transform: translateY(3px);
   }
-  .nav-links {
-    display: flex;
-    font-weight: 600;
-    .link {
-      font-size: large;
-      :hover,
-      :active,
-      :focus {
-        cursor: pointer;
-        transform: scale(1.05);
-        color: ${(props) => props.theme.green};
-      }
-    }
-    .work {
-      margin-right: 1rem;
-      @media screen and (min-width: 430px) {
-        margin-right: 2rem;
-      }
-      @media screen and (min-width: 800px) {
-        margin-right: 3rem;
-      }
-      @media screen and (min-width: 1000px) {
-        margin-right: 4rem;
-      }
-    }
+
+  @media (min-width: 900px) {
+    width: 100px;
+  }
+`;
+
+const NavLinksWrapper = styled.div`
+  display: flex;
+  font-weight: 600;
+  letter-spacing: 3px;
+  gap: 1.5rem;
+`;
+
+const NavLink = styled.div`
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  transition: 0.5s;
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    color: ${(props) => props.theme.secondary};
   }
 `;

@@ -1,259 +1,204 @@
-import React, { useEffect } from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { gradualFade } from "../gradualFade";
+import React, { useState } from "react";
 import { Button } from "../components/Button";
-import Link from "next/link";
-import { BounceIn } from "../components/BounceIn";
-import Image from "next/image";
-import MainApp from "../public/stellargaze/main-app.png";
-import Data from "../public/stellargaze/data.jpg";
-import { handleScroll } from ".";
+import projectData from "../data/projects.json";
+import Image from "next/legacy/image";
+import MainApp from "../public/stellargaze/main-app.webp";
+import Data from "../public/stellargaze/data.webp";
 import {
-  ArrowStyle,
-  ListStyle,
-  PageDetailsStyle,
-  SpecialListStyle,
+  NextButtonWrapper,
+  ProjectDetailsBackgroundSection,
+  ProjectDetailsHeader,
+  ProjectDetailsHeaderWrapper,
+  ProjectDetailsIntroWrapper,
+  ProjectDetailsSection,
+  ProjectDetailsWrapper,
+  ProjectImagesWrapper,
+  ProjectSnapshotWrapper,
+  SnapshotHeader,
+  SnapshotSection,
+  SnapshotValue,
+  StackWrapper,
+  SubSection,
+  Swatch,
+  SwatchColor,
+  Tool,
+  VisitWebsiteLink,
 } from "../styles/PageDetailsStyle";
-import { Fade } from "react-awesome-reveal";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { StyledLink } from "../components/ProjectPreviewCard";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "../utils/anims";
 
 const Stellargaze = () => {
-  useEffect(() => {
-    gradualFade("banner", true);
-  }, []);
+  const [expandPreview, setExpandPreview] = useState("");
+  const handleExpand = (
+    event: React.MouseEvent<HTMLElement>,
+    fileName: string
+  ) => {
+    event.stopPropagation();
+    setExpandPreview(fileName);
+  };
+
+  const stellargazeProjectData = projectData.projects.find(
+    (project) => project.name === "Stellargaze"
+  );
 
   return (
-    <PageDetailsStyle>
-      <ParallaxBanner
-        layers={[{ image: "stellargaze/header.jpg", speed: -20 }]}
-        className="parallax-container"
-        id="banner"
-      >
-        <div className="name-container">
-          <h1 className="name">STELLARGAZE</h1>
-          <ArrowStyle onClick={() => handleScroll("start")} />
-        </div>
-      </ParallaxBanner>
-      <div className="project-container" id="start">
-        <Fade fraction={0} triggerOnce>
-          <section className="intro">
-            <h1 className="header">ABOUT THE PROJECT</h1>
-            <div className="snapshot">
-              <div className="tagline">
-                There are roughly 5000 stars visible at night - where are they?
-              </div>
-              <div className="container">
-                <div className="description-container">
-                  <div className="description">
-                    STELLARGAZE helps find areas with low light pollution and
-                    ranks them in real-time according to both the moon phase and
-                    the nightly weather forecasts of humidity and cloud
-                    coverage. It is made for both space enthusiasts and casual
-                    observers of the sky. This was my first ever experience with
-                    React and my first real project after completing my
-                    Bachelors in Computer Science. I decided to become a
-                    professional web developer after; I had so much fun working
-                    on this with close friends at cafes all throughout Hamilton,
-                    Ontario. There are future plans to make this an experiential
-                    meditative stargazing experience using React Native and my
-                    better skills after working 3 years in the industry.
-                  </div>
-                  <div className="visit">
-                    <Button
-                      text={"VISIT THE WEBSITE"}
-                      to={"https://stellargaze.com/"}
-                    />
-                  </div>
-                </div>
+    <ProjectDetailsWrapper>
+      <ProjectDetailsHeaderWrapper>
+        <ProjectDetailsHeader>STELLARGAZE</ProjectDetailsHeader>
 
-                <div className="notes">
-                  <div className="note-container">
-                    <div className="label">ROLE</div>
-                    <div className="role">Full Stack Developer</div>
-                    <div className="role">Design</div>
-                    <div className="role">Research</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label client">CLIENT</div>
-                    <div className="client">Personal Project</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label date">DATE</div>
-                    <div className="date">June - October 2019</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label client">Teammates</div>
-                    <Link href="https://vladfalach.com/">
-                      <a target="_blank">Vlad Falach</a>
-                    </Link>
-                    <div className="client">Evan Reaume</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </Fade>
+        <VisitWebsiteLink>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button text={"VISIT THE WEBSITE"} to={"https://stellargaze.com"} />
+          </motion.div>
+        </VisitWebsiteLink>
+      </ProjectDetailsHeaderWrapper>
+      <ProjectDetailsIntroWrapper>
+        <ProjectSnapshotWrapper>
+          <SnapshotSection>
+            <SnapshotHeader>ROLE</SnapshotHeader>
+            <SnapshotValue>React Frontend</SnapshotValue>
+            <SnapshotValue>Dash of Backend</SnapshotValue>
+            <SnapshotValue>Design</SnapshotValue>
+            <SnapshotValue>Research</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>Teammates</SnapshotHeader>
+            <a href="https://vladfalach.com/" target="_blank">
+              Vlad Falach
+            </a>
+            <SnapshotValue>Evan Reaume</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>DATE</SnapshotHeader>
+            <SnapshotValue>June - October 2019</SnapshotValue>
+          </SnapshotSection>
+        </ProjectSnapshotWrapper>
+        <ProjectDetailsBackgroundSection>
+          <h2>BACKGROUND</h2>
+          <p>
+            Around 5000 stars illuminate the night sky, but where are they
+            visible? Meet STELLARGAZE: it identifies low-light pollution areas,
+            ranked by moon phase and nightly weather forecasts. Suitable for
+            space enthusiasts and casual sky gazers alike, it marked my entry
+            into React after completing my Computer Science degree.
+          </p>
+          <p>
+            Made via collaborative sessions in Hamilton, Ontario cafes with my
+            friends, it spurred my journey into the professional web development
+            industry.
+          </p>
+        </ProjectDetailsBackgroundSection>
+      </ProjectDetailsIntroWrapper>
 
-        <BounceIn>
-          <div className="image-container" style={{ marginBottom: "3rem" }}>
-            <Image
-              priority
-              className="image"
-              src={MainApp}
-              aria-label="Stellargaze Preview Image"
-              width={1719}
-              height={914}
-              layout={"responsive"}
-            />
-            <div className="label">
-              With an average score of 46% for these public areas, the app does
-              not recommend stargazing in the current conditions, as there is
-              high humidity and high cloud coverage.
-            </div>
-          </div>
-        </BounceIn>
+      <Swatch>
+        {stellargazeProjectData?.swatch?.map((color) => (
+          <SwatchColor $color={color} />
+        ))}
+      </Swatch>
 
-        <Fade fraction={0} triggerOnce>
-          <section className="technical">
-            <h1 className="header">HOW IT WORKS</h1>
+      <ProjectDetailsSection>
+        <h2>HOW IT WORKS</h2>
+        <p>
+          STELLARGAZE assists users in North America, Australia, and New Zealand
+          by locating nearby parks with optimal conditions for stargazing. These
+          parks are evaluated based on factors such as light pollution, cloud
+          coverage, humidity, and moon illumination. Our proprietary algorithm,
+          endorsed by an astronomer from McMaster University, assigns a score
+          indicating naked-eye star visibility. A score of 80% or higher denotes
+          excellent visibility.
+        </p>
+      </ProjectDetailsSection>
 
-            <div className="content">
-              <p>
-                Helps users in North America, Australia, and New Zealand find
-                nearby parks with low light pollution, cloud coverage, humidity,
-                and moon illumination. These parks are ranked according to our
-                proprietary algorithm - approved by an astronomer from McMaster
-                University - which assigns a score indicating naked-eye star
-                visibility. A score of 80% or greater represents good
-                visibility.
-              </p>
-              <p>
-                This saves time and energy by not having to read light pollution
-                maps. Currently, the search query &quot;where to stargaze&quot;
-                returns blogs and niche websites with either minimal or complex
-                information.
-              </p>
-              <p>The dataset consists of:</p>
-              <SpecialListStyle>
-                <b>Satellite Data</b> - a satellite image provided by the Earth
-                Observations Group (EOG) at the{" "}
-                <Link href={"https://ngdc.noaa.gov/"}>
-                  <a target={"_blank"} rel="noreferrer">
-                    National Centers for Environmental Information.
-                  </a>
-                </Link>{" "}
-                This Day/Night Band image captures the average radiance values
-                of North America, Australia, and New Zealand. The pixel values
-                we extract correspond to a number on the Bortle scale, which
-                gives an approximate measure of the night sky&apos;s brightness
-                at a particular location.
-              </SpecialListStyle>
-              <SpecialListStyle>
-                <b>GIS/Park Data</b> - Parks within 140km of the user in lower
-                light-pollution zones are ranked based on not only the light
-                pollution, but cloud coverage (the % of the sky covered by
-                clouds), humidity %, and moon phase.
-              </SpecialListStyle>
-              <SpecialListStyle>
-                <b>Weather Forecast Data</b> - Weather forecast data is obtained
-                from OpenWeather. Due to the data limitations and the wide area
-                required for forecasting, doing forecast requests for each park
-                individually was infeasible, as well as not financially viable.
-                As a result, a k-means clustering algorithm was used to cluster
-                nearby parks together, since all parks in an area could share a
-                forecast. After some testing, there was not a significant
-                difference between using nearest neighbor and the more elaborate
-                methods, so nearest neighbor was used. As a result, the centroid
-                of each cluster of parks is used as the forecast request point,
-                and all parks in a cluster share the same forecast.
-              </SpecialListStyle>
-              <p>
-                More detailed information can be found on the{" "}
-                <Link href={"https://stellargaze.com/FAQ"}>
-                  <a target={"_blank"} rel="noreferrer">
-                    FAQs
-                  </a>
-                </Link>
-              </p>
-            </div>
-          </section>
-        </Fade>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Data}
-              aria-label="Park Satellite Image"
-              width={1044}
-              height={697}
-              layout={"responsive"}
-            />
-            <div className="label">
-              The result of mixing the satellite data with the GIS park data.
-              Stored parks are coloured according to light pollution - the
-              lighter the colour, the more light pollution.
-            </div>
-          </div>
-        </BounceIn>
-        <Fade fraction={0} triggerOnce>
-          <section className="learnings">
-            <h1 className="header">WHAT I LEARNED</h1>
-            <ListStyle>
-              <ul>
-                <li>
-                  React has a fairly steep learning curve. Bringing engineering
-                  principles (state...) to the front-end made me thankful I got
-                  a degree prior.
-                </li>
-                <li>
-                  I was shocked that no one has attempted to create a visibility
-                  metric with respect to naked-eye stargazing. Functions were
-                  used based on 4 factors: light pollution, moon illumination,
-                  humidity %, and cloud coverage. For example, if the moon
-                  illumination at a given time is over 50%, it will assign a
-                  score of 0 to the moon. This means that since the moon
-                  illumination is high, obfuscating the stars, it will result in
-                  a lower overall score for that park
-                </li>
-                <li>
-                  You can do anything to avoid unnecessary expenses, however it
-                  might result in less maintainable code. For example, to avoid
-                  calling a pay-per-use API to assess the real-time park weather
-                  in a given radius, we used a complicated k-means script to get
-                  an approximate score. This resulted in free api requests, but
-                  with less accurate data.
-                </li>
-                <li>
-                  I grew a lot as a developer since this project. While I am
-                  very proud that this was my first ever hobby project, I am not
-                  particularly proud of the code and architecture of the app
-                  itself. When it comes time to refactor for a consumer app, I
-                  will make sure the backend is a lot more modular, make use of
-                  Typescript, and avoid the amount of client-side logic used
-                  currently.
-                </li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
-        <section className="actions">
-          <div className="repo">
-            <Link href="https://github.com/bustinjurkz/StellarGaze" passHref>
-              <a target={"_blank"}>
-                <Button text={"VIEW REPO"} />
-              </a>
-            </Link>
-          </div>
-          <div className="next">
-            <Link href="/trelli" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </PageDetailsStyle>
+      <ProjectImagesWrapper>
+        <Image
+          loading="lazy"
+          onClick={(e: any) => handleExpand(e, MainApp.src)}
+          alt="Stellargaze Preview"
+          src={MainApp}
+          aria-label="Stellargaze Preview Image"
+          width={1719}
+          height={914}
+        />
+        <Image
+          loading="lazy"
+          onClick={(e: any) => handleExpand(e, Data.src)}
+          src={Data}
+          aria-label="Park Satellite Image"
+          width={1044}
+          height={697}
+          alt="Park Satellite Image"
+        />
+      </ProjectImagesWrapper>
+
+      <ProjectDetailsSection>
+        <h2>DATASET</h2>
+        <SubSection>
+          <b>Satellite Data</b> - Utilizes satellite images from the Earth
+          Observations Group (EOG) at the National Centers for Environmental
+          Information (NCEI). These images, captured by the Day/Night Band,
+          provide average radiance values for North America, Australia, and New
+          Zealand. Extracted pixel values correspond to Bortle scale ratings,
+          offering an approximate measure of local sky brightness.
+        </SubSection>
+        <SubSection>
+          <b>GIS/Park Data</b> - Ranks parks within up to 140km of the user
+          based on factors such as light pollution, cloud coverage, humidity
+          percentage, and moon phase. Prioritizes parks located in lower
+          light-pollution zones.
+        </SubSection>
+        <SubSection>
+          <b>Weather Forecast Data</b> - Obtains weather forecasts from
+          OpenWeather. Due to data limitations and cost considerations, utilizes
+          a k-means clustering algorithm to group nearby parks and share
+          forecasts. The centroid of each cluster serves as the forecast request
+          point, ensuring all parks within a cluster receive roughly the same
+          forecast.
+        </SubSection>
+        <SubSection>
+          For additional information, visit the{" "}
+          <a href={"https://stellargaze.com/FAQ"} target="blank">
+            FAQs
+          </a>
+          .
+        </SubSection>
+      </ProjectDetailsSection>
+      <ProjectDetailsSection>
+        <h2>THE STACK</h2>
+        <StackWrapper>
+          {stellargazeProjectData?.tools?.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <Tool>{tool}</Tool>
+            </motion.div>
+          ))}
+        </StackWrapper>
+      </ProjectDetailsSection>
+      <NextButtonWrapper>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/trelli" passHref $isLarge scroll={false}>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
+      </NextButtonWrapper>
+      <Lightbox
+        open={!!expandPreview}
+        close={() => setExpandPreview("")}
+        slides={[{ src: expandPreview, width: 1000 }]}
+        carousel={{ finite: true }}
+        styles={{ container: { backgroundColor: "rgb(0 0 0 / 80%)" } }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{ buttonNext: () => null, buttonPrev: () => null }}
+      />
+    </ProjectDetailsWrapper>
   );
 };
 

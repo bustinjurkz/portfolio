@@ -1,213 +1,152 @@
 import React from "react";
-import styled from "styled-components";
-import Image from "next/image";
-import HeroImage from "../public/dustin_hero_background.jpg";
-import { gradualFade } from "../gradualFade";
-import { useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import styled, { css, keyframes } from "styled-components";
+import Image from "next/legacy/image";
+import HeroImage from "../public/dustin_hero_graffiti.webp";
+import { handleScroll } from "../pages";
+import { TechStack } from "./TechStack";
 
 export const Hero = () => {
-  // SSR requires document to be loaded first
-  useEffect(() => {
-    gradualFade("hero");
-  }, []);
-
-  const line1 = "Hello,";
-  const line2 = "I'm Dusty";
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
   return (
-    <HeroStyle>
-      <div className="container">
-        <div className="gradient-container" id="hero">
+    <>
+      <HeroWrapper>
+        <HeroTextTitle>
+          FRONT END <br /> DEVELOPER
+        </HeroTextTitle>
+        <HeroImageWrapper id="hero">
           <Image
             priority
-            className="image"
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            width={2000}
-            height={1382}
-            layout={"responsive"}
+            width={605}
+            height={186}
+            loading="eager"
           />
-        </div>
-
-        <div className="text">
-          <AnimatePresence>
-            <motion.div
-              className="title"
-              variants={{
-                hidden: {
-                  opacity: 1,
-                },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    delay: 0.5,
-                    staggerChildren: 0.08,
-                  },
-                },
-              }}
-              initial="hidden"
-              animate="visible"
-            >
-              {line1.split("").map((char, index) => {
-                return (
-                  <motion.span key={char + "-" + index} variants={letter}>
-                    {char}
-                  </motion.span>
-                );
-              })}
-              <br />{" "}
-              {line2.split("").map((char, index) => {
-                return (
-                  <motion.span key={char + "-" + index} variants={letter}>
-                    {char}
-                  </motion.span>
-                );
-              })}
-            </motion.div>
-          </AnimatePresence>
-          <AnimatePresence>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 1.2 } }}
-              className="subtitle"
-            >
-              I&apos;m a Canadian{" "}
-              <a
-                href="https://github.com/bustinjurkz"
-                target={"_blank"}
-                rel="noreferrer"
-              >
-                full-stack web developer
-              </a>{" "}
-              who loves good design and quirky ideas. I am available for
-              full-time & freelance projects.
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
-
-      <div className="subtitle-tablet">
-        I&apos;m a Canadian{" "}
-        <a
-          href="https://github.com/bustinjurkz"
-          target={"_blank"}
-          rel="noreferrer"
-        >
-          full-stack web developer
-        </a>{" "}
-        who loves good design and quirky ideas. I am available for full-time &
-        freelance projects.
-      </div>
-    </HeroStyle>
+        </HeroImageWrapper>
+        <HeroTextTitle $isName>
+          DUSTIN <br />
+          JURKAULIONIS
+        </HeroTextTitle>
+        <ArrowStackWrapper>
+          <ArrowBox onClick={() => handleScroll("projects")}>
+            <Arrow />
+          </ArrowBox>
+          <TechStack />
+        </ArrowStackWrapper>
+      </HeroWrapper>
+    </>
   );
 };
 
-const HeroStyle = styled.div`
-  .container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+`;
 
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      margin-top: 5rem;
-      margin-bottom: 80px;
-    }
+const HeroWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: initial;
+  gap: 1.5rem;
+  animation: ${fadeInAnimation} 1.25s ease-out;
 
-    .gradient-container {
-      width: 100%;
-      mask-image: linear-gradient(to bottom, #ffffff 50%, transparent 90%);
-      @media screen and (min-width: 768px) {
-        mask-image: linear-gradient(to right, #ffffff 50%, transparent 100%);
-      }
-    }
+  @media (max-height: 758px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+`;
 
-    .text {
-      width: 100%;
-      max-height: 400px;
+const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
+  white-space: nowrap;
+  color: ${(props) => props.theme.primary};
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 4px;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  font-size: clamp(1.5rem, 4vw + 0.75rem, 4rem);
+
+  ${(props) =>
+    props.$isName &&
+    css`
+      text-align: right;
+      font-size: clamp(1.75rem, 6vw + 1rem, 6rem);
+    `}
+
+  @media (max-height: 758px) {
+    font-size: clamp(1.75rem, 6vw + 1rem, 4rem);
+  }
+`;
+
+const HeroImageWrapper = styled.div`
+  width: 100%;
+  @media (min-width: 768px) {
+    min-width: 500px;
+    width: 60%;
+  }
+`;
+
+const ArrowStackWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+`;
+
+const Arrow = styled.div`
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  background: ${(props) => props.theme.primary};
+  height: 60px;
+  width: 5px;
+  transition: transform 0.75s ease;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-color: ${(props) => props.theme.primary};
+    transform: rotate(45deg);
+    bottom: 0px;
+    left: -6px;
+  }
+`;
+
+const ArrowBox = styled.div`
+  display: none;
+
+  @media (min-width: 550px) {
+    display: block;
+    height: 60px;
+    width: 40px;
+
+    :first-child {
       margin: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-weight: 600;
+    }
 
-      .title {
-        font-family: "Inter", sans-serif;
-        font-size: clamp(14.5vw, 10vw, 15vw);
-        align-self: center;
-        transform: translateY(-10vw);
-        white-space: nowrap;
-        @media screen and (min-width: 768px) {
-          align-self: auto;
-          font-size: 4rem;
-          transform: translate(-5vw, 0vw);
-        }
-        @media screen and (min-width: 1025px) {
-          font-size: 5rem;
-          transform: translate(-5vw, 1vw);
-        }
-      }
+    &:hover {
+      cursor: pointer;
+    }
 
-      .subtitle {
-        margin-top: 0rem;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 1.25rem;
-        padding: 0px 20px;
-        max-width: 550px;
-
-        @media screen and (min-width: 450px) {
-          padding: 0px 30px;
-          font-size: 1.5rem;
-        }
-
-        @media screen and (min-width: 768px) {
-          margin-top: 2rem;
-          font-size: xx-large;
-          padding: 0px 40px;
-        }
-
-        @media screen and (min-width: 768px) and (max-width: 1015px) {
-          display: none;
-        }
-        @media screen and (min-width: 1016px) {
-          padding: 30px 50px;
-          max-width: 650px;
-        }
-      }
-      a {
-        display: contents;
-        color: ${(props) => props.theme.darkGrey};
-        font-weight: 600;
-      }
+    &:hover ${Arrow} {
+      transform: translateY(5px);
     }
   }
-  .subtitle-tablet {
-    @media screen and (max-width: 767px) {
-      display: none;
-    }
-    @media screen and (min-width: 1016px) {
-      display: none;
-    }
-    font-size: xx-large;
-    margin-right: auto;
-    font-size: 1.5rem;
-    padding: 0px 60px;
-    max-width: 600px;
-    font-weight: 600;
-    a {
-      display: contents;
-      color: ${(props) => props.theme.darkGrey};
-      font-weight: 600;
-    }
+
+  @media (min-width: 768px) {
+    transform: translateX(-13px);
   }
 `;

@@ -1,15 +1,13 @@
 import type { NextPage } from "next";
-import styled from "styled-components";
-import {
-  DividerStyle,
-  ProjectPreviewCard,
-} from "../components/ProjectPreviewCard";
+import styled, { css } from "styled-components";
+import { ProjectPreviewCard } from "../components/ProjectPreviewCard";
 import data from "../data/projects.json";
 import { Hero } from "../components/Hero";
 import { Contact } from "../components/Contact";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { Button } from "../components/Button";
+import { Timeline } from "../components/Timeline";
+import { SectionHeader } from "../components/SectionHeader";
 
 export enum ProjectType {
   FullTime = "Full-Time Workplace",
@@ -31,8 +29,11 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath.split("#")[1] === "work") {
-      handleScroll("work");
+    if (router.asPath.split("#")[1] === "projects") {
+      handleScroll("projects");
+    }
+    if (router.asPath.split("#")[1] === "experience") {
+      handleScroll("experience");
     }
     if (router.asPath.split("#")[1] === "contact") {
       handleScroll("contact");
@@ -40,103 +41,70 @@ const Home: NextPage = () => {
   }, [router]);
 
   return (
-    <HomeStyle>
+    <>
       <Hero />
-      <DividerStyle className="divider" />
-      <div id="work" className="section">
-        <div className="work-header">
-          <h1 style={{ fontSize: 70 }}>WORK</h1>
-          <div className="more-details">
-            Tap <Button text="More Info" disabled /> to view full project
-            details
-          </div>
-        </div>
 
-        <div className="projects">
+      <SectionWrapper id="projects" $first>
+        <SectionHeader headerText="PROJECTS" />
+
+        <ProjectsWrapper>
           {data.projects.map((x, i) => {
             return (
               <ProjectPreviewCard
                 type={x.type as ProjectType}
                 client={x.client}
-                current={x.current}
                 description={x.description}
                 name={x.name}
                 tools={x.tools}
-                repo={x.repo}
                 slug={x.slug}
                 liveURL={x.liveURL}
                 key={i}
               />
             );
           })}
-        </div>
-      </div>
-      <div id="contact" className="section">
+        </ProjectsWrapper>
+      </SectionWrapper>
+
+      <SectionWrapper id="experience">
+        <SectionHeader headerText="EXPERIENCE" />
+
+        <Timeline />
+      </SectionWrapper>
+      <SectionWrapper id="contact" $last>
         <Contact />
-      </div>
-    </HomeStyle>
+      </SectionWrapper>
+    </>
   );
 };
 
 export default Home;
 
-const HomeStyle = styled.div`
-  .section {
-    margin-top: 100px;
-    margin-bottom: 40px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    @media screen and (min-width: 768px) {
-      padding: 0px 45px;
-    }
-    .more-details {
-      text-align: center;
-      display: flex;
-      align-items: center;
-      flex-flow: wrap;
-      justify-content: center;
-    }
+const SectionWrapper = styled.div<{ $first?: boolean; $last?: boolean }>`
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+  margin-left: auto;
+  margin-right: auto;
 
-    .work-header {
-      display: flex;
-      flex-direction: column;
-      font-weight: 600;
-      align-items: center;
-      margin-bottom: 2.5rem;
-      a {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        margin-bottom: 0.5rem;
-        @media screen and (min-width: 768px) {
-          margin-bottom: 0rem;
-        }
-      }
-      @media screen and (min-width: 780px) {
-        text-align: start;
-        margin-bottom: 2.5rem;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      @media screen and (min-width: 768px) {
-        text-align: start;
-        margin: 0;
-      }
-    }
-  }
+  ${(props) =>
+    props.$first &&
+    css`
+      margin-top: 10rem;
+    `}
 
-  .divider {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    @media screen and (min-width: 1015px) {
-      margin-top: 9rem;
-    }
+  ${(props) =>
+    props.$last &&
+    css`
+      margin-bottom: 3rem;
+    `}
+`;
+
+export const ProjectsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0;
+
+  @media (min-width: 850px) {
+    padding: 0 1.5rem;
   }
 `;

@@ -1,260 +1,191 @@
-import React, { useEffect } from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { gradualFade } from "../gradualFade";
-import { Button } from "../components/Button";
-import Link from "next/link";
-import Image from "next/image";
-import Level from "../public/handits/game-level.jpg";
-import Whiteboard from "../public/handits/whiteboard.jpg";
-import Throwing from "../public/handits/throwing-anim.gif";
-import { handleScroll } from ".";
-import {
-  ArrowStyle,
-  ListStyle,
-  PageDetailsStyle,
-} from "../styles/PageDetailsStyle";
-import { Fade } from "react-awesome-reveal";
-import Swal from "sweetalert2";
-import { BounceIn } from "../components/BounceIn";
+import React, { useState } from "react";
+import projectData from "../data/projects.json";
+import Level from "../public/handits/game-level.webp";
 
-const Agora = () => {
-  useEffect(() => {
-    gradualFade("banner", true);
-  }, []);
+import {
+  ProjectDetailsIntroWrapper,
+  ProjectDetailsWrapper,
+  ProjectDetailsHeader,
+  ProjectSnapshotWrapper,
+  SnapshotHeader,
+  SnapshotSection,
+  SnapshotValue,
+  NextButtonWrapper,
+  ProjectImagesWrapper,
+  ProjectDetailsHeaderWrapper,
+  ProjectDetailsSection,
+  Swatch,
+  SwatchColor,
+  ProjectDetailsBackgroundSection,
+  Tool,
+  StackWrapper,
+} from "../styles/PageDetailsStyle";
+
+import { StyledLink } from "../components/ProjectPreviewCard";
+import Lightbox from "yet-another-react-lightbox";
+
+import "yet-another-react-lightbox/styles.css";
+import Image from "next/legacy/image";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "../utils/anims";
+
+const Handits = () => {
+  const [expandPreview, setExpandPreview] = useState("");
+  const handleExpand = (
+    event: React.MouseEvent<HTMLElement>,
+    fileName: string
+  ) => {
+    event.stopPropagation();
+    setExpandPreview(fileName);
+  };
+
+  const agoraProjectData = projectData.projects.find(
+    (project) => project.name === "Handits"
+  );
 
   return (
-    <PageDetailsStyle>
-      <ParallaxBanner
-        layers={[{ image: "handits/header.jpg", speed: -20 }]}
-        className="parallax-container"
-        id="banner"
-      >
-        <div className="name-container">
-          <h1 className="name">HANDITS</h1>
-          <ArrowStyle onClick={() => handleScroll("start")} />
-        </div>
-      </ParallaxBanner>
+    <ProjectDetailsWrapper>
+      <ProjectDetailsHeaderWrapper>
+        <ProjectDetailsHeader>HANDITS</ProjectDetailsHeader>
+      </ProjectDetailsHeaderWrapper>
+      <ProjectDetailsIntroWrapper>
+        <ProjectSnapshotWrapper>
+          <SnapshotSection>
+            <SnapshotHeader>ROLE</SnapshotHeader>
+            <SnapshotValue>Developer</SnapshotValue>
+            <SnapshotValue>Sound Design</SnapshotValue>
+            <SnapshotValue>Level Design</SnapshotValue>
+          </SnapshotSection>
 
-      <div className="project-container" id="start">
-        <Fade fraction={0} triggerOnce>
-          <section className="intro">
-            <h1 className="header">ABOUT THE GAME</h1>
-            <div className="snapshot">
-              <div className="tagline">
-                Explore strange worlds & solve puzzles as a group of bandits
-                with bold hands!
-              </div>
-              <div className="container">
-                <div className="description">
-                  The Capstone course at McMaster University&apos;s Computer
-                  Science Dept. was a year-long course where small groups had to
-                  complete a large project. Ideally, these projects would
-                  incorporate the learnings from the years prior. I was lucky
-                  enough to be able to make my first video game under the
-                  supervision of{" "}
-                  <Link href={"http://www.cas.mcmaster.ca/~smiths/"}>
-                    <a style={{ color: "#3C9B85" }} target={"_blank"}>
-                      Dr. Spencer Smith.
-                    </a>
-                  </Link>{" "}
-                  <p>
-                    I think a video game really incorporates everything there is
-                    about computer science. Handits is a co-op 2D
-                    puzzler/platformer where the mouse (or right joystick)
-                    controls your character&apos;s hand in 360°. Players
-                    manipulate the handit&apos;s hand and toss, grab, snap,
-                    slap, pull, wave, push, and shoot in order to safely collect
-                    hidden relics.
-                  </p>
-                </div>
-                <div className="notes">
-                  <div className="note-container">
-                    <div className="label">ROLE</div>
-                    <div className="role">Developer</div>
-                    <div className="role">Audio</div>
+          <SnapshotSection>
+            <SnapshotHeader>TEAMMATES</SnapshotHeader>
+            <SnapshotValue>Evan Reaume</SnapshotValue>
+            <SnapshotValue>Danny Stewart</SnapshotValue>
+            <SnapshotValue>Ming Liu</SnapshotValue>
+            <SnapshotValue>Kong Zhijun</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>DATE</SnapshotHeader>
+            <SnapshotValue>2018-2019</SnapshotValue>
+          </SnapshotSection>
+        </ProjectSnapshotWrapper>
+        <ProjectDetailsBackgroundSection>
+          <h2>BACKGROUND</h2>
+          <p>
+            The Capstone course at McMaster University's Computer Science
+            Department is a year-long project where small teams complete a major
+            project using the knowledge gained from the previous years. I had
+            the opportunity to create my first video game under the supervision
+            of{" "}
+            <a href={"http://www.cas.mcmaster.ca/~smiths/"} target="_blank">
+              Dr. Spencer Smith.
+            </a>
+          </p>
+          <p>
+            The game (an intro-level demo), is a 2D puzzler/platformer that
+            challenges players to control a character's hand using a mouse or
+            joystick. Players use the hand to manipulate the environment by
+            tossing, grabbing, pulling, and pushing pushing to safely navigate a
+            dangerous world."
+          </p>
+        </ProjectDetailsBackgroundSection>
+      </ProjectDetailsIntroWrapper>
 
-                    <div className="role">Level Design</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label client">School</div>
-                    <div className="client">McMaster University</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label date">DATE</div>
-                    <div className="date">2018-2019</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label client">Teammates</div>
-                    <div className="client">Evan Reaume</div>
-                    <div className="client">Danny Stewart</div>
-                    <div className="client">Ming Liu</div>
-                    <div className="client">Kong Zhijun</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </Fade>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Level}
-              aria-label="Level One"
-              width={1287}
-              height={729}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Level 1 - both players must reach the end. The solution is to
-              hoist your partner over the middle block so they detonate the TNT.
-              The TNT makes the boulder fall, so one player must grab the torch
-              and set fire to the barrel to expose the little safety ditch
-              beforehand.
-            </div>
-          </div>
-        </BounceIn>
+      <Swatch>
+        {agoraProjectData?.swatch?.map((color) => (
+          <SwatchColor $color={color} />
+        ))}
+      </Swatch>
 
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Throwing}
-              aria-label="Level One"
-              width={275}
-              height={163}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Grabbing and throwing physics. More wonkier than anticipated but
-              it added an extra layer of hilarity. The goal was to make it as
-              frustrating as possible before the point of annoyance.
-            </div>
-          </div>
-        </BounceIn>
+      <ProjectDetailsSection>
+        <h2>HOW IT WAS MADE</h2>
+        <p>
+          The game engine we used for the project was Unity, and we developed
+          many C# scripts to control the game's functionality.
+        </p>
+        <p>
+          We applied game design principles and maintained an ongoing Game
+          Design Document to organize our ideas and plan the development
+          process. Our first deliverable was a Proof of Concept showcasing the
+          main mechanics. Playtesting allowed us to continually refine the game
+          and improve its playability.
+        </p>
 
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Whiteboard}
-              aria-label="Mentors Select"
-              width={1200}
-              height={757}
-              layout={"responsive"}
-            />
-            <div className="label">
-              Evan and I posing in front of a whiteboard after an early game
-              design session.
-            </div>
-          </div>
-        </BounceIn>
+        <p>
+          Our group effectively employed Scrum methodology to maximize
+          productivity during our two full-time semesters. We held weekly sprint
+          planning meetings and divided tasks related to game development. This
+          project utilized various aspects of our computer science education,
+          including programming, algorithms, and software engineering
+          principles. It also involved problem-solving, teamwork, and project
+          management skills."
+        </p>
+      </ProjectDetailsSection>
 
-        <Fade fraction={0} triggerOnce>
-          <section className="technical">
-            <h1 className="header">GAME FEATURES</h1>
+      <ProjectDetailsSection>
+        <h2>LEVEL 1</h2>
+        <p>
+          In Level 1, both players must reach the end to complete the stage. To
+          solve the puzzle, one player must lift their partner over the middle
+          block so they can detonate the TNT. The TNT causes a boulder to fall,
+          so one player must grab a torch and ignite a barrel beforehand to
+          clear a safety
+        </p>
+        <p>
+          The grabbing and throwing mechanics were less precise than expected,
+          but this added an element of humor. The aim was to create a
+          challenging experience that pushed the players to the edge of
+          frustration without losing the fun.
+        </p>
+      </ProjectDetailsSection>
 
-            <ListStyle>
-              <ul>
-                <li>
-                  Navigate through dangerous terrain by walking, jumping, or by
-                  any means necessary.
-                </li>
-                <li>
-                  Use objects, items, and weapons such as torches, guns,
-                  smoke-bombs, and daggers.
-                </li>
-                <li>
-                  Pickpocket enemies and pilfer items from the environment in
-                  order to successfully progress through the level.
-                </li>
-                <li>Work with 1-3 of their friends over local multiplayer</li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
+      <ProjectImagesWrapper>
+        <Image
+          loading="lazy"
+          onClick={(e: any) => handleExpand(e, Level.src)}
+          src={Level}
+          alt="handits level one"
+          aria-label="Level One"
+          width={1287}
+          height={729}
+        />
+      </ProjectImagesWrapper>
 
-        <Fade fraction={0} triggerOnce>
-          <section>
-            <h1 className="header">HOW IT WAS MADE</h1>
-            <ListStyle>
-              <ul>
-                <li>
-                  The game engine used was Unity and involves many C# scripts.
-                </li>
-                <li>
-                  Game design principles were studied. The creation of an
-                  on-going Game Design Document helped to organize our many
-                  ideas.
-                </li>
-                <li>
-                  The first deliverable was a Proof of Concept involving the
-                  main mechanics. It was then subjected to playtesting in order
-                  to continuously refine the game.
-                </li>
-                <li>
-                  The aesthetics were both custom-made from scratch and modified
-                  using openly licensed files.
-                </li>
-                <li>
-                  My group dynamic was efficient due to our use of Scrum
-                  methodology in order to accomplish the most out of the 2
-                  full-time semesters my peers and I had. We would do weekly
-                  sprint plan meetings and divide up the many tasks that pertain
-                  to game development.
-                </li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
-
-        <Fade fraction={0} triggerOnce>
-          <section className="learnings">
-            <h1 className="header">WHAT I LEARNED</h1>
-            <ListStyle>
-              <ul>
-                <li>
-                  I would love to return to video game design one day. I feel it
-                  provides me with a great creative outlet and fuller
-                  utilization of my skills, since I also love creating music.
-                </li>
-                <li>
-                  It is easier to make it as an actor than a video game
-                  developer. The amount of respect I have for those grinding it
-                  out in the gaming industry is astronomical.
-                </li>
-                <li>
-                  Constant playtesting (or UX testing in web development) is
-                  tantamount to the success of your project.
-                </li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
-        <section className="actions">
-          <div className="repo">
-            <Button
-              text={"VIEW REPO"}
-              to="https://github.com/Evan-HR/Handits"
-            />
-          </div>
-          <div className="repo">
-            <Button text={"VIEW BLOG"} to="http://handits.ca/part1.html" />
-          </div>
-          <div className="next">
-            <Link href="/planter" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </PageDetailsStyle>
+      <ProjectDetailsSection>
+        <h2>THE STACK</h2>
+        <StackWrapper>
+          {agoraProjectData?.tools?.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <Tool>{tool}</Tool>
+            </motion.div>
+          ))}
+        </StackWrapper>
+      </ProjectDetailsSection>
+      <NextButtonWrapper>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/planter" passHref $isLarge scroll={false}>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
+      </NextButtonWrapper>
+      <Lightbox
+        open={!!expandPreview}
+        close={() => setExpandPreview("")}
+        slides={[{ src: expandPreview, width: 1000 }]}
+        carousel={{ finite: true }}
+        styles={{ container: { backgroundColor: "rgb(0 0 0 / 80%)" } }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{ buttonNext: () => null, buttonPrev: () => null }}
+      />
+    </ProjectDetailsWrapper>
   );
 };
 
-export default Agora;
+export default Handits;

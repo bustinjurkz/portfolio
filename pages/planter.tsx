@@ -1,209 +1,213 @@
-import React, { useEffect } from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { gradualFade } from "../gradualFade";
+import React, { useState } from "react";
 import { Button } from "../components/Button";
 import Link from "next/link";
-import { BounceIn } from "../components/BounceIn";
-import Image from "next/image";
-import Calendar from "../public/planter/calendar.png";
-import Cart from "../public/planter/cart.png";
-import { handleScroll } from ".";
+import Image from "next/legacy/image";
+import Calendar from "../public/planter/calendar.webp";
+import Cart from "../public/planter/cart.webp";
+import projectData from "../data/projects.json";
+
 import {
-  ArrowStyle,
-  ListStyle,
-  PageDetailsStyle,
-  SpecialListStyle,
+  ProjectDetailsIntroWrapper,
+  ProjectDetailsWrapper,
+  ProjectDetailsHeader,
+  ProjectSnapshotWrapper,
+  SnapshotHeader,
+  SnapshotSection,
+  SnapshotValue,
+  VisitWebsiteLink,
+  NextButtonWrapper,
+  ProjectImagesWrapper,
+  ProjectDetailsHeaderWrapper,
+  ProjectDetailsSection,
+  Swatch,
+  SwatchColor,
+  SubSection,
+  ProjectDetailsBackgroundSection,
+  Tool,
+  StackWrapper,
 } from "../styles/PageDetailsStyle";
-import { Fade } from "react-awesome-reveal";
+
+import { StyledLink } from "../components/ProjectPreviewCard";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "../utils/anims";
 
 const Planter = () => {
-  useEffect(() => {
-    gradualFade("banner", true);
-  }, []);
+  const [expandPreview, setExpandPreview] = useState("");
+  const handleExpand = (
+    event: React.MouseEvent<HTMLElement>,
+    fileName: string
+  ) => {
+    event.stopPropagation();
+    setExpandPreview(fileName);
+  };
+
+  const planterProjectData = projectData.projects.find(
+    (project) => project.name === "Planter"
+  );
 
   return (
-    <PageDetailsStyle>
-      <ParallaxBanner
-        layers={[{ image: "planter/header.jpg", speed: -20 }]}
-        className="parallax-container"
-        id="banner"
-      >
-        <div className="name-container">
-          <h1 className="name">PLANTER</h1>
-          <ArrowStyle onClick={() => handleScroll("start")} />
-        </div>
-      </ParallaxBanner>
-      <div className="project-container" id="start">
-        <Fade fraction={0} triggerOnce>
-          <section className="intro">
-            <h1 className="header">ABOUT THE PROJECT</h1>
-            <div className="snapshot">
-              <div className="tagline">Automating your garden plan!</div>
-              <div className="container">
-                <div className="description-container">
-                  <div className="description">
-                    Gardening in NZ skyrocketed in the Covid era. Our Marketing
-                    team had made a printable plant calendar which tells kiwis
-                    when to plant a fruit or vegetable subject to a particular
-                    climate zone. We realized that this could also be a fun,
-                    dynamic user-experience, and thus Planter was born -
-                    Genia&apos;s first consumer app. As the Project Lead, I
-                    collaborated with the Marketing team, an Auckland-based
-                    designer, and my fellow developers. It was quickly
-                    wire-framed and implemented, and through several rounds of
-                    UX testing which I conducted, it was further refined into
-                    the app today. The purpose is to drive Genia&apos;s social
-                    metrics and generate sales for their gardening division -
-                    Get Growing. In the future, this app will integrate with
-                    Shopify in order to further streamline the gardening
-                    process.
-                  </div>
-                  <div className="visit">
-                    <Button
-                      text={"VISIT THE WEBSITE"}
-                      to={"https://planter.co.nz"}
-                    />
-                  </div>
-                </div>
+    <ProjectDetailsWrapper>
+      <ProjectDetailsHeaderWrapper>
+        <ProjectDetailsHeader>PLANTER</ProjectDetailsHeader>
 
-                <div className="notes">
-                  <div className="note-container">
-                    <div className="label">ROLE</div>
-                    <div className="role">Project Lead</div>
-                    <div className="role">Developer</div>
-                    <div className="role">UX Testing</div>
-                    <div className="role">Dash of Design</div>
-                  </div>
-                  <div className="note-container">
-                    <div className="label client">CLIENT</div>
-                    <Link href="https://www.genia.co.nz/">
-                      <a target={"_blank"}>Genia - Get Growing</a>
-                    </Link>
-                  </div>
-                  <div className="note-container">
-                    <div className="label date">DATE</div>
-                    <div className="date">2021 - Current</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </Fade>
-        <Fade fraction={0} triggerOnce>
-          <section className="technical">
-            <h1 className="header">HOW IT WORKS</h1>
+        <VisitWebsiteLink>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button text={"VISIT THE WEBSITE"} to={"https://planter.co.nz"} />
+          </motion.div>
+        </VisitWebsiteLink>
+      </ProjectDetailsHeaderWrapper>
+      <ProjectDetailsIntroWrapper>
+        <ProjectSnapshotWrapper>
+          <SnapshotSection>
+            <SnapshotHeader>ROLE</SnapshotHeader>
+            <SnapshotValue>Project Lead</SnapshotValue>
+            <SnapshotValue>Developer</SnapshotValue>
+            <SnapshotValue>UX Testing</SnapshotValue>
+            <SnapshotValue>Dash of Design</SnapshotValue>
+          </SnapshotSection>
 
-            <div className="content">
-              <p>
-                Users first select their region in NZ and will be presented with
-                viable plants for the month. They can tap a plant for more
-                specific info, and add plants to their cart. Each plant has an
-                optimal climate zone. For example, if you are in Wellington, New
-                Zealand - a Temperate climate zone - and the month is May, then
-                the app will suggest plants like Bok Choy, Carrot and Chives.
-              </p>
-              <p>
-                The user receives a calendar if they agree to sign-up for
-                marketing e-mails from Genia, via an Azure Function, Mailchimp,
-                and SendGrid. This calendar tells users when to sow or pot a
-                seed, and when to harvest all their selected plants. The
-                calendar itself was made using our proprietary React-to-PDF
-                templating tool.
-              </p>
-            </div>
-          </section>
-        </Fade>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Calendar}
-              aria-label="Planter Preview Image"
-              width={782}
-              height={786}
-              layout={"responsive"}
-            />
-            <div className="label">
-              This is the PDF calendar that is sent, ordered by starting month.
-              Some seeds can be planted straight into the ground depending on
-              the climate zone, and others will need to start in a pot.
-            </div>
-          </div>
-        </BounceIn>
-        <BounceIn>
-          <div className="image-container">
-            <Image
-              priority
-              className="image"
-              src={Cart}
-              aria-label="Planter Preview Image"
-              width={839}
-              height={732}
-              layout={"responsive"}
-            />
-            <div className="label">
-              These 8 plants the user added will be simply displayed in the
-              calendar.
-            </div>
-          </div>
-        </BounceIn>
+          <SnapshotSection>
+            <SnapshotHeader>DATE</SnapshotHeader>
+            <SnapshotValue>2021</SnapshotValue>
+          </SnapshotSection>
+          <SnapshotSection>
+            <SnapshotHeader>CLIENT</SnapshotHeader>
+            <Link href="https://getgrowing.nz/">Genia - Get Growing</Link>
+          </SnapshotSection>
+        </ProjectSnapshotWrapper>
+        <ProjectDetailsBackgroundSection>
+          <h2>BACKGROUND</h2>
+          <p>
+            During the Covid era, the popularity of gardening in New Zealand
+            surged. Genia's Marketing team created a printable plant calendar
+            that advises Kiwis on optimal planting times based on their climate
+            zone. Recognizing the potential for a captivating and interactive
+            user experience, we conceived Planter, Genia's inaugural consumer
+            app.
+          </p>
+          <p>
+            In my role as Project Lead, I collaborated closely with the
+            Marketing team, a designer based in Auckland, and my fellow
+            developers. We wireframed and implemented the app, iterating through
+            multiple rounds of UX testing to refine it into its current form.
+            Planter serves a dual purpose: boosting Genia's social metrics and
+            driving sales for their gardening division, Get Growing.
+          </p>
+        </ProjectDetailsBackgroundSection>
+      </ProjectDetailsIntroWrapper>
 
-        <Fade fraction={0} triggerOnce>
-          <section className="learnings">
-            <h1 className="header">WHAT I LEARNED</h1>
-            <ListStyle>
-              <ul>
-                <li>
-                  The importance of writing well-defined user-stories so that
-                  scope-creep, while tempting, does not happen
-                </li>
-                <li>
-                  UX Testing can be quite fun and can energize the test subjects
-                  in the office. I organized each session into 3 major sections:
-                  <SpecialListStyle>
-                    <b>Think-Aloud</b> - Users think out loud what they feel the
-                    app is for and what the general impressions are
-                  </SpecialListStyle>
-                  <SpecialListStyle>
-                    <b>Tasks</b> - Users are asked to complete tasks, such as:
-                    &quot;You are keen to grow tomatoes. You want to know what
-                    level of sunlight tomatoes need and when to begin planting.
-                    How would you go about doing this?&quot; I then assessed how
-                    difficult it was for them
-                  </SpecialListStyle>
-                  <SpecialListStyle>
-                    <b>Adjectives</b> - Users are asked to circle 5 out of 100
-                    adjectives which indicate how they feel about the UI /
-                    branding
-                  </SpecialListStyle>
-                  The main finding was that users initially did not feel the app
-                  was to help create a plan/calendar. Thus, the designer drafted
-                  a different landing page and the results were much better
-                </li>
-                <li>
-                  Working within a smaller tech team is great - I like wearing
-                  multiple hats: full-stack, design, and UX
-                </li>
-                <li>
-                  For storing data on a small app, JSON can be used in lieu of a
-                  database
-                </li>
-              </ul>
-            </ListStyle>
-          </section>
-        </Fade>
-        <section className="actions">
-          <div className="next">
-            <Link href="/stellargaze" passHref>
-              <a>
-                <Button text={"NEXT PROJECT"} />
-              </a>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </PageDetailsStyle>
+      <Swatch>
+        {planterProjectData?.swatch?.map((color) => (
+          <SwatchColor $color={color} />
+        ))}
+      </Swatch>
+
+      <ProjectDetailsSection>
+        <h2>HOW IT WORKS</h2>
+        <p>
+          Users begin by selecting their region in New Zealand, which then
+          prompts the app to display a curated list of viable plants for the
+          current month. By tapping on a plant, users can access detailed
+          information about it and add it to their cart. Each plant
+          recommendation aligns with the optimal climate zone for the selected
+          region and month. For instance, if a user is in Wellington, New
+          Zealand, categorized under a Temperate climate zone, and the month is
+          May, the app suggests plants such as Bok Choy, Carrot, and Chives.
+        </p>
+
+        <p>
+          Upon agreeing to sign up for marketing emails from Genia, users
+          receive a personalized calendar through an Azure Function, Mailchimp,
+          and SendGrid integration. This calendar (seen below) provides guidance
+          on when to sow or pot seeds and when to harvest all the selected
+          plants. Leveraging our proprietary React-to-PDF templating tool, we've
+          crafted the calendar to ensure its effectiveness and
+          user-friendliness.
+        </p>
+      </ProjectDetailsSection>
+
+      <ProjectImagesWrapper>
+        <Image
+          loading="lazy"
+          onClick={(e: any) => handleExpand(e, Calendar.src)}
+          alt="planer-preview"
+          src={Calendar}
+          aria-label="Planter Preview Image"
+          width={782}
+          height={786}
+        />
+        <Image
+          loading="lazy"
+          onClick={(e: any) => handleExpand(e, Cart.src)}
+          src={Cart}
+          aria-label="Planter Preview Image"
+          width={839}
+          height={732}
+          alt="planter-preview-two"
+        />
+      </ProjectImagesWrapper>
+
+      <ProjectDetailsSection>
+        <h2>UX TESTING</h2>I conducted my first formal UX testing sessions for
+        this project, which proved to be quite enjoyable and energizing for the
+        test subjects in the office. Each session was organized into three major
+        sections:
+        <SubSection>
+          <b>Think-Aloud</b> - Users vocalized their thoughts as they interacted
+          with the app, sharing their impressions and understanding of its
+          purpose.
+        </SubSection>
+        <SubSection>
+          <b>Tasks</b> - Users were tasked with completing specific actions,
+          such as: "You are interested in growing tomatoes and need information
+          on sunlight levels and planting times. How would you proceed?" I then
+          evaluated the difficulty they encountered in completing these tasks.
+        </SubSection>
+        <SubSection>
+          <b>Adjectives</b> - Users were prompted to select 5 adjectives out of
+          a list of 100 that best described their feelings about the UI and
+          branding. The key discovery was that users initially did not perceive
+          the app as a tool for creating a gardening timeline. As a result, the
+          designer developed an alternative landing page yielding much clearer
+          results.
+        </SubSection>
+      </ProjectDetailsSection>
+      <ProjectDetailsSection>
+        <h2>THE STACK</h2>
+        <StackWrapper>
+          {planterProjectData?.tools?.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              custom={index}
+            >
+              <Tool>{tool}</Tool>
+            </motion.div>
+          ))}
+        </StackWrapper>
+      </ProjectDetailsSection>
+      <NextButtonWrapper>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <StyledLink href="/stellargaze" passHref $isLarge scroll={false}>
+            NEXT PROJECT
+          </StyledLink>
+        </motion.div>
+      </NextButtonWrapper>
+      <Lightbox
+        open={!!expandPreview}
+        close={() => setExpandPreview("")}
+        slides={[{ src: expandPreview, width: 1000 }]}
+        carousel={{ finite: true }}
+        styles={{ container: { backgroundColor: "rgb(0 0 0 / 80%)" } }}
+        controller={{ closeOnBackdropClick: true }}
+        render={{ buttonNext: () => null, buttonPrev: () => null }}
+      />
+    </ProjectDetailsWrapper>
   );
 };
 

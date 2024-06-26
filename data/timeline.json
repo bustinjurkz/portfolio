@@ -1,0 +1,42 @@
+[
+  {
+    "date": "June 2022 – Current",
+    "iconType": "work",
+    "title": "Frontend Developer",
+    "organization": "PartsTrader",
+    "location": "Wellington, New Zealand",
+    "description": "Developed an enterprise-wide Design System with React components, migrated decade-old code to React with a UI/UX overhaul for the NZ web service, helped transition to micro-frontends with NX/tRPC, recruited and mentored talent from internship program, and taught UX at a biweekly guild."
+  },
+  {
+    "date": "Dec 2019 – June 2022",
+    "iconType": "work",
+    "title": "Full Stack Web Developer",
+    "organization": "Genia",
+    "location": "Motueka, New Zealand",
+    "description": "I've maintained 9 web applications, and spearheaded the React frontend and design for 5 of them. With support from two backend devs, these apps are optimized for desktop and mobile scanning, serving their internal lumber and home gardening operations. Notably, three projects yield annual savings surpassing $100,000."
+  },
+  {
+    "date": "2016 – 2019",
+    "iconType": "school",
+    "title": "Bachelor of Comp Sci (Honours)",
+    "organization": "McMaster University",
+    "location": "Hamilton, Ontario",
+    "description": ""
+  },
+  {
+    "date": "2013 – 2015",
+    "iconType": "work",
+    "title": "Digital Marketing and Social Media Consultant",
+    "organization": "Freelance",
+    "location": "Greater Toronto Area",
+    "description": "Provided coaching and comprehensive reports for over 10 non-profits to improve their UX, Branding, SEO, and their Digital Marketing initiatives."
+  },
+  {
+    "date": "2009 – 2013",
+    "iconType": "school",
+    "title": "Bachelor of Commerce (Honours)",
+    "organization": "McMaster University",
+    "location": "Hamilton, Ontario",
+    "description": ""
+  }
+]

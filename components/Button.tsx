@@ -1,71 +1,79 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export interface ButtonProps {
   text?: string;
   to?: string;
   disabled?: boolean;
+  isLarge?: boolean;
+  secondary?: boolean;
 }
 
-export const Button: React.VFC<ButtonProps> = ({ ...props }) => {
+export const Button = ({ text, to, disabled, isLarge }: ButtonProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!disabled && to) {
+      window.open(to, "_blank");
+    }
+  };
+
   return (
     <ButtonStyle
-      href={props.to}
       role="button"
       target="_blank"
-      style={{
-        padding:
-          props.text === "View Live" ? "0.75rem 1.55rem" : "0.75rem 1.25rem",
-        cursor: props.disabled ? "unset" : "pointer",
-      }}
+      href={to}
+      $disabled={disabled}
+      onClick={handleClick}
+      $isLarge={isLarge}
+      aria-label={`${text}-button`}
     >
-      {props.text}
+      {text}
     </ButtonStyle>
   );
 };
 
-const ButtonStyle = styled.a`
-  cursor: pointer;
+export const ButtonMixin = css`
   text-align: center;
   display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10rem;
+  padding: 4px 12px;
+  min-width: 110px;
+  border-radius: 15px;
   color: #fff;
   text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
+  font-size: 12px;
+  letter-spacing: 1px;
   transition: all 0.3s;
-  min-width: 55px;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  :before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #546178;
-    transition: all 0.3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  :after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #404754;
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  :hover {
+  white-space: nowrap;
+
+  background-color: ${(props) => props.theme.primary};
+
+  &:hover {
     color: #fff;
+    background-color: ${(props) => props.theme.secondary};
   }
-  :hover:before {
-    width: 100%;
-  }
+`;
+
+const ButtonStyle = styled.a<{
+  $disabled?: boolean;
+  $isLarge?: boolean;
+}>`
+  ${ButtonMixin};
+
+  ${(props) =>
+    props.$isLarge &&
+    css`
+      padding: 0.75rem 1rem;
+      font-size: 14px;
+      min-width: 180px;
+    `}
+
+  ${(props) =>
+    props.$disabled &&
+    css`
+      cursor: default;
+    `}
 `;

@@ -17,13 +17,22 @@
         "azure",
         "mui"
       ],
-      "description": "Planter helps New Zealanders plan their vegetable garden. Knowing what to plant and when to grow it throughout the year can be rather complicated! Planter takes away the guesswork and provides an effortless way to get a personalised planting calendar for their garden.",
+      "swatch": [
+        "#73a860",
+        "#218000",
+        "#4b713c",
+        "#3e665b",
+        "#415939",
+        "#757575"
+      ],
+      "description": "Planter generates personalized gardening calendars for New Zealanders. With a database of over 50 plants, users can add their fruits and veggies to a cart and get information on optimizing growth based on their location.  Upon submission, users are e-mailed a sow-to-harvest timelines as a stylized PDF.",
       "liveURL": "https://planter.co.nz/"
     },
     {
       "name": "Stellargaze",
       "slug": "stellargaze",
       "type": "Personal Project",
+      "swatch": ["#111414", "#1b1c1d", "#edd9c0", "#2d333c", "#b58d66"],
       "tools": [
         "react",
         "javascript",
@@ -37,15 +46,15 @@
         "openweather",
         "openstreetmaps"
       ],
-      "description": "STELLARGAZE is a React web project which helps find areas with low light pollution and ranks them in real-time according to both the moon phase and the nightly weather forecasts of humidity and cloud coverage. Made for both space enthusiasts and casual observers of the sky.",
-      "liveURL": "https://stellargaze.com/",
-      "repo": "https://github.com/bustinjurkz/StellarGaze"
+      "description": "My first React project, STELLARGAZE utilizes real-time data on moon phase, light pollution, and weather forecasts to rank a user's nearby public areas by it's stargazing visibility.",
+      "liveURL": "https://stellargaze.com/"
     },
     {
       "name": "Trelli",
       "type": "Contract",
       "client": "Genia",
       "slug": "trelli",
+      "swatch": ["#355954", "#d9cec4", "#a86752", "#71504d", "#689976"],
       "tools": [
         "react",
         "vercel",
@@ -58,40 +67,15 @@
         "sendgrid",
         "azure"
       ],
-      "description": "Winner of the Genia Innovation Award, Trelli helps customers create their custom order for trellis, gates, and panels.  Trelli helped generate significant sales orders for Genia and has been showcased at tradeshows around New Zealand.",
+      "description": "Winner of the Genia Innovation Award, Trelli simplifies custom orders for trellis, gates, and panels. Users input dimensions and design preferences. Upon submission, the backend calculates pricing, generates spec sheets, and distributes PDFs via email to sales, manufacturing teams, and the customer.",
       "liveURL": "https://trelli.co.nz/"
-    },
-    {
-      "name": "Timber Industry Apps",
-      "type": "Full-Time Workplace",
-      "current": true,
-      "client": "Genia",
-      "slug": "genia",
-      "tools": [
-        "timbersmart",
-        "react",
-        "azure",
-        "typescript",
-        "prisma",
-        "mySQL",
-        "kubernetes",
-        "docker",
-        "redux",
-        "apollo",
-        "graphQL",
-        "styled-components",
-        "dotnet",
-        "sentry",
-        "jest",
-        "express"
-      ],
-      "description": "Genia has been in the timber industry since 1993 and I am proud to have helped modernize their logistics and business-processes, as well as spearhead their consumer/marketing endeavors.  Just three of the apps I've helped design and develop is estimated to save the company over $100,000 per year."
     },
     {
       "name": "Agora Mentoring",
       "type": "Contract",
       "client": "Agora",
       "slug": "agora",
+      "swatch": ["#268F00", "#F89100", "#EF6567", "#195636"],
       "tools": [
         "next.js",
         "vercel",
@@ -106,17 +90,16 @@
         "styled-components",
         "mui"
       ],
-      "description": "An all-in-one solution which uses artificial intelligence to help an organization's mentees find the right mentors to connect with so they can gain industry knowledge and make connections."
+      "description": "AGORA streamlines mentorship connections. Users register as Mentors or Mentees, sharing work and demographic information. Mentees request Mentors based on match ratings, and upon Mentor acceptance, Google Meet links are automatically shared."
     },
     {
       "name": "Handits",
       "type": "School",
       "slug": "handits",
+      "swatch": ["#4A1315", "#388693", "#2C5130", "#4C162F", "#331B79"],
       "client": "Capstone - McMaster University",
-      "tools": ["unity", "c#"],
-      "repo": "https://github.com/Evan-HR/Handits",
-      "liveURL": "http://handits.ca/part1.html",
-      "description": "Handits is a 4-player puzzle/platformer game.  You explore strange worlds & solve puzzles as a group of bandits with bold hands which can grab, toss, steal, slap, draw (and more)!"
+      "tools": ["unity", "c#", "git"],
+      "description": "Handits is a 4-player puzzle/platformer game developed as a final-year Computer Science capstone project at McMaster University. Using Unity and C# scripts, players control bandits with versatile hands to grab, navigate dangerous terrain, and solve puzzles.  It involved game design principles, continuous playtesting, and Scrum methodology."
     }
   ]
 }

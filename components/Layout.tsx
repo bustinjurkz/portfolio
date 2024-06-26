@@ -1,31 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "./Footer";
 
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
-    <LayoutStyle id="main">
-      <ChildrenStyle>
-        {children} <Footer />
-      </ChildrenStyle>
+    <LayoutStyle id="scrollable-element">
+      <ChildrenStyle>{children}</ChildrenStyle>
     </LayoutStyle>
   );
 };
 
-export default Layout;
-
 const LayoutStyle = styled.div`
-  position: absolute;
-  overflow-y: scroll;
-  top: 80px;
-  overflow-x: hidden;
   width: 100%;
-  bottom: 0;
-  background-color: ${(props) => props.theme.lightestGreen};
+  position: relative;
 `;
 
 const ChildrenStyle = styled.div`
