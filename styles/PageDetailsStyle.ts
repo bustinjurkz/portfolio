@@ -25,7 +25,7 @@ export const ProjectDetailsIntroDescription = styled.div`
 export const VisitWebsiteLink = styled.div`
   display: flex;
   width: 100%;
-  justify-content: end;
+  transform: translateY(3px);
 `;
 
 export const ProjectSnapshotWrapper = styled.div`
@@ -89,8 +89,18 @@ export const ProjectImagesWrapper = styled.div`
 
 export const ProjectDetailsHeaderWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  float: left;
+  margin-bottom: 3rem;
+  gap: 1.75rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    float: unset;
+    margin-bottom: 0;
+    gap: 0;
+  }
 `;
 
 export const ProjectDetailsSection = styled.div`
