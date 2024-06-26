@@ -78,7 +78,11 @@ const HeroTextTitle = styled.h1<{ $isName?: boolean }>`
 `;
 
 const HeroImageWrapper = styled.div`
-  width: 60%;
+  width: 100%;
+  @media (min-width: 768px) {
+    min-width: 500px;
+    width: 60%;
+  }
 `;
 
 const ArrowStackWrapper = styled.div`
@@ -114,19 +118,27 @@ const Arrow = styled.div`
 `;
 
 const ArrowBox = styled.div`
-  height: 60px;
-  width: 40px;
-  transform: translateX(-13px);
+  display: none;
 
-  :first-child {
-    margin: auto;
+  @media (min-width: 550px) {
+    display: block;
+    height: 60px;
+    width: 40px;
+
+    :first-child {
+      margin: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover ${Arrow} {
+      transform: translateY(5px);
+    }
   }
 
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover ${Arrow} {
-    transform: translateY(5px);
+  @media (min-width: 768px) {
+    transform: translateX(-13px);
   }
 `;
