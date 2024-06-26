@@ -13,20 +13,10 @@ export const Contact = () => {
       <SectionHeader headerText="CONTACT" />
       <ContactWrapper>
         <ContactMessage>
-          Whether you want to collaborate, or simply have a question - <br />
-          Feel free to reach out.
+          Interested in working together? <br />
+          Reach out below 😊
         </ContactMessage>
         <LogosWrapper>
-          <a
-            href="https://github.com/bustinjurkz"
-            target={"_blank"}
-            rel="noreferrer"
-            aria-label="Dustin Jurkaulionis GitHub Account"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <FontAwesomeIcon icon={faGithub} />
-            </motion.div>
-          </a>
           <a
             href="https://www.linkedin.com/in/dustinjurkaulionis/"
             target={"_blank"}
@@ -45,6 +35,16 @@ export const Contact = () => {
               <FontAwesomeIcon icon={faEnvelope} />
             </motion.div>
           </a>
+          <a
+            href="https://github.com/bustinjurkz"
+            target={"_blank"}
+            rel="noreferrer"
+            aria-label="Dustin Jurkaulionis GitHub Account"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <FontAwesomeIcon icon={faGithub} />
+            </motion.div>
+          </a>
         </LogosWrapper>
       </ContactWrapper>
     </>
@@ -58,6 +58,7 @@ const LogosWrapper = styled.div`
   gap: 1.5rem;
   margin-top: 2rem;
   align-items: baseline;
+  margin-left: 2px;
 
   a {
     > * {
@@ -71,4 +72,6 @@ const ContactMessage = styled.span`
   margin-top: 2rem;
 `;
 
-const ContactWrapper = styled.div``;
+const ContactWrapper = styled.div`
+  overflow: hidden;
+`;

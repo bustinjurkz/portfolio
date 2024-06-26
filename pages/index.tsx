@@ -73,6 +73,17 @@ const Home: NextPage = () => {
       <SectionWrapper id="contact" $last>
         <Contact />
       </SectionWrapper>
+      <RepoInfo>
+        Portfolio designed and developed by me -{" "}
+        <a
+          href="https://github.com/bustinjurkz/portfolio"
+          target={"_blank"}
+          rel="noreferrer"
+          aria-label="Dustin Jurkaulionis Portfolio Repo"
+        >
+          view the code here.
+        </a>
+      </RepoInfo>
     </>
   );
 };
@@ -107,5 +118,23 @@ export const ProjectsWrapper = styled.div`
 
   @media (min-width: 850px) {
     padding: 0 1.5rem;
+  }
+`;
+
+const RepoInfo = styled.div`
+  margin-bottom: 3rem;
+  a {
+    transition: 0.5s;
+    font-weight: bold;
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      color: ${(props) => props.theme.secondary};
+    }
+  }
+
+  @media (min-width: 700px) {
+    float: right;
   }
 `;
