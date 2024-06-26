@@ -107,8 +107,8 @@ const Trelli = () => {
       </ProjectDetailsIntroWrapper>
 
       <Swatch>
-        {trelliProjectData?.swatch?.map((color) => (
-          <SwatchColor $color={color} />
+        {trelliProjectData?.swatch?.map((color, index) => (
+          <SwatchColor $color={color} key={index} />
         ))}
       </Swatch>
 

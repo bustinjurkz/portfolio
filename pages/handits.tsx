@@ -92,8 +92,8 @@ const Handits = () => {
       </ProjectDetailsIntroWrapper>
 
       <Swatch>
-        {agoraProjectData?.swatch?.map((color) => (
-          <SwatchColor $color={color} />
+        {agoraProjectData?.swatch?.map((color, index) => (
+          <SwatchColor $color={color} key={index} />
         ))}
       </Swatch>
 

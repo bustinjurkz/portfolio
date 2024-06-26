@@ -99,8 +99,8 @@ const Planter = () => {
       </ProjectDetailsIntroWrapper>
 
       <Swatch>
-        {planterProjectData?.swatch?.map((color) => (
-          <SwatchColor $color={color} />
+        {planterProjectData?.swatch?.map((color, index) => (
+          <SwatchColor $color={color} key={index} />
         ))}
       </Swatch>
 

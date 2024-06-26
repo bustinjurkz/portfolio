@@ -94,8 +94,8 @@ const Stellargaze = () => {
       </ProjectDetailsIntroWrapper>
 
       <Swatch>
-        {stellargazeProjectData?.swatch?.map((color) => (
-          <SwatchColor $color={color} />
+        {stellargazeProjectData?.swatch?.map((color, index) => (
+          <SwatchColor $color={color} key={index} />
         ))}
       </Swatch>
 
