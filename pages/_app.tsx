@@ -32,16 +32,6 @@ const myFont = localFont({
 });
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const [container, setContainer] = useState<any>(undefined);
-
-  useEffect(() => {
-    if (window != undefined) {
-      window.__forceSmoothScrollPolyfill__ = true;
-      smoothscroll.polyfill();
-    }
-    setContainer(document.getElementById("scrollable-element"));
-  }, []);
-
   const handleExitComplete = () => {
     window.scrollTo({ top: 0 });
   };
@@ -49,10 +39,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <main className={myFont.className}>
       <Head>
-        <title>DJ Portfolio</title>
+        <title>Dustin Jurkaulionis Portfolio</title>
         <meta
           name="description"
-          content="Dustin Jurkaulionis' portfolio - view my past and current projects. Let's collaborate!"
+          content="Dustin Jurkaulionis' portfolio - view my past and current projects. Let's work together!"
         />
       </Head>
       <ThemeProvider theme={theme}>
