@@ -18,8 +18,8 @@ export const Hero = () => {
             src={HeroImage}
             alt="Dustin Hero"
             aria-label="Hero Image"
-            width={605}
-            height={186}
+            width={602}
+            height={185}
             loading="eager"
           />
         </HeroImageWrapper>
