@@ -10,7 +10,7 @@ export const Hero = () => {
     <>
       <HeroWrapper>
         <HeroTextTitle>
-          FRONT END <br /> DEVELOPER
+          FULL STACK <br /> DEVELOPER
         </HeroTextTitle>
         <HeroImageWrapper id="hero">
           <Image
